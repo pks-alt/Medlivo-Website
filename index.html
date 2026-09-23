@@ -54,16 +54,35 @@ h1,h2,h3,p{margin:0}
 .hero-card strong{display:block;font-size:18px;line-height:1.3;color:var(--deep);margin-top:8px}
 .hero-card p{font-size:12px;line-height:1.55;color:#6b7890;margin-top:6px}
 
-.route{position:relative;z-index:3;margin-top:-18px}
-.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.route-card{background:#fff;box-shadow:0 18px 55px rgba(9,25,79,.1);padding:26px 28px;display:grid;grid-template-columns:1fr auto;align-items:center;border:1px solid #edf1f7;transition:.2s}
-.route-card:hover{transform:translateY(-3px)}
-.route-card:first-child{border-top:4px solid var(--blue)}
-.route-card:last-child{border-top:4px solid var(--navy)}
-.route-card small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:800;color:#8692a7}
-.route-card strong{display:block;font-size:19px;color:var(--deep);margin-top:5px}
-.route-arrow{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--deep);color:#fff;font-size:19px}
-.route-card:last-child .route-arrow{background:var(--blue)}
+.route{position:relative;z-index:3;margin-top:-30px;padding:0 0 34px}
+.route-shell{background:#fff;border:1px solid #e6ebf3;border-radius:28px;box-shadow:0 28px 75px rgba(9,25,79,.12);overflow:hidden}
+.route-top{display:flex;justify-content:space-between;align-items:end;gap:40px;padding:27px 30px 20px;border-bottom:1px solid var(--line)}
+.route-label{font-size:9px;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:var(--blue);margin-bottom:8px}
+.route-top h2{font-size:25px;line-height:1.14;letter-spacing:-.035em;color:var(--deep)}
+.route-top p{font-size:12px;line-height:1.65;color:#6c7890;max-width:470px}
+.route-grid{display:grid;grid-template-columns:1fr 1fr}
+.route-card{position:relative;min-height:205px;padding:31px 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;overflow:hidden;transition:transform .24s ease,box-shadow .24s ease}
+.route-card:first-child{background:linear-gradient(145deg,#0b225f 0%,#18358f 100%);color:#fff}
+.route-card:last-child{background:linear-gradient(145deg,#fbfdff 0%,#f2f7ff 100%);border-left:1px solid var(--line)}
+.route-card:hover{transform:translateY(-2px)}
+.route-card:after{content:"";position:absolute;width:210px;height:210px;border-radius:50%;right:-95px;top:-105px;pointer-events:none}
+.route-card:first-child:after{background:radial-gradient(circle,rgba(95,223,229,.16),transparent 70%)}
+.route-card:last-child:after{background:radial-gradient(circle,rgba(47,103,216,.10),transparent 70%)}
+.route-card small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;margin-bottom:8px}
+.route-card:first-child small{color:#9ff8f2}
+.route-card:last-child small{color:var(--blue)}
+.route-card strong{display:block;font-size:25px;line-height:1.14;letter-spacing:-.035em}
+.route-card:first-child strong{color:#fff}
+.route-card:last-child strong{color:var(--deep)}
+.route-card p{font-size:12px;line-height:1.62;margin-top:10px;max-width:475px}
+.route-card:first-child p{color:#c3cce2}
+.route-card:last-child p{color:#66748d}
+.route-link{display:inline-flex;align-items:center;gap:10px;margin-top:17px;font-size:11px;font-weight:900}
+.route-card:first-child .route-link{color:#fff}
+.route-card:last-child .route-link{color:var(--navy)}
+.route-arrow{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:19px;font-weight:700;position:relative;z-index:2}
+.route-card:first-child .route-arrow{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);color:#fff}
+.route-card:last-child .route-arrow{background:#fff;border:1px solid #dce5f2;color:var(--blue);box-shadow:0 10px 28px rgba(9,25,79,.08)}
 
 section{padding:100px 0}
 .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:var(--blue);margin-bottom:14px}
@@ -153,13 +172,31 @@ section{padding:100px 0}
 .final p{font-size:12px;line-height:1.65;color:#b8c3dc;margin-top:9px;max-width:460px}
 .final .btn{margin-top:20px}
 
-footer{background:#050f35;color:#fff;padding:47px 0 24px}
-.footer-grid{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:35px;padding-bottom:35px;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-logo{width:170px;background:#fff;padding:7px 10px}
-.footer-brand p{font-size:11px;line-height:1.7;color:#8f9bb8;margin-top:14px;max-width:290px}
-.fcol h4{margin:0 0 13px;font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#9af4ec}
-.fcol a{display:block;font-size:11px;color:#aeb9d1;margin:9px 0}
-.foot{display:flex;justify-content:space-between;gap:20px;padding-top:20px;color:#7d88a4;font-size:10px}
+footer{background:#050f35;color:#fff;padding:0 0 24px;position:relative;overflow:hidden}
+footer:before{content:"";position:absolute;right:-180px;bottom:-220px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(47,103,216,.14),transparent 70%);pointer-events:none}
+.footer-callout{position:relative;z-index:2;transform:translateY(-1px);background:linear-gradient(135deg,#102a72 0%,#18358f 62%,#224aa6 100%);border:1px solid rgba(255,255,255,.12);border-radius:0 0 26px 26px;padding:31px 34px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:34px;box-shadow:0 22px 50px rgba(0,0,0,.16);overflow:hidden}
+.footer-callout:after{content:"";position:absolute;right:120px;top:-150px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(95,223,229,.14),transparent 68%);pointer-events:none}
+.footer-callout small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;color:#9ff8f2}
+.footer-callout h3{font-size:27px;line-height:1.18;letter-spacing:-.035em;margin-top:7px;max-width:650px}
+.footer-contact-actions{display:flex;align-items:center;gap:10px;position:relative;z-index:2}
+.footer-phone,.footer-email{display:flex;align-items:center;gap:11px;border-radius:14px;padding:12px 15px;font-size:11px;font-weight:900;white-space:nowrap}
+.footer-phone{background:#fff;color:var(--navy);box-shadow:0 10px 28px rgba(0,0,0,.12)}
+.footer-email{border:1px solid rgba(255,255,255,.18);color:#fff;background:rgba(255,255,255,.06)}
+.contact-icon{width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#eff4ff;color:var(--blue);font-size:13px}
+.footer-main{padding-top:46px;position:relative;z-index:2}
+.footer-grid{display:grid;grid-template-columns:1.55fr repeat(3,1fr);gap:46px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logo{width:178px;background:#fff;padding:8px 11px;border-radius:12px}
+.footer-brand p{font-size:11px;line-height:1.75;color:#98a4c0;margin-top:16px;max-width:320px}
+.footer-meta{display:grid;gap:7px;margin-top:19px}
+.footer-meta a,.footer-meta span{font-size:11px;color:#c0c9dc}
+.footer-meta a:hover{color:#fff}
+.fcol h4{margin:0 0 15px;font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:#9af4ec}
+.fcol a{display:block;font-size:11px;color:#adb8d0;margin:10px 0;transition:.18s}
+.fcol a:hover{color:#fff;transform:translateX(2px)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:20px;color:#7f8aa7;font-size:10px;position:relative;z-index:2}
+.foot-links{display:flex;gap:18px;align-items:center}
+.foot a{color:#8f9ab5}
+.foot a:hover{color:#fff}
 
 @media(max-width:1040px){
  .nav{position:relative}.links{display:none}.links.open{display:flex;position:absolute;top:78px;left:0;right:0;z-index:60;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(9,25,79,.14);padding:20px;flex-direction:column;align-items:flex-start;gap:18px}
@@ -172,18 +209,18 @@ footer{background:#050f35;color:#fff;padding:47px 0 24px}
 @media(max-width:720px){
  :root{--wrap:min(100% - 28px,1220px)}.nav{height:72px}.logo{width:165px}.actions .btn-primary{display:none}
  .hero-grid{padding:48px 0}.hero h1{font-size:44px}.hero-copy{font-size:15px}.hero-actions{flex-direction:column}
- .hero-media{height:430px}.hero-photo{width:94%}.hero-card{width:215px}.route{margin-top:0}.route-grid{grid-template-columns:1fr}
+ .hero-media{height:430px}.hero-photo{width:94%}.hero-card{width:215px}.route{margin-top:0;padding-bottom:24px}.route-top{display:block;padding:23px}.route-top p{margin-top:10px}.route-grid{grid-template-columns:1fr}.route-card{min-height:auto;padding:26px 23px}.route-card:last-child{border-left:0;border-top:1px solid var(--line)}
  section{padding:76px 0}.specialties-head,.delivery-head{display:block}.spec-grid{grid-template-columns:1fr}.spec:last-child{grid-column:auto;max-width:none}
  .steps{grid-template-columns:1fr 1fr}.compliance{padding:28px}.comp-grid{grid-template-columns:1fr}
  .career-shell{grid-template-columns:1fr}.career-copy{padding:40px 24px}.career-copy h2{font-size:36px}.career-photo{min-height:410px}
  .proof-grid{grid-template-columns:1fr 1fr}.proof-item:nth-child(2){border-right:0}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .final-shell{grid-template-columns:1fr}.final-side:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
- .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+ .footer-callout{grid-template-columns:1fr;padding:27px 24px;border-radius:0 0 22px 22px}.footer-contact-actions{flex-wrap:wrap}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
 }
 @media(max-width:460px){
  .hero h1{font-size:40px}.hero-media{height:390px}.hero-card{display:none}.steps{grid-template-columns:1fr}
  .proof-grid{grid-template-columns:1fr}.proof-item{border-right:0;border-bottom:1px solid var(--line)}
- .footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}
+ .footer-contact-actions{display:grid}.footer-phone,.footer-email{justify-content:flex-start}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.foot{align-items:flex-start;flex-direction:column}.foot-links{flex-wrap:wrap}
 }
 </style>
 </head>
@@ -220,9 +257,21 @@ footer{background:#050f35;color:#fff;padding:47px 0 24px}
 </section>
 
 <div class="route" id="solutions">
-  <div class="wrap route-grid">
-    <a class="route-card" href="#contact"><div><small>Healthcare Organizations</small><strong>Staff a healthcare workforce need</strong></div><span class="route-arrow">→</span></a>
-    <a class="route-card" href="#clinicians"><div><small>Clinicians</small><strong>Explore nationwide opportunities</strong></div><span class="route-arrow">→</span></a>
+  <div class="wrap route-shell">
+    <div class="route-top">
+      <div><div class="route-label">Start with what you need</div><h2>One staffing partner. Two clear paths.</h2></div>
+      <p>Whether you need qualified clinicians or your next assignment, Medlivo connects you with the right specialty team without the runaround.</p>
+    </div>
+    <div class="route-grid">
+      <a class="route-card" href="#contact">
+        <div><small>Healthcare Organizations</small><strong>Strengthen your workforce</strong><p>Access Nursing & Allied, Rehabilitation, and Locum Tenens talent through one accountable delivery team.</p><span class="route-link">Request Staff <b>→</b></span></div>
+        <span class="route-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="route-card" href="#clinicians">
+        <div><small>Healthcare Professionals</small><strong>Move your career forward</strong><p>Explore nationwide opportunities with recruiter, credentialing, payroll, benefits, and assignment support.</p><span class="route-link">Search Jobs <b>→</b></span></div>
+        <span class="route-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -315,14 +364,26 @@ footer{background:#050f35;color:#fff;padding:47px 0 24px}
 
 <footer>
   <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand"><div class="footer-logo"><img src="assets/brand/medlivo-logo.png" alt="Medlivo"></div><p>Nationwide healthcare staffing across Nursing & Allied, Rehabilitation, and Locum Tenens.</p></div>
-      <div class="fcol"><h4>Organizations</h4><a href="#">Healthcare Staffing</a><a href="#">MSP / VMS</a><a href="#">Credentialing</a><a href="#contact">Request Staff</a></div>
-      <div class="fcol"><h4>Specialties</h4><a href="#">Nursing & Allied</a><a href="#">Rehabilitation</a><a href="#">Locum Tenens</a></div>
-      <div class="fcol"><h4>Clinicians</h4><a href="#clinicians">Search Jobs</a><a href="#">Benefits & Support</a><a href="#">Quick Apply</a></div>
-      <div class="fcol"><h4>Medlivo</h4><a href="#">About</a><a href="#why">Why Medlivo</a><a href="#contact">Contact</a></div>
+    <div class="footer-callout">
+      <div><small>Talk with Medlivo</small><h3>Healthcare staffing should feel responsive from the first conversation.</h3></div>
+      <div class="footer-contact-actions">
+        <a class="footer-phone" href="tel:+18556335486"><span class="contact-icon">☎</span><span>+1 855-633-5486</span></a>
+        <a class="footer-email" href="mailto:hello@medlivo.com">hello@medlivo.com →</a>
+      </div>
     </div>
-    <div class="foot"><span>© 2026 Medlivo Inc.</span><span>Privacy · Terms · Accessibility</span></div>
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/brand/medlivo-logo.png" alt="Medlivo"></div>
+          <p>Nationwide healthcare staffing across Nursing & Allied, Rehabilitation, and Locum Tenens — built around responsiveness, credentialing discipline, and accountable support.</p>
+          <div class="footer-meta"><a href="tel:+18556335486">+1 855-633-5486</a><a href="mailto:hello@medlivo.com">hello@medlivo.com</a><span>Redmond, Washington</span></div>
+        </div>
+        <div class="fcol"><h4>Workforce Solutions</h4><a href="#contact">Request Staff</a><a href="#specialties">Healthcare Staffing</a><a href="#why">MSP / VMS Experience</a><a href="#why">Credentialing & Compliance</a></div>
+        <div class="fcol"><h4>Our Divisions</h4><a href="#specialties">Nursing & Allied</a><a href="#specialties">Rehabilitation</a><a href="#specialties">Locum Tenens</a></div>
+        <div class="fcol"><h4>Clinicians & Company</h4><a href="#clinicians">Search Jobs</a><a href="#clinicians">Benefits & Support</a><a href="#why">Why Medlivo</a><a href="#contact">Contact</a></div>
+      </div>
+      <div class="foot"><span>© 2026 Medlivo Inc. · Nationwide Healthcare Staffing</span><span class="foot-links"><a href="https://www.medlivo.com/privacy-policy">Privacy</a><a href="https://www.medlivo.com/terms-of-use">Terms</a><a href="#contact">Contact</a></span></div>
+    </div>
   </div>
 </footer>
 
