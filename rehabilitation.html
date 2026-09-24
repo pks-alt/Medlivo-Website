@@ -1675,6 +1675,197 @@ header{
   .nav-drop-title{font-size:13.5px}
 }
 
+
+/* === Medlivo world-class footer === */
+.site-footer{
+  position:relative;
+  overflow:hidden;
+  padding:0;
+  background:
+    radial-gradient(circle at 88% 6%,rgba(95,223,229,.10),transparent 24%),
+    radial-gradient(circle at 10% 92%,rgba(47,103,216,.18),transparent 30%),
+    #061640;
+  color:#fff;
+  border-top:0;
+}
+.site-footer:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.018),transparent 32%);
+}
+.footer-cta{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:54px;
+  align-items:center;
+  padding:42px 0 38px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.footer-cta-copy small{
+  display:block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.18em;
+  color:#8ff5ef;
+}
+.footer-cta-copy h2{
+  margin:10px 0 0;
+  max-width:700px;
+  font-size:clamp(30px,3vw,42px);
+  line-height:1.03;
+  letter-spacing:-.045em;
+  color:#fff;
+}
+.footer-cta-copy p{
+  margin:11px 0 0;
+  font-size:13px;
+  line-height:1.6;
+  color:#aebbd1;
+}
+.footer-cta-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.footer-btn-primary{
+  background:var(--green);
+  color:#071744;
+  border-color:var(--green);
+}
+.footer-btn-secondary{
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  border-color:rgba(255,255,255,.22);
+}
+.footer-btn-secondary:hover{
+  background:rgba(255,255,255,.10);
+}
+.footer-main{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:.95fr 2.05fr;
+  gap:72px;
+  padding:52px 0 46px;
+}
+.site-footer .footer-logo{
+  display:inline-block;
+  width:216px;
+  height:auto;
+  line-height:0;
+  background:transparent;
+}
+.site-footer .footer-logo img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background:transparent;
+}
+.site-footer .footer-brand>p{
+  margin:22px 0 0;
+  max-width:360px;
+  font-size:13.5px;
+  line-height:1.72;
+  color:#aebbd1;
+}
+.footer-contact{
+  display:grid;
+  gap:9px;
+  margin-top:24px;
+}
+.footer-contact a,
+.footer-contact span{
+  width:max-content;
+  max-width:100%;
+  font-size:13px;
+  line-height:1.45;
+  font-weight:700;
+  color:#dbe3f1;
+}
+.footer-contact a:hover{color:#fff}
+.footer-nav-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:34px;
+}
+.footer-col h4{
+  margin:0 0 17px;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  color:#8ff5ef;
+}
+.footer-col a{
+  display:block;
+  width:max-content;
+  max-width:100%;
+  margin:10px 0;
+  font-size:12.5px;
+  line-height:1.45;
+  font-weight:650;
+  color:#b8c4d8;
+  transition:color .16s ease,transform .16s ease;
+}
+.footer-col a:hover,
+.footer-col a:focus-visible{
+  color:#fff;
+  transform:translateX(2px);
+}
+.footer-bottom{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:20px 0 23px;
+  border-top:1px solid rgba(255,255,255,.10);
+  color:#8392ab;
+  font-size:11.5px;
+}
+.footer-legal{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-legal a{
+  color:#9eacc2;
+}
+.footer-legal a:hover{color:#fff}
+.site-footer a:focus-visible{
+  outline:2px solid rgba(95,223,229,.65);
+  outline-offset:4px;
+  border-radius:3px;
+}
+@media(max-width:1040px){
+  .footer-cta{grid-template-columns:1fr;gap:24px}
+  .footer-cta-actions{justify-content:flex-start}
+  .footer-main{grid-template-columns:1fr;gap:38px}
+  .footer-nav-grid{grid-template-columns:repeat(2,1fr);gap:34px 48px}
+}
+@media(max-width:620px){
+  .footer-cta{padding:34px 0 30px}
+  .footer-cta-copy h2{font-size:31px}
+  .footer-cta-actions{display:grid;grid-template-columns:1fr;width:100%}
+  .footer-cta-actions .btn{width:100%}
+  .footer-main{padding:40px 0 34px}
+  .site-footer .footer-logo{width:198px}
+  .footer-nav-grid{grid-template-columns:1fr 1fr;gap:30px 22px}
+  .footer-bottom{align-items:flex-start;flex-direction:column;gap:12px}
+  .footer-legal{gap:14px 18px}
+}
+@media(max-width:430px){
+  .footer-nav-grid{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -2026,23 +2217,73 @@ header{
 </section>
 </main>
 
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <div class="footer-body">
-      <div class="footer-brand">
-        <div class="footer-logo"><img src="assets/brand/medlivo-logo.png?v=20260924" alt="Medlivo"></div>
-        <p>Healthcare staffing across Nursing & Allied, Rehabilitation, and Locum Tenens.</p>
-        <div class="footer-meta"><a href="tel:+18556335486">+1 855-633-5486</a><a href="mailto:hello@medlivo.com">hello@medlivo.com</a><span>Redmond, Washington</span></div>
+    <div class="footer-cta">
+      <div class="footer-cta-copy">
+        <small>MEDLIVO</small>
+        <h2>Healthcare staffing that keeps care moving.</h2>
+        <p>Specialized teams across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>
       </div>
-      <div>
-        <div class="footer-grid">
-          <div class="fcol"><h4>Solutions</h4><a href="workforce-solutions.html">Workforce Solutions</a><a href="nursing-allied.html">Nursing & Allied</a><a href="rehabilitation.html">Rehabilitation</a><a href="locum-tenens.html">Locum Tenens</a><a href="#contact">Request Staff</a></div>
-          <div class="fcol"><h4>For Clinicians</h4><a href="https://www.medlivo.com/search-jobs">Rehabilitation Jobs</a><a href="https://www.medlivo.com/search-jobs">All Opportunities</a></div>
-          <div class="fcol"><h4>Company</h4><a href="about.html">About Medlivo</a><a href="index.html#why">Why Medlivo</a><a href="leadership.html">Leadership</a><a href="careers.html">Careers at Medlivo</a><a href="#contact">Contact</a></div>
+      <div class="footer-cta-actions">
+        <a class="btn footer-btn-primary" href="#contact">Request Staff</a>
+        <a class="btn footer-btn-secondary" href="https://www.medlivo.com/search-jobs">Search Jobs</a>
+      </div>
+    </div>
+
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a class="footer-logo" href="./" aria-label="Medlivo home">
+          <img src="assets/brand/medlivo-logo-footer.png?v=20260924" alt="Medlivo">
+        </a>
+        <p>Healthcare staffing built around specialization, responsive delivery, and clear accountability.</p>
+        <div class="footer-contact">
+          <a href="tel:+18556335486">+1 855-633-5486</a>
+          <a href="mailto:hello@medlivo.com">hello@medlivo.com</a>
+          <span>Redmond, Washington</span>
+        </div>
+      </div>
+
+      <div class="footer-nav-grid">
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="workforce-solutions.html">Workforce Solutions</a>
+          <a href="nursing-allied.html">Nursing &amp; Allied</a>
+          <a href="rehabilitation.html">Rehabilitation</a>
+          <a href="locum-tenens.html">Locum Tenens</a>
+        </div>
+        <div class="footer-col">
+          <h4>For Clinicians</h4>
+          <a href="https://www.medlivo.com/search-jobs">Search Jobs</a>
+          <a href="nursing-allied.html#clinicians">Nursing &amp; Allied</a>
+          <a href="rehabilitation.html#clinicians">Rehabilitation</a>
+          <a href="locum-tenens.html#clinicians">Locum Tenens</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="about.html">About Medlivo</a>
+          <a href="index.html#why">Why Medlivo</a>
+          <a href="leadership.html">Leadership</a>
+          <a href="careers.html">Careers at Medlivo</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get in Touch</h4>
+          <a href="#contact">Request Staff</a>
+          <a href="mailto:hello@medlivo.com">Contact Us</a>
+          <a href="tel:+18556335486">Call Medlivo</a>
+          <a href="mailto:hello@medlivo.com?subject=Partnership%20Inquiry">Partnerships</a>
         </div>
       </div>
     </div>
-    <div class="foot"><span>© 2026 Medlivo Inc. All rights reserved.</span><span class="foot-links"><a href="https://www.medlivo.com/privacy-policy">Privacy Policy</a><a href="https://www.medlivo.com/terms-of-use">Terms of Use</a><a href="#contact">Contact</a></span></div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Medlivo Inc. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="https://www.medlivo.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.medlivo.com/terms-of-use">Terms of Use</a>
+        <a href="mailto:hello@medlivo.com">Contact</a>
+      </div>
+    </div>
   </div>
 </footer>
 
