@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Healthcare Specialties | Medlivo</title>
+<meta name="description" content="Explore Medlivo healthcare staffing specialties across Nursing & Allied, Rehabilitation, and Locum Tenens.">
+<style>
+:root{
+  --navy:#18358f;--deep:#0b225f;--blue:#2f67d8;--green:#29d80f;--aqua:#5fdfe5;
+  --ink:#0c1a3b;--text:#5b6880;--pale:#f7f9fc;--line:#e3e9f2;--white:#fff;
+  --wrap:min(1240px,calc(100vw - 56px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+.wrap{width:var(--wrap);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid #e5eaf2}
+.nav{height:80px;display:flex;align-items:center;gap:28px}
+.logo{width:194px;height:auto}
+.links{display:flex;align-items:center;gap:25px;margin-left:auto;font-size:13px;font-weight:700;color:#26385f}
+.links a{position:relative}
+.links a:after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;background:var(--blue);transition:.2s}
+.links a:hover:after,.links a.active:after{right:0}
+.actions{display:flex;gap:10px}
+.btn{min-height:48px;padding:0 20px;border-radius:10px;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:var(--deep);box-shadow:0 10px 24px rgba(41,216,15,.13)}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 10px 24px rgba(25,47,135,.17)}
+.btn-outline{background:#fff;border-color:#ccd5e6;color:var(--navy)}
+.menu{display:none}
+.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;color:var(--blue)}
+.kicker{display:flex;align-items:center;gap:10px}
+.kicker:before{content:"";width:26px;height:3px;background:var(--green)}
+.title{font-size:clamp(40px,4vw,52px);line-height:1.06;letter-spacing:-.047em;color:var(--deep);max-width:760px}
+.lead{font-size:17px;line-height:1.7;color:var(--text);max-width:650px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 88% 12%,rgba(95,223,229,.13),transparent 27%),linear-gradient(125deg,#fff 0%,#fbfdff 58%,#f1f6ff 100%)}
+.hero-grid{min-height:620px;display:grid;grid-template-columns:.98fr 1.02fr;align-items:center;gap:88px;padding:72px 0 76px}
+.hero h1{font-size:clamp(54px,5vw,72px);line-height:1.015;letter-spacing:-.055em;color:var(--deep);max-width:720px;margin-top:20px}
+.hero-copy{font-size:18px;line-height:1.66;color:var(--text);max-width:650px;margin-top:24px}
+.hero-actions{display:flex;gap:11px;margin-top:30px}
+.specialty-map{border-radius:30px;overflow:hidden;background:linear-gradient(145deg,#07194d 0%,#0b286d 62%,#16459f 100%);color:#fff;box-shadow:0 30px 70px rgba(9,25,79,.16);position:relative}
+.specialty-map:before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;right:-120px;top:-120px;background:radial-gradient(circle,rgba(95,223,229,.20),transparent 70%)}
+.map-head{padding:31px 34px 26px;border-bottom:1px solid rgba(255,255,255,.15)}
+.map-head small{font-size:9px;letter-spacing:.17em;color:#9ff8f2;font-weight:900}
+.map-head strong{display:block;font-size:30px;line-height:1.08;letter-spacing:-.04em;margin-top:15px;max-width:390px}
+.map-row{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;padding:28px 34px;border-bottom:1px solid rgba(255,255,255,.13)}
+.map-row:last-child{border-bottom:0}
+.map-num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);font-size:9px;font-weight:900;color:#8cf27d}
+.map-row h3{font-size:19px;letter-spacing:-.02em}
+.map-row p{font-size:12px;line-height:1.5;color:#b8c5dc;margin-top:5px}
+.map-row b{font-size:11px;color:#fff;opacity:.72}
+
+/* Divisions */
+.divisions{padding:96px 0;background:#fff}
+.divisions-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:46px}
+.divisions-head .lead{margin:0}
+.division-list{border-top:1px solid var(--line)}
+.division{display:grid;grid-template-columns:80px .9fr 1.1fr;gap:34px;padding:42px 0;border-bottom:1px solid var(--line);align-items:start}
+.division-index{font-size:11px;font-weight:900;letter-spacing:.14em;color:var(--blue);padding-top:7px}
+.division-copy h3{font-size:31px;line-height:1.1;letter-spacing:-.04em;color:var(--deep)}
+.division-copy p{font-size:15px;line-height:1.68;color:var(--text);margin-top:12px;max-width:470px}
+.division-details{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.detail-block{padding:20px 22px;background:#f8faff;border:1px solid #e5ebf4;border-radius:16px}
+.detail-block small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:var(--blue)}
+.detail-block strong{display:block;font-size:14px;line-height:1.55;color:var(--deep);margin-top:8px}
+.division-link{display:inline-flex;margin-top:18px;font-size:12px;font-weight:900;color:var(--blue)}
+
+/* Settings */
+.settings{padding:90px 0;background:#f7f9fc}
+.settings-head{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:end;margin-bottom:38px}
+.settings-head .lead{margin:0}
+.settings-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.setting{padding:29px 26px;border-right:1px solid var(--line)}
+.setting:first-child{padding-left:0}
+.setting:last-child{border-right:0;padding-right:0}
+.setting span{font-size:10px;font-weight:900;color:var(--blue);letter-spacing:.12em}
+.setting h3{font-size:19px;line-height:1.25;color:var(--deep);margin-top:18px}
+.setting p{font-size:13px;line-height:1.62;color:#66738a;margin-top:8px}
+
+/* Final */
+.final{padding:78px 0;background:#fff}
+.final-shell{background:linear-gradient(135deg,#0b225f 0%,#17398b 100%);border-radius:26px;color:#fff;padding:50px 54px;display:grid;grid-template-columns:1fr 1fr;gap:0;box-shadow:0 22px 54px rgba(11,34,95,.14)}
+.final-side{padding:4px 44px}
+.final-side:first-child{padding-left:0;border-right:1px solid rgba(255,255,255,.17)}
+.final-side:last-child{padding-right:0}
+.final small{font-size:10px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:#9ff8f2}
+.final h2{font-size:32px;line-height:1.1;letter-spacing:-.04em;margin-top:12px}
+.final p{font-size:14px;line-height:1.65;color:#c1cbe0;margin-top:10px;max-width:490px}
+.final .btn{margin-top:22px}
+.final .btn-outline{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#fff}
+
+/* Footer */
+footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding:50px 0 22px}
+.footer-body{display:grid;grid-template-columns:1.05fr 1.95fr;gap:54px}
+.footer-logo{width:198px}
+.footer-logo img{width:100%;height:auto;object-fit:contain}
+.footer-brand p{font-size:14px;line-height:1.65;color:#56647c;max-width:360px;margin-top:18px}
+.footer-meta{display:grid;gap:9px;margin-top:21px;padding-top:18px;border-top:1px solid #dce3ee}
+.footer-meta a,.footer-meta span{font-size:13px;color:#4e5d77;font-weight:700}
+.footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:46px}
+.fcol h4{margin:0 0 16px;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--navy)}
+.fcol a{display:block;font-size:13px;line-height:1.5;color:#5f6d85;margin:9px 0}
+.fcol a:hover{color:var(--navy)}
+.foot{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #dce3ee;margin-top:32px;padding-top:19px;color:#77839a;font-size:12px}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot a{color:#6c7890}
+.btn:focus-visible,.links a:focus-visible,.fcol a:focus-visible,.foot a:focus-visible{outline:3px solid rgba(47,103,216,.35);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+@media(max-width:1040px){
+  :root{--wrap:min(100% - 40px,1240px)}
+  .links{display:none}
+  .menu{display:block;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font-weight:900}
+  .links.open{display:flex;position:absolute;top:72px;left:20px;right:20px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(9,25,79,.14);padding:20px;flex-direction:column;align-items:flex-start;gap:18px}
+  .nav{position:relative}.actions .btn-outline{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:40px;padding:58px 0 68px}
+  .specialty-map{max-width:760px;width:100%;margin:auto}
+  .divisions-head,.settings-head{grid-template-columns:1fr;gap:26px}
+  .division{grid-template-columns:60px 1fr}
+  .division-details{grid-column:2}
+  .settings-grid{grid-template-columns:1fr 1fr}
+  .setting:nth-child(2){border-right:0}
+  .setting:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .footer-body{grid-template-columns:1fr;gap:38px}
+}
+@media(max-width:720px){
+  :root{--wrap:min(100% - 28px,1240px)}
+  .nav{height:72px}.logo{width:165px}.actions .btn-green{min-width:auto;padding:0 14px}
+  .hero-grid{padding:46px 0 54px}.hero h1{font-size:43px}.hero-copy{font-size:17px}.hero-actions{flex-direction:column;align-items:stretch}
+  .map-head{padding:27px 24px 22px}.map-head strong{font-size:27px}
+  .map-row{grid-template-columns:42px 1fr;padding:23px 24px}.map-row b{display:none}
+  .divisions,.settings{padding:70px 0}
+  .division{grid-template-columns:1fr;gap:12px;padding:34px 0}
+  .division-details{grid-column:auto;grid-template-columns:1fr;margin-top:10px}
+  .division-index{padding:0}
+  .division-copy h3{font-size:27px}
+  .settings-grid{grid-template-columns:1fr}
+  .setting,.setting:first-child,.setting:last-child{padding:23px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .setting:last-child{border-bottom:0}
+  .final-shell{grid-template-columns:1fr;padding:36px 28px}
+  .final-side,.final-side:first-child,.final-side:last-child{padding:0}
+  .final-side:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.17);padding-bottom:28px;margin-bottom:28px}
+  .footer-grid{grid-template-columns:1fr 1fr}.foot{flex-direction:column}
+}
+@media(max-width:460px){.hero h1{font-size:39px}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="./" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
+    <nav class="links">
+      <a href="workforce-solutions.html">Solutions</a>
+      <a class="active" href="specialties.html">Specialties</a>
+      <a href="index.html#clinicians">For Clinicians</a>
+      <a href="index.html#why">Why Medlivo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
+      <a class="btn btn-green" href="#contact">Request Staff</a>
+      <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Healthcare Specialties</div>
+      <h1>Three healthcare divisions. Focused expertise in each.</h1>
+      <p class="hero-copy">Medlivo organizes healthcare staffing around Nursing & Allied, Rehabilitation, and Locum Tenens. Each division focuses on the roles, talent markets, and care environments specific to its area.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#divisions">Explore Specialties</a>
+        <a class="btn btn-outline" href="#contact">Request Staff</a>
+      </div>
+    </div>
+    <div class="specialty-map">
+      <div class="map-head">
+        <small>MEDLIVO HEALTHCARE STAFFING</small>
+        <strong>Three focused divisions across the healthcare workforce.</strong>
+      </div>
+      <div class="map-row"><div class="map-num">01</div><div><h3>Nursing & Allied</h3><p>Nursing and allied health disciplines</p></div><b>Clinical</b></div>
+      <div class="map-row"><div class="map-num">02</div><div><h3>Rehabilitation</h3><p>Physical, occupational, and speech therapy</p></div><b>Therapy</b></div>
+      <div class="map-row"><div class="map-num">03</div><div><h3>Locum Tenens</h3><p>Physicians and advanced practice providers</p></div><b>Provider</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="divisions" id="divisions">
+  <div class="wrap">
+    <div class="divisions-head">
+      <div><div class="eyebrow">Our Divisions</div><h2 class="title">Healthcare talent organized by specialty.</h2></div>
+      <p class="lead">Each division concentrates on a distinct healthcare talent market. That structure gives clients and clinicians a more direct path to teams familiar with the roles they support.</p>
+    </div>
+
+    <div class="division-list">
+      <article class="division" id="nursing-allied">
+        <div class="division-index">01</div>
+        <div class="division-copy">
+          <h3>Nursing & Allied</h3>
+          <p>Clinical professionals across nursing and allied health disciplines for hospitals, health systems, clinics, and other care environments.</p>
+          <a class="division-link" href="#contact">Request Nursing & Allied Staff →</a>
+        </div>
+        <div class="division-details">
+          <div class="detail-block"><small>Representative Nursing</small><strong>RN · LPN/LVN · CNA · Case Management</strong></div>
+          <div class="detail-block"><small>Representative Allied</small><strong>Imaging · Cath Lab · Respiratory · Laboratory · Surgical Tech · Pharmacy</strong></div>
+        </div>
+      </article>
+
+      <article class="division" id="rehabilitation">
+        <div class="division-index">02</div>
+        <div class="division-copy">
+          <h3>Rehabilitation</h3>
+          <p>Therapy professionals supporting rehabilitation across inpatient, outpatient, post-acute, and related care settings.</p>
+          <a class="division-link" href="#contact">Request Rehabilitation Staff →</a>
+        </div>
+        <div class="division-details">
+          <div class="detail-block"><small>Core Disciplines</small><strong>PT · PTA · OT · COTA · SLP</strong></div>
+          <div class="detail-block"><small>Care Environments</small><strong>Inpatient · Outpatient · Rehabilitation · Post-Acute</strong></div>
+        </div>
+      </article>
+
+      <article class="division" id="locum-tenens">
+        <div class="division-index">03</div>
+        <div class="division-copy">
+          <h3>Locum Tenens</h3>
+          <p>Physicians and advanced practice providers for temporary coverage, specialty needs, and continuity of care.</p>
+          <a class="division-link" href="#contact">Request Locum Tenens Coverage →</a>
+        </div>
+        <div class="division-details">
+          <div class="detail-block"><small>Provider Types</small><strong>Physicians · NPs · PAs · CRNAs</strong></div>
+          <div class="detail-block"><small>Coverage Needs</small><strong>Temporary Coverage · Specialty Coverage · Continuity Support</strong></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="settings">
+  <div class="wrap">
+    <div class="settings-head">
+      <div><div class="eyebrow">Care Environments</div><h2 class="title">Talent for different points across the care continuum.</h2></div>
+      <p class="lead">Depending on the discipline and client requirement, Medlivo supports workforce needs across a range of healthcare environments.</p>
+    </div>
+    <div class="settings-grid">
+      <div class="setting"><span>01</span><h3>Hospitals & Health Systems</h3><p>Acute care, procedural, diagnostic, therapy, and provider workforce needs.</p></div>
+      <div class="setting"><span>02</span><h3>Outpatient & Ambulatory</h3><p>Clinical and therapy support across outpatient, clinic, and ambulatory settings.</p></div>
+      <div class="setting"><span>03</span><h3>Rehabilitation & Post-Acute</h3><p>Therapy and clinical professionals supporting rehabilitation and post-acute care.</p></div>
+      <div class="setting"><span>04</span><h3>Specialty & Provider Settings</h3><p>Physician, advanced practice, and specialty coverage based on client needs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <div class="wrap final-shell">
+    <div class="final-side">
+      <small>For Healthcare Organizations</small>
+      <h2>Looking for talent in a specific specialty?</h2>
+      <p>Tell us the role, location, timing, and care setting. We’ll connect the request with the appropriate Medlivo division.</p>
+      <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Staffing%20Request">Request Staff</a>
+    </div>
+    <div class="final-side">
+      <small>For Clinicians</small>
+      <h2>Looking for your next healthcare opportunity?</h2>
+      <p>Explore opportunities aligned to your profession, specialty, location, and career goals.</p>
+      <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-body">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="assets/brand/medlivo-logo.png?v=20260924" alt="Medlivo"></div>
+        <p>Healthcare staffing across Nursing & Allied, Rehabilitation, and Locum Tenens.</p>
+        <div class="footer-meta"><a href="tel:+18556335486">+1 855-633-5486</a><a href="mailto:hello@medlivo.com">hello@medlivo.com</a><span>Redmond, Washington</span></div>
+      </div>
+      <div class="footer-links-panel">
+        <div class="footer-grid">
+          <div class="fcol"><h4>Solutions</h4><a href="workforce-solutions.html">Workforce Solutions</a><a href="#nursing-allied">Nursing & Allied</a><a href="#rehabilitation">Rehabilitation</a><a href="#locum-tenens">Locum Tenens</a><a href="#contact">Request Staff</a></div>
+          <div class="fcol"><h4>For Clinicians</h4><a href="index.html#clinicians">Search Jobs</a><a href="index.html#clinicians">Clinician Resources</a></div>
+          <div class="fcol"><h4>Company</h4><a href="index.html#why">Why Medlivo</a><a href="#contact">Contact</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>© 2026 Medlivo Inc. All rights reserved.</span><span class="foot-links"><a href="https://www.medlivo.com/privacy-policy">Privacy Policy</a><a href="https://www.medlivo.com/terms-of-use">Terms of Use</a><a href="#contact">Contact</a></span></div>
+  </div>
+</footer>
+
+<script>
+const menu=document.querySelector('.menu');
+const links=document.querySelector('.links');
+if(menu&&links){
+  menu.addEventListener('click',()=>{
+    const open=links.classList.toggle('open');
+    menu.setAttribute('aria-expanded',String(open));
+    menu.textContent=open?'×':'☰';
+  });
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    links.classList.remove('open');
+    menu.setAttribute('aria-expanded','false');
+    menu.textContent='☰';
+  }));
+}
+</script>
+</body>
+</html>
