@@ -497,6 +497,94 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .delivery-principles{margin-top:8px;display:grid;gap:10px}
 }
 
+
+/* === Enterprise program readiness refinement === */
+.programs{
+  background:#fff;
+  padding:96px 0;
+}
+.programs-head{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:82px;
+  align-items:end;
+  margin-bottom:40px;
+}
+.programs-head .lead{
+  margin:0;
+  max-width:610px;
+}
+.program-assurance{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 18px 48px rgba(9,25,79,.06);
+}
+.program-principle{
+  padding:42px 40px;
+  background:linear-gradient(145deg,#f4f7fc 0%,#eef4ff 100%);
+  border-right:1px solid var(--line);
+}
+.program-principle-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:900;
+  color:var(--blue);
+}
+.program-principle strong{
+  display:block;
+  margin-top:24px;
+  font-size:31px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+  color:var(--deep);
+}
+.program-principle p{
+  margin-top:18px;
+  font-size:14px;
+  line-height:1.68;
+  color:#627087;
+  max-width:390px;
+}
+.program-assurance .program-list{
+  border-top:0;
+  padding:12px 34px;
+  background:#fff;
+}
+.program-assurance .program-row{
+  grid-template-columns:46px 1fr;
+  gap:18px;
+  padding:25px 0;
+}
+.program-assurance .program-row:first-child{border-top:0}
+.program-assurance .program-row>span{
+  width:34px;
+  height:34px;
+  background:#f8faff;
+}
+.program-assurance .program-row h3{
+  font-size:20px;
+}
+.program-assurance .program-row p{
+  font-size:14px;
+  max-width:620px;
+}
+@media(max-width:1040px){
+  .programs-head{grid-template-columns:1fr;gap:24px}
+  .program-assurance{grid-template-columns:1fr}
+  .program-principle{border-right:0;border-bottom:1px solid var(--line)}
+}
+@media(max-width:720px){
+  .programs{padding:72px 0}
+  .program-principle{padding:30px 24px}
+  .program-principle strong{font-size:27px}
+  .program-assurance .program-list{padding:8px 22px}
+  .program-assurance .program-row{grid-template-columns:42px 1fr;padding:22px 0}
+}
+
 </style>
 </head>
 <body>
@@ -676,18 +764,28 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 </section>
 
 <section class="programs">
-  <div class="wrap program-grid">
-    <div>
-      <div class="eyebrow">Enterprise & Program Readiness</div>
-      <h2 class="title">Structured for enterprise and MSP/VMS environments.</h2>
-      <p class="lead">Enterprise workforce programs depend on supplier discipline. Medlivo is structured to follow program rules, meet client-specific requirements, and keep client teams, program partners, clinicians, and delivery teams aligned.</p>
-      <div class="experience-note"><strong>20+ years</strong><span>of staffing and workforce leadership experience behind Medlivo.</span></div>
+  <div class="wrap">
+    <div class="programs-head">
+      <div>
+        <div class="eyebrow">Enterprise & Program Readiness</div>
+        <h2 class="title">Built for the discipline enterprise programs require.</h2>
+      </div>
+      <p class="lead">Large workforce programs run on defined rules, deadlines, approvals, and visibility. Medlivo works within those structures rather than asking clients to change them.</p>
     </div>
-    <div class="program-list">
-      <div class="program-row"><span>01</span><div><h3>Program discipline</h3><p>Submission rules, rate parameters, documentation standards, deadlines, and supplier requirements handled within the established process.</p></div></div>
-      <div class="program-row"><span>02</span><div><h3>Client-specific workflows</h3><p>Processes adapted to your onboarding steps, communication structure, approvals, and operating requirements.</p></div></div>
-      <div class="program-row"><span>03</span><div><h3>Multi-stakeholder coordination</h3><p>Clear communication across client teams, program partners, clinicians, recruiters, and delivery operations.</p></div></div>
-      <div class="program-row"><span>04</span><div><h3>Consistent ownership</h3><p>Defined responsibility for moving requirements forward and staying engaged through the assignment.</p></div></div>
+
+    <div class="program-assurance">
+      <div class="program-principle">
+        <div class="program-principle-label">Our Operating Principle</div>
+        <strong>Fit the program.<br>Keep ownership visible.</strong>
+        <p>Client requirements shape the workflow. Medlivo keeps recruiting, credentialing, communication, and assignment support aligned to that operating model.</p>
+      </div>
+
+      <div class="program-list">
+        <div class="program-row"><span>01</span><div><h3>Follow the program rules</h3><p>Requisition details, rate parameters, submission requirements, deadlines, and supplier protocols handled within the established process.</p></div></div>
+        <div class="program-row"><span>02</span><div><h3>Meet client-specific standards</h3><p>Credentialing, documentation, onboarding, approvals, and start requirements aligned to the client or program.</p></div></div>
+        <div class="program-row"><span>03</span><div><h3>Keep stakeholders aligned</h3><p>Clear coordination across client teams, program partners, clinicians, recruiters, credentialing, and delivery operations.</p></div></div>
+        <div class="program-row"><span>04</span><div><h3>Maintain ownership through assignment</h3><p>Defined responsibility before start and continued support when questions, changes, or assignment needs arise.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
