@@ -124,19 +124,38 @@ section{padding:100px 0}
 .step h3{font-size:15px;margin-top:19px}
 .step p{font-size:12px;line-height:1.6;color:#9eabc8;margin-top:7px}
 
-.why-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:58px;align-items:start}
-.why-list{display:grid;gap:12px;margin-top:28px}
-.why-item{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:17px;border:1px solid var(--line);border-radius:16px}
-.why-icon{width:44px;height:44px;border-radius:13px;background:#eef3ff;display:grid;place-items:center;color:var(--navy);font-weight:900;font-size:12px}
-.why-item h3{font-size:14px;color:var(--deep)}
-.why-item p{font-size:12px;line-height:1.6;color:#6b7890;margin-top:4px}
-.compliance{background:linear-gradient(145deg,#eef5ff,#f3fff1);border:1px solid #dce6ee;border-radius:28px;padding:40px;min-height:520px}
-.shield{width:62px;height:62px;border-radius:18px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900;box-shadow:0 14px 28px rgba(25,47,135,.22)}
-.compliance h3{font-size:30px;line-height:1.18;letter-spacing:-.04em;margin-top:22px;color:var(--deep)}
-.compliance>p{font-size:14px;line-height:1.7;color:#617087;margin-top:12px}
-.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px}
-.comp-grid span{background:rgba(255,255,255,.82);border:1px solid #dce5ee;padding:13px 14px;font-size:12px;font-weight:800;color:#34425f;display:flex;align-items:center;gap:9px}
-.comp-grid span:before{content:"✓";width:21px;height:21px;border-radius:50%;background:#efffed;color:#16820f;display:grid;place-items:center;font-size:9px}
+.why-section{background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);position:relative;overflow:hidden}
+.why-section:after{content:"";position:absolute;left:-180px;bottom:-250px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(47,103,216,.08),transparent 68%);pointer-events:none}
+.why-head{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:end;margin-bottom:42px;position:relative;z-index:2}
+.why-head .title span{color:var(--blue)}
+.why-head .lead{margin:0;max-width:570px}
+.why-shell{display:grid;grid-template-columns:.92fr 1.08fr;border:1px solid #e3e9f2;border-radius:30px;overflow:hidden;box-shadow:0 24px 70px rgba(9,25,79,.08);background:#f7f9fd;position:relative;z-index:2}
+.why-account{position:relative;overflow:hidden;background:linear-gradient(145deg,#081a52 0%,#0b225f 48%,#173789 100%);padding:44px 42px 40px;color:#fff;min-height:560px}
+.why-account:before{content:"";position:absolute;right:-120px;top:-140px;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(95,223,229,.22),transparent 67%);pointer-events:none}
+.why-account:after{content:"";position:absolute;left:-110px;bottom:-150px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(41,216,15,.09),transparent 70%);pointer-events:none}
+.account-badge{position:relative;z-index:2;display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);padding:9px 12px;border-radius:999px;font-size:9px;text-transform:uppercase;letter-spacing:.15em;font-weight:900;color:#baf9f5}
+.account-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(41,216,15,.10)}
+.why-account h3{position:relative;z-index:2;font-size:40px;line-height:1.06;letter-spacing:-.048em;max-width:470px;margin-top:25px}
+.why-account>p{position:relative;z-index:2;font-size:14px;line-height:1.78;color:#c4cee5;max-width:500px;margin-top:17px}
+.account-line{position:relative;z-index:2;height:1px;background:rgba(255,255,255,.13);margin:33px 0 26px}
+.account-support{position:relative;z-index:2;display:grid;gap:17px}
+.account-support div{display:grid;grid-template-columns:36px 1fr;column-gap:13px;align-items:start}
+.account-support span{grid-row:1/3;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.13);font-size:9px;font-weight:900;color:#9ff8f2}
+.account-support strong{font-size:13px;color:#fff}
+.account-support small{font-size:10px;line-height:1.5;color:#98a8c9;margin-top:3px}
+.why-proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e4e9f2;align-content:stretch}
+.why-proof{background:#fff;padding:31px 29px;min-height:208px;position:relative;transition:.22s}
+.why-proof:hover{background:#fbfdff}
+.why-proof-icon{width:42px;height:42px;border-radius:13px;background:#eff4ff;color:var(--navy);display:grid;place-items:center;font-size:13px;font-weight:900;margin-bottom:22px}
+.why-proof:nth-child(2) .why-proof-icon{background:#eefcf0;color:#16820f}
+.why-proof:nth-child(3) .why-proof-icon{background:#effbfc;color:#16777d}
+.why-proof:nth-child(4) .why-proof-icon{background:#f1f3ff;color:var(--blue)}
+.why-proof small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.14em;font-weight:900;color:#8794aa;margin-bottom:7px}
+.why-proof h3{font-size:18px;letter-spacing:-.025em;color:var(--deep)}
+.why-proof p{font-size:12px;line-height:1.68;color:#68758d;margin-top:8px}
+.why-proof-band{grid-column:1/-1;background:linear-gradient(90deg,#f7faff,#f3fff4);padding:20px 28px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.why-proof-band strong{font-size:12px;color:var(--deep)}
+.why-proof-band span{font-size:10px;color:#6e7b92;line-height:1.6;text-align:right}
 
 .careers{background:#f8fafc}
 .career-shell{display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:28px;background:#fff;min-height:565px;box-shadow:0 22px 60px rgba(9,25,79,.10);border:1px solid var(--line)}
@@ -204,14 +223,14 @@ footer:before{content:"";position:absolute;right:-180px;bottom:-220px;width:520p
  .actions .btn-outline{display:none}.hero-grid{grid-template-columns:1fr;gap:45px}.hero-media{max-width:720px;width:100%;margin:auto}
  .spec-grid{grid-template-columns:1fr 1fr}.spec:last-child{grid-column:1/-1;max-width:590px}
  .steps{grid-template-columns:repeat(3,1fr);gap:28px}.steps:before{display:none}
- .why-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+ .why-head{grid-template-columns:1fr;gap:18px}.why-shell{grid-template-columns:1fr}.why-account{min-height:auto}.footer-grid{grid-template-columns:1.5fr 1fr 1fr}
 }
 @media(max-width:720px){
  :root{--wrap:min(100% - 28px,1220px)}.nav{height:72px}.logo{width:165px}.actions .btn-primary{display:none}
  .hero-grid{padding:48px 0}.hero h1{font-size:44px}.hero-copy{font-size:15px}.hero-actions{flex-direction:column}
  .hero-media{height:430px}.hero-photo{width:94%}.hero-card{width:215px}.route{margin-top:0;padding-bottom:24px}.route-top{display:block;padding:23px}.route-top p{margin-top:10px}.route-grid{grid-template-columns:1fr}.route-card{min-height:auto;padding:26px 23px}.route-card:last-child{border-left:0;border-top:1px solid var(--line)}
  section{padding:76px 0}.specialties-head,.delivery-head{display:block}.spec-grid{grid-template-columns:1fr}.spec:last-child{grid-column:auto;max-width:none}
- .steps{grid-template-columns:1fr 1fr}.compliance{padding:28px}.comp-grid{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}.why-account{padding:34px 27px}.why-account h3{font-size:34px}.why-proof-grid{grid-template-columns:1fr}.why-proof-band{grid-column:auto;display:block}.why-proof-band span{display:block;text-align:left;margin-top:7px}
  .career-shell{grid-template-columns:1fr}.career-copy{padding:40px 24px}.career-copy h2{font-size:36px}.career-photo{min-height:410px}
  .proof-grid{grid-template-columns:1fr 1fr}.proof-item:nth-child(2){border-right:0}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
  .final-shell{grid-template-columns:1fr}.final-side:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
@@ -305,23 +324,31 @@ footer:before{content:"";position:absolute;right:-180px;bottom:-220px;width:520p
   </div>
 </section>
 
-<section id="why">
-  <div class="wrap why-grid">
-    <div>
-      <div class="eyebrow">Why Medlivo</div><h2 class="title">National capability. Personal accountability.</h2>
-      <p class="lead">The scale to support nationwide healthcare staffing should never come at the expense of responsiveness.</p>
-      <div class="why-list">
-        <div class="why-item"><div class="why-icon">◎</div><div><h3>National Talent Reach</h3><p>Broader recruiting reach without losing ownership of the assignment.</p></div></div>
-        <div class="why-item"><div class="why-icon">✦</div><div><h3>Specialty-Focused Delivery</h3><p>Teams aligned to Nursing & Allied, Rehabilitation, and Locum Tenens.</p></div></div>
-        <div class="why-item"><div class="why-icon">↗</div><div><h3>MSP / VMS Experience</h3><p>Comfort operating within structured workforce programs and submission rules.</p></div></div>
-        <div class="why-item"><div class="why-icon">24</div><div><h3>Responsive Support</h3><p>Clear ownership before the start date and throughout the assignment.</p></div></div>
-      </div>
+<section class="why-section" id="why">
+  <div class="wrap">
+    <div class="why-head">
+      <div><div class="eyebrow">Why Medlivo</div><h2 class="title">National reach. <span>One accountable team.</span></h2></div>
+      <p class="lead">A national staffing network only works when someone owns the outcome. Medlivo brings specialty recruiting, credentialing discipline, program experience, and human support together in one coordinated model.</p>
     </div>
-    <div class="compliance">
-      <div class="shield">✓</div>
-      <h3>Quality and compliance are part of the staffing product.</h3>
-      <p>Credentialing is central to clinician readiness and client confidence.</p>
-      <div class="comp-grid"><span>License verification</span><span>Background screening</span><span>Credential tracking</span><span>Client requirements</span><span>Onboarding readiness</span><span>Assignment support</span></div>
+    <div class="why-shell">
+      <div class="why-account">
+        <div class="account-badge">Built for accountability</div>
+        <h3>Scale without the handoff problem.</h3>
+        <p>From the first workforce request through onboarding and assignment support, ownership stays visible — so clients and clinicians know who is responsible for the next step.</p>
+        <div class="account-line"></div>
+        <div class="account-support">
+          <div><span>01</span><strong>Specialty ownership</strong><small>Teams aligned to the work, not a generic recruiting queue.</small></div>
+          <div><span>02</span><strong>Credentialing discipline</strong><small>Readiness and client requirements built into delivery.</small></div>
+          <div><span>03</span><strong>Human support</strong><small>Accountability continues after the assignment starts.</small></div>
+        </div>
+      </div>
+      <div class="why-proof-grid">
+        <div class="why-proof"><div class="why-proof-icon">◎</div><small>Reach</small><h3>Nationwide talent access</h3><p>Recruiting reach across markets while keeping clear ownership of each assignment.</p></div>
+        <div class="why-proof"><div class="why-proof-icon">✦</div><small>Focus</small><h3>Specialty-led delivery</h3><p>Dedicated focus across Nursing & Allied, Rehabilitation, and Locum Tenens.</p></div>
+        <div class="why-proof"><div class="why-proof-icon">↗</div><small>Program fluency</small><h3>MSP / VMS experience</h3><p>Comfort working inside structured workforce programs, submission rules, and client workflows.</p></div>
+        <div class="why-proof"><div class="why-proof-icon">✓</div><small>Readiness</small><h3>Compliance built in</h3><p>License verification, screening, credential tracking, and client-specific onboarding requirements.</p></div>
+        <div class="why-proof-band"><strong>One operating standard across all three divisions.</strong><span>Recruiting · Credentialing · Client requirements · Assignment support</span></div>
+      </div>
     </div>
   </div>
 </section>
