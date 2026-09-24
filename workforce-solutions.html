@@ -244,6 +244,150 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .experience-note{align-items:flex-start;flex-direction:column;gap:5px}
 }
 
+
+/* === Refined challenge + solutions layouts === */
+.challenges{background:#fff;padding:96px 0}
+.challenge-layout{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:96px;
+  align-items:start;
+}
+.challenge-intro{position:sticky;top:118px}
+.challenge-intro .title{max-width:540px}
+.challenge-intro .lead{max-width:520px}
+.challenge-note{
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid var(--line);
+  font-size:12px;
+  line-height:1.6;
+  font-weight:800;
+  color:#45536d;
+  max-width:470px;
+}
+.challenge-list{border-top:1px solid var(--line)}
+.challenge-row{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:20px;
+  padding:27px 0 28px;
+  border-bottom:1px solid var(--line);
+  transition:padding-left .2s ease,background .2s ease;
+}
+.challenge-row:hover{padding-left:10px}
+.challenge-row>span{
+  width:38px;height:38px;border:1px solid #d7e0ef;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:10px;font-weight:900;color:var(--blue)
+}
+.challenge-row h3{
+  font-size:23px;
+  line-height:1.18;
+  letter-spacing:-.03em;
+  color:var(--deep)
+}
+.challenge-row p{
+  margin-top:8px;
+  font-size:15px;
+  line-height:1.62;
+  color:#637087;
+  max-width:610px
+}
+
+.solutions{background:#f6f8fc;padding:94px 0}
+.solutions-head{margin-bottom:36px}
+.solution-architecture{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 18px 46px rgba(9,25,79,.07);
+}
+.solution-models-panel{
+  background:linear-gradient(145deg,#081b51 0%,#0b286d 58%,#16449d 100%);
+  color:#fff;
+  padding:34px 34px 30px;
+}
+.solution-capabilities-panel{
+  background:#fff;
+  padding:34px 34px 30px;
+}
+.solution-panel-label{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.17em;
+  font-weight:900;
+}
+.solution-models-panel .solution-panel-label{color:#9ff8f2}
+.solution-capabilities-panel .solution-panel-label{color:var(--blue)}
+.solution-panel-intro{
+  font-size:14px;
+  line-height:1.6;
+  margin-top:9px;
+  max-width:430px;
+}
+.solution-models-panel .solution-panel-intro{color:#bec9df}
+.solution-capabilities-panel .solution-panel-intro{color:#68758b}
+.solution-arch-row,.capability-row{
+  display:grid;
+  grid-template-columns:44px 1fr;
+  gap:16px;
+  padding:24px 0;
+}
+.solution-arch-row{border-top:1px solid rgba(255,255,255,.14)}
+.capability-row{border-top:1px solid var(--line)}
+.solution-arch-row:first-of-type,.capability-row:first-of-type{margin-top:24px}
+.solution-arch-row>span,.capability-row>span{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  font-size:9px;font-weight:900
+}
+.solution-arch-row>span{
+  border:1px solid rgba(255,255,255,.22);
+  color:#8cf27d
+}
+.capability-row>span{
+  border:1px solid #d8e1ef;
+  color:var(--blue)
+}
+.solution-arch-row h3,.capability-row h3{
+  font-size:20px;
+  line-height:1.2;
+  letter-spacing:-.025em
+}
+.solution-arch-row h3{color:#fff}
+.capability-row h3{color:var(--deep)}
+.solution-arch-row p,.capability-row p{
+  margin-top:7px;
+  font-size:13px;
+  line-height:1.62
+}
+.solution-arch-row p{color:#b6c2da}
+.capability-row p{color:#657289}
+.specialty-link-band{
+  margin-top:22px;
+  border-radius:14px;
+  padding:20px 22px;
+  background:#fff
+}
+
+@media(max-width:1040px){
+  .challenge-layout{grid-template-columns:1fr;gap:34px}
+  .challenge-intro{position:static}
+  .solution-architecture{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .challenges,.solutions{padding:70px 0}
+  .challenge-row{grid-template-columns:44px 1fr;padding:22px 0}
+  .challenge-row:hover{padding-left:0}
+  .challenge-row h3{font-size:20px}
+  .challenge-row p{font-size:14px}
+  .solution-models-panel,.solution-capabilities-panel{padding:28px 22px 24px}
+  .solution-arch-row,.capability-row{grid-template-columns:40px 1fr;padding:21px 0}
+  .solution-arch-row h3,.capability-row h3{font-size:18px}
+}
+
 </style>
 </head>
 <body>
@@ -295,16 +439,18 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 </section>
 
 <section class="challenges">
-  <div class="wrap">
-    <div class="split-head">
-      <div><div class="eyebrow">Workforce Challenges</div><h2 class="title">When staffing gets harder, the process has to work better.</h2></div>
+  <div class="wrap challenge-layout">
+    <div class="challenge-intro">
+      <div class="eyebrow">Workforce Challenges</div>
+      <h2 class="title">When staffing gets harder, the process has to work better.</h2>
       <p class="lead">Healthcare workforce needs rarely follow a predictable schedule. Medlivo helps organizations respond to changing demand without adding unnecessary complexity.</p>
+      <div class="challenge-note">Built for real-world workforce pressure, not a one-size-fits-all staffing process.</div>
     </div>
-    <div class="challenge-grid">
-      <div class="challenge"><span>01</span><h3>Critical coverage needs</h3><p>Support for urgent openings, unexpected gaps, and time-sensitive staffing requirements.</p></div>
-      <div class="challenge"><span>02</span><h3>Hard-to-fill roles</h3><p>Focused recruiting for specialties and markets where qualified talent is harder to find.</p></div>
-      <div class="challenge"><span>03</span><h3>Ongoing workforce demand</h3><p>Consistent support for recurring needs across departments, facilities, and care settings.</p></div>
-      <div class="challenge"><span>04</span><h3>Structured staffing programs</h3><p>A team that can work within established submission, compliance, and supplier processes.</p></div>
+    <div class="challenge-list">
+      <div class="challenge-row"><span>01</span><div><h3>Critical coverage needs</h3><p>Support for urgent openings, unexpected gaps, and time-sensitive staffing requirements.</p></div></div>
+      <div class="challenge-row"><span>02</span><div><h3>Hard-to-fill roles</h3><p>Focused recruiting for specialties and markets where qualified talent is harder to find.</p></div></div>
+      <div class="challenge-row"><span>03</span><div><h3>Ongoing workforce demand</h3><p>Consistent support for recurring needs across departments, facilities, and care settings.</p></div></div>
+      <div class="challenge-row"><span>04</span><div><h3>Structured staffing programs</h3><p>A team that can work within established submission, compliance, and supplier processes.</p></div></div>
     </div>
   </div>
 </section>
@@ -312,17 +458,55 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 <section class="solutions" id="solutions">
   <div class="wrap">
     <div class="solutions-head">
-      <div><div class="eyebrow">Workforce Solutions</div><h2 class="title">Support for more than one kind of staffing need.</h2></div>
+      <div>
+        <div class="eyebrow">Workforce Solutions</div>
+        <h2 class="title">Support for more than one kind of staffing need.</h2>
+      </div>
       <p class="lead">Different workforce challenges require different operating models. Medlivo can support a single difficult opening, recurring coverage, or a broader enterprise program without forcing every requirement into the same process.</p>
     </div>
-    <div class="solution-model-grid">
-      <article class="solution-model"><span>01</span><h3>Direct Staffing</h3><p>Contract, temporary, and specialty staffing for individual openings or recurring workforce needs.</p></article>
-      <article class="solution-model"><span>02</span><h3>Urgent & Hard-to-Fill Coverage</h3><p>Focused recruiting when timing, market conditions, or specialty requirements make an opening harder to fill.</p></article>
-      <article class="solution-model"><span>03</span><h3>MSP / VMS Program Support</h3><p>Supplier participation within structured submission, compliance, credentialing, and workforce-management environments.</p></article>
-      <article class="solution-model"><span>04</span><h3>Enterprise & Multi-Site Staffing</h3><p>Coordinated support for organizations managing workforce demand across facilities, departments, or markets.</p></article>
-      <article class="solution-model"><span>05</span><h3>Credentialing & Onboarding Coordination</h3><p>Structured follow-through on documentation, licensing, compliance, onboarding, and assignment readiness.</p></article>
-      <article class="solution-model"><span>06</span><h3>Assignment Support</h3><p>Ongoing coordination after the start so clients and clinicians have a clear path when questions or issues arise.</p></article>
+
+    <div class="solution-architecture">
+      <div class="solution-models-panel">
+        <div class="solution-panel-label">Staffing Models</div>
+        <div class="solution-panel-intro">How Medlivo can engage with your organization.</div>
+
+        <div class="solution-arch-row">
+          <span>01</span>
+          <div><h3>Direct Staffing</h3><p>Contract, temporary, and specialty staffing for individual openings or recurring workforce needs.</p></div>
+        </div>
+
+        <div class="solution-arch-row">
+          <span>02</span>
+          <div><h3>Enterprise & Multi-Site Staffing</h3><p>Coordinated support for organizations managing workforce demand across facilities, departments, or markets.</p></div>
+        </div>
+
+        <div class="solution-arch-row">
+          <span>03</span>
+          <div><h3>MSP / VMS Program Support</h3><p>Supplier participation within structured submission, compliance, credentialing, and workforce-management environments.</p></div>
+        </div>
+      </div>
+
+      <div class="solution-capabilities-panel">
+        <div class="solution-panel-label">Delivery Capabilities</div>
+        <div class="solution-panel-intro">What helps each staffing model move from requirement to assignment.</div>
+
+        <div class="capability-row">
+          <span>01</span>
+          <div><h3>Urgent & Hard-to-Fill Coverage</h3><p>Focused recruiting when timing, market conditions, or specialty requirements make an opening harder to fill.</p></div>
+        </div>
+
+        <div class="capability-row">
+          <span>02</span>
+          <div><h3>Credentialing & Onboarding Coordination</h3><p>Structured follow-through on documentation, licensing, compliance, onboarding, and assignment readiness.</p></div>
+        </div>
+
+        <div class="capability-row">
+          <span>03</span>
+          <div><h3>Assignment Support</h3><p>Ongoing coordination after the start so clients and clinicians have a clear path when questions or issues arise.</p></div>
+        </div>
+      </div>
     </div>
+
     <div class="specialty-link-band">
       <div><small>Healthcare Specialties</small><strong>Nursing & Allied · Rehabilitation · Locum Tenens</strong></div>
       <a href="index.html#specialties">Explore Specialties →</a>
