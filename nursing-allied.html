@@ -171,6 +171,521 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .footer-grid{grid-template-columns:1fr 1fr}.foot{flex-direction:column}
 }
 @media(max-width:460px){.hero h1{font-size:39px}.footer-grid{grid-template-columns:1fr}}
+
+/* === Nursing & Allied premium redesign === */
+.na-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 12%,rgba(95,223,229,.14),transparent 27%),
+    linear-gradient(125deg,#fff 0%,#fbfdff 55%,#f1f6ff 100%);
+}
+.na-hero-grid{
+  min-height:690px;
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  align-items:center;
+  gap:80px;
+  padding:74px 0 86px;
+}
+.na-hero-copy h1{
+  font-size:clamp(56px,5.3vw,76px);
+  line-height:1.005;
+  letter-spacing:-.058em;
+  color:var(--deep);
+  max-width:760px;
+  margin-top:20px;
+}
+.na-proof-rail{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:30px;
+}
+.na-proof-rail span{
+  position:relative;
+  padding-left:15px;
+  font-size:11px;
+  font-weight:850;
+  color:#53617a;
+}
+.na-proof-rail span:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:5px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--green);
+}
+.na-hero-visual{
+  position:relative;
+  min-height:550px;
+}
+.na-photo{
+  position:absolute;
+  inset:0 36px 34px 0;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 34px 76px rgba(9,25,79,.19);
+}
+.na-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 48%;
+  transform:scale(1.01);
+}
+.na-photo-shade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(4,16,54,.03) 38%,rgba(5,22,65,.52) 100%);
+}
+.na-photo-label{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.17em;
+}
+.na-float{
+  position:absolute;
+  z-index:3;
+  box-shadow:0 20px 52px rgba(9,25,79,.18);
+  backdrop-filter:blur(12px);
+}
+.na-float-primary{
+  right:0;
+  top:52px;
+  width:270px;
+  padding:22px 22px;
+  border-radius:18px;
+  background:rgba(7,25,77,.93);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.13);
+}
+.na-float-primary small{
+  display:block;
+  color:#9ff8f2;
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:900;
+}
+.na-float-primary strong{
+  display:block;
+  margin-top:10px;
+  font-size:16px;
+  line-height:1.45;
+}
+.na-float-secondary{
+  right:10px;
+  bottom:0;
+  max-width:410px;
+  padding:15px;
+  border-radius:18px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(222,229,239,.95);
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.na-float-secondary span{
+  padding:8px 10px;
+  border-radius:999px;
+  background:#f3f6fb;
+  border:1px solid #e3e9f2;
+  font-size:10px;
+  font-weight:800;
+  color:#42516b;
+}
+
+/* talent markets */
+.market{padding:100px 0;background:#fff}
+.market-head{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:82px;
+  align-items:end;
+  margin-bottom:42px;
+}
+.market-head .lead{margin:0}
+.market-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.market-card{
+  position:relative;
+  overflow:hidden;
+  padding:38px;
+  border-radius:26px;
+  border:1px solid var(--line);
+  box-shadow:0 18px 44px rgba(9,25,79,.055);
+}
+.market-card:after{
+  content:"";
+  position:absolute;
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  right:-100px;
+  top:-100px;
+  background:radial-gradient(circle,var(--market-glow),transparent 69%);
+  pointer-events:none;
+}
+.market-nursing{
+  --market-glow:rgba(47,103,216,.16);
+  background:linear-gradient(145deg,#fff 0%,#f6f8ff 100%);
+}
+.market-allied{
+  --market-glow:rgba(36,169,183,.17);
+  background:linear-gradient(145deg,#fff 0%,#f3fbfc 100%);
+}
+.market-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.market-num{
+  font-size:10px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.13em;
+}
+.market-top small{
+  font-size:10px;
+  color:#53617a;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+.market-card h3{
+  margin-top:24px;
+  font-size:30px;
+  line-height:1.1;
+  letter-spacing:-.04em;
+  color:var(--deep);
+  max-width:520px;
+}
+.market-card>p{
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.68;
+  color:var(--text);
+  max-width:540px;
+}
+.role-cloud{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:26px;
+}
+.role-cloud span{
+  padding:9px 11px;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #dde5f0;
+  font-size:11px;
+  font-weight:800;
+  color:#3f4f6a;
+}
+.market-bottom{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.market-bottom b{
+  display:block;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--blue);
+}
+.market-bottom span{
+  display:block;
+  margin-top:7px;
+  font-size:13px;
+  line-height:1.55;
+  color:#56647c;
+}
+
+/* recruiting */
+.approach{
+  padding:96px 0;
+  background:#f7f9fc;
+}
+.approach-head{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:84px;
+  align-items:end;
+  margin-bottom:40px;
+}
+.approach-head .lead{margin:0}
+.approach-shell{
+  display:grid;
+  grid-template-columns:.76fr 1.24fr;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 22px 56px rgba(9,25,79,.08);
+  border:1px solid var(--line);
+}
+.approach-principle{
+  padding:46px 40px;
+  background:radial-gradient(circle at 90% 10%,rgba(95,223,229,.16),transparent 32%),linear-gradient(145deg,#07194d,#0b286d 64%,#16459f);
+  color:#fff;
+}
+.approach-principle small{
+  color:#9ff8f2;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.16em;
+}
+.approach-principle strong{
+  display:block;
+  margin-top:26px;
+  font-size:34px;
+  line-height:1.06;
+  letter-spacing:-.045em;
+}
+.approach-principle p{
+  margin-top:18px;
+  font-size:14px;
+  line-height:1.68;
+  color:#c2cee2;
+}
+.approach-steps{
+  background:#fff;
+  padding:12px 34px;
+}
+.approach-step{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:18px;
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+}
+.approach-step:last-child{border-bottom:0}
+.approach-step>span{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid #d8e1ef;
+  background:#f8faff;
+  display:grid;
+  place-items:center;
+  font-size:9px;
+  font-weight:900;
+  color:var(--blue);
+}
+.approach-step h3{
+  font-size:20px;
+  color:var(--deep);
+  letter-spacing:-.025em;
+}
+.approach-step p{
+  margin-top:7px;
+  font-size:14px;
+  line-height:1.62;
+  color:#66738a;
+}
+
+/* readiness */
+.readiness{
+  padding:98px 0;
+  background:#fff;
+}
+.readiness-shell{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:90px;
+  align-items:start;
+}
+.readiness-callout{
+  margin-top:30px;
+  padding:23px 24px;
+  border-radius:18px;
+  background:#f3f7ff;
+  border:1px solid #dde7f7;
+}
+.readiness-callout small{
+  display:block;
+  font-size:9px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.readiness-callout strong{
+  display:block;
+  margin-top:9px;
+  font-size:16px;
+  line-height:1.5;
+  color:var(--deep);
+}
+.readiness-track{
+  position:relative;
+  padding-left:4px;
+}
+.readiness-track-line{
+  position:absolute;
+  left:22px;
+  top:24px;
+  bottom:24px;
+  width:1px;
+  background:#dfe6f1;
+}
+.readiness-item{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:46px 1fr;
+  gap:18px;
+  padding:0 0 29px;
+}
+.readiness-item:last-child{padding-bottom:0}
+.readiness-item>span{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border:1px solid #d8e1ef;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  box-shadow:0 0 0 7px #fff;
+}
+.readiness-item h3{
+  padding-top:6px;
+  font-size:20px;
+  color:var(--deep);
+}
+.readiness-item p{
+  margin-top:7px;
+  font-size:14px;
+  line-height:1.62;
+  color:#657289;
+  max-width:610px;
+}
+
+/* engage */
+.engage{
+  padding:92px 0;
+  background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);
+}
+.engage-head{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:84px;
+  align-items:end;
+  margin-bottom:38px;
+}
+.engage-head .lead{margin:0}
+.engage-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.engage-card{
+  padding:38px;
+  border-radius:26px;
+  border:1px solid var(--line);
+}
+.client-card{
+  background:linear-gradient(145deg,#081b51 0%,#0b286d 63%,#16449d 100%);
+  color:#fff;
+  box-shadow:0 20px 52px rgba(9,25,79,.12);
+}
+.clinician-card{
+  background:#fff;
+  box-shadow:0 18px 44px rgba(9,25,79,.055);
+}
+.engage-card small{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-weight:900;
+}
+.client-card small{color:#9ff8f2}
+.clinician-card small{color:var(--blue)}
+.engage-card h3{
+  margin-top:13px;
+  font-size:31px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+.client-card h3{color:#fff}
+.clinician-card h3{color:var(--deep)}
+.engage-card>p{
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.66;
+  max-width:520px;
+}
+.client-card>p{color:#c3cee1}
+.clinician-card>p{color:var(--text)}
+.engage-fields{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:24px;
+}
+.engage-fields span{
+  padding:9px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+}
+.client-card .engage-fields span{
+  color:#dbe4f4;
+  border:1px solid rgba(255,255,255,.17);
+  background:rgba(255,255,255,.05);
+}
+.clinician-card .engage-fields span{
+  color:#4f5f79;
+  border:1px solid #dfe6f0;
+  background:#f7f9fc;
+}
+.engage-card .btn{margin-top:25px}
+.client-card .btn-green{box-shadow:none}
+.clinician-card .btn-outline{background:#fff}
+
+/* suppress superseded original section styling */
+.talent,.recruiting,.paths{display:none!important;}
+
+@media(max-width:1040px){
+  .na-hero-grid{grid-template-columns:1fr;gap:42px}
+  .na-hero-visual{max-width:780px;width:100%;min-height:530px;margin:auto}
+  .market-head,.approach-head,.readiness-shell,.engage-head{grid-template-columns:1fr;gap:28px}
+  .approach-shell{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .na-hero-grid{padding:48px 0 64px}
+  .na-hero-copy h1{font-size:43px}
+  .na-hero-visual{min-height:440px}
+  .na-photo{inset:0 0 58px 0}
+  .na-float-primary{right:10px;top:20px;width:245px}
+  .na-float-secondary{left:14px;right:14px;bottom:0;max-width:none}
+  .market,.approach,.readiness,.engage{padding:72px 0}
+  .market-grid,.engage-grid{grid-template-columns:1fr}
+  .market-card,.engage-card{padding:30px 24px}
+  .approach-principle{padding:32px 24px}
+  .approach-steps{padding:8px 22px}
+  .approach-step{grid-template-columns:42px 1fr}
+  .readiness-shell{gap:36px}
+}
+@media(max-width:460px){
+  .na-hero-copy h1{font-size:39px}
+  .na-hero-visual{min-height:420px}
+  .na-float-primary{width:220px;padding:18px}
+  .na-float-secondary span{font-size:9px}
+}
+
 </style>
 </head>
 <body>
@@ -196,133 +711,197 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
     <div class="division-name">Nursing & Allied</div>
     <nav class="division-links">
       <a href="#talent">Talent</a>
-      <a href="#recruiting">Recruiting</a>
+      <a href="#approach">How We Recruit</a>
       <a href="#readiness">Readiness</a>
-      <a href="#clinicians">For Clinicians</a>
+      <a href="#engage">Clients & Clinicians</a>
     </nav>
   </div>
 </div>
 
 <main>
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="kicker">Nursing & Allied</div>
-      <h1>Clinical staffing built for speed, specialty, and readiness.</h1>
-      <p class="hero-copy">Medlivo’s Nursing & Allied division supports hospitals, health systems, clinics, and healthcare programs with nursing and allied professionals matched to the role, location, schedule, and client requirements.</p>
+<section class="na-hero">
+  <div class="wrap na-hero-grid">
+    <div class="na-hero-copy">
+      <div class="kicker">Nursing & Allied Division</div>
+      <h1>Clinical talent for the roles healthcare cannot leave open.</h1>
+      <p class="hero-copy">Medlivo’s Nursing & Allied team supports hospitals, health systems, clinics, and workforce programs with clinicians matched to the specialty, schedule, location, and assignment requirements behind each opening.</p>
       <div class="hero-actions">
-        <a class="btn btn-green" href="#contact">Request Nursing & Allied Staff</a>
+        <a class="btn btn-green" href="#engage">Request Nursing & Allied Staff</a>
         <a class="btn btn-outline" href="#clinicians">Search Nursing & Allied Jobs</a>
       </div>
-    </div>
-    <div class="match-panel">
-      <div class="match-head">
-        <small>WHAT SHAPES THE MATCH</small>
-        <strong>The right clinician is more than a job title.</strong>
+      <div class="na-proof-rail">
+        <span>Specialty-led recruiting</span>
+        <span>Program-ready delivery</span>
+        <span>Assignment readiness</span>
       </div>
-      <div class="match-grid">
-        <div><span>01</span><h3>Specialty & Experience</h3><p>Clinical background aligned to the actual requirements of the role.</p></div>
-        <div><span>02</span><h3>Shift & Schedule</h3><p>Availability aligned to shift, schedule, call, and assignment expectations.</p></div>
-        <div><span>03</span><h3>Location & Licensure</h3><p>Geography, licensing, and client-specific eligibility considered early.</p></div>
-        <div><span>04</span><h3>Start Timing</h3><p>Real availability and readiness measured against the required start date.</p></div>
+    </div>
+
+    <div class="na-hero-visual">
+      <div class="na-photo">
+        <img src="assets/images/home/nursing-allied.webp" alt="Nursing and allied healthcare professionals working in a clinical setting">
+        <div class="na-photo-shade"></div>
+        <div class="na-photo-label">NURSING + ALLIED</div>
+      </div>
+      <div class="na-float na-float-primary">
+        <small>BUILT AROUND THE OPENING</small>
+        <strong>Specialty · Shift · Location · Start</strong>
+      </div>
+      <div class="na-float na-float-secondary">
+        <span>Nursing</span>
+        <span>Imaging</span>
+        <span>Cath Lab</span>
+        <span>Respiratory</span>
+        <span>Laboratory</span>
+        <span>Surgical Services</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="talent" id="talent">
+<section class="market" id="talent">
   <div class="wrap">
-    <div class="talent-head">
-      <div><div class="eyebrow">Talent We Support</div><h2 class="title">Nursing and allied expertise across critical clinical functions.</h2></div>
-      <p class="lead">The division covers a broad range of clinical disciplines. Recruiting is organized around the requirements of the role rather than treating every nursing or allied opening the same.</p>
+    <div class="market-head">
+      <div>
+        <div class="eyebrow">Two Talent Markets</div>
+        <h2 class="title">One division. Two different clinical talent markets.</h2>
+      </div>
+      <p class="lead">Nursing and allied health sit under one Medlivo division, but the recruiting logic is different. Nursing is often shaped by unit, specialty, shift, and schedule. Allied roles are frequently shaped by modality, certification, technical experience, and care setting.</p>
     </div>
 
-    <div class="talent-grid">
-      <article class="talent-panel nursing">
-        <small>Nursing</small>
-        <h3>Nursing professionals</h3>
-        <p>Representative nursing talent for acute, ambulatory, and other healthcare environments.</p>
-        <div class="role-list">
-          <div class="role-row"><b>Core Roles</b><span>Registered Nurses · LPN/LVNs · CNAs</span></div>
-          <div class="role-row"><b>Specialized Support</b><span>Case Management · Care Coordination · Nursing Leadership</span></div>
-          <div class="role-row"><b>Match Factors</b><span>Specialty · Shift · Experience · Location · Availability</span></div>
+    <div class="market-grid">
+      <article class="market-card market-nursing">
+        <div class="market-top">
+          <span class="market-num">01</span>
+          <small>Nursing</small>
         </div>
+        <h3>Coverage across nursing disciplines and clinical settings.</h3>
+        <p>Representative nursing talent for acute, ambulatory, post-acute, and other healthcare environments.</p>
+        <div class="role-cloud">
+          <span>Registered Nurses</span>
+          <span>LPN / LVN</span>
+          <span>CNAs</span>
+          <span>Case Management</span>
+          <span>Care Coordination</span>
+          <span>Nursing Leadership</span>
+        </div>
+        <div class="market-bottom"><b>What shapes the match</b><span>Specialty · Unit · Shift · Experience · Location · Availability</span></div>
       </article>
 
-      <article class="talent-panel allied">
-        <small>Allied Health</small>
-        <h3>Allied health professionals</h3>
-        <p>Representative allied disciplines supporting diagnostic, procedural, respiratory, laboratory, pharmacy, and clinical operations.</p>
-        <div class="role-list">
-          <div class="role-row"><b>Diagnostic</b><span>Imaging · Cath Lab · Laboratory</span></div>
-          <div class="role-row"><b>Clinical Support</b><span>Respiratory · Surgical Tech · Pharmacy · Medical Assistants</span></div>
-          <div class="role-row"><b>Match Factors</b><span>Modality · Specialty · Certification · Location · Availability</span></div>
+      <article class="market-card market-allied">
+        <div class="market-top">
+          <span class="market-num">02</span>
+          <small>Allied Health</small>
         </div>
+        <h3>Specialized talent across diagnostic, procedural, and clinical support functions.</h3>
+        <p>Representative allied professionals supporting hospitals, clinics, procedural areas, diagnostic services, and other care environments.</p>
+        <div class="role-cloud">
+          <span>Imaging</span>
+          <span>Cath Lab</span>
+          <span>Respiratory</span>
+          <span>Laboratory</span>
+          <span>Surgical Tech</span>
+          <span>Pharmacy</span>
+          <span>Medical Assistants</span>
+        </div>
+        <div class="market-bottom"><b>What shapes the match</b><span>Modality · Certification · Procedure Experience · Setting · Location · Availability</span></div>
       </article>
     </div>
-    <div class="talent-note">Representative roles shown. Contact Medlivo for specialty-specific workforce needs not listed here.</div>
+    <p class="talent-note">Representative roles shown. Medlivo can review specialty-specific Nursing & Allied requirements not listed here.</p>
   </div>
 </section>
 
-<section class="recruiting" id="recruiting">
+<section class="approach" id="approach">
   <div class="wrap">
-    <div class="recruiting-head">
-      <div><div class="eyebrow">Recruiting Approach</div><h2 class="title">Built to move quickly without losing the details that matter.</h2></div>
-      <p class="lead">Nursing and allied staffing often combines speed with highly specific clinical requirements. Our recruiting approach is designed to address both.</p>
+    <div class="approach-head">
+      <div>
+        <div class="eyebrow">How This Division Recruits</div>
+        <h2 class="title">Recruiting starts with the opening, not the database.</h2>
+      </div>
+      <p class="lead">A title alone rarely tells us enough. The team first translates the requirement into the clinical, practical, and program details that determine whether a candidate is truly a fit.</p>
     </div>
 
-    <div class="recruiting-shell">
-      <div class="recruiting-intro">
-        <small>Division Priority</small>
-        <strong>Match the clinician to the actual opening, not just the title.</strong>
-        <p>Specialty, schedule, location, experience, availability, licensing, and client requirements are considered together before a candidate moves forward.</p>
+    <div class="approach-shell">
+      <div class="approach-principle">
+        <small>THE NURSING & ALLIED APPROACH</small>
+        <strong>Move quickly.<br>Qualify precisely.</strong>
+        <p>Speed matters, but a fast submission is only useful when the clinician can actually meet the assignment requirements.</p>
       </div>
-      <div class="recruiting-list">
-        <div class="recruiting-row"><span>01</span><div><h3>Recruit by specialty and market</h3><p>Searches are shaped around the clinical discipline, geography, schedule, and availability needed for the opening.</p></div></div>
-        <div class="recruiting-row"><span>02</span><div><h3>Qualify beyond the resume</h3><p>Experience, role fit, availability, work history, and required credentials are reviewed against the specific requirement.</p></div></div>
-        <div class="recruiting-row"><span>03</span><div><h3>Confirm the practical fit</h3><p>Shift expectations, location, start timing, assignment length, and other role-specific details are addressed before submission.</p></div></div>
-        <div class="recruiting-row"><span>04</span><div><h3>Present against the requirement</h3><p>Candidate information is organized around what the client or program needs to evaluate the submission efficiently.</p></div></div>
+
+      <div class="approach-steps">
+        <div class="approach-step">
+          <span>01</span>
+          <div><h3>Build the target</h3><p>Define the specialty, experience, shift, schedule, location, start timing, and non-negotiable client requirements.</p></div>
+        </div>
+        <div class="approach-step">
+          <span>02</span>
+          <div><h3>Search the right talent market</h3><p>Recruit within the nursing or allied specialty pool most relevant to the opening rather than relying on a general candidate search.</p></div>
+        </div>
+        <div class="approach-step">
+          <span>03</span>
+          <div><h3>Validate practical fit</h3><p>Confirm interest, availability, location, schedule, licensing, compensation expectations, and role-specific qualifications.</p></div>
+        </div>
+        <div class="approach-step">
+          <span>04</span>
+          <div><h3>Submit with clarity</h3><p>Present the candidate against the actual requirement so the client or program can evaluate the fit efficiently.</p></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="readiness" id="readiness">
-  <div class="wrap readiness-grid">
-    <div class="readiness-copy">
+  <div class="wrap readiness-shell">
+    <div class="readiness-intro">
       <div class="eyebrow">Assignment Readiness</div>
-      <h2 class="title">The work between selection and start matters.</h2>
-      <p class="lead">Once a clinician is selected, the focus shifts to the requirements that make the assignment possible. Readiness varies by role, facility, state, and program.</p>
+      <h2 class="title">Selection is not the finish line.</h2>
+      <p class="lead">The work between candidate selection and the first shift is where strong recruiting becomes reliable delivery. Requirements vary by profession, state, client, and program.</p>
+      <div class="readiness-callout">
+        <small>READY MEANS</small>
+        <strong>The clinician has cleared the requirements that matter for that assignment.</strong>
+      </div>
     </div>
-    <div class="readiness-list">
-      <div class="readiness-row"><span>01</span><div><h3>License & certification</h3><p>Applicable professional licenses, certifications, and role-specific requirements.</p></div></div>
-      <div class="readiness-row"><span>02</span><div><h3>Clinical documentation</h3><p>Required employment, skills, health, screening, and compliance documentation based on the assignment.</p></div></div>
-      <div class="readiness-row"><span>03</span><div><h3>Client & program requirements</h3><p>Facility-specific onboarding, forms, approvals, and program steps completed within the required workflow.</p></div></div>
-      <div class="readiness-row"><span>04</span><div><h3>Start coordination</h3><p>Final readiness, schedule, reporting instructions, and assignment details aligned before the clinician starts.</p></div></div>
+
+    <div class="readiness-track">
+      <div class="readiness-track-line" aria-hidden="true"></div>
+      <div class="readiness-item"><span>01</span><div><h3>License & certification</h3><p>Applicable professional licenses, certifications, and role-specific eligibility.</p></div></div>
+      <div class="readiness-item"><span>02</span><div><h3>Clinical verification</h3><p>Experience, skills, work history, and assignment-specific documentation reviewed as required.</p></div></div>
+      <div class="readiness-item"><span>03</span><div><h3>Health & compliance</h3><p>Screening, health, background, and compliance items aligned to the client or program standard.</p></div></div>
+      <div class="readiness-item"><span>04</span><div><h3>Client onboarding</h3><p>Facility forms, approvals, orientation requirements, and other client-specific steps completed.</p></div></div>
+      <div class="readiness-item"><span>05</span><div><h3>Start coordination</h3><p>Schedule, reporting instructions, contacts, and final assignment details confirmed before start.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="paths" id="contact">
+<section class="engage" id="engage">
   <div class="wrap">
-    <div class="paths-head">
-      <div><div class="eyebrow">Nursing & Allied</div><h2 class="title">One division. Two clear ways to engage.</h2></div>
-      <p class="lead">Healthcare organizations need qualified talent. Clinicians need relevant opportunities and a team that understands the work. This division is built to support both sides of that relationship.</p>
+    <div class="engage-head">
+      <div>
+        <div class="eyebrow">Work With the Division</div>
+        <h2 class="title">Different questions matter to clients and clinicians.</h2>
+      </div>
+      <p class="lead">The Nursing & Allied team works from both sides of the assignment: what the organization needs covered and what the clinician needs to know before committing.</p>
     </div>
 
-    <div class="path-grid">
-      <div class="path-card">
+    <div class="engage-grid">
+      <article class="engage-card client-card">
         <small>For Healthcare Organizations</small>
-        <h3>Need Nursing or Allied talent?</h3>
-        <p>Share the role, specialty, location, schedule, start timing, and any program requirements. We’ll route the request to the appropriate Nursing & Allied team.</p>
+        <h3>Tell us what is different about the role.</h3>
+        <p>The more precise the requirement, the more focused the recruiting response can be.</p>
+        <div class="engage-fields">
+          <span>Role & specialty</span><span>Location</span><span>Shift / schedule</span><span>Start timing</span><span>Care setting</span><span>Program requirements</span>
+        </div>
         <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Nursing%20and%20Allied%20Staffing%20Request">Request Staff</a>
-      </div>
-      <div class="path-card" id="clinicians">
+      </article>
+
+      <article class="engage-card clinician-card" id="clinicians">
         <small>For Nursing & Allied Clinicians</small>
-        <h3>Looking for your next assignment?</h3>
-        <p>Explore opportunities based on your profession, specialty, location, schedule preferences, and availability.</p>
-        <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
-      </div>
+        <h3>Tell us what matters in your next assignment.</h3>
+        <p>A better match starts with more than a resume. Specialty, location, schedule, timing, and career preferences all matter.</p>
+        <div class="engage-fields">
+          <span>Profession</span><span>Specialty</span><span>Preferred location</span><span>Schedule</span><span>Availability</span><span>Career goals</span>
+        </div>
+        <a class="btn btn-outline" href="index.html#clinicians">Search Nursing & Allied Jobs</a>
+      </article>
     </div>
   </div>
 </section>
