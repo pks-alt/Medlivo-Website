@@ -1693,6 +1693,38 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .locum-hero-stack .stack-slp{right:18px}
 }
 
+
+/* === Locum Tenens final visual polish === */
+.na-premium-hero .na-premium-copy h1{
+  font-size:clamp(50px,4.65vw,67px);
+  line-height:1.015;
+  max-width:730px;
+}
+.locum-hero-stack .stack-main{
+  box-shadow:0 28px 72px rgba(0,0,0,.22);
+}
+.locum-hero-stack .stack-nursing,
+.locum-hero-stack .stack-allied,
+.locum-hero-stack .stack-slp{
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
+}
+.provider-card:nth-child(2),
+.provider-card:nth-child(4){
+  background:linear-gradient(180deg,#fff 0%,#fbfcfe 100%);
+}
+.clearance-card:nth-child(3){
+  background:linear-gradient(180deg,#fff 0%,#f7fbff 100%);
+}
+.coverage-ready-card:nth-child(5){
+  background:linear-gradient(180deg,#fff 0%,#f4fbfa 100%);
+}
+@media(max-width:720px){
+  .na-premium-hero .na-premium-copy h1{font-size:43px}
+}
+@media(max-width:460px){
+  .na-premium-hero .na-premium-copy h1{font-size:39px}
+}
+
 </style>
 </head>
 <body>
@@ -1728,7 +1760,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
       <div class="na-premium-copy">
         <div class="kicker">Locum Tenens Division</div>
         <h1>Locum Tenens coverage built around specialty, timing, and execution.</h1>
-        <p class="hero-copy">Medlivo connects healthcare organizations with physicians and advanced practice providers for planned, urgent, and specialty coverage. Our team coordinates the clinical and operational dependencies that determine whether coverage can start when it is needed.</p>
+        <p class="hero-copy">Medlivo connects healthcare organizations with physicians and advanced practice providers for planned, urgent, and specialty coverage. We coordinate the clinical, administrative, and logistical work required to turn provider availability into dependable coverage.</p>
         <div class="hero-actions">
           <a class="btn btn-green" href="#engage">Request Locum Tenens Coverage</a>
           <a class="btn btn-outline hero-outline" href="https://www.medlivo.com/search-jobs">Explore Locum Tenens Opportunities</a>
@@ -1773,7 +1805,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <div class="eyebrow">Coverage Needs</div>
         <h2 class="title">Different gaps require different coverage strategies.</h2>
       </div>
-      <p class="lead">Some organizations are protecting continuity during a planned absence. Others are responding to an unexpected vacancy, a specialty shortage, or a longer recruitment cycle. Medlivo starts with the coverage problem before building the provider search.</p>
+      <p class="lead">Some organizations are protecting continuity during a planned absence. Others are responding to an unexpected vacancy, a specialty shortage, or a longer recruitment cycle. Medlivo starts with the operational need, then builds the provider search around it.</p>
     </div>
 
     <div class="coverage-grid">
@@ -1813,7 +1845,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <div class="eyebrow">Provider Coverage</div>
         <h2 class="title">The provider model changes with the coverage need.</h2>
       </div>
-      <p class="lead">Medlivo supports physician and advanced practice provider coverage across primary care and specialty environments. Scope, schedule, clinical responsibilities, licensing, and required autonomy shape the search.</p>
+      <p class="lead">Medlivo supports physician and advanced practice provider coverage across primary care and specialty environments. Scope of practice, schedule, clinical responsibilities, licensing, and practice model shape the search.</p>
     </div>
 
     <div class="provider-grid">
@@ -1850,16 +1882,16 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
     <div class="signals-head">
       <div>
         <div class="eyebrow">The Locum Tenens Coordination Lens</div>
-        <h2 class="title">Six moving parts determine whether coverage comes together.</h2>
+        <h2 class="title">Six dependencies determine whether coverage comes together.</h2>
       </div>
-      <p class="lead">Clinical alignment is only one part of a locum engagement. Availability, licensing, credentialing, logistics, and timing have to move together for the coverage plan to work.</p>
+      <p class="lead">Clinical alignment is only one part of a locum engagement. Availability, licensing, credentialing, logistics, and timing must converge before the coverage plan is viable.</p>
     </div>
 
     <div class="signals-stage">
       <div class="signal-core">
         <small>THE COVERAGE PLAN</small>
         <strong>Can every dependency be cleared before the provider is needed?</strong>
-        <p>Medlivo keeps the clinical and operational workstreams connected so potential delays are visible early.</p>
+        <p>Medlivo keeps clinical and operational workstreams connected so potential delays surface early.</p>
       </div>
 
       <div class="signal-grid">
@@ -1868,7 +1900,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <article class="signal-card"><span>03</span><h3>Licensing</h3><p>Active licenses, additional state licensing needs, processing timelines, and start-date impact.</p></article>
         <article class="signal-card"><span>04</span><h3>Credentialing & privileging</h3><p>Facility documentation, verifications, privileges, medical staff review, and required approvals.</p></article>
         <article class="signal-card signal-card-wide"><span>05</span><h3>Malpractice & logistics</h3><p>Professional liability, travel, lodging, transportation, reporting instructions, and practical details.</p></article>
-        <article class="signal-card signal-card-wide"><span>06</span><h3>Start-date feasibility</h3><p>Whether the clinical, administrative, and logistical dependencies can be completed by the coverage date.</p></article>
+        <article class="signal-card signal-card-wide"><span>06</span><h3>Start-date feasibility</h3><p>Whether every clinical, administrative, and logistical dependency can be completed by the required start date.</p></article>
       </div>
     </div>
   </div>
@@ -1881,7 +1913,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <div class="eyebrow">Licensing, Credentialing & Privileging</div>
         <h2 class="title">Coverage is only real when the provider is cleared to practice.</h2>
       </div>
-      <p class="lead">A qualified, available provider cannot start until required approvals are complete. Medlivo keeps each clearance workstream visible against the target coverage date.</p>
+      <p class="lead">A qualified, available provider cannot practice until the required approvals are complete. Medlivo keeps each clearance workstream visible against the target start date.</p>
     </div>
 
     <div class="clearance-grid">
@@ -1894,7 +1926,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 
     <div class="clearance-note">
       <strong>Why it matters</strong>
-      <span>The objective is not simply to complete paperwork. It is to move an appropriately qualified provider through every required approval without losing visibility of the coverage date.</span>
+      <span>The objective is not simply to complete paperwork. It is to move an appropriately qualified provider through every required approval while protecting the target start date.</span>
     </div>
   </div>
 </section>
@@ -1906,7 +1938,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <div class="eyebrow">Coverage Readiness</div>
         <h2 class="title">Ready means every dependency is aligned before the first day.</h2>
       </div>
-      <p class="lead">Once clearance is complete, the provider and healthcare organization still need a coordinated start. Medlivo brings schedule, travel, reporting details, and ongoing support into the same coverage plan.</p>
+      <p class="lead">Clearance is not the finish line. Schedule, travel, reporting details, and first-day expectations still have to be aligned before the provider arrives.</p>
     </div>
 
     <div class="coverage-ready-grid">
@@ -1914,7 +1946,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
       <article class="coverage-ready-card"><span>02</span><h3>Schedule confirmation</h3><p>Coverage dates, clinic hours, call structure, orientation, and reporting expectations confirmed.</p></article>
       <article class="coverage-ready-card"><span>03</span><h3>Travel & logistics</h3><p>Travel, lodging, local transportation, arrival timing, and location details coordinated where required.</p></article>
       <article class="coverage-ready-card"><span>04</span><h3>First-day details</h3><p>Reporting location, point of contact, access instructions, orientation, and final facility details communicated.</p></article>
-      <article class="coverage-ready-card"><span>05</span><h3>Ongoing support</h3><p>A clear path remains for schedule changes, travel issues, extensions, coverage adjustments, or questions.</p></article>
+      <article class="coverage-ready-card"><span>05</span><h3>Ongoing support</h3><p>A clear support path remains for schedule changes, travel issues, extensions, coverage adjustments, and questions during the engagement.</p></article>
     </div>
 
     <div class="coverage-ready-note">
@@ -1931,14 +1963,14 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <div class="eyebrow">Locum Tenens</div>
         <h2 class="title">Strong coverage starts with clarity on both sides.</h2>
       </div>
-      <p class="lead">Healthcare organizations need confidence that the provider, timeline, and operating requirements are aligned. Providers need a clear picture of the specialty, schedule, responsibilities, logistics, and expectations before they commit.</p>
+      <p class="lead">Healthcare organizations need confidence in the provider, timeline, and start plan. Providers need a clear picture of the clinical work, schedule, logistics, and expectations before they commit.</p>
     </div>
 
     <div class="engage-grid">
       <article class="engage-card client-card">
         <small>For Healthcare Organizations</small>
         <h3>Tell us what the coverage really requires.</h3>
-        <p>The more clearly the clinical and operational need is defined, the more focused the provider search can be.</p>
+        <p>Define the specialty, schedule, responsibilities, timing, and clearance requirements. We’ll build the search around the coverage plan.</p>
         <div class="engage-fields">
           <span>Specialty</span><span>Coverage dates</span><span>Clinic / call schedule</span><span>Clinical responsibilities</span>
           <span>Location</span><span>Licensing requirements</span><span>Credentialing timeline</span><span>Travel expectations</span>
@@ -1949,7 +1981,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
       <article class="engage-card clinician-card" id="clinicians">
         <small>For Locum Tenens Providers</small>
         <h3>Tell us what makes an engagement worth considering.</h3>
-        <p>We’ll focus on opportunities aligned to your specialty, availability, preferred schedule, geographic preferences, and the type of work you want to take on.</p>
+        <p>Share your specialty, availability, preferred schedule, licensing footprint, and geographic preferences. We’ll focus on opportunities that align with how you want to practice.</p>
         <div class="engage-fields">
           <span>Specialty</span><span>State licenses</span><span>Availability</span><span>Preferred schedule</span>
           <span>Call preferences</span><span>Geographic preferences</span><span>Travel flexibility</span><span>Career priorities</span>
