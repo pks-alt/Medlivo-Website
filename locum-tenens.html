@@ -1725,6 +1725,433 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .na-premium-hero .na-premium-copy h1{font-size:39px}
 }
 
+
+/* === Locum Tenens world-class visual system === */
+.na-premium-hero{
+  background:#061640;
+}
+.na-premium-hero:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:0;
+  height:190px;
+  background:linear-gradient(180deg,transparent,rgba(4,16,49,.35));
+  pointer-events:none;
+}
+.na-premium-grid{
+  padding-bottom:132px;
+}
+.locum-hero-stack .stack-main{
+  background:rgba(7,26,76,.90);
+  border-color:rgba(255,255,255,.2);
+}
+.locum-hero-stack .stack-nursing,
+.locum-hero-stack .stack-allied,
+.locum-hero-stack .stack-slp{
+  border-color:rgba(255,255,255,.36);
+}
+.locum-hero-rail{
+  position:absolute;
+  left:50%;
+  bottom:28px;
+  transform:translateX(-50%);
+  z-index:4;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(5,20,58,.72);
+  backdrop-filter:blur(16px);
+  box-shadow:0 18px 48px rgba(0,0,0,.17);
+}
+.locum-hero-rail>div{
+  padding:15px 20px 16px;
+  border-right:1px solid rgba(255,255,255,.12);
+  min-width:0;
+}
+.locum-hero-rail>div:last-child{border-right:0}
+.locum-hero-rail small{
+  display:block;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.14em;
+  color:#8ff5ef;
+}
+.locum-hero-rail strong{
+  display:block;
+  margin-top:5px;
+  font-size:12px;
+  color:#fff;
+}
+.locum-hero-rail span{
+  display:block;
+  margin-top:3px;
+  font-size:9px;
+  color:#aebbd2;
+}
+
+/* Coverage mosaic */
+.coverage-needs{
+  padding:96px 0 102px;
+  background:
+    radial-gradient(circle at 90% 0%,rgba(95,223,229,.10),transparent 24%),
+    linear-gradient(180deg,#f6f9fd 0%,#fff 100%);
+}
+.coverage-head{
+  grid-template-columns:.86fr 1.14fr;
+  margin-bottom:42px;
+}
+.coverage-grid{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:minmax(170px,auto);
+  gap:18px;
+  background:transparent;
+}
+.coverage-card{
+  grid-column:span 4;
+  min-height:0;
+  padding:30px 28px;
+  border-radius:24px;
+  border:1px solid #dee6f1;
+  background:#fff;
+  box-shadow:0 18px 44px rgba(9,25,79,.05);
+}
+.coverage-card:nth-child(2),
+.coverage-card:nth-child(3){
+  grid-column:span 5;
+}
+.coverage-card:nth-child(4),
+.coverage-card:nth-child(5){
+  grid-column:span 5;
+}
+.coverage-feature{
+  grid-column:span 7 !important;
+  grid-row:span 2;
+  min-height:358px;
+  padding:38px 36px;
+  background:
+    radial-gradient(circle at 88% 12%,rgba(95,223,229,.20),transparent 28%),
+    linear-gradient(145deg,#071a4e 0%,#0c2b72 62%,#17469d 100%);
+  border-color:transparent;
+  box-shadow:0 26px 64px rgba(9,25,79,.17);
+}
+.coverage-feature>span{color:#9ff8f2}
+.coverage-feature h3{
+  color:#fff;
+  margin-top:38px;
+  font-size:34px;
+}
+.coverage-feature p{
+  color:#c4d0e2;
+  max-width:520px;
+  font-size:14px;
+}
+.coverage-feature .coverage-detail{
+  margin-top:34px;
+  border-top-color:rgba(255,255,255,.15);
+}
+.coverage-feature .coverage-detail small{color:#8ff5ef}
+.coverage-feature .coverage-detail strong{color:#d8e1ef}
+.coverage-card:not(.coverage-feature){
+  min-height:226px;
+}
+.coverage-card:not(.coverage-feature) h3{font-size:22px}
+
+/* Editorial provider panels */
+.provider-editorial{
+  padding:96px 0;
+  background:#fff;
+}
+.provider-editorial .provider-head{
+  margin-bottom:42px;
+}
+.provider-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:20px;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+}
+.provider-card{
+  position:relative;
+  min-height:250px;
+  padding:34px 32px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:#fff;
+  overflow:hidden;
+}
+.provider-card:nth-child(1){
+  grid-row:span 2;
+  min-height:520px;
+  padding:42px 38px;
+  background:
+    radial-gradient(circle at 88% 10%,rgba(47,103,216,.12),transparent 28%),
+    linear-gradient(180deg,#fff,#f6f9ff);
+}
+.provider-card:nth-child(1) h3{
+  margin-top:88px;
+  font-size:38px;
+  line-height:1.05;
+  max-width:360px;
+}
+.provider-card:nth-child(1) p{
+  font-size:15px;
+  max-width:440px;
+}
+.provider-card:nth-child(1) strong{
+  margin-top:30px;
+}
+.provider-card:after{
+  content:"";
+  position:absolute;
+  width:170px;height:170px;border-radius:50%;
+  right:-85px;top:-85px;
+  background:radial-gradient(circle,rgba(95,223,229,.12),transparent 70%);
+}
+.provider-card:nth-child(2),
+.provider-card:nth-child(3),
+.provider-card:nth-child(4){
+  min-height:0;
+}
+.provider-card:nth-child(4){
+  grid-column:2;
+}
+.provider-card strong{
+  border-top-color:#e4eaf2;
+}
+
+/* Dark coordination command center */
+.locum-command{
+  position:relative;
+  padding:104px 0;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 14% 8%,rgba(95,223,229,.12),transparent 25%),
+    radial-gradient(circle at 92% 88%,rgba(47,103,216,.18),transparent 30%),
+    #061640;
+}
+.locum-command .eyebrow{color:#8ff5ef}
+.locum-command .title{color:#fff}
+.locum-command .lead{color:#bcc8dc}
+.locum-command .signals-stage{
+  grid-template-columns:.72fr 1.28fr;
+  border-color:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.03);
+  box-shadow:0 28px 70px rgba(0,0,0,.18);
+}
+.locum-command .signal-core{
+  background:linear-gradient(145deg,rgba(16,48,122,.92),rgba(8,29,82,.96));
+  border-right:1px solid rgba(255,255,255,.10);
+}
+.locum-command .signal-grid{
+  background:transparent;
+}
+.locum-command .signal-card{
+  background:rgba(255,255,255,.055);
+  border-color:rgba(255,255,255,.11);
+  color:#fff;
+}
+.locum-command .signal-card span{color:#8ff5ef}
+.locum-command .signal-card h3{color:#fff}
+.locum-command .signal-card p{color:#b8c5da}
+
+/* Clearance journey */
+.clearance-journey{
+  padding:100px 0;
+  background:#f7f9fc;
+}
+.clearance-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+}
+.clearance-grid:before{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:23px;
+  height:2px;
+  background:linear-gradient(90deg,#2f67d8,#5fdfe5,#29d80f);
+  opacity:.45;
+}
+.clearance-card{
+  position:relative;
+  min-height:0;
+  padding:0 18px 0;
+  background:transparent !important;
+  text-align:center;
+}
+.clearance-card>span{
+  position:relative;
+  z-index:2;
+  width:46px;height:46px;
+  margin:0 auto;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border:1px solid #d5e1f1;
+  box-shadow:0 8px 22px rgba(9,25,79,.07);
+  color:var(--blue);
+}
+.clearance-card h3{
+  margin-top:24px;
+  font-size:19px;
+}
+.clearance-card p{
+  max-width:210px;
+  margin:9px auto 0;
+  font-size:12.5px;
+}
+.clearance-note{
+  margin-top:42px;
+  background:#fff;
+  box-shadow:0 12px 32px rgba(9,25,79,.04);
+}
+
+/* Readiness runway */
+.coverage-runway{
+  padding:100px 0;
+  background:#fff;
+}
+.coverage-ready-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.coverage-ready-card{
+  display:grid;
+  grid-template-columns:56px 230px 1fr;
+  align-items:center;
+  gap:20px;
+  min-height:0;
+  padding:23px 20px;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  background:#fff !important;
+}
+.coverage-ready-card:last-child{border-bottom:0}
+.coverage-ready-card span{
+  width:36px;height:36px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#f2f6fd;
+  border:1px solid #dce5f2;
+}
+.coverage-ready-card h3{
+  margin:0;
+  font-size:18px;
+}
+.coverage-ready-card p{
+  margin:0;
+  font-size:13px;
+}
+.coverage-ready-card:nth-child(5){
+  background:linear-gradient(90deg,#fff 0%,#f7fcfa 100%) !important;
+}
+.coverage-ready-note{
+  margin-top:28px;
+  background:#071a4e;
+  border-color:#071a4e;
+}
+.coverage-ready-note strong{color:#8ff5ef}
+.coverage-ready-note span{color:#d0daea}
+
+/* Finish section elevation */
+.engage{
+  padding-top:100px;
+  background:
+    radial-gradient(circle at 85% 8%,rgba(95,223,229,.08),transparent 24%),
+    linear-gradient(180deg,#f7f9fc 0%,#fff 100%);
+}
+.engage-card{
+  border-radius:28px;
+}
+.client-card{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(95,223,229,.14),transparent 25%),
+    linear-gradient(145deg,#061744,#0b2a70 62%,#16459f);
+}
+
+@media(max-width:1040px){
+  .na-premium-grid{padding-bottom:150px}
+  .locum-hero-rail{bottom:26px}
+  .coverage-grid{grid-template-columns:1fr 1fr}
+  .coverage-card,.coverage-card:nth-child(2),.coverage-card:nth-child(3),.coverage-card:nth-child(4),.coverage-card:nth-child(5),.coverage-feature{
+    grid-column:auto !important;
+    grid-row:auto;
+    min-height:240px;
+  }
+  .coverage-feature{grid-column:1/-1 !important;min-height:300px}
+  .provider-grid{grid-template-columns:1fr 1fr}
+  .provider-card:nth-child(1){grid-row:auto;grid-column:1/-1;min-height:340px}
+  .provider-card:nth-child(1) h3{margin-top:42px}
+  .provider-card:nth-child(4){grid-column:auto}
+  .locum-command .signals-stage{grid-template-columns:1fr}
+  .clearance-grid{grid-template-columns:1fr}
+  .clearance-grid:before{display:none}
+  .clearance-card{
+    display:grid;
+    grid-template-columns:54px 180px 1fr;
+    align-items:start;
+    gap:18px;
+    text-align:left;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .clearance-card>span{margin:0}
+  .clearance-card h3{margin:10px 0 0}
+  .clearance-card p{max-width:none;margin:8px 0 0}
+}
+@media(max-width:720px){
+  .na-premium-grid{padding-bottom:210px}
+  .locum-hero-rail{
+    grid-template-columns:1fr;
+    bottom:22px;
+    border-radius:16px;
+  }
+  .locum-hero-rail>div{
+    display:grid;
+    grid-template-columns:26px 1fr;
+    gap:3px 8px;
+    padding:9px 13px;
+    border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.10);
+  }
+  .locum-hero-rail>div:last-child{border-bottom:0}
+  .locum-hero-rail small{grid-row:1/3}
+  .coverage-grid,.provider-grid{grid-template-columns:1fr}
+  .coverage-card,.coverage-feature,.provider-card,.provider-card:nth-child(1){
+    grid-column:auto !important;
+    min-height:auto;
+  }
+  .provider-card:nth-child(1) h3{margin-top:28px;font-size:31px}
+  .clearance-card{
+    grid-template-columns:46px 1fr;
+  }
+  .clearance-card p{grid-column:2}
+  .coverage-ready-card{
+    grid-template-columns:46px 1fr;
+    gap:12px;
+  }
+  .coverage-ready-card p{grid-column:2}
+}
+
 </style>
 </head>
 <body>
@@ -1794,6 +2221,11 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
       </div>
     </div>
 
+    <div class="wrap locum-hero-rail" aria-label="Locum Tenens coverage modes">
+      <div><small>01</small><strong>Planned Coverage</strong><span>Known gaps & transitions</span></div>
+      <div><small>02</small><strong>Urgent Coverage</strong><span>Unexpected needs & vacancies</span></div>
+      <div><small>03</small><strong>Specialty Coverage</strong><span>Hard-to-source expertise</span></div>
+    </div>
     <div class="na-hero-wordmark" aria-hidden="true">LOCUM TENENS</div>
   </div>
 </section>
@@ -1809,7 +2241,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
     </div>
 
     <div class="coverage-grid">
-      <article class="coverage-card">
+      <article class="coverage-card coverage-feature">
         <span>01</span><h3>Planned Coverage</h3>
         <p>Maintain continuity during scheduled leave, transitions, recruitment periods, or known staffing gaps.</p>
         <div class="coverage-detail"><small>Coverage considerations</small><strong>Dates · Schedule · Specialty · Call Expectations · Credentialing Lead Time</strong></div>
@@ -1838,7 +2270,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   </div>
 </section>
 
-<section class="provider-types" id="providers">
+<section class="provider-types provider-editorial" id="providers">
   <div class="wrap">
     <div class="provider-head">
       <div>
@@ -1877,7 +2309,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   </div>
 </section>
 
-<section class="signals locum-signals" id="coordination">
+<section class="signals locum-signals locum-command" id="coordination">
   <div class="wrap">
     <div class="signals-head">
       <div>
@@ -1906,7 +2338,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   </div>
 </section>
 
-<section class="clearance" id="clearance">
+<section class="clearance clearance-journey" id="clearance">
   <div class="wrap">
     <div class="clearance-head">
       <div>
@@ -1931,7 +2363,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   </div>
 </section>
 
-<section class="coverage-ready" id="readiness">
+<section class="coverage-ready coverage-runway" id="readiness">
   <div class="wrap">
     <div class="coverage-ready-head">
       <div>
