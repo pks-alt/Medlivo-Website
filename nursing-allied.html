@@ -1064,6 +1064,169 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .stack-nursing,.stack-allied{width:250px}
 }
 
+
+/* === Nursing & Allied first-section premium treatment === */
+.na-market-premium{
+  padding:92px 0 96px;
+  background:
+    radial-gradient(circle at 7% 8%,rgba(47,103,216,.08),transparent 24%),
+    radial-gradient(circle at 93% 14%,rgba(95,223,229,.11),transparent 25%),
+    #f8fafc;
+  border-top:1px solid #edf1f6;
+  border-bottom:1px solid #edf1f6;
+}
+.na-market-head{
+  display:block;
+  max-width:900px;
+  margin:0 auto 44px;
+  text-align:center;
+}
+.na-market-head .eyebrow{
+  display:inline-block;
+}
+.na-market-head .title{
+  max-width:760px;
+  margin:12px auto 0;
+  font-size:clamp(42px,4.2vw,58px);
+  line-height:1.02;
+  letter-spacing:-.052em;
+}
+.na-market-head .lead{
+  max-width:760px;
+  margin:18px auto 0;
+  font-size:15px;
+  line-height:1.72;
+}
+.na-market-grid{
+  gap:26px;
+  align-items:stretch;
+}
+.na-market-card{
+  position:relative;
+  overflow:hidden;
+  padding:36px 36px 34px;
+  border-radius:28px;
+  background:#fff;
+  border:1px solid #dfe7f1;
+  box-shadow:0 22px 55px rgba(9,25,79,.065);
+}
+.na-market-card:before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:4px;
+  background:linear-gradient(90deg,#2f67d8,#5fdfe5);
+}
+.na-market-card.market-allied:before{
+  background:linear-gradient(90deg,#5fdfe5,#29d80f);
+}
+.na-market-card:after{
+  width:260px;
+  height:260px;
+  right:-120px;
+  top:-120px;
+  opacity:.7;
+}
+.na-market-card-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+}
+.na-market-card-top>div:first-child{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+.na-market-card-top small{
+  font-size:10px;
+  color:#52617a;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+.na-market-emblem{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,#edf4ff,#f9fbff);
+  border:1px solid #dbe6f4;
+  color:var(--blue);
+  font-size:18px;
+  font-weight:900;
+  box-shadow:0 10px 24px rgba(47,103,216,.08);
+}
+.market-allied .na-market-emblem{
+  background:linear-gradient(145deg,#edfbfc,#f8fffb);
+  border-color:#d7eef0;
+  color:#168f9b;
+}
+.na-market-card h3{
+  margin-top:28px;
+  max-width:560px;
+  font-size:31px;
+  line-height:1.08;
+  letter-spacing:-.042em;
+}
+.na-market-card>p{
+  margin-top:13px;
+  max-width:560px;
+  font-size:14px;
+  line-height:1.68;
+}
+.na-market-card .role-cloud{
+  margin-top:25px;
+}
+.na-market-card .role-cloud span{
+  border-radius:999px;
+  padding:9px 12px;
+  background:#f7f9fc;
+}
+.na-market-card .market-lens{
+  margin-top:28px;
+  padding-top:22px;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+.na-market-card .market-lens>div{
+  position:relative;
+  padding-left:16px;
+}
+.na-market-card .market-lens>div:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:3px;
+  bottom:3px;
+  width:2px;
+  border-radius:2px;
+  background:#d8e5fa;
+}
+.na-market-card.market-allied .market-lens>div:before{
+  background:#ccecee;
+}
+.na-market-card .market-lens strong{
+  font-size:12px;
+  line-height:1.62;
+}
+@media(max-width:900px){
+  .na-market-grid{grid-template-columns:1fr}
+  .na-market-head{margin-bottom:34px}
+}
+@media(max-width:720px){
+  .na-market-premium{padding:70px 0 74px}
+  .na-market-head .title{font-size:40px}
+  .na-market-head .lead{font-size:14px}
+  .na-market-card{padding:30px 24px}
+  .na-market-card h3{font-size:28px}
+}
+@media(max-width:460px){
+  .na-market-head .title{font-size:37px}
+  .na-market-emblem{width:46px;height:46px}
+}
+
 </style>
 </head>
 <body>
@@ -1131,24 +1294,25 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   </div>
 </section>
 
-<section class="market" id="talent">
+<section class="market na-market-premium" id="talent">
   <div class="wrap">
-    <div class="market-head">
-      <div>
-        <div class="eyebrow">Inside the Division</div>
-        <h2 class="title">Two talent markets. Different qualification signals.</h2>
-      </div>
-      <p class="lead">Within the division, nursing and allied openings are evaluated differently. Nursing often turns on unit, specialty, shift, and availability. Allied roles are more often shaped by modality, certification, procedure experience, and care setting.</p>
+    <div class="market-head na-market-head">
+      <div class="eyebrow">Inside the Division</div>
+      <h2 class="title">Two talent markets. Different clinical demands.</h2>
+      <p class="lead">Nursing and allied health operate under different qualification signals, workflows, and staffing realities. Medlivo evaluates each through the lens of the work itself.</p>
     </div>
 
-    <div class="market-grid premium-market-grid">
-      <article class="market-card market-nursing">
-        <div class="market-top">
-          <span class="market-num">01</span>
-          <small>Nursing</small>
+    <div class="market-grid premium-market-grid na-market-grid">
+      <article class="market-card market-nursing na-market-card">
+        <div class="na-market-card-top">
+          <div>
+            <span class="market-num">01</span>
+            <small>Nursing</small>
+          </div>
+          <div class="na-market-emblem" aria-hidden="true">N</div>
         </div>
-        <h3>Recruiting shaped by unit, specialty, shift, and availability.</h3>
-        <p>Nursing requirements can change quickly across care settings and schedules. The recruiting team focuses on the clinical background and practical availability needed for the specific opening.</p>
+        <h3>Care delivery roles shaped by unit, specialty, and shift.</h3>
+        <p>From bedside care to coordination and leadership, nursing searches depend on specialty, unit experience, scheduling realities, and readiness to start.</p>
         <div class="role-cloud">
           <span>Registered Nurses</span>
           <span>LPN / LVN</span>
@@ -1158,18 +1322,21 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
           <span>Nursing Leadership</span>
         </div>
         <div class="market-lens">
-          <div><small>What we validate</small><strong>Specialty · Unit · Experience · Shift · Location · Availability</strong></div>
-          <div><small>What affects readiness</small><strong>Licensure · Certifications · Clinical documentation · Client requirements</strong></div>
+          <div><small>What we evaluate</small><strong>Unit · Specialty · Experience · Shift · Schedule · Location · Availability</strong></div>
+          <div><small>What affects readiness</small><strong>Licensure · Certifications · Clinical Documentation · Client Requirements</strong></div>
         </div>
       </article>
 
-      <article class="market-card market-allied">
-        <div class="market-top">
-          <span class="market-num">02</span>
-          <small>Allied Health</small>
+      <article class="market-card market-allied na-market-card">
+        <div class="na-market-card-top">
+          <div>
+            <span class="market-num">02</span>
+            <small>Allied Health</small>
+          </div>
+          <div class="na-market-emblem" aria-hidden="true">A</div>
         </div>
-        <h3>Recruiting shaped by modality, certification, and technical experience.</h3>
-        <p>Allied roles often depend on technical specialization, procedure experience, care setting, and role-specific credentials as much as general clinical experience.</p>
+        <h3>Technical and clinical support roles shaped by modality and environment.</h3>
+        <p>Allied staffing depends on technical specialization, procedure exposure, care setting, and role-specific credentials—not just general clinical experience.</p>
         <div class="role-cloud">
           <span>Imaging</span>
           <span>Cath Lab</span>
@@ -1180,12 +1347,11 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
           <span>Medical Assistants</span>
         </div>
         <div class="market-lens">
-          <div><small>What we validate</small><strong>Modality · Certification · Procedure Experience · Setting · Location · Availability</strong></div>
-          <div><small>What affects readiness</small><strong>Credentials · Technical requirements · Facility standards · Start timing</strong></div>
+          <div><small>What we evaluate</small><strong>Modality · Certification · Procedure Experience · Setting · Location · Availability</strong></div>
+          <div><small>What affects readiness</small><strong>Credentials · Technical Requirements · Facility Standards · Start Timing</strong></div>
         </div>
       </article>
     </div>
-
   </div>
 </section>
 
