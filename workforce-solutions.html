@@ -585,6 +585,111 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .program-assurance .program-row{grid-template-columns:42px 1fr;padding:22px 0}
 }
 
+
+/* === Specialties navigation dropdown === */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-drop-trigger{display:inline-flex;align-items:center;gap:7px}
+.nav-chevron{
+  width:7px;height:7px;
+  border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+  transform-origin:center;
+  transition:transform .18s ease;
+  opacity:.72;
+}
+.nav-dropdown-menu{
+  position:absolute;
+  top:100%;
+  left:-22px;
+  width:320px;
+  padding-top:15px;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(7px);
+  transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
+  z-index:120;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.nav-dropdown:hover .nav-chevron,
+.nav-dropdown:focus-within .nav-chevron{
+  transform:rotate(225deg) translate(-1px,-1px);
+}
+.nav-dropdown-panel{
+  overflow:hidden;
+  padding:8px;
+  border:1px solid #e0e7f1;
+  border-radius:16px;
+  background:rgba(255,255,255,.985);
+  box-shadow:0 22px 55px rgba(9,25,79,.14);
+  backdrop-filter:blur(16px);
+}
+.links .nav-dropdown-panel a{
+  display:block;
+  padding:13px 14px;
+  border-radius:11px;
+  transition:background .16s ease,transform .16s ease;
+}
+.links .nav-dropdown-panel a:after{display:none}
+.links .nav-dropdown-panel a:hover,
+.links .nav-dropdown-panel a:focus-visible{
+  background:#f3f7fd;
+  transform:none;
+}
+.links .nav-dropdown-panel a.active{
+  background:#eef4ff;
+}
+.nav-drop-title{
+  display:block;
+  font-size:12px;
+  line-height:1.25;
+  font-weight:850;
+  color:var(--deep);
+}
+.nav-drop-desc{
+  display:block;
+  margin-top:3px;
+  font-size:10px;
+  line-height:1.35;
+  font-weight:600;
+  color:#70809a;
+}
+@media(max-width:1040px){
+  .nav-dropdown{width:100%;display:block}
+  .nav-drop-trigger{width:100%;justify-content:space-between}
+  .nav-dropdown-menu{
+    position:static;
+    width:100%;
+    padding-top:8px;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+    display:none;
+  }
+  .links.open .nav-dropdown-menu{display:block}
+  .nav-dropdown-panel{
+    border:0;
+    border-left:2px solid #dce6f4;
+    border-radius:0;
+    box-shadow:none;
+    background:#f8faff;
+    padding:4px 0 4px 10px;
+  }
+  .links .nav-dropdown-panel a{
+    padding:10px 12px;
+  }
+  .nav-drop-desc{display:none}
+  .nav-chevron{margin-right:2px}
+}
+
 </style>
 </head>
 <body>
@@ -593,7 +698,16 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
     <a href="./" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
     <nav class="links">
       <a class="active" href="workforce-solutions.html">Solutions</a>
-      <a href="specialties.html">Specialties</a>
+      <div class="nav-dropdown">
+        <a class="nav-drop-trigger" href="specialties.html">Specialties<span class="nav-chevron" aria-hidden="true"></span></a>
+        <div class="nav-dropdown-menu">
+          <div class="nav-dropdown-panel">
+            <a href="nursing-allied.html"><span class="nav-drop-title">Nursing &amp; Allied</span><span class="nav-drop-desc">Nursing, imaging, lab, respiratory &amp; clinical support</span></a>
+            <a href="rehabilitation.html"><span class="nav-drop-title">Rehabilitation</span><span class="nav-drop-desc">PT, PTA, OT, COTA &amp; SLP staffing</span></a>
+            <a href="locum-tenens.html"><span class="nav-drop-title">Locum Tenens</span><span class="nav-drop-desc">Physician &amp; advanced practice provider coverage</span></a>
+          </div>
+        </div>
+      </div>
       <a href="index.html#clinicians">For Clinicians</a>
       <a href="index.html#why">Why Medlivo</a>
       <a href="#contact">Contact</a>
