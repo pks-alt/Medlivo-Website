@@ -175,12 +175,32 @@ section{padding:100px 0}
 .career-note b{display:block;font-size:13px;color:var(--deep)}
 .career-note span{display:block;font-size:11px;line-height:1.55;color:#6f7b90;margin-top:5px}
 
-.proof{padding:70px 0}
-.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.proof-item{text-align:center;padding:30px 23px;border-right:1px solid var(--line)}
-.proof-item:last-child{border-right:0}
-.proof-item strong{display:block;font-size:22px;color:var(--navy);letter-spacing:-.035em}
-.proof-item span{display:block;font-size:11px;line-height:1.5;color:#7a879b;margin-top:7px}
+.proof{padding:82px 0;background:linear-gradient(180deg,#f8fafc 0%,#ffffff 100%)}
+.proof-head{display:flex;justify-content:space-between;align-items:end;gap:48px;margin-bottom:30px}
+.proof-head .eyebrow{margin-bottom:10px}
+.proof-head h2{font-size:32px;line-height:1.1;letter-spacing:-.04em;color:var(--deep);max-width:520px}
+.proof-head p{font-size:12px;line-height:1.7;color:#6c7890;max-width:500px}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.proof-item{position:relative;min-height:220px;padding:27px 25px 25px;border:1px solid #e2e8f1;border-radius:22px;background:#fff;box-shadow:0 12px 34px rgba(9,25,79,.05);overflow:hidden;transition:.22s}
+.proof-item:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(9,25,79,.10)}
+.proof-item:first-child{background:linear-gradient(145deg,#0b225f,#18358f);border-color:transparent}
+.proof-item:after{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-72px;top:-78px;background:radial-gradient(circle,rgba(47,103,216,.10),transparent 69%)}
+.proof-item:first-child:after{background:radial-gradient(circle,rgba(95,223,229,.19),transparent 69%)}
+.proof-kicker{display:flex;align-items:center;justify-content:space-between;gap:15px;position:relative;z-index:2}
+.proof-kicker small{font-size:9px;text-transform:uppercase;letter-spacing:.15em;font-weight:900;color:#8794aa}
+.proof-item:first-child .proof-kicker small{color:#aaf7f2}
+.proof-icon{width:36px;height:36px;border-radius:11px;background:#eff4ff;color:var(--navy);display:grid;place-items:center;font-size:11px;font-weight:900}
+.proof-item:nth-child(2) .proof-icon{background:#eefcf0;color:#16820f}
+.proof-item:nth-child(3) .proof-icon{background:#effbfc;color:#16777d}
+.proof-item:nth-child(4) .proof-icon{background:#f1f3ff;color:var(--blue)}
+.proof-item:first-child .proof-icon{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);color:#fff}
+.proof-item strong{position:relative;z-index:2;display:block;font-size:24px;line-height:1.1;color:var(--deep);letter-spacing:-.04em;margin-top:30px}
+.proof-item:first-child strong{color:#fff}
+.proof-item span{position:relative;z-index:2;display:block;font-size:12px;line-height:1.65;color:#6f7c92;margin-top:10px}
+.proof-item:first-child span{color:#c5cfe5}
+.proof-note{display:flex;align-items:center;gap:8px;margin-top:17px;font-size:10px!important;font-weight:800;color:#465672!important}
+.proof-item:first-child .proof-note{color:#aaf7f2!important}
+.proof-note:before{content:"";width:18px;height:2px;background:var(--green);display:block}
 
 .final{padding:0 0 90px}
 .final-shell{background:var(--deep);color:#fff;border-radius:28px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
@@ -232,7 +252,7 @@ footer:before{content:"";position:absolute;right:-180px;bottom:-220px;width:520p
  section{padding:76px 0}.specialties-head,.delivery-head{display:block}.spec-grid{grid-template-columns:1fr}.spec:last-child{grid-column:auto;max-width:none}
  .steps{grid-template-columns:1fr 1fr}.why-account{padding:34px 27px}.why-account h3{font-size:34px}.why-proof-grid{grid-template-columns:1fr}.why-proof-band{grid-column:auto;display:block}.why-proof-band span{display:block;text-align:left;margin-top:7px}
  .career-shell{grid-template-columns:1fr}.career-copy{padding:40px 24px}.career-copy h2{font-size:36px}.career-photo{min-height:410px}
- .proof-grid{grid-template-columns:1fr 1fr}.proof-item:nth-child(2){border-right:0}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .proof-head{display:block}.proof-head p{margin-top:12px}.proof-grid{grid-template-columns:1fr 1fr}
  .final-shell{grid-template-columns:1fr}.final-side:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
  .footer-callout{grid-template-columns:1fr;padding:27px 24px;border-radius:0 0 22px 22px}.footer-contact-actions{flex-wrap:wrap}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
 }
@@ -373,11 +393,37 @@ footer:before{content:"";position:absolute;right:-180px;bottom:-220px;width:520p
 </section>
 
 <section class="proof">
-  <div class="wrap proof-grid">
-    <div class="proof-item"><strong>Nationwide</strong><span>Healthcare staffing reach across the U.S.</span></div>
-    <div class="proof-item"><strong>3 Divisions</strong><span>Nursing & Allied · Rehabilitation · Locum Tenens</span></div>
-    <div class="proof-item"><strong>MSP / VMS</strong><span>Experience inside structured workforce programs.</span></div>
-    <div class="proof-item"><strong>Human Support</strong><span>Accountability beyond the placement.</span></div>
+  <div class="wrap">
+    <div class="proof-head">
+      <div><div class="eyebrow">The Medlivo model</div><h2>Built for reach. Structured for accountability.</h2></div>
+      <p>Our operating model combines national recruiting reach with specialty focus, program experience, and human support that stays engaged beyond the placement.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-item">
+        <div class="proof-kicker"><small>Reach</small><div class="proof-icon">◎</div></div>
+        <strong>Nationwide Reach</strong>
+        <span>Healthcare staffing support across U.S. markets and care settings.</span>
+        <span class="proof-note">Broader access, one accountable team</span>
+      </div>
+      <div class="proof-item">
+        <div class="proof-kicker"><small>Specialization</small><div class="proof-icon">03</div></div>
+        <strong>Three Focused Divisions</strong>
+        <span>Nursing & Allied · Rehabilitation · Locum Tenens.</span>
+        <span class="proof-note">Specialty-aligned delivery</span>
+      </div>
+      <div class="proof-item">
+        <div class="proof-kicker"><small>Program Experience</small><div class="proof-icon">↗</div></div>
+        <strong>MSP / VMS Ready</strong>
+        <span>Experienced working inside structured workforce programs and vendor workflows.</span>
+        <span class="proof-note">Built for program discipline</span>
+      </div>
+      <div class="proof-item">
+        <div class="proof-kicker"><small>Support</small><div class="proof-icon">✓</div></div>
+        <strong>Human Support That Stays</strong>
+        <span>Clear ownership before the start date, during onboarding, and throughout the assignment.</span>
+        <span class="proof-note">Accountability beyond placement</span>
+      </div>
+    </div>
   </div>
 </section>
 
