@@ -1394,6 +1394,48 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .nav-dropdown-menu{display:none}
   .nav-dropdown.open .nav-dropdown-menu{display:block}
 }
+
+/* === Specialties dropdown final polish === */
+.nav-dropdown-menu{width:292px}
+.nav-dropdown-panel{
+  padding:7px;
+  border-radius:14px;
+}
+.links .nav-dropdown-panel a{
+  position:relative;
+  padding:12px 13px 11px;
+  border:1px solid transparent;
+}
+.links .nav-dropdown-panel a:hover,
+.links .nav-dropdown-panel a:focus-visible{
+  background:#f6f9fe;
+  border-color:#e5ebf4;
+}
+.links .nav-dropdown-panel a.active{
+  background:#eef4ff;
+  border-color:#dbe6f6;
+}
+.nav-drop-title{
+  font-size:12.5px;
+  letter-spacing:-.01em;
+}
+.nav-drop-desc{
+  margin-top:4px;
+  font-size:10px;
+  line-height:1.4;
+  color:#72819a;
+}
+.nav-dropdown-panel a + a{margin-top:2px}
+@media(max-width:1040px){
+  .nav-dropdown-menu{width:100%}
+  .nav-dropdown-panel{padding:5px 0 5px 10px}
+  .links .nav-dropdown-panel a{
+    padding:10px 12px;
+    border:0;
+    border-radius:9px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1406,9 +1448,9 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
         <button class="nav-drop-trigger active" type="button" aria-haspopup="true" aria-expanded="false">Specialties<span class="nav-chevron" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-panel">
-            <a class="active" href="nursing-allied.html"><span class="nav-drop-title">Nursing &amp; Allied</span><span class="nav-drop-desc">Nursing, imaging, lab, respiratory &amp; clinical support</span></a>
-            <a href="rehabilitation.html"><span class="nav-drop-title">Rehabilitation</span><span class="nav-drop-desc">PT, PTA, OT, COTA &amp; SLP staffing</span></a>
-            <a href="locum-tenens.html"><span class="nav-drop-title">Locum Tenens</span><span class="nav-drop-desc">Physician &amp; advanced practice provider coverage</span></a>
+            <a class="active" href="nursing-allied.html"><span class="nav-drop-title">Nursing &amp; Allied</span><span class="nav-drop-desc">Nursing and allied clinical staffing</span></a>
+            <a href="rehabilitation.html"><span class="nav-drop-title">Rehabilitation</span><span class="nav-drop-desc">PT, OT and SLP staffing</span></a>
+            <a href="locum-tenens.html"><span class="nav-drop-title">Locum Tenens</span><span class="nav-drop-desc">Physician and APP coverage</span></a>
           </div>
         </div>
       </div>
