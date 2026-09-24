@@ -684,6 +684,34 @@ footer{padding:50px 0 22px}
 .footer-logo{padding:0;background:transparent}
 .footer-logo img{filter:grayscale(1) brightness(0) invert(1);background:transparent}
 
+
+/* === Final live-review corrections === */
+html{scroll-padding-top:92px}
+#solutions,#specialties,#workforce,#why,#clinicians,#contact{scroll-margin-top:92px}
+.hero-photo img{object-position:center 44%}
+.spec:nth-child(1) .spec-img img{object-position:center 46%}
+.spec:nth-child(2) .spec-img img{object-position:center 50%}
+.spec:nth-child(3) .spec-img img{object-position:center 45%}
+.career-photo img{object-position:center 42%}
+.career-photo:after{background:linear-gradient(90deg,rgba(11,34,95,.20),rgba(11,34,95,.02) 48%,transparent 72%)}
+.route-top h2,.specialties-head .title,.workforce-intro .title,.credibility-head .title{max-width:650px}
+.workforce-intro .lead{max-width:520px}
+.credibility-head .lead{max-width:500px}
+.fcol h4{font-size:10px}
+.fcol a{font-size:12px;line-height:1.45}
+.footer-meta a,.footer-meta span{font-size:12px}
+.foot{font-size:11px}
+.btn:focus-visible,.links a:focus-visible,.route-card:focus-visible,.spec a:focus-visible,.fcol a:focus-visible,.foot a:focus-visible,.career-secondary:focus-visible,.why-link:focus-visible{outline:3px solid rgba(47,103,216,.35);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important;animation:none!important}
+}
+@media(max-width:720px){
+  html{scroll-padding-top:78px}
+  #solutions,#specialties,#workforce,#why,#clinicians,#contact{scroll-margin-top:78px}
+  .hero-photo img,.career-photo img{object-position:center center}
+}
+
 </style>
 </head>
 <body>
