@@ -2152,6 +2152,38 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .coverage-ready-card p{grid-column:2}
 }
 
+
+/* === Locum Tenens bento balance correction === */
+.coverage-card:nth-child(4),
+.coverage-card:nth-child(5){
+  grid-column:span 6;
+}
+.provider-card:nth-child(4){
+  grid-column:1 / -1;
+  min-height:220px;
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:28px;
+  align-items:center;
+}
+.provider-card:nth-child(4) h3{
+  margin-top:14px;
+  font-size:28px;
+}
+.provider-card:nth-child(4) p{
+  margin-top:0;
+}
+.provider-card:nth-child(4) strong{
+  margin-top:14px;
+}
+@media(max-width:1040px){
+  .provider-card:nth-child(4){
+    grid-column:auto;
+    display:block;
+    min-height:0;
+  }
+}
+
 </style>
 </head>
 <body>
