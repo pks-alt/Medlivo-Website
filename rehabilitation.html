@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rehabilitation Staffing | Medlivo</title>
+<meta name="description" content="Medlivo rehabilitation staffing across Physical Therapy, Occupational Therapy, and Speech-Language Pathology for healthcare organizations and clinicians.">
+<style>
+:root{
+  --navy:#18358f;--deep:#0b225f;--blue:#2f67d8;--green:#29d80f;--aqua:#5fdfe5;
+  --ink:#0c1a3b;--text:#5b6880;--pale:#f7f9fc;--line:#e3e9f2;--white:#fff;
+  --wrap:min(1240px,calc(100vw - 56px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+.wrap{width:var(--wrap);margin:auto}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid #e5eaf2}
+.nav{height:78px;display:flex;align-items:center;gap:28px}
+.logo{width:190px;height:auto}
+.links{display:flex;align-items:center;gap:24px;margin-left:auto;font-size:13px;font-weight:700;color:#26385f}
+.links a{position:relative}
+.links a:after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;background:var(--blue);transition:.2s}
+.links a:hover:after,.links a.active:after{right:0}
+.actions{display:flex;gap:10px}
+.btn{min-height:48px;padding:0 20px;border-radius:10px;border:1px solid transparent;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:800;transition:.2s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:var(--deep);box-shadow:0 10px 24px rgba(41,216,15,.13)}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 10px 24px rgba(25,47,135,.17)}
+.btn-outline{background:#fff;border-color:#ccd5e6;color:var(--navy)}
+.menu{display:none}
+
+
+.eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;color:var(--blue)}
+.kicker{display:flex;align-items:center;gap:10px}
+.kicker:before{content:"";width:26px;height:3px;background:var(--green)}
+.title{font-size:clamp(40px,4vw,52px);line-height:1.06;letter-spacing:-.047em;color:var(--deep);max-width:760px}
+.lead{font-size:17px;line-height:1.7;color:var(--text);max-width:650px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(95,223,229,.14),transparent 28%),linear-gradient(125deg,#fff 0%,#fbfdff 58%,#f1f6ff 100%)}
+.hero-grid{min-height:640px;display:grid;grid-template-columns:.96fr 1.04fr;align-items:center;gap:86px;padding:72px 0 78px}
+.hero h1{font-size:clamp(54px,5vw,72px);line-height:1.01;letter-spacing:-.055em;color:var(--deep);max-width:730px;margin-top:20px}
+.hero-copy{font-size:18px;line-height:1.66;color:var(--text);max-width:650px;margin-top:24px}
+.hero-actions{display:flex;gap:11px;margin-top:30px}
+.match-panel{
+  border-radius:30px;
+  overflow:hidden;
+  background:linear-gradient(145deg,#07194d 0%,#0b286d 62%,#16459f 100%);
+  color:#fff;
+  box-shadow:0 30px 70px rgba(9,25,79,.16);
+  position:relative;
+}
+.match-panel:before{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(95,223,229,.20),transparent 70%)}
+.match-head{padding:34px 36px 28px;border-bottom:1px solid rgba(255,255,255,.15)}
+.match-head small{font-size:9px;letter-spacing:.17em;color:#9ff8f2;font-weight:900}
+.match-head strong{display:block;font-size:31px;line-height:1.08;letter-spacing:-.04em;margin-top:15px;max-width:420px}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.13)}
+.match-grid>div{background:rgba(7,25,77,.72);padding:25px 24px;min-height:145px}
+.match-grid span{font-size:9px;font-weight:900;letter-spacing:.12em;color:#8cf27d}
+.match-grid h3{font-size:17px;margin-top:17px}
+.match-grid p{font-size:11px;line-height:1.5;color:#afbdd7;margin-top:6px}
+
+/* Talent */
+.talent{padding:96px 0;background:#fff}
+.talent-head{display:grid;grid-template-columns:.95fr 1.05fr;gap:82px;align-items:end;margin-bottom:42px}
+.talent-head .lead{margin:0}
+.talent-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.talent-panel{border:1px solid var(--line);border-radius:24px;padding:34px;background:#fff;box-shadow:0 16px 42px rgba(9,25,79,.05)}
+.talent-panel.nursing{background:linear-gradient(145deg,#fff,#f7f9ff)}
+.talent-panel.allied{background:linear-gradient(145deg,#fff,#f4fbfc)}
+.talent-panel small{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:var(--blue)}
+.talent-panel h3{font-size:31px;letter-spacing:-.04em;color:var(--deep);margin-top:12px}
+.talent-panel>p{font-size:14px;line-height:1.65;color:var(--text);margin-top:10px;max-width:520px}
+.role-list{margin-top:26px;border-top:1px solid var(--line)}
+.role-row{display:grid;grid-template-columns:138px 1fr;gap:20px;padding:19px 0;border-bottom:1px solid var(--line)}
+.role-row:last-child{border-bottom:0}
+.role-row b{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#50607a}
+.role-row span{font-size:14px;line-height:1.55;color:#33425f;font-weight:700}
+.talent-note{margin-top:22px;font-size:12px;line-height:1.6;color:#68758b}
+
+/* Recruiting */
+.recruiting{padding:94px 0;background:#f7f9fc}
+.recruiting-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:86px;align-items:end;margin-bottom:40px}
+.recruiting-head .lead{margin:0}
+.recruiting-shell{display:grid;grid-template-columns:.78fr 1.22fr;border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 18px 48px rgba(9,25,79,.06)}
+.recruiting-intro{padding:40px 38px;background:linear-gradient(145deg,#0a225f,#143c96);color:#fff}
+.recruiting-intro small{font-size:9px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#9ff8f2}
+.recruiting-intro strong{display:block;font-size:31px;line-height:1.08;letter-spacing:-.04em;margin-top:22px}
+.recruiting-intro p{font-size:14px;line-height:1.68;color:#bdc9df;margin-top:16px}
+.recruiting-list{padding:10px 34px}
+.recruiting-row{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:25px 0;border-bottom:1px solid var(--line)}
+.recruiting-row:last-child{border-bottom:0}
+.recruiting-row>span{width:34px;height:34px;border:1px solid #d8e1ef;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:900;color:var(--blue);background:#f8faff}
+.recruiting-row h3{font-size:20px;color:var(--deep);letter-spacing:-.025em}
+.recruiting-row p{font-size:14px;line-height:1.62;color:#657289;margin-top:7px}
+
+/* Readiness */
+.readiness{padding:94px 0;background:#fff}
+.readiness-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:92px;align-items:start}
+.readiness-copy .lead{margin-top:16px}
+.readiness-list{border-top:1px solid var(--line)}
+.readiness-row{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.readiness-row>span{font-size:10px;letter-spacing:.12em;font-weight:900;color:var(--blue);padding-top:4px}
+.readiness-row h3{font-size:20px;color:var(--deep)}
+.readiness-row p{font-size:14px;line-height:1.62;color:#657289;margin-top:7px}
+
+/* Paths */
+.paths{padding:84px 0;background:radial-gradient(circle at 86% 8%,rgba(95,223,229,.14),transparent 27%),linear-gradient(132deg,#061744 0%,#0a225f 54%,#16398f 100%);color:#fff}
+.paths-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:end;margin-bottom:36px}
+.paths .eyebrow{color:#9ff8f2}.paths .title{color:#fff}.paths .lead{color:#bdc8dd;margin:0}
+.path-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.16);border-bottom:1px solid rgba(255,255,255,.16)}
+.path-card{padding:32px 34px}
+.path-card:first-child{border-right:1px solid rgba(255,255,255,.16);padding-left:0}
+.path-card:last-child{padding-right:0}
+.path-card small{font-size:9px;text-transform:uppercase;letter-spacing:.15em;color:#8cf27d;font-weight:900}
+.path-card h3{font-size:28px;line-height:1.1;letter-spacing:-.035em;margin-top:12px}
+.path-card p{font-size:14px;line-height:1.65;color:#bdc8dd;margin-top:10px;max-width:520px}
+.path-card .btn{margin-top:22px}
+.paths .btn-outline{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#fff}
+
+/* Footer */
+footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding:50px 0 22px}
+.footer-body{display:grid;grid-template-columns:1.05fr 1.95fr;gap:54px}
+.footer-logo{width:198px}.footer-logo img{width:100%;height:auto;object-fit:contain}
+.footer-brand p{font-size:14px;line-height:1.65;color:#56647c;max-width:360px;margin-top:18px}
+.footer-meta{display:grid;gap:9px;margin-top:21px;padding-top:18px;border-top:1px solid #dce3ee}
+.footer-meta a,.footer-meta span{font-size:13px;color:#4e5d77;font-weight:700}
+.footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:46px}
+.fcol h4{margin:0 0 16px;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--navy)}
+.fcol a{display:block;font-size:13px;line-height:1.5;color:#5f6d85;margin:9px 0}
+.fcol a:hover{color:var(--navy)}
+.foot{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #dce3ee;margin-top:32px;padding-top:19px;color:#77839a;font-size:12px}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot a{color:#6c7890}
+.btn:focus-visible,.links a:focus-visible,.fcol a:focus-visible,.foot a:focus-visible{outline:3px solid rgba(47,103,216,.35);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+@media(max-width:1040px){
+  :root{--wrap:min(100% - 40px,1240px)}
+  .links{display:none}.menu{display:block;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font-weight:900}
+  .links.open{display:flex;position:absolute;top:72px;left:20px;right:20px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(9,25,79,.14);padding:20px;flex-direction:column;align-items:flex-start;gap:18px}
+  .nav{position:relative}.actions .btn-outline{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:42px;padding:58px 0 68px}
+  .match-panel{max-width:760px;width:100%;margin:auto}
+  .talent-head,.recruiting-head,.readiness-grid,.paths-head{grid-template-columns:1fr;gap:28px}
+  .recruiting-shell{grid-template-columns:1fr}
+  .talent-grid{grid-template-columns:1fr}
+  .footer-body{grid-template-columns:1fr;gap:38px}
+}
+@media(max-width:720px){
+  :root{--wrap:min(100% - 28px,1240px)}
+  .nav{height:72px}.logo{width:165px}.actions .btn-green{min-width:auto;padding:0 14px}
+  .hero-grid{padding:46px 0 54px}.hero h1{font-size:43px}.hero-copy{font-size:17px}.hero-actions{flex-direction:column;align-items:stretch}
+  .match-head{padding:28px 24px 24px}.match-head strong{font-size:27px}.match-grid{grid-template-columns:1fr}
+  .talent,.recruiting,.readiness{padding:70px 0}
+  .talent-panel{padding:28px 24px}.role-row{grid-template-columns:1fr;gap:7px}
+  .recruiting-intro{padding:30px 24px}.recruiting-list{padding:8px 22px}.recruiting-row{grid-template-columns:40px 1fr}
+  .readiness-row{grid-template-columns:42px 1fr}
+  .paths{padding:68px 0}.path-grid{grid-template-columns:1fr}.path-card,.path-card:first-child,.path-card:last-child{padding:27px 0}.path-card:first-child{border-right:0;border-bottom:1px solid rgba(255,255,255,.16)}
+  .footer-grid{grid-template-columns:1fr 1fr}.foot{flex-direction:column}
+}
+@media(max-width:460px){.hero h1{font-size:39px}.footer-grid{grid-template-columns:1fr}}
+
+/* === Nursing & Allied premium redesign === */
+.na-hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 12%,rgba(95,223,229,.14),transparent 27%),
+    linear-gradient(125deg,#fff 0%,#fbfdff 55%,#f1f6ff 100%);
+}
+.na-hero-grid{
+  min-height:690px;
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  align-items:center;
+  gap:80px;
+  padding:74px 0 86px;
+}
+.na-hero-copy h1{
+  font-size:clamp(56px,5.3vw,76px);
+  line-height:1.005;
+  letter-spacing:-.058em;
+  color:var(--deep);
+  max-width:760px;
+  margin-top:20px;
+}
+.na-proof-rail{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-top:30px;
+}
+.na-proof-rail span{
+  position:relative;
+  padding-left:15px;
+  font-size:11px;
+  font-weight:850;
+  color:#53617a;
+}
+.na-proof-rail span:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:5px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--green);
+}
+.na-hero-visual{
+  position:relative;
+  min-height:550px;
+}
+.na-photo{
+  position:absolute;
+  inset:0 36px 34px 0;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 34px 76px rgba(9,25,79,.19);
+}
+.na-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 48%;
+  transform:scale(1.01);
+}
+.na-photo-shade{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(4,16,54,.03) 38%,rgba(5,22,65,.52) 100%);
+}
+.na-photo-label{
+  position:absolute;
+  left:28px;
+  bottom:26px;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.17em;
+}
+.na-float{
+  position:absolute;
+  z-index:3;
+  box-shadow:0 20px 52px rgba(9,25,79,.18);
+  backdrop-filter:blur(12px);
+}
+.na-float-primary{
+  right:0;
+  top:52px;
+  width:270px;
+  padding:22px 22px;
+  border-radius:18px;
+  background:rgba(7,25,77,.93);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.13);
+}
+.na-float-primary small{
+  display:block;
+  color:#9ff8f2;
+  font-size:9px;
+  letter-spacing:.14em;
+  font-weight:900;
+}
+.na-float-primary strong{
+  display:block;
+  margin-top:10px;
+  font-size:16px;
+  line-height:1.45;
+}
+.na-float-secondary{
+  right:10px;
+  bottom:0;
+  max-width:410px;
+  padding:15px;
+  border-radius:18px;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(222,229,239,.95);
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.na-float-secondary span{
+  padding:8px 10px;
+  border-radius:999px;
+  background:#f3f6fb;
+  border:1px solid #e3e9f2;
+  font-size:10px;
+  font-weight:800;
+  color:#42516b;
+}
+
+/* talent markets */
+.market{padding:100px 0;background:#fff}
+.market-head{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:82px;
+  align-items:end;
+  margin-bottom:42px;
+}
+.market-head .lead{margin:0}
+.market-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.market-card{
+  position:relative;
+  overflow:hidden;
+  padding:38px;
+  border-radius:26px;
+  border:1px solid var(--line);
+  box-shadow:0 18px 44px rgba(9,25,79,.055);
+}
+.market-card:after{
+  content:"";
+  position:absolute;
+  width:210px;
+  height:210px;
+  border-radius:50%;
+  right:-100px;
+  top:-100px;
+  background:radial-gradient(circle,var(--market-glow),transparent 69%);
+  pointer-events:none;
+}
+.market-nursing{
+  --market-glow:rgba(47,103,216,.16);
+  background:linear-gradient(145deg,#fff 0%,#f6f8ff 100%);
+}
+.market-allied{
+  --market-glow:rgba(36,169,183,.17);
+  background:linear-gradient(145deg,#fff 0%,#f3fbfc 100%);
+}
+.market-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.market-num{
+  font-size:10px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.13em;
+}
+.market-top small{
+  font-size:10px;
+  color:#53617a;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+}
+.market-card h3{
+  margin-top:24px;
+  font-size:30px;
+  line-height:1.1;
+  letter-spacing:-.04em;
+  color:var(--deep);
+  max-width:520px;
+}
+.market-card>p{
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.68;
+  color:var(--text);
+  max-width:540px;
+}
+.role-cloud{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:26px;
+}
+.role-cloud span{
+  padding:9px 11px;
+  border-radius:10px;
+  background:#fff;
+  border:1px solid #dde5f0;
+  font-size:11px;
+  font-weight:800;
+  color:#3f4f6a;
+}
+.market-bottom{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.market-bottom b{
+  display:block;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  color:var(--blue);
+}
+.market-bottom span{
+  display:block;
+  margin-top:7px;
+  font-size:13px;
+  line-height:1.55;
+  color:#56647c;
+}
+
+/* recruiting */
+.approach{
+  padding:96px 0;
+  background:#f7f9fc;
+}
+.approach-head{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:84px;
+  align-items:end;
+  margin-bottom:40px;
+}
+.approach-head .lead{margin:0}
+.approach-shell{
+  display:grid;
+  grid-template-columns:.76fr 1.24fr;
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 22px 56px rgba(9,25,79,.08);
+  border:1px solid var(--line);
+}
+.approach-principle{
+  padding:46px 40px;
+  background:radial-gradient(circle at 90% 10%,rgba(95,223,229,.16),transparent 32%),linear-gradient(145deg,#07194d,#0b286d 64%,#16459f);
+  color:#fff;
+}
+.approach-principle small{
+  color:#9ff8f2;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.16em;
+}
+.approach-principle strong{
+  display:block;
+  margin-top:26px;
+  font-size:34px;
+  line-height:1.06;
+  letter-spacing:-.045em;
+}
+.approach-principle p{
+  margin-top:18px;
+  font-size:14px;
+  line-height:1.68;
+  color:#c2cee2;
+}
+.approach-steps{
+  background:#fff;
+  padding:12px 34px;
+}
+.approach-step{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:18px;
+  padding:26px 0;
+  border-bottom:1px solid var(--line);
+}
+.approach-step:last-child{border-bottom:0}
+.approach-step>span{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid #d8e1ef;
+  background:#f8faff;
+  display:grid;
+  place-items:center;
+  font-size:9px;
+  font-weight:900;
+  color:var(--blue);
+}
+.approach-step h3{
+  font-size:20px;
+  color:var(--deep);
+  letter-spacing:-.025em;
+}
+.approach-step p{
+  margin-top:7px;
+  font-size:14px;
+  line-height:1.62;
+  color:#66738a;
+}
+
+/* readiness */
+.readiness{
+  padding:98px 0;
+  background:#fff;
+}
+.readiness-shell{
+  display:grid;
+  grid-template-columns:.78fr 1.22fr;
+  gap:90px;
+  align-items:start;
+}
+.readiness-callout{
+  margin-top:30px;
+  padding:23px 24px;
+  border-radius:18px;
+  background:#f3f7ff;
+  border:1px solid #dde7f7;
+}
+.readiness-callout small{
+  display:block;
+  font-size:9px;
+  color:var(--blue);
+  font-weight:900;
+  letter-spacing:.14em;
+}
+.readiness-callout strong{
+  display:block;
+  margin-top:9px;
+  font-size:16px;
+  line-height:1.5;
+  color:var(--deep);
+}
+.readiness-track{
+  position:relative;
+  padding-left:4px;
+}
+.readiness-track-line{
+  position:absolute;
+  left:22px;
+  top:24px;
+  bottom:24px;
+  width:1px;
+  background:#dfe6f1;
+}
+.readiness-item{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:46px 1fr;
+  gap:18px;
+  padding:0 0 29px;
+}
+.readiness-item:last-child{padding-bottom:0}
+.readiness-item>span{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#fff;
+  border:1px solid #d8e1ef;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  box-shadow:0 0 0 7px #fff;
+}
+.readiness-item h3{
+  padding-top:6px;
+  font-size:20px;
+  color:var(--deep);
+}
+.readiness-item p{
+  margin-top:7px;
+  font-size:14px;
+  line-height:1.62;
+  color:#657289;
+  max-width:610px;
+}
+
+/* engage */
+.engage{
+  padding:92px 0;
+  background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);
+}
+.engage-head{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:84px;
+  align-items:end;
+  margin-bottom:38px;
+}
+.engage-head .lead{margin:0}
+.engage-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.engage-card{
+  padding:38px;
+  border-radius:26px;
+  border:1px solid var(--line);
+}
+.client-card{
+  background:linear-gradient(145deg,#081b51 0%,#0b286d 63%,#16449d 100%);
+  color:#fff;
+  box-shadow:0 20px 52px rgba(9,25,79,.12);
+}
+.clinician-card{
+  background:#fff;
+  box-shadow:0 18px 44px rgba(9,25,79,.055);
+}
+.engage-card small{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  font-weight:900;
+}
+.client-card small{color:#9ff8f2}
+.clinician-card small{color:var(--blue)}
+.engage-card h3{
+  margin-top:13px;
+  font-size:31px;
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+.client-card h3{color:#fff}
+.clinician-card h3{color:var(--deep)}
+.engage-card>p{
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.66;
+  max-width:520px;
+}
+.client-card>p{color:#c3cee1}
+.clinician-card>p{color:var(--text)}
+.engage-fields{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:24px;
+}
+.engage-fields span{
+  padding:9px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:800;
+}
+.client-card .engage-fields span{
+  color:#dbe4f4;
+  border:1px solid rgba(255,255,255,.17);
+  background:rgba(255,255,255,.05);
+}
+.clinician-card .engage-fields span{
+  color:#4f5f79;
+  border:1px solid #dfe6f0;
+  background:#f7f9fc;
+}
+.engage-card .btn{margin-top:25px}
+.client-card .btn-green{box-shadow:none}
+.clinician-card .btn-outline{background:#fff}
+
+
+@media(max-width:1040px){
+  .na-hero-grid{grid-template-columns:1fr;gap:42px}
+  .na-hero-visual{max-width:780px;width:100%;min-height:530px;margin:auto}
+  .market-head,.approach-head,.readiness-shell,.engage-head{grid-template-columns:1fr;gap:28px}
+  .approach-shell{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .na-hero-grid{padding:48px 0 64px}
+  .na-hero-copy h1{font-size:43px}
+  .na-hero-visual{min-height:440px}
+  .na-photo{inset:0 0 58px 0}
+  .na-float-primary{right:10px;top:20px;width:245px}
+  .na-float-secondary{left:14px;right:14px;bottom:0;max-width:none}
+  .market,.approach,.readiness,.engage{padding:72px 0}
+  .market-grid,.engage-grid{grid-template-columns:1fr}
+  .market-card,.engage-card{padding:30px 24px}
+  .approach-principle{padding:32px 24px}
+  .approach-steps{padding:8px 22px}
+  .approach-step{grid-template-columns:42px 1fr}
+  .readiness-shell{gap:36px}
+}
+@media(max-width:460px){
+  .na-hero-copy h1{font-size:39px}
+  .na-hero-visual{min-height:420px}
+  .na-float-primary{width:220px;padding:18px}
+  .na-float-secondary span{font-size:9px}
+}
+
+
+/* === Nursing & Allied final premium visual system === */
+.na-premium-hero{
+  position:relative;
+  overflow:hidden;
+  min-height:700px;
+  background:#071744;
+}
+.na-hero-stage{
+  position:relative;
+  min-height:700px;
+  isolation:isolate;
+}
+.na-hero-image{
+  position:absolute;
+  inset:0 0 0 48%;
+  z-index:-3;
+  overflow:hidden;
+}
+.na-hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 48%;
+  transform:scale(1.02);
+}
+.na-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,#071744 0%,rgba(7,23,68,.98) 12%,rgba(7,23,68,.90) 32%,rgba(7,23,68,.28) 67%,rgba(7,23,68,.08) 100%),
+    linear-gradient(180deg,rgba(7,23,68,.05),rgba(7,23,68,.32));
+}
+.na-premium-grid{
+  min-height:700px;
+  display:grid;
+  grid-template-columns:.94fr 1.06fr;
+  gap:70px;
+  align-items:center;
+  padding:76px 0 88px;
+}
+.na-premium-copy{max-width:690px;color:#fff}
+.na-premium-copy .kicker{color:#9ff8f2}
+.na-premium-copy h1{
+  margin-top:20px;
+  font-size:clamp(56px,5.3vw,76px);
+  line-height:1.005;
+  letter-spacing:-.058em;
+  color:#fff;
+}
+.na-premium-copy .hero-copy{
+  color:#c6d0e3;
+  max-width:620px;
+}
+.hero-outline{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.24);
+  color:#fff;
+}
+.hero-signals{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:28px;
+}
+.hero-signals span{
+  padding:8px 11px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05);
+  color:#dce4f1;
+  font-size:10px;
+  font-weight:800;
+}
+.na-hero-stack{
+  position:relative;
+  min-height:470px;
+}
+.stack-card{
+  position:absolute;
+  right:0;
+  border:1px solid rgba(255,255,255,.17);
+  box-shadow:0 26px 70px rgba(0,0,0,.22);
+  backdrop-filter:blur(14px);
+}
+.stack-main{
+  top:40px;
+  width:min(390px,92%);
+  padding:28px;
+  border-radius:22px;
+  background:rgba(8,31,86,.88);
+  color:#fff;
+}
+.stack-main small{
+  color:#9ff8f2;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.15em;
+}
+.stack-main strong{
+  display:block;
+  margin-top:13px;
+  font-size:25px;
+  line-height:1.18;
+  letter-spacing:-.035em;
+}
+.stack-nursing,.stack-allied{
+  width:300px;
+  padding:20px 22px;
+  border-radius:18px;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:14px;
+  align-items:center;
+  background:rgba(255,255,255,.94);
+  color:var(--deep);
+}
+.stack-nursing{top:220px;right:55px}
+.stack-allied{top:330px;right:5px}
+.stack-nursing>span,.stack-allied>span{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:#eef4ff;color:var(--blue);font-size:9px;font-weight:900;
+}
+.stack-card b{display:block;font-size:15px}
+.stack-card div small{display:block;margin-top:4px;font-size:10px;line-height:1.45;color:#6b7890}
+.na-hero-wordmark{
+  position:absolute;
+  right:-18px;
+  bottom:-12px;
+  font-size:clamp(70px,9vw,138px);
+  line-height:.85;
+  font-weight:950;
+  letter-spacing:-.06em;
+  color:rgba(255,255,255,.045);
+  white-space:nowrap;
+  user-select:none;
+}
+
+/* market refinements */
+.market{padding:102px 0}
+.premium-market-grid{gap:26px}
+.market-card{padding:40px}
+.market-card h3{font-size:32px}
+.market-lens{
+  margin-top:27px;
+  padding-top:21px;
+  border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.market-lens small{
+  display:block;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:900;
+  color:var(--blue);
+}
+.market-lens strong{
+  display:block;
+  margin-top:7px;
+  font-size:12px;
+  line-height:1.58;
+  color:#50607a;
+}
+
+/* five signals */
+.signals{
+  padding:98px 0;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(95,223,229,.10),transparent 27%),
+    #f7f9fc;
+}
+.signals-head{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:84px;
+  align-items:end;
+  margin-bottom:42px;
+}
+.signals-head .lead{margin:0}
+.signals-stage{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 20px 52px rgba(9,25,79,.07);
+}
+.signal-core{
+  padding:44px 40px;
+  background:
+    radial-gradient(circle at 88% 10%,rgba(95,223,229,.17),transparent 30%),
+    linear-gradient(145deg,#07194d,#0b286d 62%,#16459f);
+  color:#fff;
+}
+.signal-core small{
+  font-size:9px;
+  letter-spacing:.15em;
+  font-weight:900;
+  color:#9ff8f2;
+}
+.signal-core strong{
+  display:block;
+  margin-top:25px;
+  font-size:34px;
+  line-height:1.07;
+  letter-spacing:-.045em;
+}
+.signal-core p{
+  margin-top:18px;
+  font-size:14px;
+  line-height:1.68;
+  color:#c2cee2;
+}
+.signal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#fff;
+}
+.signal-card{
+  padding:28px 28px 30px;
+  border-left:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  min-height:180px;
+}
+.signal-card:nth-child(2n+1){border-left:0}
+.signal-card span{
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  color:var(--blue);
+}
+.signal-card h3{
+  margin-top:20px;
+  font-size:20px;
+  color:var(--deep);
+  letter-spacing:-.025em;
+}
+.signal-card p{
+  margin-top:8px;
+  font-size:13px;
+  line-height:1.62;
+  color:#657289;
+}
+.signal-card-wide{
+  grid-column:1 / -1;
+  min-height:auto;
+  border-bottom:0;
+  display:grid;
+  grid-template-columns:50px 190px 1fr;
+  align-items:start;
+  gap:10px;
+}
+.signal-card-wide h3{margin-top:0}
+.signal-card-wide p{margin-top:0}
+
+/* clinical readiness */
+.clinical-ready{
+  padding:98px 0;
+  background:#fff;
+}
+.ready-head{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:82px;
+  align-items:end;
+  margin-bottom:38px;
+}
+.ready-head .lead{margin:0}
+.ready-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+}
+.ready-card{
+  background:#fff;
+  padding:30px 26px;
+  min-height:210px;
+}
+.ready-card span{
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  color:var(--blue);
+}
+.ready-card h3{
+  margin-top:23px;
+  font-size:20px;
+  color:var(--deep);
+  letter-spacing:-.025em;
+}
+.ready-card p{
+  margin-top:9px;
+  font-size:13px;
+  line-height:1.62;
+  color:#657289;
+}
+.ready-bar{
+  margin-top:22px;
+  border-radius:16px;
+  padding:20px 22px;
+  background:#f2f6fd;
+  border:1px solid #dee7f3;
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:20px;
+  align-items:center;
+}
+.ready-bar strong{
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  color:var(--blue);
+}
+.ready-bar span{
+  font-size:14px;
+  line-height:1.6;
+  color:#4f5f79;
+}
+
+/* engage premium */
+.engage{
+  padding:94px 0 100px;
+  background:linear-gradient(180deg,#f7f9fc 0%,#fff 100%);
+}
+.engage-card{min-height:390px}
+.client-card{
+  position:relative;
+  overflow:hidden;
+}
+.client-card:after{
+  content:"";
+  position:absolute;
+  width:260px;height:260px;border-radius:50%;
+  right:-110px;top:-120px;
+  background:radial-gradient(circle,rgba(95,223,229,.18),transparent 70%);
+}
+.engage-fields{max-width:520px}
+
+
+@media(max-width:1040px){
+  .na-premium-grid{grid-template-columns:1fr;gap:32px}
+  .na-hero-image{inset:47% 0 0 0}
+  .na-hero-overlay{
+    background:linear-gradient(180deg,#071744 0%,rgba(7,23,68,.99) 42%,rgba(7,23,68,.42) 72%,rgba(7,23,68,.22) 100%);
+  }
+  .na-hero-stack{min-height:360px}
+  .stack-main{left:0;right:auto}
+  .stack-nursing{top:175px;right:48px}
+  .stack-allied{top:270px;right:0}
+  .market-head,.signals-head,.ready-head{grid-template-columns:1fr;gap:28px}
+  .signals-stage{grid-template-columns:1fr}
+  .ready-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .na-hero-stage,.na-premium-grid{min-height:auto}
+  .na-premium-grid{padding:48px 0 62px}
+  .na-premium-copy h1{font-size:43px}
+  .na-hero-image{inset:52% 0 0 0}
+  .na-hero-stack{min-height:390px;margin-top:8px}
+  .stack-main{width:92%;top:10px}
+  .stack-nursing{top:180px;right:35px;width:270px}
+  .stack-allied{top:285px;right:0;width:270px}
+  .na-hero-wordmark{font-size:66px}
+  .market,.signals,.clinical-ready,.engage{padding:72px 0}
+  .market-lens{grid-template-columns:1fr}
+  .signal-grid{grid-template-columns:1fr}
+  .signal-card,.signal-card:nth-child(2n+1){border-left:0;border-bottom:1px solid var(--line)}
+  .signal-card-wide{grid-column:auto;display:block}
+  .signal-card-wide h3{margin-top:20px}
+  .signal-card-wide p{margin-top:8px}
+  .ready-grid{grid-template-columns:1fr}
+  .ready-card{min-height:auto}
+  .ready-bar{grid-template-columns:1fr;gap:6px}
+}
+@media(max-width:460px){
+  .na-premium-copy h1{font-size:39px}
+  .stack-main strong{font-size:22px}
+  .stack-nursing,.stack-allied{width:250px}
+}
+
+
+/* === Rehabilitation division extensions === */
+.rehab-market-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+.rehab-market-grid .market-card{
+  min-width:0;
+}
+.rehab-market-grid .market-card h3{
+  font-size:27px;
+  line-height:1.12;
+}
+.rehab-market-grid .market-lens{
+  grid-template-columns:1fr;
+  gap:16px;
+}
+.stack-slp{
+  width:300px;
+  padding:20px 22px;
+  border-radius:18px;
+  display:grid;
+  grid-template-columns:36px 1fr;
+  gap:14px;
+  align-items:center;
+  background:rgba(255,255,255,.94);
+  color:var(--deep);
+  top:432px;
+  right:42px;
+}
+.stack-slp>span{
+  width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:#eef4ff;color:var(--blue);font-size:9px;font-weight:900;
+}
+.rehab-hero-stack{min-height:535px}
+.care-settings{
+  padding:98px 0;
+  background:#fff;
+}
+.setting-head{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:84px;
+  align-items:end;
+  margin-bottom:40px;
+}
+.setting-head .lead{margin:0}
+.setting-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:18px;
+}
+.setting-card{
+  grid-column:span 2;
+  position:relative;
+  overflow:hidden;
+  padding:30px 28px;
+  min-height:260px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:linear-gradient(180deg,#fff 0%,#f9fbfe 100%);
+  box-shadow:0 14px 34px rgba(9,25,79,.045);
+}
+.setting-card:nth-child(4),
+.setting-card:nth-child(5){
+  grid-column:span 3;
+}
+.setting-card:before{
+  content:"";
+  position:absolute;
+  width:150px;height:150px;border-radius:50%;
+  right:-70px;top:-80px;
+  background:radial-gradient(circle,rgba(95,223,229,.14),transparent 70%);
+}
+.setting-card>span{
+  display:block;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+  color:var(--blue);
+}
+.setting-card h3{
+  margin-top:22px;
+  font-size:24px;
+  line-height:1.14;
+  letter-spacing:-.03em;
+  color:var(--deep);
+}
+.setting-card p{
+  margin-top:11px;
+  font-size:13px;
+  line-height:1.65;
+  color:#657289;
+}
+.setting-matters{
+  margin-top:22px;
+  padding-top:17px;
+  border-top:1px solid var(--line);
+}
+.setting-matters small{
+  display:block;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:900;
+  color:var(--blue);
+}
+.setting-matters strong{
+  display:block;
+  margin-top:7px;
+  font-size:11px;
+  line-height:1.55;
+  color:#50607a;
+}
+@media(max-width:1040px){
+  .rehab-market-grid{grid-template-columns:1fr 1fr}
+  .rehab-market-grid .market-card:last-child{grid-column:1 / -1}
+  .setting-head{grid-template-columns:1fr;gap:28px}
+  .setting-grid{grid-template-columns:1fr 1fr}
+  .setting-card,.setting-card:nth-child(4),.setting-card:nth-child(5){grid-column:auto}
+  .setting-card:last-child{grid-column:1 / -1}
+  .rehab-hero-stack{min-height:475px}
+  .stack-slp{top:365px;right:24px}
+}
+@media(max-width:720px){
+  .rehab-market-grid{grid-template-columns:1fr}
+  .rehab-market-grid .market-card:last-child{grid-column:auto}
+  .care-settings{padding:72px 0}
+  .setting-grid{grid-template-columns:1fr}
+  .setting-card,.setting-card:last-child{grid-column:auto;min-height:auto}
+  .rehab-hero-stack{min-height:500px}
+  .stack-slp{top:392px;right:8px;width:270px}
+}
+@media(max-width:460px){
+  .stack-slp{width:250px}
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="./" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
+    <nav class="links">
+      <a href="workforce-solutions.html">Solutions</a>
+      <a class="active" href="specialties.html">Specialties</a>
+      <a href="index.html#clinicians">For Clinicians</a>
+      <a href="index.html#why">Why Medlivo</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Jobs</a>
+      <a class="btn btn-green" href="#contact">Request Staff</a>
+      <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+
+<main>
+<section class="na-premium-hero">
+  <div class="na-hero-stage">
+    <div class="na-hero-image">
+      <img src="assets/images/home/rehabilitation.webp" alt="Rehabilitation clinician supporting a patient during therapy">
+      <div class="na-hero-overlay"></div>
+    </div>
+
+    <div class="wrap na-premium-grid">
+      <div class="na-premium-copy">
+        <div class="kicker">Rehabilitation Division</div>
+        <h1>Rehabilitation staffing built around discipline, setting, and continuity.</h1>
+        <p class="hero-copy">Medlivo connects healthcare organizations with Physical Therapy, Occupational Therapy, and Speech-Language Pathology professionals. We recruit around the clinical and practical details that shape each assignment — discipline, care setting, patient population, schedule, location, licensure, and availability.</p>
+        <div class="hero-actions">
+          <a class="btn btn-green" href="#engage">Request Rehabilitation Staff</a>
+          <a class="btn btn-outline hero-outline" href="https://www.medlivo.com/search-jobs">Search Rehabilitation Jobs</a>
+        </div>
+        <div class="hero-signals">
+          <span>Discipline</span>
+          <span>Care Setting</span>
+          <span>Patient Population</span>
+          <span>Licensure</span>
+          <span>Availability</span>
+        </div>
+      </div>
+
+      <div class="na-hero-stack rehab-hero-stack">
+        <div class="stack-card stack-main">
+          <small>ASSIGNMENT FIT FIRST</small>
+          <strong>A stronger rehabilitation match starts with understanding where and how care is delivered.</strong>
+        </div>
+        <div class="stack-card stack-nursing">
+          <span>01</span>
+          <div><b>Physical Therapy</b><small>PT · PTA · Mobility · Functional Recovery</small></div>
+        </div>
+        <div class="stack-card stack-allied">
+          <span>02</span>
+          <div><b>Occupational Therapy</b><small>OT · COTA · Function · Daily Living</small></div>
+        </div>
+        <div class="stack-card stack-slp">
+          <span>03</span>
+          <div><b>Speech-Language Pathology</b><small>SLP · Communication · Swallowing · Cognition</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="na-hero-wordmark" aria-hidden="true">REHABILITATION</div>
+  </div>
+</section>
+
+<section class="market" id="talent">
+  <div class="wrap">
+    <div class="market-head">
+      <div>
+        <div class="eyebrow">Inside the Division</div>
+        <h2 class="title">Three disciplines. Different clinical demands.</h2>
+      </div>
+      <p class="lead">Physical Therapy, Occupational Therapy, and Speech-Language Pathology share a rehabilitation mission, but the experience required can differ significantly by discipline, patient population, and care environment.</p>
+    </div>
+
+    <div class="market-grid premium-market-grid rehab-market-grid">
+      <article class="market-card market-nursing">
+        <div class="market-top">
+          <span class="market-num">01</span>
+          <small>Physical Therapy</small>
+        </div>
+        <h3>Mobility and functional recovery shaped by the care environment.</h3>
+        <p>Physical therapy assignments can differ by patient acuity, mobility goals, care setting, caseload, and the level of independence expected in the role.</p>
+        <div class="role-cloud">
+          <span>PT</span>
+          <span>PTA</span>
+        </div>
+        <div class="market-lens">
+          <div><small>What we evaluate</small><strong>Setting · Patient Population · Experience · Schedule · Location · Availability</strong></div>
+          <div><small>What affects readiness</small><strong>State Licensure · Facility Requirements · Documentation · Start Timing</strong></div>
+        </div>
+      </article>
+
+      <article class="market-card market-allied">
+        <div class="market-top">
+          <span class="market-num">02</span>
+          <small>Occupational Therapy</small>
+        </div>
+        <h3>Functional care aligned to patient needs and setting.</h3>
+        <p>Occupational therapy fit depends on the environment in which care is delivered, the patient population, functional goals, schedule, and assignment expectations.</p>
+        <div class="role-cloud">
+          <span>OT</span>
+          <span>COTA</span>
+        </div>
+        <div class="market-lens">
+          <div><small>What we evaluate</small><strong>Setting · Patient Population · Relevant Experience · Schedule · Location · Availability</strong></div>
+          <div><small>What affects readiness</small><strong>State Licensure · Facility Requirements · Documentation · Start Timing</strong></div>
+        </div>
+      </article>
+
+      <article class="market-card market-allied">
+        <div class="market-top">
+          <span class="market-num">03</span>
+          <small>Speech-Language Pathology</small>
+        </div>
+        <h3>Clinical fit shaped by patient needs and practice environment.</h3>
+        <p>Speech-language pathology assignments can vary by patient population, clinical focus, care setting, caseload, and the credentials required for the role.</p>
+        <div class="role-cloud">
+          <span>SLP</span>
+        </div>
+        <div class="market-lens">
+          <div><small>What we evaluate</small><strong>Patient Population · Clinical Setting · Relevant Experience · Schedule · Location · Availability</strong></div>
+          <div><small>What affects readiness</small><strong>State Licensure · Required Credentials · Facility Requirements · Start Timing</strong></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="care-settings" id="settings">
+  <div class="wrap">
+    <div class="setting-head">
+      <div>
+        <div class="eyebrow">Care Setting Matters</div>
+        <h2 class="title">The same discipline can require a very different clinician.</h2>
+      </div>
+      <p class="lead">A PT, OT, or SLP may work across very different patient populations and clinical environments. Medlivo evaluates the setting alongside the discipline so the clinician’s experience aligns with the actual assignment.</p>
+    </div>
+
+    <div class="setting-grid">
+      <article class="setting-card">
+        <span>01</span>
+        <h3>Acute & Inpatient</h3>
+        <p>Hospital-based rehabilitation where acuity, interdisciplinary coordination, discharge planning, and pace can shape the role.</p>
+        <div class="setting-matters"><small>What matters</small><strong>Setting Experience · Patient Acuity · Schedule · Documentation · Team Coordination</strong></div>
+      </article>
+      <article class="setting-card">
+        <span>02</span>
+        <h3>Inpatient Rehabilitation</h3>
+        <p>Therapy focused on intensive recovery and functional improvement through coordinated rehabilitation care.</p>
+        <div class="setting-matters"><small>What matters</small><strong>Rehabilitation Experience · Patient Population · Therapy Intensity · Interdisciplinary Care · Schedule</strong></div>
+      </article>
+      <article class="setting-card">
+        <span>03</span>
+        <h3>Skilled Nursing & Post-Acute</h3>
+        <p>Rehabilitation supporting recovery, mobility, function, and continuity across skilled nursing and post-acute environments.</p>
+        <div class="setting-matters"><small>What matters</small><strong>Setting Experience · Caseload · Patient Population · Productivity Expectations · Schedule</strong></div>
+      </article>
+      <article class="setting-card">
+        <span>04</span>
+        <h3>Outpatient</h3>
+        <p>Scheduled therapy where clinical focus, patient mix, caseload, documentation, and clinic operations influence the assignment.</p>
+        <div class="setting-matters"><small>What matters</small><strong>Clinical Focus · Patient Population · Caseload · Schedule · Documentation Requirements</strong></div>
+      </article>
+      <article class="setting-card">
+        <span>05</span>
+        <h3>Home Health</h3>
+        <p>Rehabilitation delivered in the patient’s home, where service area, travel, independence, scheduling, and documentation are central to fit.</p>
+        <div class="setting-matters"><small>What matters</small><strong>Home Health Experience · Service Area · Visit Expectations · Documentation · Schedule</strong></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="signals" id="approach">
+  <div class="wrap">
+    <div class="signals-head">
+      <div>
+        <div class="eyebrow">The Rehabilitation Recruiting Lens</div>
+        <h2 class="title">Five factors shape the right rehabilitation match.</h2>
+      </div>
+      <p class="lead">The team evaluates the assignment as a whole rather than matching on discipline alone. Clinical fit and practical fit both matter before a clinician is presented.</p>
+    </div>
+
+    <div class="signals-stage">
+      <div class="signal-core">
+        <small>THE ASSIGNMENT</small>
+        <strong>What makes this role workable in practice?</strong>
+        <p>The discipline, care environment, workload, location, and start requirements are considered together.</p>
+      </div>
+
+      <div class="signal-grid">
+        <article class="signal-card">
+          <span>01</span>
+          <h3>Discipline & clinical experience</h3>
+          <p>PT, PTA, OT, COTA, or SLP experience aligned to the clinical requirements of the assignment.</p>
+        </article>
+        <article class="signal-card">
+          <span>02</span>
+          <h3>Care setting & patient population</h3>
+          <p>Experience within the relevant environment and with the populations the clinician will support.</p>
+        </article>
+        <article class="signal-card">
+          <span>03</span>
+          <h3>Schedule & workload</h3>
+          <p>Hours, schedule structure, caseload, productivity expectations, assignment length, and availability.</p>
+        </article>
+        <article class="signal-card">
+          <span>04</span>
+          <h3>Location & mobility</h3>
+          <p>Commute, travel expectations, service area, and the practical ability to work the assignment location.</p>
+        </article>
+        <article class="signal-card signal-card-wide">
+          <span>05</span>
+          <h3>Licensure & start timing</h3>
+          <p>State licensure, required credentials, client-specific requirements, and the ability to meet the target start date.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clinical-ready" id="readiness">
+  <div class="wrap">
+    <div class="ready-head">
+      <div>
+        <div class="eyebrow">Clinical & Assignment Readiness</div>
+        <h2 class="title">Ready means prepared for this specific assignment.</h2>
+      </div>
+      <p class="lead">Before the first day, the clinician needs the professional standing, verified background, compliance clearance, and assignment details required for the role and facility.</p>
+    </div>
+
+    <div class="ready-grid">
+      <article class="ready-card">
+        <span>01</span>
+        <h3>Professional standing</h3>
+        <p>Active or assignment-eligible state licensure, required credentials, and discipline-specific professional requirements.</p>
+      </article>
+      <article class="ready-card">
+        <span>02</span>
+        <h3>Clinical verification</h3>
+        <p>Relevant experience, work history, setting background, and patient-population experience aligned to the assignment.</p>
+      </article>
+      <article class="ready-card">
+        <span>03</span>
+        <h3>Compliance clearance</h3>
+        <p>Health requirements, background screening, documentation, and client- or facility-specific compliance standards.</p>
+      </article>
+      <article class="ready-card">
+        <span>04</span>
+        <h3>First-day readiness</h3>
+        <p>Schedule, orientation, caseload expectations, reporting instructions, and final assignment details confirmed before start.</p>
+      </article>
+    </div>
+
+    <div class="ready-bar">
+      <strong>Why it matters</strong>
+      <span>The goal is a clinician who understands the environment, is cleared to start, and arrives prepared for the assignment.</span>
+    </div>
+  </div>
+</section>
+
+<section class="engage" id="engage">
+  <div class="wrap" id="contact">
+    <div class="engage-head">
+      <div>
+        <div class="eyebrow">Rehabilitation</div>
+        <h2 class="title">Better rehabilitation assignments start with clarity on both sides.</h2>
+      </div>
+      <p class="lead">For healthcare organizations, that means defining the work behind the opening. For clinicians, it means understanding how the assignment fits their experience, preferred setting, schedule, and next career step.</p>
+    </div>
+
+    <div class="engage-grid">
+      <article class="engage-card client-card">
+        <small>For Healthcare Organizations</small>
+        <h3>Define the assignment, not just the discipline.</h3>
+        <p>Care setting, patient population, workload, schedule, and timing help the team focus the search on clinicians who fit the actual environment.</p>
+        <div class="engage-fields">
+          <span>Discipline</span>
+          <span>Care setting</span>
+          <span>Patient population</span>
+          <span>Schedule</span>
+          <span>Location</span>
+          <span>Start timing</span>
+          <span>Caseload / productivity</span>
+          <span>Facility requirements</span>
+        </div>
+        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Rehabilitation%20Staffing%20Request">Request Rehabilitation Staff</a>
+      </article>
+
+      <article class="engage-card clinician-card" id="clinicians">
+        <small>For Rehabilitation Clinicians</small>
+        <h3>Find work that fits how you want to practice.</h3>
+        <p>Tell us what matters to you so we can focus on opportunities aligned to your discipline, experience, preferred setting, location, and schedule.</p>
+        <div class="engage-fields">
+          <span>Profession</span>
+          <span>Preferred setting</span>
+          <span>Patient population</span>
+          <span>Preferred location</span>
+          <span>Schedule</span>
+          <span>Availability</span>
+          <span>Career priorities</span>
+        </div>
+        <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Rehabilitation Jobs</a>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-body">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="assets/brand/medlivo-logo.png?v=20260924" alt="Medlivo"></div>
+        <p>Healthcare staffing across Nursing & Allied, Rehabilitation, and Locum Tenens.</p>
+        <div class="footer-meta"><a href="tel:+18556335486">+1 855-633-5486</a><a href="mailto:hello@medlivo.com">hello@medlivo.com</a><span>Redmond, Washington</span></div>
+      </div>
+      <div>
+        <div class="footer-grid">
+          <div class="fcol"><h4>Solutions</h4><a href="workforce-solutions.html">Workforce Solutions</a><a href="nursing-allied.html">Nursing & Allied</a><a href="rehabilitation.html">Rehabilitation</a><a href="specialties.html#locum-tenens">Locum Tenens</a><a href="#contact">Request Staff</a></div>
+          <div class="fcol"><h4>For Clinicians</h4><a href="https://www.medlivo.com/search-jobs">Rehabilitation Jobs</a><a href="https://www.medlivo.com/search-jobs">All Opportunities</a></div>
+          <div class="fcol"><h4>Company</h4><a href="specialties.html">Healthcare Specialties</a><a href="index.html#why">Why Medlivo</a><a href="#contact">Contact</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>© 2026 Medlivo Inc. All rights reserved.</span><span class="foot-links"><a href="https://www.medlivo.com/privacy-policy">Privacy Policy</a><a href="https://www.medlivo.com/terms-of-use">Terms of Use</a><a href="#contact">Contact</a></span></div>
+  </div>
+</footer>
+
+<script>
+const menu=document.querySelector('.menu');
+const links=document.querySelector('.links');
+if(menu&&links){
+  menu.addEventListener('click',()=>{
+    const open=links.classList.toggle('open');
+    menu.setAttribute('aria-expanded',String(open));
+    menu.textContent=open?'×':'☰';
+  });
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    links.classList.remove('open');
+    menu.setAttribute('aria-expanded','false');
+    menu.textContent='☰';
+  }));
+}
+</script>
+</body>
+</html>
