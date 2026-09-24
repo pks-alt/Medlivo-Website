@@ -12,7 +12,7 @@
   --wrap:min(1240px,calc(100vw - 56px));
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:130px}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
 body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
@@ -33,11 +33,6 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdro
 .btn-outline{background:#fff;border-color:#ccd5e6;color:var(--navy)}
 .menu{display:none}
 
-.division-nav{background:#0b225f;color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
-.division-nav .wrap{height:48px;display:flex;align-items:center;gap:26px}
-.division-name{font-size:12px;font-weight:900;letter-spacing:.02em;margin-right:auto}
-.division-links{display:flex;align-items:center;gap:22px;font-size:11px;font-weight:800;color:#c4cee0}
-.division-links a:hover{color:#fff}
 
 .eyebrow,.kicker{font-size:11px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;color:var(--blue)}
 .kicker{display:flex;align-items:center;gap:10px}
@@ -141,7 +136,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 .foot{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #dce3ee;margin-top:32px;padding-top:19px;color:#77839a;font-size:12px}
 .foot-links{display:flex;gap:18px;flex-wrap:wrap}
 .foot a{color:#6c7890}
-.btn:focus-visible,.links a:focus-visible,.division-links a:focus-visible,.fcol a:focus-visible,.foot a:focus-visible{outline:3px solid rgba(47,103,216,.35);outline-offset:4px}
+.btn:focus-visible,.links a:focus-visible,.fcol a:focus-visible,.foot a:focus-visible{outline:3px solid rgba(47,103,216,.35);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 @media(max-width:1040px){
@@ -149,7 +144,6 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .links{display:none}.menu{display:block;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--navy);font-weight:900}
   .links.open{display:flex;position:absolute;top:72px;left:20px;right:20px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 45px rgba(9,25,79,.14);padding:20px;flex-direction:column;align-items:flex-start;gap:18px}
   .nav{position:relative}.actions .btn-outline{display:none}
-  .division-links{display:none}
   .hero-grid{grid-template-columns:1fr;gap:42px;padding:58px 0 68px}
   .match-panel{max-width:760px;width:100%;margin:auto}
   .talent-head,.recruiting-head,.readiness-grid,.paths-head{grid-template-columns:1fr;gap:28px}
@@ -160,7 +154,6 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 @media(max-width:720px){
   :root{--wrap:min(100% - 28px,1240px)}
   .nav{height:72px}.logo{width:165px}.actions .btn-green{min-width:auto;padding:0 14px}
-  .division-nav .wrap{height:44px}
   .hero-grid{padding:46px 0 54px}.hero h1{font-size:43px}.hero-copy{font-size:17px}.hero-actions{flex-direction:column;align-items:stretch}
   .match-head{padding:28px 24px 24px}.match-head strong{font-size:27px}.match-grid{grid-template-columns:1fr}
   .talent,.recruiting,.readiness{padding:70px 0}
@@ -1095,17 +1088,6 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
     </div>
   </div>
 </header>
-<div class="division-nav">
-  <div class="wrap">
-    <div class="division-name">Nursing & Allied</div>
-    <nav class="division-links">
-      <a href="#talent">Talent</a>
-      <a href="#approach">How We Recruit</a>
-      <a href="#readiness">Readiness</a>
-      <a href="#engage">Clients & Clinicians</a>
-    </nav>
-  </div>
-</div>
 
 <main>
 <section class="na-premium-hero">
