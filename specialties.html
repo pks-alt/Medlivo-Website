@@ -149,6 +149,153 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .footer-grid{grid-template-columns:1fr 1fr}.foot{flex-direction:column}
 }
 @media(max-width:460px){.hero h1{font-size:39px}.footer-grid{grid-template-columns:1fr}}
+
+/* === Specialties differentiation pass === */
+.hero-grid{grid-template-columns:.96fr 1.04fr}
+.specialty-map{min-height:495px;display:flex;flex-direction:column;justify-content:center}
+.map-row{grid-template-columns:52px 1fr minmax(120px,170px)}
+.map-row b{text-align:right;line-height:1.4}
+
+.divisions{padding:98px 0;background:#fff}
+.specialty-showcase{display:grid;gap:26px}
+.specialty-block{
+  position:relative;
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:48px;
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  padding:42px;
+  box-shadow:0 18px 46px rgba(9,25,79,.055);
+}
+.specialty-block:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:5px;
+  background:var(--division-accent);
+}
+.specialty-block.nursing{--division-accent:#2f67d8;background:linear-gradient(145deg,#fff 0%,#f7f9ff 100%)}
+.specialty-block.rehab{--division-accent:#24a9b7;background:linear-gradient(145deg,#fff 0%,#f4fbfc 100%)}
+.specialty-block.locums{--division-accent:#18358f;background:linear-gradient(145deg,#fff 0%,#f5f7fc 100%)}
+.specialty-heading{padding-right:12px}
+.specialty-number{
+  font-size:10px;
+  letter-spacing:.15em;
+  font-weight:900;
+  color:var(--division-accent)
+}
+.specialty-type{
+  margin-top:20px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:900;
+  color:#50607b
+}
+.specialty-heading h3{
+  margin-top:10px;
+  font-size:clamp(28px,2.8vw,38px);
+  line-height:1.08;
+  letter-spacing:-.045em;
+  color:var(--deep);
+  max-width:520px
+}
+.specialty-heading p{
+  margin-top:15px;
+  font-size:15px;
+  line-height:1.7;
+  color:var(--text);
+  max-width:520px
+}
+.specialty-ops{
+  display:grid;
+  grid-template-columns:1fr;
+  align-content:start;
+  border-top:1px solid var(--line)
+}
+.ops-card{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:22px;
+  padding:22px 0;
+  border-bottom:1px solid var(--line)
+}
+.ops-card small{
+  font-size:9px;
+  line-height:1.4;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:900;
+  color:var(--division-accent)
+}
+.ops-card strong{
+  font-size:14px;
+  line-height:1.6;
+  font-weight:700;
+  color:#33425f
+}
+.division-link{display:inline-flex;margin-top:20px;font-size:12px;font-weight:900;color:var(--division-accent)}
+
+.standard{
+  padding:82px 0;
+  background:radial-gradient(circle at 86% 15%,rgba(95,223,229,.14),transparent 28%),linear-gradient(132deg,#061744 0%,#0a225f 55%,#16398f 100%);
+  color:#fff
+}
+.standard-shell{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:88px;
+  align-items:center
+}
+.standard .eyebrow{color:#9ff8f2}
+.standard h2{
+  margin-top:12px;
+  font-size:clamp(36px,3.6vw,48px);
+  line-height:1.07;
+  letter-spacing:-.045em;
+  max-width:560px
+}
+.standard-copy p{
+  font-size:16px;
+  line-height:1.7;
+  color:#c0cbe0;
+  max-width:620px
+}
+.standard-points{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-top:25px
+}
+.standard-points span{
+  padding:10px 14px;
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  color:#e2e9f5;
+  background:rgba(255,255,255,.04)
+}
+.settings{display:none}
+
+@media(max-width:1040px){
+  .specialty-block{grid-template-columns:1fr;gap:28px}
+  .standard-shell{grid-template-columns:1fr;gap:26px}
+}
+@media(max-width:720px){
+  .specialty-map{min-height:auto}
+  .map-row{grid-template-columns:42px 1fr}
+  .map-row b{display:none}
+  .specialty-block{padding:30px 24px;gap:24px;border-radius:20px}
+  .ops-card{grid-template-columns:1fr;gap:8px;padding:18px 0}
+  .specialty-heading h3{font-size:29px}
+  .standard{padding:68px 0}
+}
+
 </style>
 </head>
 <body>
@@ -175,21 +322,34 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   <div class="wrap hero-grid">
     <div>
       <div class="kicker">Healthcare Specialties</div>
-      <h1>Three healthcare divisions. Focused expertise in each.</h1>
-      <p class="hero-copy">Medlivo organizes healthcare staffing around Nursing & Allied, Rehabilitation, and Locum Tenens. Each division focuses on the roles, talent markets, and care environments specific to its area.</p>
+      <h1>Specialized staffing built around three different healthcare talent markets.</h1>
+      <p class="hero-copy">Nursing & Allied, Rehabilitation, and Locum Tenens do not recruit, credential, or deliver the same way. Medlivo organizes each division around the realities of its market while keeping one company standard for accountability and service.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#divisions">Explore Specialties</a>
+        <a class="btn btn-primary" href="#divisions">Explore the Divisions</a>
         <a class="btn btn-outline" href="#contact">Request Staff</a>
       </div>
     </div>
+
     <div class="specialty-map">
       <div class="map-head">
-        <small>MEDLIVO HEALTHCARE STAFFING</small>
-        <strong>Three focused divisions across the healthcare workforce.</strong>
+        <small>THREE DIVISIONS. THREE OPERATING MOTIONS.</small>
+        <strong>Different talent markets need different staffing strategies.</strong>
       </div>
-      <div class="map-row"><div class="map-num">01</div><div><h3>Nursing & Allied</h3><p>Nursing and allied health disciplines</p></div><b>Clinical</b></div>
-      <div class="map-row"><div class="map-num">02</div><div><h3>Rehabilitation</h3><p>Physical, occupational, and speech therapy</p></div><b>Therapy</b></div>
-      <div class="map-row"><div class="map-num">03</div><div><h3>Locum Tenens</h3><p>Physicians and advanced practice providers</p></div><b>Provider</b></div>
+      <div class="map-row">
+        <div class="map-num">01</div>
+        <div><h3>Nursing & Allied</h3><p>Broader clinical demand across nursing and allied disciplines</p></div>
+        <b>Speed + specialty alignment</b>
+      </div>
+      <div class="map-row">
+        <div class="map-num">02</div>
+        <div><h3>Rehabilitation</h3><p>Therapy-specific talent across varied care settings</p></div>
+        <b>Setting + fit</b>
+      </div>
+      <div class="map-row">
+        <div class="map-num">03</div>
+        <div><h3>Locum Tenens</h3><p>Physician and advanced practice provider coverage</p></div>
+        <b>Availability + credentialing</b>
+      </div>
     </div>
   </div>
 </section>
@@ -197,64 +357,102 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
 <section class="divisions" id="divisions">
   <div class="wrap">
     <div class="divisions-head">
-      <div><div class="eyebrow">Our Divisions</div><h2 class="title">Healthcare talent organized by specialty.</h2></div>
-      <p class="lead">Each division concentrates on a distinct healthcare talent market. That structure gives clients and clinicians a more direct path to teams familiar with the roles they support.</p>
+      <div>
+        <div class="eyebrow">Division Operating Models</div>
+        <h2 class="title">Different talent. Different recruiting. Different delivery.</h2>
+      </div>
+      <p class="lead">Each Medlivo division has its own recruiting motion and delivery priorities. The goal is not to force every healthcare role through the same staffing process.</p>
     </div>
 
-    <div class="division-list">
-      <article class="division" id="nursing-allied">
-        <div class="division-index">01</div>
-        <div class="division-copy">
-          <h3>Nursing & Allied</h3>
-          <p>Clinical professionals across nursing and allied health disciplines for hospitals, health systems, clinics, and other care environments.</p>
+    <div class="specialty-showcase">
+      <article class="specialty-block nursing" id="nursing-allied">
+        <div class="specialty-heading">
+          <div class="specialty-number">01</div>
+          <div class="specialty-type">Nursing & Allied</div>
+          <h3>Built for speed, breadth, and specialty alignment.</h3>
+          <p>Nursing and allied demand can shift quickly across specialties, shifts, locations, and client programs. This division is structured for responsive recruiting across a broad clinical talent market.</p>
           <a class="division-link" href="#contact">Request Nursing & Allied Staff →</a>
         </div>
-        <div class="division-details">
-          <div class="detail-block"><small>Representative Nursing</small><strong>RN · LPN/LVN · CNA · Case Management</strong></div>
-          <div class="detail-block"><small>Representative Allied</small><strong>Imaging · Cath Lab · Respiratory · Laboratory · Surgical Tech · Pharmacy</strong></div>
+        <div class="specialty-ops">
+          <div class="ops-card">
+            <small>Talent Focus</small>
+            <strong>RN · LPN/LVN · CNA · Imaging · Cath Lab · Respiratory · Laboratory · Surgical Tech · Pharmacy</strong>
+          </div>
+          <div class="ops-card">
+            <small>Recruiting Motion</small>
+            <strong>Broader talent pools, rapid outreach, and matching by specialty, shift, location, and availability.</strong>
+          </div>
+          <div class="ops-card">
+            <small>Delivery Focus</small>
+            <strong>Qualification, credentialing coordination, client-program alignment, and start readiness.</strong>
+          </div>
         </div>
       </article>
 
-      <article class="division" id="rehabilitation">
-        <div class="division-index">02</div>
-        <div class="division-copy">
-          <h3>Rehabilitation</h3>
-          <p>Therapy professionals supporting rehabilitation across inpatient, outpatient, post-acute, and related care settings.</p>
+      <article class="specialty-block rehab" id="rehabilitation">
+        <div class="specialty-heading">
+          <div class="specialty-number">02</div>
+          <div class="specialty-type">Rehabilitation</div>
+          <h3>Built around discipline, care setting, and long-term fit.</h3>
+          <p>Therapy staffing is more relationship-driven. Discipline, licensure, care setting, patient population, schedule, and location all play a larger role in making the right match.</p>
           <a class="division-link" href="#contact">Request Rehabilitation Staff →</a>
         </div>
-        <div class="division-details">
-          <div class="detail-block"><small>Core Disciplines</small><strong>PT · PTA · OT · COTA · SLP</strong></div>
-          <div class="detail-block"><small>Care Environments</small><strong>Inpatient · Outpatient · Rehabilitation · Post-Acute</strong></div>
+        <div class="specialty-ops">
+          <div class="ops-card">
+            <small>Talent Focus</small>
+            <strong>PT · PTA · OT · COTA · SLP across inpatient, outpatient, rehabilitation, and post-acute settings.</strong>
+          </div>
+          <div class="ops-card">
+            <small>Recruiting Motion</small>
+            <strong>Discipline-specific networks with closer attention to licensure, setting, location, and clinician preferences.</strong>
+          </div>
+          <div class="ops-card">
+            <small>Delivery Focus</small>
+            <strong>Closer clinician coordination, facility-specific onboarding, assignment fit, and continuity.</strong>
+          </div>
         </div>
       </article>
 
-      <article class="division" id="locum-tenens">
-        <div class="division-index">03</div>
-        <div class="division-copy">
-          <h3>Locum Tenens</h3>
-          <p>Physicians and advanced practice providers for temporary coverage, specialty needs, and continuity of care.</p>
+      <article class="specialty-block locums" id="locum-tenens">
+        <div class="specialty-heading">
+          <div class="specialty-number">03</div>
+          <div class="specialty-type">Locum Tenens</div>
+          <h3>Built around provider availability, specialty, and continuity of coverage.</h3>
+          <p>Provider staffing requires a higher-touch model. Specialty fit, availability windows, schedule, rates, licensing, credentialing, and privileging can all shape a successful assignment.</p>
           <a class="division-link" href="#contact">Request Locum Tenens Coverage →</a>
         </div>
-        <div class="division-details">
-          <div class="detail-block"><small>Provider Types</small><strong>Physicians · NPs · PAs · CRNAs</strong></div>
-          <div class="detail-block"><small>Coverage Needs</small><strong>Temporary Coverage · Specialty Coverage · Continuity Support</strong></div>
+        <div class="specialty-ops">
+          <div class="ops-card">
+            <small>Talent Focus</small>
+            <strong>Physicians · Nurse Practitioners · Physician Assistants · CRNAs across primary care and specialty coverage.</strong>
+          </div>
+          <div class="ops-card">
+            <small>Recruiting Motion</small>
+            <strong>Provider relationships, specialty sourcing, availability windows, and schedule alignment.</strong>
+          </div>
+          <div class="ops-card">
+            <small>Delivery Focus</small>
+            <strong>Licensing, credentialing and privileging coordination, malpractice coordination, travel, and assignment logistics.</strong>
+          </div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="settings">
-  <div class="wrap">
-    <div class="settings-head">
-      <div><div class="eyebrow">Care Environments</div><h2 class="title">Talent for different points across the care continuum.</h2></div>
-      <p class="lead">Depending on the discipline and client requirement, Medlivo supports workforce needs across a range of healthcare environments.</p>
+<section class="standard">
+  <div class="wrap standard-shell">
+    <div>
+      <div class="eyebrow">One Medlivo Standard</div>
+      <h2>Different operating models. One standard for execution.</h2>
     </div>
-    <div class="settings-grid">
-      <div class="setting"><span>01</span><h3>Hospitals & Health Systems</h3><p>Acute care, procedural, diagnostic, therapy, and provider workforce needs.</p></div>
-      <div class="setting"><span>02</span><h3>Outpatient & Ambulatory</h3><p>Clinical and therapy support across outpatient, clinic, and ambulatory settings.</p></div>
-      <div class="setting"><span>03</span><h3>Rehabilitation & Post-Acute</h3><p>Therapy and clinical professionals supporting rehabilitation and post-acute care.</p></div>
-      <div class="setting"><span>04</span><h3>Specialty & Provider Settings</h3><p>Physician, advanced practice, and specialty coverage based on client needs.</p></div>
+    <div class="standard-copy">
+      <p>The recruiting motion changes by division. The expectation does not: understand the requirement, keep the process moving, communicate clearly, and stay accountable through the assignment.</p>
+      <div class="standard-points">
+        <span>Specialty-led teams</span>
+        <span>Assignment readiness</span>
+        <span>Accountable support</span>
+      </div>
     </div>
   </div>
 </section>
@@ -263,14 +461,14 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   <div class="wrap final-shell">
     <div class="final-side">
       <small>For Healthcare Organizations</small>
-      <h2>Looking for talent in a specific specialty?</h2>
-      <p>Tell us the role, location, timing, and care setting. We’ll connect the request with the appropriate Medlivo division.</p>
+      <h2>Start with the specialty. We’ll connect the right team.</h2>
+      <p>Tell us the role, location, timing, and care setting. We’ll route the request to the Medlivo division built for that talent market.</p>
       <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Staffing%20Request">Request Staff</a>
     </div>
     <div class="final-side">
       <small>For Clinicians</small>
-      <h2>Looking for your next healthcare opportunity?</h2>
-      <p>Explore opportunities aligned to your profession, specialty, location, and career goals.</p>
+      <h2>Find the team that understands your profession.</h2>
+      <p>Explore opportunities aligned to your discipline, specialty, location, and what you want to do next.</p>
       <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
     </div>
   </div>
