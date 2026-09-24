@@ -690,6 +690,45 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
   .nav-chevron{margin-right:2px}
 }
 
+
+/* === Specialties click-toggle behavior === */
+.nav-drop-trigger{
+  appearance:none;
+  border:0;
+  background:transparent;
+  padding:0;
+  margin:0;
+  font:inherit;
+  color:inherit;
+  cursor:pointer;
+  position:relative;
+}
+.nav-drop-trigger:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-9px;
+  height:2px;
+  background:var(--blue);
+  transition:.2s;
+}
+.nav-drop-trigger:hover:after,
+.nav-drop-trigger.active:after,
+.nav-dropdown.open .nav-drop-trigger:after{right:0}
+.nav-dropdown.open .nav-dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.nav-dropdown.open .nav-chevron{
+  transform:rotate(225deg) translate(-1px,-1px);
+}
+@media(max-width:1040px){
+  .nav-dropdown-menu{display:none}
+  .nav-dropdown.open .nav-dropdown-menu{display:block}
+}
 </style>
 </head>
 <body>
@@ -699,7 +738,7 @@ footer{background:#f5f7fb;color:var(--deep);border-top:1px solid #e3e8f1;padding
     <nav class="links">
       <a class="active" href="workforce-solutions.html">Solutions</a>
       <div class="nav-dropdown">
-        <a class="nav-drop-trigger" href="specialties.html">Specialties<span class="nav-chevron" aria-hidden="true"></span></a>
+        <button class="nav-drop-trigger" type="button" aria-haspopup="true" aria-expanded="false">Specialties<span class="nav-chevron" aria-hidden="true"></span></button>
         <div class="nav-dropdown-menu">
           <div class="nav-dropdown-panel">
             <a href="nursing-allied.html"><span class="nav-drop-title">Nursing &amp; Allied</span><span class="nav-drop-desc">Nursing, imaging, lab, respiratory &amp; clinical support</span></a>
@@ -956,5 +995,31 @@ if(menu&&links){
   }));
 }
 </script>
+
+<script>
+const specialtiesDropdown=document.querySelector('.nav-dropdown');
+const specialtiesTrigger=document.querySelector('.nav-drop-trigger');
+if(specialtiesDropdown&&specialtiesTrigger){
+  specialtiesTrigger.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const open=specialtiesDropdown.classList.toggle('open');
+    specialtiesTrigger.setAttribute('aria-expanded',String(open));
+  });
+  document.addEventListener('click',(e)=>{
+    if(!specialtiesDropdown.contains(e.target)){
+      specialtiesDropdown.classList.remove('open');
+      specialtiesTrigger.setAttribute('aria-expanded','false');
+    }
+  });
+  document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+      specialtiesDropdown.classList.remove('open');
+      specialtiesTrigger.setAttribute('aria-expanded','false');
+      specialtiesTrigger.focus();
+    }
+  });
+}
+</script>
+
 </body>
 </html>
