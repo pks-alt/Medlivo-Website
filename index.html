@@ -2416,6 +2416,56 @@ header{
   color:var(--blue);
 }
 
+
+
+/* === Healthcare Organizations section refinement: final === */
+.workforce-list{
+  position:relative;
+  border-top:1px solid #dce3ee;
+}
+.workforce-row{
+  position:relative;
+  transition:background .18s ease,padding-left .18s ease;
+}
+.workforce-row:before{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--blue),var(--aqua),var(--green));
+  transition:width .22s ease;
+}
+.workforce-row:hover{
+  background:linear-gradient(90deg,rgba(47,103,216,.035),transparent 72%);
+  padding-left:8px;
+}
+.workforce-row:hover:before{
+  width:84px;
+}
+.workforce-row>span{
+  border:0;
+  background:transparent;
+  color:#9aa7bb;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.10em;
+  align-items:start;
+  justify-items:start;
+  width:auto;
+  height:auto;
+  border-radius:0;
+  padding-top:4px;
+}
+.workforce-row h3{
+  color:var(--deep);
+  letter-spacing:-.025em;
+}
+.workforce-row p{
+  max-width:560px;
+}
+
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
@@ -2506,10 +2556,10 @@ header{
       <a class="btn btn-primary workforce-cta" href="workforce-solutions.html">Explore Workforce Solutions →</a>
     </div>
     <div class="workforce-list">
-      <div class="workforce-row"><span>01</span><div><h3>Specialized recruiting</h3><p>Teams aligned to the healthcare disciplines and talent markets they support.</p></div></div>
-      <div class="workforce-row"><span>02</span><div><h3>Responsive delivery</h3><p>Practical follow-through when priorities, timelines, or staffing needs change.</p></div></div>
-      <div class="workforce-row"><span>03</span><div><h3>Clear ownership</h3><p>Direct accountability so you know who is responsible for the next step.</p></div></div>
-      <div class="workforce-row"><span>04</span><div><h3>Support beyond the start</h3><p>A team that stays engaged throughout the assignment when questions or needs arise.</p></div></div>
+      <div class="workforce-row"><span>01</span><div><h3>Urgent coverage</h3><p>Help addressing immediate staffing gaps when coverage is needed quickly.</p></div></div>
+      <div class="workforce-row"><span>02</span><div><h3>Ongoing workforce demand</h3><p>Recruiting support for recurring and longer-term healthcare staffing needs.</p></div></div>
+      <div class="workforce-row"><span>03</span><div><h3>Structured workforce programs</h3><p>Support within MSP, VMS, and other organized workforce environments.</p></div></div>
+      <div class="workforce-row"><span>04</span><div><h3>Assignment continuity</h3><p>Ongoing support from placement through the life of the assignment.</p></div></div>
     </div>
   </div>
 </section>
