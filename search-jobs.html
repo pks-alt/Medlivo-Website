@@ -2534,6 +2534,131 @@ header{
 }
 
 
+
+/* === Large job inventory architecture === */
+.jobs-career-tools{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  margin:0 0 16px;
+  padding:15px 17px;
+  border:1px solid #e0e7f1;
+  border-radius:14px;
+  background:#f8faff;
+}
+.jobs-career-tools-copy span{
+  display:block;
+  color:#718097;
+  font-size:10px;
+  font-weight:850;
+}
+.jobs-career-tools-copy strong{
+  display:block;
+  margin-top:3px;
+  color:var(--deep);
+  font-size:12px;
+  line-height:1.4;
+}
+.jobs-career-tools-actions{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.jobs-career-tools-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 11px;
+  border:1px solid #d8e1ee;
+  border-radius:9px;
+  background:#fff;
+  color:#40516d;
+  font-size:10px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.jobs-career-tools-actions a:first-child{
+  border-color:#bfeab9;
+  color:#216e24;
+  background:#f4fcf3;
+}
+.jobs-career-tools-actions a:hover{
+  border-color:#aabbd2;
+  color:var(--navy);
+}
+.jobs-pagination{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-top:22px;
+  padding:18px 0 4px;
+  border-top:1px solid #e3e9f2;
+}
+.jobs-pagination[hidden]{display:none}
+.jobs-pagination-summary{
+  color:#6f7d93;
+  font-size:11px;
+  font-weight:750;
+}
+.jobs-pagination-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.jobs-pagination-actions button{
+  min-height:38px;
+  padding:0 12px;
+  border:1px solid #dce4ef;
+  border-radius:9px;
+  background:#fff;
+  color:#3d4f6d;
+  font-size:10px;
+  font-weight:900;
+  cursor:pointer;
+}
+.jobs-pagination-actions button:hover:not(:disabled){
+  border-color:#aebfd7;
+  color:var(--navy);
+}
+.jobs-pagination-actions button:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+}
+#paginationPage{
+  min-width:104px;
+  color:#53627a;
+  font-size:10px;
+  font-weight:900;
+  text-align:center;
+}
+@media(max-width:800px){
+  .jobs-career-tools{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .jobs-career-tools-actions{width:100%}
+}
+@media(max-width:620px){
+  .jobs-career-tools-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .jobs-career-tools-actions a{width:100%}
+  .jobs-pagination{
+    align-items:stretch;
+    flex-direction:column;
+  }
+  .jobs-pagination-actions{
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+  }
+  .jobs-pagination-actions button{padding:0 8px}
+}
+
 /* === Working with Medlivo: sequential clinician journey === */
 .jobs-support-strip{
   padding:76px 0 82px;
@@ -3140,7 +3265,28 @@ header{
           </div>
         </div>
 
+        <div class="jobs-career-tools" aria-label="Other ways to get started">
+          <div class="jobs-career-tools-copy">
+            <span>Can’t find the exact job?</span>
+            <strong>Keep moving without searching every opening.</strong>
+          </div>
+          <div class="jobs-career-tools-actions">
+            <a data-ats-action="quick-apply" href="mailto:hello@medlivo.com?subject=Quick%20Apply%20-%20Healthcare%20Clinician">Quick Apply</a>
+            <a data-ats-action="job-alerts" href="mailto:hello@medlivo.com?subject=Job%20Alert%20Request">Get Job Alerts</a>
+            <a href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Ask a Recruiter</a>
+          </div>
+        </div>
+
         <div class="job-list" id="jobList" data-ats-results="pending"></div>
+
+        <nav class="jobs-pagination" id="jobsPagination" aria-label="Job results pages" data-ats-pagination="required" hidden>
+          <div class="jobs-pagination-summary" id="paginationSummary"></div>
+          <div class="jobs-pagination-actions">
+            <button type="button" id="jobsPrevPage" aria-label="Previous page">← Previous</button>
+            <span id="paginationPage"></span>
+            <button type="button" id="jobsNextPage" aria-label="Next page">Next →</button>
+          </div>
+        </nav>
 
         <div class="jobs-no-results" id="noResults" hidden>
           <span>No matching jobs right now</span>
@@ -3152,41 +3298,6 @@ header{
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="jobs-actions-strip" aria-labelledby="jobsActionsTitle">
-    <div class="wrap">
-      <div class="jobs-actions-head">
-        <div>
-          <div class="eyebrow">More Ways to Get Started</div>
-          <h2 id="jobsActionsTitle">You don’t have to find the perfect job on your own.</h2>
-        </div>
-        <p>Send us your resume for matching opportunities, or tell us what you want to hear about next.</p>
-      </div>
-
-      <div class="jobs-actions-grid">
-        <article class="jobs-action-card">
-          <span class="jobs-action-number">01</span>
-          <div class="jobs-action-copy">
-            <div class="jobs-action-label">Quick Apply</div>
-            <h3>Send us your resume.</h3>
-            <p>A recruiter can review your experience and connect you with current or upcoming opportunities that fit.</p>
-          </div>
-          <a class="btn btn-green" data-ats-action="quick-apply" href="mailto:hello@medlivo.com?subject=Quick%20Apply%20-%20Healthcare%20Clinician">Quick Apply →</a>
-        </article>
-
-        <article class="jobs-action-card">
-          <span class="jobs-action-number">02</span>
-          <div class="jobs-action-copy">
-            <div class="jobs-action-label">Job Alerts</div>
-            <h3>Hear about matching jobs.</h3>
-            <p>Tell us your profession, specialty, and preferred location so you can stay on top of relevant openings.</p>
-          </div>
-          <a class="btn btn-outline" data-ats-action="job-alerts" href="mailto:hello@medlivo.com?subject=Job%20Alert%20Request">Request Job Alerts →</a>
-        </article>
-      </div>
-      <!-- Developer handoff: replace the temporary email actions above with the existing Quick Apply and Job Alert ATS workflows. -->
     </div>
   </section>
 
@@ -3352,6 +3463,14 @@ document.addEventListener('keydown',(e)=>{
     id, title, category, profession, specialty, type, state, city, pay, start, posted, applyUrl.
     The page is intentionally organized for clinicians as:
     Division → Profession → Specialty → Location/State.
+
+    LARGE INVENTORY REQUIREMENT
+    ---------------------------
+    Production ATS integration must be server/API paginated. Do NOT load thousands
+    of jobs into the browser. Request one page at a time and return totalCount,
+    page, pageSize, and jobs. The preview below uses client-side paging only because
+    it contains a small static sample.
+
     Replace the temporary Quick Apply and Job Alert email actions with existing ATS workflows.
   */
   const jobs=[
@@ -3468,6 +3587,13 @@ document.addEventListener('keydown',(e)=>{
   const contextTitle=qs("#divisionContextTitle");
   const contextText=qs("#divisionContextText");
   const shortcuts=qs("#specialtyShortcuts");
+  const pagination=qs("#jobsPagination");
+  const paginationSummary=qs("#paginationSummary");
+  const paginationPage=qs("#paginationPage");
+  const prevPage=qs("#jobsPrevPage");
+  const nextPage=qs("#jobsNextPage");
+  const PAGE_SIZE=20;
+  let currentPage=1;
   let activeCategory="";
 
   function slug(value){
@@ -3636,7 +3762,7 @@ document.addEventListener('keydown',(e)=>{
         }
         specialty.value=value;
       }
-      render();
+      render(true);
       qs(".job-list")?.scrollIntoView({behavior:"smooth",block:"start"});
     }));
   }
@@ -3661,13 +3787,21 @@ document.addEventListener('keydown',(e)=>{
     contextText.textContent=cfg.contextText;
     renderShortcuts();
   }
-  function render(){
+  function render(resetPage=false){
+    if(resetPage)currentPage=1;
     let items=jobs.filter(matches);
     if(sort.value==="pay-high")items.sort((a,b)=>payHigh(b)-payHigh(a));
     if(sort.value==="location")items.sort((a,b)=>(a.state+a.city).localeCompare(b.state+b.city));
     if(sort.value==="newest")items.sort((a,b)=>(Date.parse(b.posted)||0)-(Date.parse(a.posted)||0));
 
-    list.innerHTML=items.map(job=>`
+    const count=items.length;
+    const totalPages=Math.max(1,Math.ceil(count/PAGE_SIZE));
+    if(currentPage>totalPages)currentPage=totalPages;
+    const start=(currentPage-1)*PAGE_SIZE;
+    const end=Math.min(start+PAGE_SIZE,count);
+    const visibleItems=items.slice(start,end);
+
+    list.innerHTML=visibleItems.map(job=>`
       <article class="job-card cat-${slug(job.category)}" data-job-id="${job.id}" data-ats-template="job-card" data-ats-category="${job.category}">
         <div class="job-card-main">
           <div class="job-badges">
@@ -3691,15 +3825,23 @@ document.addEventListener('keydown',(e)=>{
         </div>
       </article>`).join("");
 
-    const count=items.length;
     noResults.hidden=count!==0;
     list.hidden=count===0;
     const scope=profession.value
       ? (profession.options[profession.selectedIndex]?.text||profession.value)
       : specialty.value||activeCategory;
     summary.textContent=count
-      ? `${count} current opportunit${count===1?"y":"ies"} found${scope?` for ${scope}`:""}`
+      ? `${count.toLocaleString("en-US")} current opportunit${count===1?"y":"ies"} found${scope?` for ${scope}`:""}`
       : "No matching jobs found with these selections.";
+
+    const showPagination=count>PAGE_SIZE;
+    pagination.hidden=!showPagination;
+    if(count){
+      paginationSummary.textContent=`Showing ${start+1}–${end} of ${count.toLocaleString("en-US")} jobs`;
+      paginationPage.textContent=`Page ${currentPage} of ${totalPages}`;
+      prevPage.disabled=currentPage<=1;
+      nextPage.disabled=currentPage>=totalPages;
+    }
     updateDivisionUI();
   }
   function setDivision(category){
@@ -3709,7 +3851,7 @@ document.addEventListener('keydown',(e)=>{
     specialty.value="";
     rebuildProfessionOptions();
     rebuildSpecialtyOptions();
-    render();
+    render(true);
   }
 
   const params=new URLSearchParams(window.location.search);
@@ -3734,7 +3876,7 @@ document.addEventListener('keydown',(e)=>{
     activeCategory=normalizeCategory(division.value);
     rebuildProfessionOptions(profession.value);
     rebuildSpecialtyOptions(specialty.value);
-    render();
+    render(true);
     qs(".jobs-results-section")?.scrollIntoView({behavior:"smooth",block:"start"});
   });
 
@@ -3744,7 +3886,7 @@ document.addEventListener('keydown',(e)=>{
     specialty.value="";
     rebuildProfessionOptions();
     rebuildSpecialtyOptions();
-    render();
+    render(true);
   });
   profession.addEventListener("change",()=>{
     setProfession(profession.value);
@@ -3758,9 +3900,9 @@ document.addEventListener('keydown',(e)=>{
       }
     }
     rebuildSpecialtyOptions();
-    render();
+    render(true);
   });
-  specialty.addEventListener("change",render);
+  specialty.addEventListener("change",()=>render(true));
   filterType.addEventListener("change",()=>{
     setProfession(filterType.value);
     if(!activeCategory && filterType.value){
@@ -3773,9 +3915,9 @@ document.addEventListener('keydown',(e)=>{
       }
     }
     rebuildSpecialtyOptions();
-    render();
+    render(true);
   });
-  [filterState,sort].forEach(el=>el.addEventListener("change",render));
+  [filterState,sort].forEach(el=>el.addEventListener("change",()=>render(true)));
 
   qsa(".jobs-division-card").forEach(btn=>btn.addEventListener("click",()=>setDivision(btn.dataset.category||"")));
   allButton.addEventListener("click",()=>{
@@ -3785,7 +3927,7 @@ document.addEventListener('keydown',(e)=>{
     specialty.value="";
     rebuildProfessionOptions();
     rebuildSpecialtyOptions();
-    render();
+    render(true);
   });
 
   function clearAll(){
@@ -3797,10 +3939,22 @@ document.addEventListener('keydown',(e)=>{
     filterState.value="";
     rebuildProfessionOptions();
     rebuildSpecialtyOptions();
-    render();
+    render(true);
   }
   qs("#clearFilters").addEventListener("click",clearAll);
   qs("#viewAllJobs").addEventListener("click",clearAll);
+
+  prevPage.addEventListener("click",()=>{
+    if(currentPage<=1)return;
+    currentPage--;
+    render();
+    qs(".jobs-results-head")?.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+  nextPage.addEventListener("click",()=>{
+    currentPage++;
+    render();
+    qs(".jobs-results-head")?.scrollIntoView({behavior:"smooth",block:"start"});
+  });
 
   const filterToggle=qs("#mobileFilterToggle");
   const filters=qs(".jobs-filters");
