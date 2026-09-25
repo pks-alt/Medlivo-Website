@@ -2830,6 +2830,120 @@ header{
 
 
 
+
+
+/* === Healthcare organizations lead-generation module === */
+.staffing-request{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:28px;
+  margin-top:36px;
+  padding:28px;
+  border:1px solid #dfe6f1;
+  border-radius:20px;
+  background:linear-gradient(135deg,#f9fbff 0%,#f5f8fe 100%);
+  box-shadow:0 14px 34px rgba(9,25,79,.055);
+}
+.staffing-request-copy{
+  padding:4px 8px 4px 2px;
+}
+.staffing-request-copy .eyebrow{
+  margin-bottom:9px;
+}
+.staffing-request-copy h3{
+  color:var(--deep);
+  font-size:clamp(28px,2.7vw,36px);
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+.staffing-request-copy p{
+  margin-top:11px;
+  max-width:500px;
+  color:#66748a;
+  font-size:13px;
+  line-height:1.65;
+}
+.staffing-request-primary{
+  margin-top:18px;
+}
+.staffing-request-paths{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.staffing-request-path{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:126px;
+  padding:17px 18px 16px;
+  border:1px solid #dce4ef;
+  border-radius:14px;
+  background:#fff;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.staffing-request-path:hover,
+.staffing-request-path:focus-visible{
+  transform:translateY(-2px);
+  border-color:#c5d3e6;
+  box-shadow:0 12px 28px rgba(9,25,79,.08);
+}
+.staffing-request-path:focus-visible{
+  outline:3px solid rgba(47,103,216,.24);
+  outline-offset:3px;
+}
+.staffing-request-path span{
+  color:#6d7c93;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.staffing-request-path strong{
+  margin-top:7px;
+  color:var(--deep);
+  font-size:14px;
+  line-height:1.35;
+}
+.staffing-request-path b{
+  margin-top:auto;
+  padding-top:13px;
+  color:var(--navy);
+  font-size:10px;
+  font-weight:900;
+}
+.staffing-request-rehab{
+  border-top:3px solid #24a9b7;
+}
+.staffing-request-locum{
+  border-top:3px solid #5b55c7;
+}
+.staffing-request-nursing{
+  grid-column:1/-1;
+  border-top:3px solid #2f67d8;
+}
+@media(max-width:980px){
+  .staffing-request{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:620px){
+  .staffing-request{
+    margin-top:28px;
+    padding:20px;
+    border-radius:17px;
+  }
+  .staffing-request-paths{
+    grid-template-columns:1fr;
+  }
+  .staffing-request-nursing{
+    grid-column:auto;
+  }
+  .staffing-request-primary{
+    width:100%;
+  }
+}
+
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
@@ -2924,6 +3038,33 @@ header{
         <div class="workforce-row"><span>02</span><div><h3>Ongoing workforce demand</h3><p>Recruiting support for recurring and longer-term healthcare staffing needs.</p></div></div>
         <div class="workforce-row"><span>03</span><div><h3>Structured workforce programs</h3><p>Support within MSP, VMS, and other organized workforce environments.</p></div></div>
         <div class="workforce-row"><span>04</span><div><h3>Assignment continuity</h3><p>Ongoing support from placement through the life of the assignment.</p></div></div>
+      </div>
+    </div>
+
+    <div class="staffing-request">
+      <div class="staffing-request-copy">
+        <div class="eyebrow">Start a Staffing Request</div>
+        <h3>Tell us what coverage you need.</h3>
+        <p>Share the role, location, start timing, schedule, and expected duration. We’ll route your request to the right Medlivo team and follow up directly.</p>
+        <a class="btn btn-green staffing-request-primary" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff →</a>
+      </div>
+
+      <div class="staffing-request-paths" aria-label="Healthcare staffing request options">
+        <a class="staffing-request-path staffing-request-rehab" href="mailto:hello@medlivo.com?subject=Rehabilitation%20Staffing%20Request">
+          <span>Rehabilitation</span>
+          <strong>PT, OT, SLP, PTA &amp; COTA</strong>
+          <b>Request Rehab Staff →</b>
+        </a>
+        <a class="staffing-request-path staffing-request-locum" href="mailto:hello@medlivo.com?subject=Locum%20Tenens%20Coverage%20Request">
+          <span>Locum Tenens</span>
+          <strong>Physicians, NPs &amp; PAs</strong>
+          <b>Request Locum Coverage →</b>
+        </a>
+        <a class="staffing-request-path staffing-request-nursing" href="mailto:hello@medlivo.com?subject=Nursing%20and%20Allied%20Staffing%20Request">
+          <span>Nursing &amp; Allied</span>
+          <strong>Nursing and allied clinical talent</strong>
+          <b>Request Nursing &amp; Allied Staff →</b>
+        </a>
       </div>
     </div>
 
