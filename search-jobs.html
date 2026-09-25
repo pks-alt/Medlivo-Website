@@ -2736,8 +2736,8 @@ header{
         <button class="jobs-filter-close" id="filterClose" type="button" aria-label="Close filters">×</button>
         <div class="jobs-filter-head">
           <div>
-            <span>Refine Results</span>
-            <strong>Filters</strong>
+            <span>Your Search</span>
+            <strong>Narrow results</strong>
           </div>
           <button type="button" id="clearFilters">Clear all</button>
         </div>
@@ -2836,7 +2836,7 @@ header{
           <div class="jobs-division-head">
             <div>
               <span class="jobs-category-label">Browse by division</span>
-              <strong>Choose the healthcare path that fits your profession.</strong>
+              <strong>Choose the area that best matches your work.</strong>
             </div>
             <button class="jobs-all-button active" data-category="" type="button" aria-pressed="true">All Opportunities</button>
           </div>
@@ -3358,9 +3358,12 @@ document.addEventListener('keydown',(e)=>{
       btn.setAttribute("aria-selected",String(selected));
     });
     const selectedProfession=profession.value;
+    const selectedSpecialty=specialty.value;
     resultsTitle.textContent=selectedProfession
       ? (profession.options[profession.selectedIndex]?.text||selectedProfession)+" jobs."
-      : cfg.title;
+      : selectedSpecialty
+        ? selectedSpecialty+" jobs."
+        : cfg.title;
     contextEyebrow.textContent=cfg.eyebrow;
     contextTitle.textContent=cfg.contextTitle;
     contextText.textContent=cfg.contextText;
@@ -3400,7 +3403,7 @@ document.addEventListener('keydown',(e)=>{
     list.hidden=count===0;
     const scope=profession.value
       ? (profession.options[profession.selectedIndex]?.text||profession.value)
-      : activeCategory;
+      : specialty.value||activeCategory;
     summary.textContent=count
       ? `${count} current opportunit${count===1?"y":"ies"} found${scope?` for ${scope}`:""}`
       : "No matching jobs found with these selections.";
