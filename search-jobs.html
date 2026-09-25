@@ -1984,7 +1984,7 @@ header{
   display:block;
   margin-bottom:18px;
   color:var(--blue);
-  font-size:9px;
+  font-size:10px;
   font-weight:900;
   letter-spacing:.12em;
 }
@@ -2128,7 +2128,7 @@ header{
   border-radius:999px;
   background:#fff;
   color:#53617a;
-  font-size:10px;
+  font-size:12px;
   font-weight:900;
   cursor:pointer;
 }
@@ -2182,12 +2182,12 @@ header{
   width:32px;height:32px;border-radius:50%;
   background:#f3f6fb;
   color:#7d8aa1;
-  font-size:9px;font-weight:900;
+  font-size:10px;font-weight:900;
 }
 .jobs-division-card.active .division-index{background:#eef3ff;color:var(--blue)}
 .jobs-division-card .division-copy{display:grid;gap:4px}
-.jobs-division-card .division-copy strong{font-size:14px;letter-spacing:-.02em}
-.jobs-division-card .division-copy small{color:#7a879e;font-size:9px;line-height:1.4;font-weight:700}
+.jobs-division-card .division-copy strong{font-size:15px;letter-spacing:-.02em}
+.jobs-division-card .division-copy small{color:#7a879e;font-size:11px;line-height:1.45;font-weight:700}
 .jobs-division-card .division-arrow{font-size:17px;color:#91a0b6}
 
 .jobs-division-context{
@@ -2203,7 +2203,7 @@ header{
 .jobs-division-context-copy span{
   display:block;
   color:var(--blue);
-  font-size:8px;
+  font-size:10px;
   font-weight:900;
   letter-spacing:.14em;
   text-transform:uppercase;
@@ -2212,14 +2212,14 @@ header{
   display:block;
   margin-top:5px;
   color:var(--deep);
-  font-size:15px;
+  font-size:16px;
   line-height:1.35;
 }
 .jobs-division-context-copy p{
   margin-top:5px;
   color:#66748d;
-  font-size:10px;
-  line-height:1.5;
+  font-size:12px;
+  line-height:1.55;
 }
 .jobs-specialty-shortcuts{
   display:flex;
@@ -2234,7 +2234,7 @@ header{
   border-radius:999px;
   background:#fff;
   color:#50607a;
-  font-size:9px;
+  font-size:11px;
   font-weight:900;
   cursor:pointer;
   transition:.16s ease;
@@ -2300,7 +2300,7 @@ header{
 .job-detail small{
   display:block;
   color:#8b98ad;
-  font-size:8px;
+  font-size:9px;
   letter-spacing:.1em;
   text-transform:uppercase;
   font-weight:900;
@@ -2309,8 +2309,8 @@ header{
   display:block;
   margin-top:4px;
   color:#344562;
-  font-size:10px;
-  line-height:1.35;
+  font-size:12px;
+  line-height:1.4;
 }
 .job-card-side{
   min-width:190px;
@@ -2320,7 +2320,7 @@ header{
 .job-pay-label{
   display:block;
   color:#8b98ad;
-  font-size:8px;
+  font-size:9px;
   text-transform:uppercase;
   letter-spacing:.12em;
   font-weight:900;
@@ -2341,8 +2341,8 @@ header{
   display:block;
   margin-top:7px;
   color:#98a4b6;
-  font-size:8px;
-  line-height:1.35;
+  font-size:10px;
+  line-height:1.4;
   text-align:right;
 }
 .jobs-no-results{
@@ -2409,8 +2409,8 @@ header{
 .jobs-support-item p{
   margin-top:7px;
   color:#69778e;
-  font-size:10px;
-  line-height:1.55;
+  font-size:12px;
+  line-height:1.6;
 }
 
 @media(max-width:1040px){
@@ -2513,9 +2513,9 @@ header{
     <div class="wrap">
       <form class="jobs-search-panel" id="jobsSearchForm" action="search-jobs.html" method="get" data-ats-integration="pending">
         <div class="jobs-search-field">
-          <label for="searchProfession">Profession</label>
-          <select id="searchProfession" name="profession">
-            <option value="">All professions</option>
+          <label for="searchProfession">Division</label>
+          <select id="searchProfession" name="profession" aria-label="Healthcare division">
+            <option value="">All divisions</option>
             <option value="Nursing & Allied">Nursing &amp; Allied</option>
             <option value="Rehabilitation">Rehabilitation</option>
             <option value="Locum Tenens">Locum Tenens</option>
@@ -2537,7 +2537,7 @@ header{
   <section class="jobs-results-section">
     <div class="wrap jobs-layout">
       <div class="jobs-filter-backdrop" id="filterBackdrop" hidden></div>
-      <aside class="jobs-filters" aria-label="Refine job results">
+      <aside class="jobs-filters" id="jobsFilters" aria-label="Refine job results">
         <button class="jobs-filter-close" id="filterClose" type="button" aria-label="Close filters">×</button>
         <div class="jobs-filter-head">
           <div>
@@ -2605,9 +2605,9 @@ header{
         </div>
 
         <div class="jobs-filter-group">
-          <label for="filterType">Role type</label>
-          <select id="filterType" data-ats-filter="role-type">
-            <option value="">All role types</option>
+          <label for="filterType">Profession</label>
+          <select id="filterType" data-ats-filter="profession">
+            <option value="">All professions</option>
             <option value="Nursing">Nursing</option>
             <option value="Allied Health">Allied Health</option>
             <option value="Rehabilitation">Rehabilitation</option>
@@ -2632,7 +2632,7 @@ header{
             <p id="resultsSummary">Current openings across Medlivo’s healthcare divisions.</p>
           </div>
           <div class="jobs-results-tools">
-            <button class="jobs-mobile-filter" id="mobileFilterToggle" type="button">Filters</button>
+            <button class="jobs-mobile-filter" id="mobileFilterToggle" type="button" aria-controls="jobsFilters" aria-expanded="false">Filters</button>
             <select id="sortJobs" aria-label="Sort jobs">
               <option value="newest">Newest first</option>
               <option value="pay-high">Pay: high to low</option>
@@ -2647,11 +2647,11 @@ header{
               <span class="jobs-category-label">Browse by division</span>
               <strong>Choose the healthcare path that fits your profession.</strong>
             </div>
-            <button class="jobs-all-button active" data-category="" type="button">All Opportunities</button>
+            <button class="jobs-all-button active" data-category="" type="button" aria-pressed="true">All Opportunities</button>
           </div>
 
           <div class="jobs-division-grid" role="tablist" aria-label="Medlivo healthcare divisions">
-            <button class="jobs-division-card division-nursing" data-category="Nursing & Allied" type="button">
+            <button class="jobs-division-card division-nursing" data-category="Nursing & Allied" type="button" role="tab" aria-selected="false">
               <span class="division-index">01</span>
               <span class="division-copy">
                 <strong>Nursing &amp; Allied</strong>
@@ -2660,7 +2660,7 @@ header{
               <span class="division-arrow" aria-hidden="true">→</span>
             </button>
 
-            <button class="jobs-division-card division-rehab" data-category="Rehabilitation" type="button">
+            <button class="jobs-division-card division-rehab" data-category="Rehabilitation" type="button" role="tab" aria-selected="false">
               <span class="division-index">02</span>
               <span class="division-copy">
                 <strong>Rehabilitation</strong>
@@ -2669,7 +2669,7 @@ header{
               <span class="division-arrow" aria-hidden="true">→</span>
             </button>
 
-            <button class="jobs-division-card division-locum" data-category="Locum Tenens" type="button">
+            <button class="jobs-division-card division-locum" data-category="Locum Tenens" type="button" role="tab" aria-selected="false">
               <span class="division-index">03</span>
               <span class="division-copy">
                 <strong>Locum Tenens</strong>
@@ -2846,7 +2846,7 @@ document.addEventListener('keydown',(e)=>{
     ATS HANDOFF CONTRACT
     --------------------
     Replace "jobs" with live ATS records while preserving these normalized fields:
-    id, title, category, type, state, city, pay, start, posted, applyUrl.
+    id, title, category, profession, specialty, type, state, city, pay, start, posted, applyUrl.
     Optional future ATS fields can be added to the card template without changing layout.
     The preview records below are from fields already exposed in the current Medlivo ATS search experience.
   */
@@ -2926,7 +2926,7 @@ document.addEventListener('keydown',(e)=>{
     return value||"";
   }
   function payHigh(job){
-    const nums=(String(job.pay||"").match(/[\d.]+/g)||[]).map(Number);
+    const nums=(String(job.pay||"").replace(/,/g,"").match(/\d+(?:\.\d+)?/g)||[]).map(Number);
     return nums.length?Math.max(...nums):0;
   }
   function roleTypeMatch(job,filter){
@@ -2944,7 +2944,7 @@ document.addEventListener('keydown',(e)=>{
     const type=filterType.value||"";
     if(p && job.category.toLowerCase()!==p)return false;
     if(cat && job.category.toLowerCase()!==cat)return false;
-    if(q && !(job.title+" "+job.type+" "+job.category).toLowerCase().includes(q))return false;
+    if(q && !(job.title+" "+(job.profession||"")+" "+(job.specialty||"")+" "+job.type+" "+job.category).toLowerCase().includes(q))return false;
     if(l && !(job.city+" "+job.state).toLowerCase().includes(l))return false;
     if(st && job.state.toLowerCase()!==st)return false;
     if(!roleTypeMatch(job,type))return false;
@@ -2953,7 +2953,7 @@ document.addEventListener('keydown',(e)=>{
   function rebuildRoleTypes(){
     const cfg=divisionConfig[activeCategory]||divisionConfig[""];
     const current=filterType.value;
-    filterType.innerHTML='<option value="">All role types</option>'+cfg.roleTypes.map(v=>'<option value="'+v+'">'+v+'</option>').join("");
+    filterType.innerHTML='<option value="">All professions</option>'+cfg.roleTypes.map(v=>'<option value="'+v+'">'+v+'</option>').join("");
     if(cfg.roleTypes.includes(current))filterType.value=current;
   }
   function renderShortcuts(){
@@ -2968,7 +2968,12 @@ document.addEventListener('keydown',(e)=>{
   function updateDivisionUI(){
     const cfg=divisionConfig[activeCategory]||divisionConfig[""];
     allButton.classList.toggle("active",!activeCategory);
-    qsa(".jobs-division-card").forEach(btn=>btn.classList.toggle("active",btn.dataset.category===activeCategory));
+    allButton.setAttribute("aria-pressed",String(!activeCategory));
+    qsa(".jobs-division-card").forEach(btn=>{
+      const selected=btn.dataset.category===activeCategory;
+      btn.classList.toggle("active",selected);
+      btn.setAttribute("aria-selected",String(selected));
+    });
     resultsTitle.textContent=cfg.title;
     contextEyebrow.textContent=cfg.eyebrow;
     contextTitle.textContent=cfg.contextTitle;
@@ -2979,7 +2984,7 @@ document.addEventListener('keydown',(e)=>{
     let items=jobs.filter(matches);
     if(sort.value==="pay-high")items.sort((a,b)=>payHigh(b)-payHigh(a));
     if(sort.value==="location")items.sort((a,b)=>(a.state+a.city).localeCompare(b.state+b.city));
-    if(sort.value==="newest")items.sort((a,b)=>String(b.posted).localeCompare(String(a.posted)));
+    if(sort.value==="newest")items.sort((a,b)=>(Date.parse(b.posted)||0)-(Date.parse(a.posted)||0));
 
     list.innerHTML=items.map(job=>`
       <article class="job-card cat-${slug(job.category)}" data-job-id="${job.id}" data-ats-template="job-card" data-ats-category="${job.category}">
@@ -3008,7 +3013,7 @@ document.addEventListener('keydown',(e)=>{
     noResults.hidden=count!==0;
     list.hidden=count===0;
     summary.textContent=count
-      ? `${count} opportunit${count===1?"y":"ies"} found`
+      ? `${count} current opportunit${count===1?"y":"ies"} found${activeCategory?` in ${activeCategory}`:""}`
       : "No exact matches found. Try widening your search.";
     updateDivisionUI();
   }
@@ -3029,8 +3034,10 @@ document.addEventListener('keydown',(e)=>{
   }
   if(params.has("specialty"))specialty.value=params.get("specialty")||"";
   if(params.has("location"))locationInput.value=params.get("location")||"";
+  if(params.has("state"))filterState.value=(params.get("state")||"").toUpperCase();
 
   rebuildRoleTypes();
+  if(params.has("type") && [...filterType.options].some(o=>o.value===params.get("type")))filterType.value=params.get("type");
 
   qs("#jobsSearchForm").addEventListener("submit",e=>{
     e.preventDefault();
@@ -3080,6 +3087,7 @@ document.addEventListener('keydown',(e)=>{
   function setFiltersOpen(open){
     filters.classList.toggle("open",open);
     filterBackdrop.hidden=!open;
+    filterToggle?.setAttribute("aria-expanded",String(open));
     document.body.style.overflow=open?"hidden":"";
   }
   if(filterToggle)filterToggle.addEventListener("click",()=>setFiltersOpen(true));
