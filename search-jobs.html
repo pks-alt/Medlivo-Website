@@ -2174,9 +2174,14 @@ header{
   box-shadow:0 13px 30px rgba(9,25,79,.08);
 }
 .jobs-division-card.active:before{width:5px}
-.division-nursing:before{background:#2f67d8}
-.division-rehab:before{background:#24a6b0}
-.division-locum:before{background:#29a526}
+.division-nursing{--division-accent:#2f67d8;--division-soft:#eef4ff}
+.division-rehab{--division-accent:#18a0a8;--division-soft:#eafafa}
+.division-locum{--division-accent:#635bce;--division-soft:#f2f0ff}
+.jobs-division-card:before{background:var(--division-accent,#cbd6e6)}
+.jobs-division-card.active{
+  border-color:var(--division-accent,#ced9e9);
+  background:linear-gradient(180deg,#fff 0%,var(--division-soft,#f7f9fc) 100%);
+}
 .jobs-division-card .division-index{
   display:grid;place-items:center;
   width:32px;height:32px;border-radius:50%;
@@ -2184,7 +2189,8 @@ header{
   color:#7d8aa1;
   font-size:10px;font-weight:900;
 }
-.jobs-division-card.active .division-index{background:#eef3ff;color:var(--blue)}
+.jobs-division-card.active .division-index{background:var(--division-soft,#eef3ff);color:var(--division-accent,var(--blue))}
+.jobs-division-card.active .division-arrow{color:var(--division-accent,var(--blue))}
 .jobs-division-card .division-copy{display:grid;gap:4px}
 .jobs-division-card .division-copy strong{font-size:15px;letter-spacing:-.02em}
 .jobs-division-card .division-copy small{color:#7a879e;font-size:11px;line-height:1.45;font-weight:700}
@@ -2240,10 +2246,16 @@ header{
   transition:.16s ease;
 }
 .jobs-specialty-shortcuts button:hover{
-  border-color:#aebdd2;
-  color:var(--navy);
+  border-color:var(--context-accent,#aebdd2);
+  color:var(--context-accent,var(--navy));
   transform:translateY(-1px);
 }
+.jobs-division-context[data-division="nursing-and-allied"]{--context-accent:#2f67d8;background:#f6f9ff}
+.jobs-division-context[data-division="rehabilitation"]{--context-accent:#18a0a8;background:#f3fbfb}
+.jobs-division-context[data-division="locum-tenens"]{--context-accent:#635bce;background:#f8f7ff}
+.jobs-division-context[data-division="nursing-and-allied"] .jobs-division-context-copy span,
+.jobs-division-context[data-division="rehabilitation"] .jobs-division-context-copy span,
+.jobs-division-context[data-division="locum-tenens"] .jobs-division-context-copy span{color:var(--context-accent)}
 
 .job-list{
   display:grid;
@@ -2272,13 +2284,13 @@ header{
 }
 .job-card:hover:before{width:5px;height:auto}
 .job-card.cat-nursing-and-allied:before{background:#2f67d8}
-.job-card.cat-rehabilitation:before{background:#24a6b0}
-.job-card.cat-locum-tenens:before{background:#29a526}
+.job-card.cat-rehabilitation:before{background:#18a0a8}
+.job-card.cat-locum-tenens:before{background:#635bce}
 .job-card-main{min-width:0}
 .job-badges{margin-bottom:11px}
 .job-card.cat-nursing-and-allied .job-badge:first-child{background:#eef4ff;color:#2457bd}
-.job-card.cat-rehabilitation .job-badge:first-child{background:#eafafa;color:#16767e}
-.job-card.cat-locum-tenens .job-badge:first-child{background:#eef9ec;color:#237b1f}
+.job-card.cat-rehabilitation .job-badge:first-child{background:#eafafa;color:#157d84}
+.job-card.cat-locum-tenens .job-badge:first-child{background:#f2f0ff;color:#5148b8}
 .job-card h3{font-size:23px;max-width:650px}
 .job-location-line{
   display:flex;align-items:center;gap:7px;
@@ -2976,6 +2988,7 @@ document.addEventListener('keydown',(e)=>{
     });
     resultsTitle.textContent=cfg.title;
     contextEyebrow.textContent=cfg.eyebrow;
+    qs("#divisionContext").dataset.division=slug(activeCategory)||"all";
     contextTitle.textContent=cfg.contextTitle;
     contextText.textContent=cfg.contextText;
     renderShortcuts();
