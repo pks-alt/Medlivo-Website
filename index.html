@@ -2085,6 +2085,343 @@ header{
   }
 }
 
+
+
+/* === Homepage V7: full-page rhythm and consistency polish === */
+.home-hero-premium + .specialties{
+  padding:74px 0 72px;
+}
+
+/* Specialties: tighter, equal-height editorial cards */
+.specialties{
+  padding:74px 0 72px;
+}
+.specialties-head{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:64px;
+  align-items:end;
+  margin-bottom:28px;
+}
+.specialties-head .lead{
+  margin:0;
+  max-width:520px;
+}
+.spec-grid{
+  gap:18px;
+}
+.spec{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  border-radius:18px;
+  box-shadow:0 10px 28px rgba(9,25,79,.05);
+}
+.spec-img{
+  height:225px;
+}
+.spec-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:21px 22px 22px;
+}
+.spec h3{
+  font-size:22px;
+}
+.spec p{
+  font-size:13px;
+  line-height:1.62;
+}
+.spec a{
+  margin-top:auto;
+  padding-top:16px;
+  font-size:11px;
+}
+
+/* Healthcare organizations: reduce air, increase structure */
+.workforce-section{
+  padding:72px 0;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);
+}
+.workforce-grid{
+  grid-template-columns:.90fr 1.10fr;
+  gap:76px;
+}
+.workforce-intro{
+  padding-top:0;
+}
+.workforce-intro .title{
+  max-width:540px;
+}
+.workforce-intro .lead{
+  max-width:510px;
+  margin-top:16px;
+}
+.workforce-cta{
+  margin-top:24px;
+}
+.workforce-row{
+  grid-template-columns:48px 1fr;
+  gap:17px;
+  padding:20px 0;
+}
+.workforce-row>span{
+  width:36px;
+  height:36px;
+}
+.workforce-row h3{
+  font-size:20px;
+}
+.workforce-row p{
+  margin-top:6px;
+  font-size:13px;
+  line-height:1.6;
+}
+
+/* Why Medlivo: stronger density and cleaner four-column rhythm */
+.why-section{
+  padding:82px 0;
+}
+.why-head{
+  gap:76px;
+  margin-bottom:34px;
+}
+.why-section .title{
+  font-size:clamp(42px,4.15vw,56px);
+}
+.why-section .lead{
+  font-size:15px;
+  line-height:1.68;
+}
+.why-principle{
+  min-height:176px;
+  padding-top:24px;
+  padding-bottom:25px;
+}
+.why-principle:not(:first-child){
+  padding-left:24px;
+}
+.why-principle{
+  padding-right:24px;
+}
+.why-principle>span{
+  margin-bottom:18px;
+}
+.why-principle h3{
+  font-size:19px;
+}
+.why-principle p{
+  font-size:12px;
+  line-height:1.58;
+}
+
+/* Experience band: quieter proof section, not another full-size content block */
+.heritage{
+  padding:54px 0;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);
+}
+.heritage-shell{
+  grid-template-columns:.92fr 1.08fr;
+  gap:58px;
+}
+.heritage-copy h2{
+  font-size:clamp(32px,3vw,42px);
+  max-width:530px;
+}
+.heritage-copy p{
+  margin-top:13px;
+  font-size:15px;
+  line-height:1.62;
+  max-width:530px;
+}
+.heritage-point{
+  min-height:94px;
+  padding:8px 22px;
+}
+.heritage-point strong{
+  font-size:26px;
+}
+.heritage-point span{
+  margin-top:8px;
+  font-size:12px;
+  line-height:1.45;
+}
+
+/* Clinicians: shorter section and a proper desktop search bar */
+.careers{
+  padding:72px 0;
+}
+.career-shell{
+  min-height:500px;
+  border-radius:22px;
+}
+.career-copy{
+  padding:36px 38px;
+}
+.career-copy h2{
+  font-size:40px;
+  max-width:550px;
+}
+.career-copy>p{
+  font-size:14px;
+  line-height:1.62;
+}
+.search-label{
+  margin-top:17px;
+}
+.search{
+  display:grid;
+  grid-template-columns:1.05fr 1.05fr 1.05fr auto;
+  gap:8px;
+  margin-top:8px;
+  padding:9px;
+  border-radius:14px;
+  align-items:stretch;
+}
+.field{
+  padding:8px 10px;
+}
+.search .btn{
+  grid-column:auto;
+  min-width:132px;
+  padding:0 16px;
+}
+.career-photo{
+  min-height:500px;
+}
+.career-note{
+  left:22px;
+  bottom:22px;
+  width:228px;
+  padding:14px 15px;
+}
+
+/* Final conversion: reduce dead space while keeping strong close */
+.final{
+  padding:8px 0 62px;
+}
+.final-intro{
+  margin-bottom:20px;
+}
+.final-intro h2{
+  font-size:clamp(36px,3.7vw,48px);
+}
+.final-shell{
+  border-radius:20px;
+  box-shadow:0 18px 44px rgba(11,34,95,.13);
+}
+.final-side{
+  padding:36px 38px;
+}
+.final h3{
+  font-size:27px;
+}
+.final p{
+  font-size:12px;
+}
+
+/* Consistent section typography */
+.specialties .eyebrow,
+.workforce-section .eyebrow,
+.why-section .eyebrow,
+.heritage .eyebrow,
+.careers .eyebrow{
+  margin-bottom:11px;
+}
+.specialties .title,
+.workforce-section .title{
+  font-size:clamp(38px,3.75vw,50px);
+}
+
+@media(max-width:1040px){
+  .specialties-head{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .specialties-head .lead{
+    max-width:680px;
+  }
+  .workforce-grid{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .why-head{
+    gap:20px;
+  }
+  .heritage-shell{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+  .search{
+    grid-template-columns:1fr 1fr;
+  }
+  .search .btn{
+    grid-column:1/-1;
+  }
+  .career-shell{
+    min-height:auto;
+  }
+  .career-photo{
+    min-height:450px;
+  }
+}
+@media(max-width:720px){
+  .home-hero-premium + .specialties,
+  .specialties,
+  .workforce-section,
+  .careers{
+    padding:62px 0;
+  }
+  .specialties-head{
+    margin-bottom:24px;
+  }
+  .spec-grid{
+    gap:30px;
+  }
+  .spec-img{
+    height:240px;
+  }
+  .workforce-row{
+    padding:18px 0;
+  }
+  .why-section{
+    padding:68px 0;
+  }
+  .why-principle,
+  .why-principle:not(:first-child){
+    min-height:auto;
+    padding:22px 0;
+  }
+  .heritage{
+    padding:48px 0;
+  }
+  .heritage-point{
+    min-height:auto;
+  }
+  .career-copy{
+    padding:34px 24px;
+  }
+  .career-copy h2{
+    font-size:35px;
+  }
+  .search{
+    grid-template-columns:1fr;
+  }
+  .search .btn{
+    grid-column:auto;
+  }
+  .career-photo{
+    min-height:400px;
+  }
+  .final{
+    padding:6px 0 56px;
+  }
+  .final-side{
+    padding:32px 26px;
+  }
+}
+
 </style>
 </head>
 <body>
