@@ -3267,13 +3267,13 @@ header{
 
         <div class="jobs-career-tools" aria-label="Other ways to get started">
           <div class="jobs-career-tools-copy">
-            <span>Can’t find the exact job?</span>
-            <strong>Keep moving without searching every opening.</strong>
+            <span>More ways to find the right match</span>
+            <strong>Submit your resume, receive alerts for matching jobs, or connect with a Medlivo recruiter.</strong>
           </div>
           <div class="jobs-career-tools-actions">
-            <a data-ats-action="quick-apply" href="mailto:hello@medlivo.com?subject=Quick%20Apply%20-%20Healthcare%20Clinician">Quick Apply</a>
-            <a data-ats-action="job-alerts" href="mailto:hello@medlivo.com?subject=Job%20Alert%20Request">Get Job Alerts</a>
-            <a href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Ask a Recruiter</a>
+            <a data-ats-action="quick-apply" href="mailto:hello@medlivo.com?subject=Quick%20Apply%20-%20Healthcare%20Clinician">Submit Resume</a>
+            <a data-ats-action="job-alerts" href="mailto:hello@medlivo.com?subject=Job%20Alert%20Request">Create Job Alert</a>
+            <a href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Talk to a Recruiter</a>
           </div>
         </div>
 
@@ -3289,12 +3289,12 @@ header{
         </nav>
 
         <div class="jobs-no-results" id="noResults" hidden>
-          <span>No matching jobs right now</span>
-          <h3>Try a broader search.</h3>
-          <p>Choose another specialty or location, view all current jobs, or ask a Medlivo recruiter to help you find a match.</p>
+          <span>No jobs match your current search</span>
+          <h3>Adjust your search or stay connected.</h3>
+          <p>Try a broader specialty or location, view all current jobs, or create a job alert to hear about new opportunities that match your preferences.</p>
           <div class="jobs-no-results-actions">
             <button class="btn btn-primary" type="button" id="viewAllJobs">View All Jobs</button>
-            <a class="btn btn-outline" href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Ask a Recruiter</a>
+            <a class="btn btn-outline" data-ats-action="job-alerts" href="mailto:hello@medlivo.com?subject=Job%20Alert%20Request">Create Job Alert</a>
           </div>
         </div>
       </div>
@@ -3837,7 +3837,7 @@ document.addEventListener('keydown',(e)=>{
     const showPagination=count>PAGE_SIZE;
     pagination.hidden=!showPagination;
     if(count){
-      paginationSummary.textContent=`Showing ${start+1}–${end} of ${count.toLocaleString("en-US")} jobs`;
+      paginationSummary.textContent=`Showing jobs ${start+1}–${end} of ${count.toLocaleString("en-US")}`;
       paginationPage.textContent=`Page ${currentPage} of ${totalPages}`;
       prevPage.disabled=currentPage<=1;
       nextPage.disabled=currentPage>=totalPages;
