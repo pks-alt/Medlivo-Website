@@ -2830,12 +2830,12 @@ header{
 
 
 
-/* === Homepage final conversion: healthcare organizations only === */
-.final-client{
+/* === Homepage final conversion: clinician close === */
+.final-clinician{
   padding:18px 0 72px;
   background:#fff;
 }
-.final-client .final-client-shell{
+.final-clinician .final-clinician-shell{
   position:relative;
   overflow:hidden;
   display:grid;
@@ -2850,7 +2850,7 @@ header{
   color:#fff;
   box-shadow:0 22px 54px rgba(11,34,95,.14);
 }
-.final-client .final-client-shell:after{
+.final-clinician .final-clinician-shell:after{
   content:"";
   position:absolute;
   right:-95px;
@@ -2861,12 +2861,12 @@ header{
   border-radius:50%;
   pointer-events:none;
 }
-.final-client-copy{
+.final-clinician-copy{
   position:relative;
   z-index:1;
-  max-width:760px;
+  max-width:780px;
 }
-.final-client small{
+.final-clinician small{
   display:block;
   color:#9ff8f2;
   font-size:10px;
@@ -2874,28 +2874,28 @@ header{
   letter-spacing:.15em;
   text-transform:uppercase;
 }
-.final-client h2{
+.final-clinician h2{
   margin-top:11px;
-  max-width:720px;
+  max-width:760px;
   color:#fff;
   font-size:clamp(34px,3.6vw,48px);
   line-height:1.05;
   letter-spacing:-.045em;
 }
-.final-client p{
+.final-clinician p{
   margin-top:13px;
-  max-width:690px;
+  max-width:710px;
   color:#c3cee2;
   font-size:14px;
   line-height:1.66;
 }
-.final-client-specialties{
+.final-clinician-specialties{
   display:flex;
   gap:9px;
   flex-wrap:wrap;
   margin-top:20px;
 }
-.final-client-specialties span{
+.final-clinician-specialties span{
   padding:8px 11px;
   border:1px solid rgba(255,255,255,.16);
   border-radius:999px;
@@ -2904,59 +2904,58 @@ header{
   font-size:10px;
   font-weight:800;
 }
-.final-client-actions{
+.final-clinician-actions{
   position:relative;
   z-index:1;
   display:grid;
   gap:10px;
-  min-width:220px;
+  min-width:210px;
 }
-.final-client-actions .btn{
+.final-clinician-actions .btn{
   width:100%;
   min-height:48px;
   white-space:nowrap;
 }
-.final-client-actions .btn-outline{
+.final-clinician-actions .btn-outline{
   border-color:rgba(255,255,255,.26);
   background:rgba(255,255,255,.06);
   color:#fff;
 }
-.final-client-actions .btn-outline:hover{
+.final-clinician-actions .btn-outline:hover{
   background:rgba(255,255,255,.12);
 }
 @media(max-width:900px){
-  .final-client .final-client-shell{
+  .final-clinician .final-clinician-shell{
     grid-template-columns:1fr;
     gap:26px;
   }
-  .final-client-actions{
+  .final-clinician-actions{
     display:flex;
     min-width:0;
     flex-wrap:wrap;
   }
-  .final-client-actions .btn{
+  .final-clinician-actions .btn{
     width:auto;
   }
 }
 @media(max-width:620px){
-  .final-client{
+  .final-clinician{
     padding:10px 0 58px;
   }
-  .final-client .final-client-shell{
+  .final-clinician .final-clinician-shell{
     padding:34px 24px;
     border-radius:20px;
   }
-  .final-client h2{
+  .final-clinician h2{
     font-size:34px;
   }
-  .final-client-actions{
+  .final-clinician-actions{
     display:grid;
   }
-  .final-client-actions .btn{
+  .final-clinician-actions .btn{
     width:100%;
   }
 }
-
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
@@ -3144,22 +3143,22 @@ header{
 
 
 
-<section class="final final-client" id="contact">
+<section class="final final-clinician">
   <div class="wrap">
-    <div class="final-shell final-client-shell">
-      <div class="final-client-copy">
-        <small>For Healthcare Organizations</small>
-        <h2>Need healthcare talent? Let’s build the right coverage.</h2>
-        <p>Tell us the roles, locations, timing, and coverage priorities. We’ll connect you with the right Medlivo team across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>
-        <div class="final-client-specialties" aria-label="Medlivo healthcare staffing divisions">
+    <div class="final-shell final-clinician-shell">
+      <div class="final-clinician-copy">
+        <small>For Clinicians</small>
+        <h2>Ready for the opportunity that fits what’s next?</h2>
+        <p>Explore current opportunities across Nursing &amp; Allied, Rehabilitation, and Locum Tenens. When you find the right fit, Medlivo stays with you through credentialing, onboarding, and your assignment.</p>
+        <div class="final-clinician-specialties" aria-label="Medlivo clinician opportunities">
           <span>Nursing &amp; Allied</span>
           <span>Rehabilitation</span>
           <span>Locum Tenens</span>
         </div>
       </div>
-      <div class="final-client-actions">
-        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff →</a>
-        <a class="btn btn-outline" href="workforce-solutions.html">Explore Workforce Solutions</a>
+      <div class="final-clinician-actions">
+        <a class="btn btn-green" href="search-jobs.html">Search Jobs →</a>
+        <a class="btn btn-outline" href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Talk to a Recruiter</a>
       </div>
     </div>
   </div>
@@ -3167,7 +3166,7 @@ header{
 
 </main>
 
-<footer class="site-footer footer-minimal">
+<footer class="site-footer footer-minimal" id="contact">
   <div class="wrap footer-main-minimal">
     <div class="footer-brand-minimal">
       <a class="footer-logo-minimal" href="./" aria-label="Medlivo home">
