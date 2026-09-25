@@ -2830,89 +2830,6 @@ header{
 
 
 
-/* === Healthcare organizations conversion close === */
-.workforce-conversion{
-  position:relative;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) auto;
-  gap:42px;
-  align-items:center;
-  margin-top:34px;
-  padding:28px 30px;
-  border:1px solid #dfe6f1;
-  border-radius:18px;
-  background:
-    radial-gradient(circle at 90% 0%,rgba(95,223,229,.10),transparent 26%),
-    linear-gradient(135deg,#f8faff 0%,#f4f8ff 100%);
-}
-.workforce-conversion:before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  width:4px;
-  background:linear-gradient(180deg,var(--blue),var(--aqua),var(--green));
-}
-.workforce-conversion-copy{
-  max-width:760px;
-}
-.workforce-conversion-copy>span{
-  display:block;
-  color:var(--blue);
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-}
-.workforce-conversion h3{
-  margin-top:8px;
-  color:var(--deep);
-  font-size:clamp(25px,2.5vw,33px);
-  line-height:1.08;
-  letter-spacing:-.035em;
-}
-.workforce-conversion p{
-  margin-top:9px;
-  max-width:720px;
-  color:#65738a;
-  font-size:12px;
-  line-height:1.65;
-}
-.workforce-conversion-actions{
-  display:flex;
-  gap:9px;
-  align-items:center;
-}
-.workforce-conversion-actions .btn{
-  min-height:46px;
-  white-space:nowrap;
-}
-@media(max-width:900px){
-  .workforce-conversion{
-    grid-template-columns:1fr;
-    gap:20px;
-  }
-  .workforce-conversion-actions{
-    justify-content:flex-start;
-    flex-wrap:wrap;
-  }
-}
-@media(max-width:620px){
-  .workforce-conversion{
-    margin-top:26px;
-    padding:24px 20px;
-    border-radius:16px;
-  }
-  .workforce-conversion-actions{
-    display:grid;
-  }
-  .workforce-conversion-actions .btn{
-    width:100%;
-  }
-}
-
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
@@ -3010,17 +2927,6 @@ header{
       </div>
     </div>
 
-    <div class="workforce-conversion">
-      <div class="workforce-conversion-copy">
-        <span>Ready to Discuss Your Staffing Needs?</span>
-        <h3>Need healthcare talent? Let’s build the right coverage.</h3>
-        <p>Tell us the roles, locations, timing, and coverage priorities. We’ll connect you with the right Medlivo team across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>
-      </div>
-      <div class="workforce-conversion-actions">
-        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff →</a>
-        <a class="btn btn-outline" href="workforce-solutions.html">Explore Workforce Solutions</a>
-      </div>
-    </div>
   </div>
 </section>
 
