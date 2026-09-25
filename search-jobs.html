@@ -2642,6 +2642,117 @@ header{
   }
 }
 
+
+/* === Final recruiter-support CTA === */
+.jobs-bottom-cta{
+  padding:0 0 78px;
+  background:#f7f9fc;
+}
+.jobs-bottom-shell{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:48px;
+  align-items:center;
+  padding:38px 42px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:22px;
+  background:linear-gradient(125deg,#07194d 0%,#0b286d 70%,#123c90 100%);
+  box-shadow:0 22px 50px rgba(9,25,79,.14);
+}
+.jobs-bottom-shell:after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  right:-82px;
+  top:-105px;
+  border-radius:50%;
+  border:1px solid rgba(95,223,229,.14);
+  pointer-events:none;
+}
+.jobs-bottom-copy{
+  position:relative;
+  z-index:1;
+  max-width:720px;
+}
+.jobs-bottom-shell .eyebrow{
+  color:#9ff8f2;
+}
+.jobs-bottom-shell h2{
+  margin-top:8px;
+  color:#fff;
+  font-size:clamp(30px,3vw,38px);
+  line-height:1.06;
+  letter-spacing:-.04em;
+}
+.jobs-bottom-shell p{
+  margin-top:10px;
+  max-width:680px;
+  color:#c9d5e8;
+  font-size:13px;
+  line-height:1.65;
+}
+.jobs-bottom-contact{
+  margin-top:14px;
+  color:#e7edf8;
+  font-size:11px;
+  line-height:1.5;
+  font-weight:800;
+}
+.jobs-bottom-contact span{
+  margin:0 7px;
+  color:#7fdde3;
+}
+.jobs-bottom-actions{
+  position:relative;
+  z-index:1;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.jobs-bottom-actions .btn{
+  min-height:46px;
+  white-space:nowrap;
+}
+.jobs-bottom-actions .btn-outline{
+  border-color:rgba(255,255,255,.34);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+}
+.jobs-bottom-actions .btn-outline:hover{
+  background:rgba(255,255,255,.12);
+}
+@media(max-width:860px){
+  .jobs-bottom-shell{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .jobs-bottom-actions{
+    justify-content:flex-start;
+  }
+}
+@media(max-width:540px){
+  .jobs-bottom-cta{padding-bottom:62px}
+  .jobs-bottom-shell{
+    padding:30px 22px;
+    border-radius:18px;
+  }
+  .jobs-bottom-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .jobs-bottom-actions .btn{
+    width:100%;
+  }
+  .jobs-bottom-contact{
+    display:grid;
+    gap:3px;
+  }
+  .jobs-bottom-contact span{display:none}
+}
+
 /* === Clinician usability pass: plain-language search + conversion === */
 .jobs-search-panel{
   grid-template-columns:1fr 1.15fr 1.15fr 1fr auto;
@@ -3114,14 +3225,15 @@ header{
     </div>
   </section>
 
-  <section class="jobs-bottom-cta">
+  <section class="jobs-bottom-cta" aria-labelledby="recruiterSupportTitle">
     <div class="wrap jobs-bottom-shell">
-      <div>
-        <div class="eyebrow">Need Help Choosing?</div>
-        <h2>Talk with a recruiter.</h2>
-        <p>Tell us your profession, preferred location, and timing. We’ll help you understand your options and next steps.</p>
+      <div class="jobs-bottom-copy">
+        <div class="eyebrow">Recruiter Support</div>
+        <h2 id="recruiterSupportTitle">Prefer to talk to someone?</h2>
+        <p>Questions about a job, requirements, location, timing, or what happens next? A Medlivo recruiter can help you work through the details.</p>
+        <div class="jobs-bottom-contact">hello@medlivo.com <span aria-hidden="true">•</span> 855-633-5486</div>
       </div>
-      <div class="jobs-bottom-actions">
+      <div class="jobs-bottom-actions" aria-label="Contact a Medlivo recruiter">
         <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Job%20Search">Email a Recruiter</a>
         <a class="btn btn-outline" href="tel:+18556335486">Call 855-633-5486</a>
       </div>
