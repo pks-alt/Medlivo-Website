@@ -2533,6 +2533,115 @@ header{
   .job-ats-note{margin-left:0}
 }
 
+
+/* === Working with Medlivo: sequential clinician journey === */
+.jobs-support-strip{
+  padding:76px 0 82px;
+  background:#f7f9fc;
+}
+.jobs-support-head{
+  margin-bottom:34px;
+}
+.jobs-support-grid{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  border:0;
+}
+.jobs-support-grid:before{
+  content:"";
+  position:absolute;
+  top:19px;
+  left:5%;
+  right:5%;
+  height:1px;
+  background:#d8e1ee;
+}
+.jobs-support-item,
+.jobs-support-item:not(:first-child){
+  position:relative;
+  min-height:0;
+  padding:0 26px 0 0;
+  border:0;
+  background:transparent;
+}
+.jobs-support-item:not(:first-child){
+  padding-left:24px;
+}
+.jobs-support-step{
+  position:relative;
+  z-index:2;
+  display:grid!important;
+  place-items:center;
+  width:40px;
+  height:40px;
+  margin:0 0 20px!important;
+  border:1px solid #cbd8eb;
+  border-radius:50%;
+  background:#fff;
+  color:var(--blue)!important;
+  font-size:10px!important;
+  font-weight:900!important;
+  letter-spacing:.08em!important;
+  box-shadow:0 5px 14px rgba(9,25,79,.06);
+}
+.jobs-support-item strong{
+  margin-top:0;
+  font-size:17px;
+  line-height:1.28;
+}
+.jobs-support-item p{
+  margin-top:9px;
+  max-width:260px;
+  color:#66748b;
+  font-size:12px;
+  line-height:1.62;
+}
+@media(max-width:1040px){
+  .jobs-support-grid{
+    grid-template-columns:1fr 1fr;
+    gap:28px 0;
+  }
+  .jobs-support-grid:before{display:none}
+  .jobs-support-item,
+  .jobs-support-item:not(:first-child){
+    padding:0 28px 0 0;
+    border:0;
+  }
+  .jobs-support-item:nth-child(even){padding-left:28px;padding-right:0}
+}
+@media(max-width:720px){
+  .jobs-support-strip{padding:60px 0 66px}
+  .jobs-support-grid{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+  .jobs-support-item,
+  .jobs-support-item:not(:first-child),
+  .jobs-support-item:nth-child(even){
+    display:grid;
+    grid-template-columns:44px 1fr;
+    column-gap:14px;
+    padding:20px 0;
+    border-top:1px solid #e2e8f1;
+  }
+  .jobs-support-item:first-child{border-top:0;padding-top:0}
+  .jobs-support-step{
+    grid-row:1 / span 2;
+    margin:0!important;
+  }
+  .jobs-support-item strong{
+    align-self:center;
+    margin:0;
+  }
+  .jobs-support-item p{
+    grid-column:2;
+    max-width:none;
+    margin-top:5px;
+  }
+}
+
 /* === Clinician usability pass: plain-language search + conversion === */
 .jobs-search-panel{
   grid-template-columns:1fr 1.15fr 1.15fr 1fr auto;
@@ -2975,16 +3084,32 @@ header{
       <div class="jobs-support-head">
         <div>
           <div class="eyebrow">Working with Medlivo</div>
-          <h2>Support from your first search through your assignment.</h2>
+          <h2>What happens after you find a job.</h2>
         </div>
-        <p>You’ll know what to expect, who to contact, and what comes next—from job details through credentialing and assignment support.</p>
+        <p>From your first recruiter conversation through your assignment, we keep the next step clear and make sure you know who to contact.</p>
       </div>
 
-      <div class="jobs-support-grid">
-        <div class="jobs-support-item"><span>01</span><strong>Understand the job</strong><p>See the location, start timing, available pay information, and other key details before you move forward.</p></div>
-        <div class="jobs-support-item"><span>02</span><strong>Get credentialing help</strong><p>Our team helps keep licenses, documents, onboarding, and assignment readiness moving.</p></div>
-        <div class="jobs-support-item"><span>03</span><strong>Explore nationwide</strong><p>Search Nursing &amp; Allied, Rehabilitation, and Locum Tenens opportunities across the U.S.</p></div>
-        <div class="jobs-support-item"><span>04</span><strong>Stay connected</strong><p>Know who to contact before your start date and throughout your assignment when questions come up.</p></div>
+      <div class="jobs-support-grid" aria-label="What to expect when working with Medlivo">
+        <div class="jobs-support-item">
+          <span class="jobs-support-step">01</span>
+          <strong>Review the opportunity</strong>
+          <p>Talk through the role, location, schedule, available pay information, start timing, and requirements before you decide to move forward.</p>
+        </div>
+        <div class="jobs-support-item">
+          <span class="jobs-support-step">02</span>
+          <strong>Complete credentialing</strong>
+          <p>Get help with licenses, documents, compliance items, onboarding, and anything needed to become assignment-ready.</p>
+        </div>
+        <div class="jobs-support-item">
+          <span class="jobs-support-step">03</span>
+          <strong>Get ready to start</strong>
+          <p>Confirm your start details, reporting instructions, assignment contacts, and what to expect on your first day.</p>
+        </div>
+        <div class="jobs-support-item">
+          <span class="jobs-support-step">04</span>
+          <strong>Stay supported</strong>
+          <p>Keep a Medlivo contact throughout your assignment so you know where to go when questions or needs come up.</p>
+        </div>
       </div>
     </div>
   </section>
