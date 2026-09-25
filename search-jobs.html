@@ -3419,8 +3419,9 @@ document.addEventListener('keydown',(e)=>{
   const params=new URLSearchParams(window.location.search);
   let requestedDivision=normalizeCategory(params.get("division")||"");
   const legacyProfession=params.get("profession")||"";
-  if(!requestedDivision && normalizeCategory(legacyProfession)!==legacyProfession){
-    requestedDivision=normalizeCategory(legacyProfession);
+  const normalizedLegacy=normalizeCategory(legacyProfession);
+  if(!requestedDivision && ["Nursing & Allied","Rehabilitation","Locum Tenens"].includes(normalizedLegacy)){
+    requestedDivision=normalizedLegacy;
   }
   activeCategory=requestedDivision;
   division.value=activeCategory;
