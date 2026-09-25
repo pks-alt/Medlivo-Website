@@ -2493,6 +2493,46 @@ header{
 
 
 
+
+/* === Job-card scanability pass === */
+.job-specialty-line{
+  margin-top:9px;
+  color:#65738a;
+  font-size:11px;
+  line-height:1.45;
+  font-weight:700;
+}
+.job-specialty-line strong{
+  color:#344562;
+  font-weight:850;
+}
+.job-detail-grid{
+  max-width:640px;
+}
+.job-detail.job-id{
+  background:transparent;
+  border:1px solid #edf1f6;
+}
+.job-pay-label{
+  font-size:10px;
+}
+.job-pay{
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:-.01em;
+}
+.job-apply{
+  min-height:46px;
+  font-size:11px;
+}
+.job-ats-note{
+  max-width:180px;
+  margin-left:auto;
+}
+@media(max-width:720px){
+  .job-ats-note{margin-left:0}
+}
+
 /* === Clinician usability pass: plain-language search + conversion === */
 .jobs-search-panel{
   grid-template-columns:1fr 1.15fr 1.15fr 1fr auto;
@@ -3267,6 +3307,21 @@ document.addEventListener('keydown',(e)=>{
     const nums=(String(job.pay||"").replace(/,/g,"").match(/\d+(?:\.\d+)?/g)||[]).map(Number);
     return nums.length?Math.max(...nums):0;
   }
+  function formatPosted(value){
+    if(!value)return "Current";
+    const d=new Date(value);
+    if(Number.isNaN(d.getTime()))return value;
+    return d.toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+  }
+  function showSpecialty(job){
+    const sp=String(job.specialty||"").trim();
+    if(!sp)return "";
+    const title=norm(job.title);
+    const professionName=norm(job.profession||job.type);
+    const specialtyName=norm(sp);
+    if(!specialtyName || title===specialtyName || professionName===specialtyName)return "";
+    return sp;
+  }
   function professionMatch(job,filter){
     if(!filter)return true;
     const target=norm(filter);
@@ -3384,17 +3439,18 @@ document.addEventListener('keydown',(e)=>{
           </div>
           <h3>${job.title}</h3>
           <div class="job-location-line"><span class="job-location-dot"></span><span>${job.city}, ${job.state}</span></div>
+          ${showSpecialty(job)?`<div class="job-specialty-line">Specialty: <strong>${showSpecialty(job)}</strong></div>`:""}
           <div class="job-detail-grid">
-            <div class="job-detail"><small>Start date</small><strong>${job.start||"Ask recruiter"}</strong></div>
-            <div class="job-detail"><small>Posted</small><strong>${job.posted||"Current"}</strong></div>
-            <div class="job-detail"><small>Job ID</small><strong>${job.id}</strong></div>
+            <div class="job-detail"><small>Starts</small><strong>${job.start||"Ask recruiter"}</strong></div>
+            <div class="job-detail"><small>Posted</small><strong>${formatPosted(job.posted)}</strong></div>
+            <div class="job-detail job-id"><small>Job ID</small><strong>${job.id}</strong></div>
           </div>
         </div>
         <div class="job-card-side">
-          <span class="job-pay-label">Pay</span>
+          <span class="job-pay-label">Pay range</span>
           <div class="job-pay">${job.pay||"Ask recruiter"}</div>
-          <a class="job-apply" href="${job.applyUrl||"https://www.medlivo.com/search-jobs"}" data-ats-apply-id="${job.id}" aria-label="View and apply for ${job.title}">View &amp; Apply →</a>
-          <span class="job-ats-note">See full job details before you apply</span>
+          <a class="job-apply" href="${job.applyUrl||"https://www.medlivo.com/search-jobs"}" data-ats-apply-id="${job.id}" aria-label="View job details for ${job.title}">View Job →</a>
+          <span class="job-ats-note">See full details and apply if it fits</span>
         </div>
       </article>`).join("");
 
