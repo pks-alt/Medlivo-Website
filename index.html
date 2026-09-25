@@ -2541,6 +2541,42 @@ header{
   }
 }
 
+
+
+/* === Clinician ATS-ready search refinement: final === */
+.career-search-cta{
+  display:none!important;
+}
+.ats-search{
+  position:relative;
+}
+.ats-search .field{
+  min-width:0;
+}
+.ats-search .field input,
+.ats-search .field select{
+  min-height:24px;
+}
+.ats-search .btn{
+  align-self:stretch;
+}
+@media(max-width:1040px){
+  .ats-search{
+    grid-template-columns:1fr 1fr;
+  }
+  .ats-search .btn{
+    grid-column:1/-1;
+  }
+}
+@media(max-width:720px){
+  .ats-search{
+    grid-template-columns:1fr;
+  }
+  .ats-search .btn{
+    grid-column:auto;
+  }
+}
+
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
@@ -2646,13 +2682,27 @@ header{
       <h2>Find the next role that moves your career forward.</h2>
       <p>Explore nationwide opportunities and connect with a team that helps you understand the role, the process, and what comes next.</p>
 
-      <a class="career-search-cta" href="https://www.medlivo.com/search-jobs" aria-label="Search current Medlivo jobs">
-        <span>
-          <small>Current Opportunities</small>
-          <strong>Search by profession, specialty, and location.</strong>
-        </span>
-        <b>Search Jobs →</b>
-      </a>
+      <div class="search-label">Search Opportunities</div>
+      <form class="search ats-search" action="https://www.medlivo.com/search-jobs" method="get" data-ats-integration="pending">
+        <div class="field">
+          <label for="job-profession">Profession</label>
+          <select id="job-profession" name="profession">
+            <option value="">All professions</option>
+            <option value="nursing-allied">Nursing &amp; Allied</option>
+            <option value="rehabilitation">Rehabilitation</option>
+            <option value="locum-tenens">Locum Tenens</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="job-specialty">Specialty</label>
+          <input id="job-specialty" name="specialty" placeholder="e.g. ICU, PT, Urology">
+        </div>
+        <div class="field">
+          <label for="job-location">Location</label>
+          <input id="job-location" name="location" placeholder="City or state">
+        </div>
+        <button class="btn btn-primary" type="submit">Search Jobs →</button>
+      </form>
     </div>
 
     <div class="career-photo">
