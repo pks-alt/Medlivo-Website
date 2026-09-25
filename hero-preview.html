@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medlivo Homepage Hero — Design Preview</title>
+<style>
+:root{
+  --navy:#18358f;--deep:#0b225f;--blue:#2f67d8;--green:#29d80f;--aqua:#5fdfe5;
+  --ink:#0c1a3b;--text:#5b6880;--line:#e3e9f2;--white:#fff;
+  --wrap:min(1240px,calc(100vw - 56px))
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff}
+a{text-decoration:none;color:inherit}
+img{display:block}
+.wrap{width:var(--wrap);margin:auto}
+
+/* Header is intentionally kept visually aligned with the live site. */
+header{
+  position:relative;z-index:30;background:#fff;border-bottom:1px solid #e7ebf2;
+  box-shadow:0 1px 0 rgba(11,34,95,.02)
+}
+.nav{height:80px;display:flex;align-items:center;gap:30px}
+.logo{width:194px;height:auto}
+.links{display:flex;align-items:center;gap:25px;margin-left:auto;font-size:12px;font-weight:700;color:#26385f}
+.actions{display:flex;gap:10px}
+.btn{
+  min-height:48px;padding:0 21px;border-radius:10px;border:1px solid transparent;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-size:13px;font-weight:800;transition:.2s ease
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:var(--deep)}
+.btn-outline{background:#fff;border-color:#ccd5e6;color:var(--navy)}
+.menu{display:none}
+
+/* HERO CONCEPT — light editorial / human / premium healthcare */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 9% 10%,rgba(95,223,229,.13),transparent 25%),
+    radial-gradient(circle at 77% 7%,rgba(47,103,216,.08),transparent 26%),
+    linear-gradient(118deg,#fff 0%,#fbfdff 58%,#f4f8ff 100%);
+  border-bottom:1px solid #e2e8f1
+}
+.hero:before{
+  content:"";position:absolute;left:-120px;bottom:-210px;width:430px;height:430px;border-radius:50%;
+  border:1px solid rgba(47,103,216,.10);pointer-events:none
+}
+.hero:after{
+  content:"";position:absolute;left:7%;right:7%;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(47,103,216,.16),transparent)
+}
+.hero-grid{
+  min-height:660px;display:grid;grid-template-columns:1.02fr .98fr;gap:84px;
+  align-items:center;padding:68px 0 78px;position:relative;z-index:2
+}
+.hero-copy-block{position:relative;z-index:5}
+.kicker{
+  display:inline-flex;align-items:center;gap:11px;font-size:10px;font-weight:900;
+  text-transform:uppercase;letter-spacing:.19em;color:var(--navy)
+}
+.kicker i{width:28px;height:3px;background:var(--green)}
+h1,p{margin:0}
+h1{
+  max-width:675px;margin-top:20px;font-size:clamp(58px,5.25vw,76px);
+  line-height:.99;letter-spacing:-.058em;color:var(--deep);font-weight:800
+}
+h1 span{display:block;color:var(--blue)}
+.hero-copy{
+  max-width:600px;margin-top:24px;font-size:17px;line-height:1.68;color:var(--text)
+}
+.hero-actions{display:flex;gap:11px;margin-top:30px}
+.hero-actions .btn-green{box-shadow:0 12px 28px rgba(41,216,15,.12)}
+.hero-actions .btn-outline{background:rgba(255,255,255,.86)}
+
+/* Visual composition */
+.visual{position:relative;height:535px}
+.visual-backplate{
+  position:absolute;right:-34px;top:34px;width:82%;height:88%;border-radius:32px;
+  background:linear-gradient(150deg,#0b225f 0%,#18358f 68%,#2f67d8 100%);
+}
+.visual-backplate:before{
+  content:"";position:absolute;right:26px;top:24px;width:74px;height:74px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.20)
+}
+.visual-backplate:after{
+  content:"";position:absolute;right:58px;top:57px;width:9px;height:9px;border-radius:50%;
+  background:var(--green);box-shadow:0 0 0 8px rgba(41,216,15,.10)
+}
+.photo-frame{
+  position:absolute;left:0;top:0;width:90%;height:100%;overflow:hidden;border-radius:30px;
+  background:#dbe4f2;box-shadow:0 34px 78px rgba(9,25,79,.16)
+}
+.photo-frame:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(11,34,95,0) 58%,rgba(11,34,95,.10) 100%),
+    linear-gradient(90deg,rgba(255,255,255,.02),rgba(255,255,255,0))
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 44%;transform:scale(1.01)}
+.accent-line{
+  position:absolute;left:-28px;bottom:56px;width:72px;height:4px;background:var(--green);z-index:4
+}
+
+/* Specialty links become one quiet navigation rail instead of competing with the headline. */
+.specialty-rail{
+  position:absolute;left:-54px;right:14px;bottom:-34px;z-index:6;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(255,255,255,.97);border:1px solid #e2e8f1;border-radius:18px;
+  box-shadow:0 22px 55px rgba(9,25,79,.12);overflow:hidden
+}
+.specialty-rail a{
+  position:relative;display:grid;gap:5px;padding:17px 18px 18px 20px;min-height:76px;
+  transition:.18s ease
+}
+.specialty-rail a+a{border-left:1px solid #e4e9f1}
+.specialty-rail a:hover{background:#f8fbff}
+.specialty-rail span{
+  font-size:8px;font-weight:900;letter-spacing:.14em;color:var(--blue)
+}
+.specialty-rail strong{
+  padding-right:16px;font-size:12.5px;line-height:1.28;color:var(--deep);font-weight:800
+}
+.specialty-rail a:after{
+  content:"→";position:absolute;right:14px;bottom:17px;color:var(--green);
+  font-size:15px;font-weight:900
+}
+
+/* Gives context for how the hero hands off to the already-approved homepage. */
+.next-section{
+  padding:92px 0 76px;background:#f8fafc
+}
+.next-kicker{font-size:10px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:var(--blue)}
+.next-title{margin-top:12px;font-size:36px;letter-spacing:-.04em;color:var(--deep);max-width:700px}
+.next-copy{margin-top:13px;font-size:14px;color:#69758c;max-width:650px;line-height:1.7}
+
+@media(max-width:1040px){
+  .links{display:none}.menu{display:block;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:10px}
+  .hero-grid{grid-template-columns:1fr;gap:48px;padding:58px 0 82px}
+  .visual{max-width:760px;width:100%;height:500px;margin:auto}
+  .specialty-rail{left:22px;right:22px;bottom:-34px}
+}
+@media(max-width:720px){
+  :root{--wrap:min(100% - 28px,1240px)}
+  .nav{height:72px}.logo{width:165px}.actions>.btn{display:none}
+  .hero-grid{padding:48px 0 72px;gap:38px}
+  h1{font-size:44px;line-height:1.02}
+  .hero-copy{font-size:15px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .visual{height:430px}
+  .visual-backplate{right:-18px;top:22px;width:84%;height:91%}
+  .photo-frame{width:92%;border-radius:24px}
+  .specialty-rail{left:12px;right:12px;bottom:-72px;grid-template-columns:1fr}
+  .specialty-rail a{min-height:auto;padding:12px 16px}
+  .specialty-rail a+a{border-left:0;border-top:1px solid #e4e9f1}
+  .specialty-rail a:after{bottom:13px}
+  .next-section{padding-top:132px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="index.html" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
+    <nav class="links" aria-label="Primary">
+      <a href="workforce-solutions.html">Solutions</a>
+      <a href="index.html#specialties">Specialties</a>
+      <a href="index.html#clinicians">For Clinicians</a>
+      <a href="about.html">Company</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
+      <a class="btn btn-green" href="index.html#contact">Request Staff →</a>
+      <button class="menu" type="button" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy-block">
+      <div class="kicker"><i></i>Healthcare Workforce Solutions</div>
+      <h1>Healthcare staffing <span>that keeps care moving.</span></h1>
+      <p class="hero-copy">Medlivo connects healthcare organizations with qualified professionals across Nursing &amp; Allied, Rehabilitation, and Locum Tenens. We also help clinicians find roles that fit their specialty, goals, and location.</p>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="index.html#contact">Request Staff →</a>
+        <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="visual-backplate" aria-hidden="true"></div>
+      <div class="photo-frame"><img id="heroImage" alt="Healthcare professionals"></div>
+      <span class="accent-line" aria-hidden="true"></span>
+      <div class="specialty-rail" aria-label="Healthcare specialties">
+        <a href="nursing-allied.html"><span>01</span><strong>Nursing &amp; Allied</strong></a>
+        <a href="rehabilitation.html"><span>02</span><strong>Rehabilitation</strong></a>
+        <a href="locum-tenens.html"><span>03</span><strong>Locum Tenens</strong></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-section">
+  <div class="wrap">
+    <div class="next-kicker">Our Specialties</div>
+    <h2 class="next-title">The rest of the approved homepage begins here unchanged.</h2>
+    <p class="next-copy">This preview isolates the proposed first-screen design so the hero can be judged without disturbing the sections that are already working well.</p>
+  </div>
+</section>
+</main>
+
+<script>
+(async()=>{
+  try{
+    const html=await fetch('index.html',{cache:'no-store'}).then(r=>r.text());
+    const doc=new DOMParser().parseFromString(html,'text/html');
+    const src=doc.querySelector('.home-hero-premium .hero-photo img')?.getAttribute('src')
+      || doc.querySelector('.hero-photo img')?.getAttribute('src');
+    if(src) document.getElementById('heroImage').src=src;
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
