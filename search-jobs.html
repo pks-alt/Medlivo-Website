@@ -2491,6 +2491,150 @@ header{
   .jobs-support-item:last-child{border-bottom:0}
 }
 
+
+
+/* === Clinician usability pass: plain-language search + conversion === */
+.jobs-search-panel{
+  grid-template-columns:1fr 1.15fr 1.15fr 1fr auto;
+  position:relative;
+  padding-bottom:34px;
+}
+.jobs-search-helper{
+  position:absolute;
+  left:23px;
+  bottom:10px;
+  margin:0;
+  color:#7a879d;
+  font-size:10px;
+  line-height:1.35;
+  font-weight:700;
+}
+.jobs-search-field select:disabled{
+  color:#99a5b6;
+  cursor:not-allowed;
+}
+.jobs-sort-label{
+  color:#8a96aa;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.10em;
+}
+.jobs-actions-strip{
+  padding:0 0 76px;
+  background:linear-gradient(180deg,#fbfcff 0%,#fff 100%);
+}
+.jobs-actions-head{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:64px;
+  align-items:end;
+  margin-bottom:24px;
+}
+.jobs-actions-head h2{
+  margin-top:8px;
+  max-width:720px;
+  color:var(--deep);
+  font-size:clamp(32px,3.2vw,44px);
+  line-height:1.06;
+  letter-spacing:-.045em;
+}
+.jobs-actions-head>p{
+  max-width:520px;
+  color:var(--text);
+  font-size:13px;
+  line-height:1.65;
+}
+.jobs-actions-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.jobs-action-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:18px;
+  align-items:start;
+  min-height:230px;
+  padding:28px;
+  border:1px solid #e1e7f0;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 12px 30px rgba(9,25,79,.05);
+}
+.jobs-action-number{
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#eef4ff;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+}
+.jobs-action-label{
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.jobs-action-copy h3{
+  margin-top:8px;
+  color:var(--deep);
+  font-size:25px;
+  line-height:1.08;
+  letter-spacing:-.035em;
+}
+.jobs-action-copy p{
+  margin-top:9px;
+  max-width:520px;
+  color:#66748c;
+  font-size:12px;
+  line-height:1.6;
+}
+.jobs-action-card .btn{
+  grid-column:2;
+  justify-self:start;
+  margin-top:8px;
+}
+.job-card .job-badge.alt{
+  background:#f2f5f9;
+  color:#53627a;
+}
+@media(max-width:1180px){
+  .jobs-search-panel{
+    grid-template-columns:1fr 1fr;
+    padding-bottom:38px;
+  }
+  .jobs-search-button{grid-column:1/-1}
+}
+@media(max-width:1040px){
+  .jobs-actions-head{grid-template-columns:1fr;gap:14px}
+}
+@media(max-width:720px){
+  .jobs-search-panel{
+    grid-template-columns:1fr;
+    padding-bottom:52px;
+  }
+  .jobs-search-button{grid-column:auto}
+  .jobs-search-helper{
+    left:20px;
+    right:20px;
+    bottom:12px;
+  }
+  .jobs-results-tools{flex-wrap:wrap}
+  .jobs-sort-label{margin-left:auto}
+  .jobs-actions-grid{grid-template-columns:1fr}
+  .jobs-action-card{
+    grid-template-columns:auto 1fr;
+    min-height:0;
+    padding:24px 20px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2535,13 +2679,13 @@ header{
   <section class="jobs-hero">
     <div class="wrap jobs-hero-grid">
       <div class="jobs-hero-copy">
-        <div class="kicker">Healthcare Opportunities</div>
-        <h1>Find the role that fits what’s next.</h1>
-        <p>Search healthcare opportunities nationwide and connect with a Medlivo team that helps you navigate the role, the process, and what comes next.</p>
+        <div class="kicker">Healthcare Jobs Nationwide</div>
+        <h1>Find your next healthcare job.</h1>
+        <p>Choose the work you do, where you want to go, and the specialty that fits you. See current openings and apply online—or ask a Medlivo recruiter for help.</p>
         <div class="jobs-trust">
-          <span>Nationwide opportunities</span>
-          <span>Specialty-focused recruiting</span>
-          <span>Support beyond the start</span>
+          <span>Jobs across all 50 states</span>
+          <span>Real recruiter support</span>
+          <span>Credentialing &amp; onboarding guidance</span>
         </div>
       </div>
 
@@ -2555,8 +2699,8 @@ header{
     <div class="wrap">
       <form class="jobs-search-panel" id="jobsSearchForm" action="search-jobs.html" method="get" data-ats-integration="pending">
         <div class="jobs-search-field">
-          <label for="searchProfession">Division</label>
-          <select id="searchProfession" name="profession" aria-label="Healthcare division">
+          <label for="searchDivision">Division</label>
+          <select id="searchDivision" name="division" aria-label="Healthcare division">
             <option value="">All divisions</option>
             <option value="Nursing & Allied">Nursing &amp; Allied</option>
             <option value="Rehabilitation">Rehabilitation</option>
@@ -2564,14 +2708,23 @@ header{
           </select>
         </div>
         <div class="jobs-search-field">
-          <label for="searchSpecialty">Specialty or keyword</label>
-          <input id="searchSpecialty" name="specialty" placeholder="e.g. ICU, PT, Cardiology">
+          <label for="searchProfession">Profession</label>
+          <select id="searchProfession" name="profession" aria-label="Profession">
+            <option value="">All professions</option>
+          </select>
+        </div>
+        <div class="jobs-search-field">
+          <label for="searchSpecialty">Specialty</label>
+          <select id="searchSpecialty" name="specialty" aria-label="Specialty">
+            <option value="">All specialties</option>
+          </select>
         </div>
         <div class="jobs-search-field">
           <label for="searchLocation">Location</label>
-          <input id="searchLocation" name="location" placeholder="City or state">
+          <input id="searchLocation" name="location" placeholder="City or state" autocomplete="address-level2">
         </div>
-        <button class="btn btn-green jobs-search-button" type="submit">Search Jobs →</button>
+        <button class="btn btn-green jobs-search-button" type="submit">Find Jobs →</button>
+        <p class="jobs-search-helper">Not sure what to choose? Leave any field as “All” and search by location.</p>
       </form>
     </div>
   </section>
@@ -2650,31 +2803,27 @@ header{
           <label for="filterType">Profession</label>
           <select id="filterType" data-ats-filter="profession">
             <option value="">All professions</option>
-            <option value="Nursing">Nursing</option>
-            <option value="Allied Health">Allied Health</option>
-            <option value="Rehabilitation">Rehabilitation</option>
-            <option value="Physician">Physician</option>
-            <option value="Advanced Practice">Advanced Practice</option>
           </select>
         </div>
 
         <div class="jobs-help-card">
-          <small>Need help?</small>
-          <h3>Tell us what you’re looking for.</h3>
-          <p>A Medlivo recruiter can help you identify roles that match your specialty, location, and timing.</p>
-          <a href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Assignment">Talk to a Recruiter →</a>
+          <small>Not sure what to choose?</small>
+          <h3>Ask a recruiter.</h3>
+          <p>Tell us your profession, preferred location, and timing. We’ll help you understand the options that fit.</p>
+          <a href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Ask a Recruiter →</a>
         </div>
       </aside>
 
       <div class="jobs-results">
         <div class="jobs-results-head">
           <div>
-            <div class="eyebrow">Current Opportunities</div>
-            <h2 id="resultsTitle">Healthcare jobs nationwide.</h2>
+            <div class="eyebrow">Current Jobs</div>
+            <h2 id="resultsTitle">Healthcare jobs across the U.S.</h2>
             <p id="resultsSummary">Current openings across Medlivo’s healthcare divisions.</p>
           </div>
           <div class="jobs-results-tools">
             <button class="jobs-mobile-filter" id="mobileFilterToggle" type="button" aria-controls="jobsFilters" aria-expanded="false">Filters</button>
+            <span class="jobs-sort-label">Sort</span>
             <select id="sortJobs" aria-label="Sort jobs">
               <option value="newest">Newest first</option>
               <option value="pay-high">Pay: high to low</option>
@@ -2723,9 +2872,9 @@ header{
 
           <div class="jobs-division-context" id="divisionContext" data-ats-context="division">
             <div class="jobs-division-context-copy">
-              <span id="divisionContextEyebrow">All Healthcare Opportunities</span>
-              <strong id="divisionContextTitle">Search across Medlivo’s healthcare divisions.</strong>
-              <p id="divisionContextText">Use profession, specialty, location, and state filters to narrow current opportunities.</p>
+              <span id="divisionContextEyebrow">Popular Searches</span>
+              <strong id="divisionContextTitle">Start with a common search, or use the filters above.</strong>
+              <p id="divisionContextText">Choose a shortcut below, or leave any field set to All to see more jobs.</p>
             </div>
             <div class="jobs-specialty-shortcuts" id="specialtyShortcuts" aria-label="Popular specialty shortcuts"></div>
           </div>
@@ -2734,15 +2883,50 @@ header{
         <div class="job-list" id="jobList" data-ats-results="pending"></div>
 
         <div class="jobs-no-results" id="noResults" hidden>
-          <span>No exact matches</span>
-          <h3>Let’s widen the search.</h3>
-          <p>Try another specialty or location, clear your filters, or connect with a Medlivo recruiter for help finding the right assignment.</p>
+          <span>No matching jobs right now</span>
+          <h3>Try a broader search.</h3>
+          <p>Choose another specialty or location, view all current jobs, or ask a Medlivo recruiter to help you find a match.</p>
           <div class="jobs-no-results-actions">
             <button class="btn btn-primary" type="button" id="viewAllJobs">View All Jobs</button>
-            <a class="btn btn-outline" href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Assignment">Talk to a Recruiter</a>
+            <a class="btn btn-outline" href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Job">Ask a Recruiter</a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="jobs-actions-strip" aria-labelledby="jobsActionsTitle">
+    <div class="wrap">
+      <div class="jobs-actions-head">
+        <div>
+          <div class="eyebrow">More Ways to Get Started</div>
+          <h2 id="jobsActionsTitle">You don’t have to find the perfect job on your own.</h2>
+        </div>
+        <p>Send us your resume for matching opportunities, or tell us what you want to hear about next.</p>
+      </div>
+
+      <div class="jobs-actions-grid">
+        <article class="jobs-action-card">
+          <span class="jobs-action-number">01</span>
+          <div class="jobs-action-copy">
+            <div class="jobs-action-label">Quick Apply</div>
+            <h3>Send us your resume.</h3>
+            <p>A recruiter can review your experience and connect you with current or upcoming opportunities that fit.</p>
+          </div>
+          <a class="btn btn-green" data-ats-action="quick-apply" href="mailto:hello@medlivo.com?subject=Quick%20Apply%20-%20Healthcare%20Clinician">Quick Apply →</a>
+        </article>
+
+        <article class="jobs-action-card">
+          <span class="jobs-action-number">02</span>
+          <div class="jobs-action-copy">
+            <div class="jobs-action-label">Job Alerts</div>
+            <h3>Hear about matching jobs.</h3>
+            <p>Tell us your profession, specialty, and preferred location so you can stay on top of relevant openings.</p>
+          </div>
+          <a class="btn btn-outline" data-ats-action="job-alerts" href="mailto:hello@medlivo.com?subject=Job%20Alert%20Request">Request Job Alerts →</a>
+        </article>
+      </div>
+      <!-- Developer handoff: replace the temporary email actions above with the existing Quick Apply and Job Alert ATS workflows. -->
     </div>
   </section>
 
@@ -2751,16 +2935,16 @@ header{
       <div class="jobs-support-head">
         <div>
           <div class="eyebrow">Working with Medlivo</div>
-          <h2>Support that continues beyond the search.</h2>
+          <h2>Support from your first search through your assignment.</h2>
         </div>
-        <p>From your first conversation through credentialing and assignment support, Medlivo stays close to the process.</p>
+        <p>You’ll know what to expect, who to contact, and what comes next—from job details through credentialing and assignment support.</p>
       </div>
 
       <div class="jobs-support-grid">
-        <div class="jobs-support-item"><span>01</span><strong>Clear opportunity details</strong><p>Understand the role, location, timing, and available compensation information before you move forward.</p></div>
-        <div class="jobs-support-item"><span>02</span><strong>Streamlined credentialing</strong><p>Experienced teams help keep documentation, onboarding, and assignment readiness moving.</p></div>
-        <div class="jobs-support-item"><span>03</span><strong>Nationwide reach</strong><p>Explore opportunities across Medlivo’s Nursing &amp; Allied, Rehabilitation, and Locum Tenens divisions.</p></div>
-        <div class="jobs-support-item"><span>04</span><strong>Assignment support</strong><p>Stay connected with a Medlivo team after placement when questions or needs arise.</p></div>
+        <div class="jobs-support-item"><span>01</span><strong>Understand the job</strong><p>See the location, start timing, available pay information, and other key details before you move forward.</p></div>
+        <div class="jobs-support-item"><span>02</span><strong>Get credentialing help</strong><p>Our team helps keep licenses, documents, onboarding, and assignment readiness moving.</p></div>
+        <div class="jobs-support-item"><span>03</span><strong>Explore nationwide</strong><p>Search Nursing &amp; Allied, Rehabilitation, and Locum Tenens opportunities across the U.S.</p></div>
+        <div class="jobs-support-item"><span>04</span><strong>Stay connected</strong><p>Know who to contact before your start date and throughout your assignment when questions come up.</p></div>
       </div>
     </div>
   </section>
@@ -2768,18 +2952,18 @@ header{
   <section class="jobs-bottom-cta">
     <div class="wrap jobs-bottom-shell">
       <div>
-        <div class="eyebrow">Your Next Assignment</div>
-        <h2>Don’t see the right role yet?</h2>
-        <p>Share what you’re looking for and let a Medlivo recruiter help you find the right fit.</p>
+        <div class="eyebrow">Need Help Choosing?</div>
+        <h2>Talk with a recruiter.</h2>
+        <p>Tell us your profession, preferred location, and timing. We’ll help you understand your options and next steps.</p>
       </div>
       <div class="jobs-bottom-actions">
-        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Job%20Search">Talk to a Recruiter</a>
-        <a class="btn btn-outline" href="search-jobs.html">View All Jobs</a>
+        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Job%20Search">Email a Recruiter</a>
+        <a class="btn btn-outline" href="tel:+18556335486">Call 855-633-5486</a>
       </div>
     </div>
   </section>
 </main>
-<footer class="site-footer footer-minimal">
+<footer class="site-footer footer-minimal" id="contact">
   <div class="wrap footer-main-minimal">
     <div class="footer-brand-minimal">
       <a class="footer-logo-minimal" href="./" aria-label="Medlivo home">
@@ -2889,19 +3073,105 @@ document.addEventListener('keydown',(e)=>{
     --------------------
     Replace "jobs" with live ATS records while preserving these normalized fields:
     id, title, category, profession, specialty, type, state, city, pay, start, posted, applyUrl.
-    Optional future ATS fields can be added to the card template without changing layout.
-    The preview records below are from fields already exposed in the current Medlivo ATS search experience.
+    The page is intentionally organized for clinicians as:
+    Division → Profession → Specialty → Location/State.
+    Replace the temporary Quick Apply and Job Alert email actions with existing ATS workflows.
   */
   const jobs=[
-    {id:"26-38997",title:"Neurology",category:"Locum Tenens",type:"Physician",state:"AZ",city:"Prescott",pay:"$110.00 – $130.00 / Hour",start:"A.S.A.P",posted:"09/22/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38892",title:"OB/GYN Physician",category:"Locum Tenens",type:"Physician",state:"CO",city:"Fort Morgan",pay:"$315.00 – $365.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38883",title:"ENT Physician",category:"Locum Tenens",type:"Physician",state:"CA",city:"Sacramento",pay:"$315.00 – $345.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38946",title:"Emergency Medicine",category:"Locum Tenens",type:"Physician",state:"CA",city:"Fortuna",pay:"$250.00 – $300.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38740",title:"Nurse Practitioner (NP)",category:"Locum Tenens",type:"Advanced Practice",state:"NM",city:"Deming",pay:"$90.00 – $110.00 / Hour",start:"A.S.A.P",posted:"09/18/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38617",title:"Physician Assistant - Cardiology, Nurse Practitioner - Cardiology",category:"Locum Tenens",type:"Advanced Practice",state:"WA",city:"Everett",pay:"$100.00 – $120.00 / Hour",start:"A.S.A.P",posted:"09/17/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38616",title:"Obstetrics and Gynecology",category:"Locum Tenens",type:"Physician",state:"OR",city:"Hood River",pay:"$150.00 – $200.00 / Hour",start:"A.S.A.P",posted:"09/17/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
-    {id:"26-38524",title:"Audiologist",category:"Nursing & Allied",type:"Allied Health",state:"WA",city:"Yakima",pay:"$80.00 – $90.00 / Hour",start:"A.S.A.P",posted:"09/16/2026",applyUrl:"https://www.medlivo.com/search-jobs"}
+    {id:"26-38997",title:"Neurology",category:"Locum Tenens",profession:"Physician",specialty:"Neurology",type:"Physician",state:"AZ",city:"Prescott",pay:"$110.00 – $130.00 / Hour",start:"A.S.A.P",posted:"09/22/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38892",title:"OB/GYN Physician",category:"Locum Tenens",profession:"Physician",specialty:"OB/GYN",type:"Physician",state:"CO",city:"Fort Morgan",pay:"$315.00 – $365.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38883",title:"ENT Physician",category:"Locum Tenens",profession:"Physician",specialty:"ENT / Otolaryngology",type:"Physician",state:"CA",city:"Sacramento",pay:"$315.00 – $345.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38946",title:"Emergency Medicine",category:"Locum Tenens",profession:"Physician",specialty:"Emergency Medicine",type:"Physician",state:"CA",city:"Fortuna",pay:"$250.00 – $300.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38740",title:"Nurse Practitioner (NP)",category:"Locum Tenens",profession:"Nurse Practitioner",specialty:"",type:"Advanced Practice",state:"NM",city:"Deming",pay:"$90.00 – $110.00 / Hour",start:"A.S.A.P",posted:"09/18/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38617",title:"Physician Assistant - Cardiology, Nurse Practitioner - Cardiology",category:"Locum Tenens",profession:"Nurse Practitioner / Physician Assistant",specialty:"Cardiology",type:"Advanced Practice",state:"WA",city:"Everett",pay:"$100.00 – $120.00 / Hour",start:"A.S.A.P",posted:"09/17/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38616",title:"Obstetrics and Gynecology",category:"Locum Tenens",profession:"Physician",specialty:"OB/GYN",type:"Physician",state:"OR",city:"Hood River",pay:"$150.00 – $200.00 / Hour",start:"A.S.A.P",posted:"09/17/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38524",title:"Audiologist",category:"Nursing & Allied",profession:"Audiology",specialty:"Audiology",type:"Allied Health",state:"WA",city:"Yakima",pay:"$80.00 – $90.00 / Hour",start:"A.S.A.P",posted:"09/16/2026",applyUrl:"https://www.medlivo.com/search-jobs"}
   ];
+
+  const careerTaxonomy={
+    "Nursing & Allied":[
+      {value:"Registered Nurse",label:"Registered Nurse (RN)",specialties:["ICU","Med/Surg","Telemetry","Emergency Room","Operating Room","PACU","Labor & Delivery","Mother/Baby","NICU","PICU","Cath Lab","Oncology","Case Management","Home Health"]},
+      {value:"LPN/LVN",label:"LPN / LVN",specialties:["Long-Term Care","Skilled Nursing","Clinic","Home Health","Corrections"]},
+      {value:"CNA",label:"Certified Nursing Assistant (CNA)",specialties:["Acute Care","Long-Term Care","Skilled Nursing","Rehabilitation"]},
+      {value:"Imaging & Radiology",label:"Imaging & Radiology",specialties:["CT","MRI","Radiologic Technologist","Ultrasound / Sonography","Mammography","Nuclear Medicine","Interventional Radiology"]},
+      {value:"Laboratory",label:"Laboratory",specialties:["Medical Laboratory Scientist","Medical Laboratory Technician","Phlebotomy","Histology","Cytology"]},
+      {value:"Respiratory Therapy",label:"Respiratory Therapy",specialties:["Registered Respiratory Therapist (RRT)","Certified Respiratory Therapist (CRT)"]},
+      {value:"Surgical Services",label:"Surgical Services",specialties:["Surgical Technologist","Sterile Processing"]},
+      {value:"Cardiovascular",label:"Cardiovascular",specialties:["Cath Lab Tech","Cardiovascular Technologist","EKG Tech"]},
+      {value:"Audiology",label:"Audiology",specialties:["Audiology"]},
+      {value:"Other Allied Health",label:"Other Allied Health",specialties:["Medical Assistant","Other Allied Health"]}
+    ],
+    "Rehabilitation":[
+      {value:"Physical Therapist",label:"Physical Therapist (PT)",specialties:["Acute Care","Inpatient Rehabilitation","Outpatient","Skilled Nursing","Home Health","Pediatrics","Schools"]},
+      {value:"Physical Therapist Assistant",label:"Physical Therapist Assistant (PTA)",specialties:["Inpatient Rehabilitation","Outpatient","Skilled Nursing","Home Health"]},
+      {value:"Occupational Therapist",label:"Occupational Therapist (OT)",specialties:["Acute Care","Inpatient Rehabilitation","Outpatient","Skilled Nursing","Home Health","Pediatrics","Schools"]},
+      {value:"COTA",label:"Certified Occupational Therapy Assistant (COTA)",specialties:["Inpatient Rehabilitation","Skilled Nursing","Home Health","Pediatrics"]},
+      {value:"Speech-Language Pathologist",label:"Speech-Language Pathologist (SLP)",specialties:["Acute Care","Inpatient Rehabilitation","Skilled Nursing","Home Health","Pediatrics","Schools"]}
+    ],
+    "Locum Tenens":[
+      {value:"Physician",label:"Physician",specialties:["Emergency Medicine","Hospitalist","Family Medicine","Internal Medicine","Cardiology","OB/GYN","Urology","Neurology","Psychiatry","Radiology","Anesthesiology","General Surgery","Gastroenterology","Oncology","Pulmonology","Critical Care","Pediatrics","Urgent Care","ENT / Otolaryngology"]},
+      {value:"Nurse Practitioner",label:"Nurse Practitioner (NP)",specialties:["Primary Care","Urgent Care","Emergency Medicine","Hospitalist","Cardiology","OB/GYN","Psychiatry","Pediatrics"]},
+      {value:"Physician Assistant",label:"Physician Assistant (PA)",specialties:["Primary Care","Urgent Care","Emergency Medicine","Hospitalist","Cardiology","Surgery","Orthopedics"]}
+    ]
+  };
+
+  const divisionConfig={
+    "":{
+      title:"Healthcare jobs across the U.S.",
+      eyebrow:"Popular Searches",
+      contextTitle:"Start with a common search, or use the filters above.",
+      contextText:"Choose a shortcut below, or leave any field set to All to see more jobs.",
+      shortcuts:[
+        {label:"ICU",kind:"specialty",value:"ICU"},
+        {label:"Operating Room",kind:"specialty",value:"Operating Room"},
+        {label:"Physical Therapist",kind:"profession",value:"Physical Therapist"},
+        {label:"Occupational Therapist",kind:"profession",value:"Occupational Therapist"},
+        {label:"Emergency Medicine",kind:"specialty",value:"Emergency Medicine"},
+        {label:"Cardiology",kind:"specialty",value:"Cardiology"}
+      ]
+    },
+    "Nursing & Allied":{
+      title:"Nursing & Allied jobs.",
+      eyebrow:"Popular Nursing & Allied Searches",
+      contextTitle:"Choose a common specialty or profession.",
+      contextText:"You can also use Profession and Specialty above to narrow your search.",
+      shortcuts:[
+        {label:"ICU",kind:"specialty",value:"ICU"},
+        {label:"Med/Surg",kind:"specialty",value:"Med/Surg"},
+        {label:"Operating Room",kind:"specialty",value:"Operating Room"},
+        {label:"Imaging & Radiology",kind:"profession",value:"Imaging & Radiology"},
+        {label:"Respiratory Therapy",kind:"profession",value:"Respiratory Therapy"},
+        {label:"Laboratory",kind:"profession",value:"Laboratory"}
+      ]
+    },
+    "Rehabilitation":{
+      title:"Rehabilitation jobs.",
+      eyebrow:"Popular Rehabilitation Searches",
+      contextTitle:"Choose your therapy profession.",
+      contextText:"Select your profession first, then narrow by care setting if you want.",
+      shortcuts:[
+        {label:"Physical Therapist",kind:"profession",value:"Physical Therapist"},
+        {label:"PTA",kind:"profession",value:"Physical Therapist Assistant"},
+        {label:"Occupational Therapist",kind:"profession",value:"Occupational Therapist"},
+        {label:"COTA",kind:"profession",value:"COTA"},
+        {label:"SLP",kind:"profession",value:"Speech-Language Pathologist"}
+      ]
+    },
+    "Locum Tenens":{
+      title:"Locum Tenens jobs.",
+      eyebrow:"Popular Locum Tenens Searches",
+      contextTitle:"Choose a specialty or provider type.",
+      contextText:"Search physician, nurse practitioner, and physician assistant opportunities.",
+      shortcuts:[
+        {label:"Emergency Medicine",kind:"specialty",value:"Emergency Medicine"},
+        {label:"Hospitalist",kind:"specialty",value:"Hospitalist"},
+        {label:"Cardiology",kind:"specialty",value:"Cardiology"},
+        {label:"OB/GYN",kind:"specialty",value:"OB/GYN"},
+        {label:"Urology",kind:"specialty",value:"Urology"},
+        {label:"Neurology",kind:"specialty",value:"Neurology"}
+      ]
+    }
+  };
 
   const qs=s=>document.querySelector(s);
   const qsa=s=>[...document.querySelectorAll(s)];
@@ -2909,6 +3179,7 @@ document.addEventListener('keydown',(e)=>{
   const noResults=qs("#noResults");
   const summary=qs("#resultsSummary");
   const resultsTitle=qs("#resultsTitle");
+  const division=qs("#searchDivision");
   const profession=qs("#searchProfession");
   const specialty=qs("#searchSpecialty");
   const locationInput=qs("#searchLocation");
@@ -2922,43 +3193,11 @@ document.addEventListener('keydown',(e)=>{
   const shortcuts=qs("#specialtyShortcuts");
   let activeCategory="";
 
-  const divisionConfig={
-    "":{
-      title:"Healthcare jobs nationwide.",
-      eyebrow:"All Healthcare Opportunities",
-      contextTitle:"Search across Medlivo’s healthcare divisions.",
-      contextText:"Use profession, specialty, location, and state filters to narrow current opportunities.",
-      roleTypes:["Nursing","Allied Health","Rehabilitation","Physician","Advanced Practice"],
-      shortcuts:["ICU","Operating Room","Physical Therapy","Occupational Therapy","Speech Therapy","Cardiology"]
-    },
-    "Nursing & Allied":{
-      title:"Nursing & Allied opportunities.",
-      eyebrow:"Nursing & Allied",
-      contextTitle:"Clinical roles across nursing and allied health.",
-      contextText:"Search nursing, imaging, laboratory, respiratory, surgical services, and other allied opportunities.",
-      roleTypes:["Nursing","Allied Health"],
-      shortcuts:["ICU","Med/Surg","Operating Room","Imaging","Respiratory","Laboratory"]
-    },
-    "Rehabilitation":{
-      title:"Rehabilitation opportunities.",
-      eyebrow:"Rehabilitation",
-      contextTitle:"Therapy opportunities built around your discipline.",
-      contextText:"Explore physical therapy, occupational therapy, speech-language pathology, and therapy assistant roles.",
-      roleTypes:["Rehabilitation"],
-      shortcuts:["Physical Therapist","PTA","Occupational Therapist","COTA","SLP"]
-    },
-    "Locum Tenens":{
-      title:"Locum Tenens opportunities.",
-      eyebrow:"Locum Tenens",
-      contextTitle:"Flexible physician and advanced practice coverage.",
-      contextText:"Search physician, nurse practitioner, and physician assistant opportunities across specialties and locations.",
-      roleTypes:["Physician","Advanced Practice"],
-      shortcuts:["Emergency Medicine","Hospitalist","Cardiology","OB/GYN","Urology","Neurology"]
-    }
-  };
-
   function slug(value){
     return String(value||"").toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  }
+  function norm(value){
+    return String(value||"").trim().toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g," ").replace(/\s+/g," ").trim();
   }
   function normalizeCategory(value){
     const v=String(value||"").trim().toLowerCase();
@@ -2967,42 +3206,144 @@ document.addEventListener('keydown',(e)=>{
     if(["locum","locums","locum-tenens","locum tenens"].includes(v))return "Locum Tenens";
     return value||"";
   }
+  function taxonomyItems(category){
+    if(category && careerTaxonomy[category])return careerTaxonomy[category];
+    return Object.values(careerTaxonomy).flat();
+  }
+  function uniqueByValue(items){
+    const seen=new Set();
+    return items.filter(item=>{
+      if(seen.has(item.value))return false;
+      seen.add(item.value);
+      return true;
+    });
+  }
+  function findDivisionForProfession(value){
+    for(const [category,items] of Object.entries(careerTaxonomy)){
+      if(items.some(item=>item.value===value))return category;
+    }
+    return "";
+  }
+  function findDivisionForSpecialty(value){
+    for(const [category,items] of Object.entries(careerTaxonomy)){
+      if(items.some(item=>item.specialties.includes(value)))return category;
+    }
+    return "";
+  }
+  function rebuildProfessionOptions(preferred=""){
+    const items=uniqueByValue(taxonomyItems(activeCategory));
+    const current=preferred||profession.value||filterType.value;
+    const options=['<option value="">All professions</option>']
+      .concat(items.map(item=>'<option value="'+item.value.replace(/"/g,"&quot;")+'">'+item.label+'</option>'));
+    profession.innerHTML=options.join("");
+    filterType.innerHTML=options.join("");
+    if(items.some(item=>item.value===current)){
+      profession.value=current;
+      filterType.value=current;
+    }
+  }
+  function rebuildSpecialtyOptions(preferred=""){
+    let values=[];
+    const currentProfession=profession.value;
+    const items=taxonomyItems(activeCategory);
+    if(currentProfession){
+      const matching=items.filter(item=>item.value===currentProfession);
+      values=matching.flatMap(item=>item.specialties);
+    }else if(activeCategory){
+      values=items.flatMap(item=>item.specialties);
+    }else{
+      values=["ICU","Med/Surg","Operating Room","Physical Therapy","Occupational Therapy","Speech-Language Pathology","Emergency Medicine","Cardiology","OB/GYN","Urology","Neurology"];
+    }
+    values=[...new Set(values)];
+    const current=preferred||specialty.value;
+    specialty.innerHTML='<option value="">All specialties</option>'+values.map(v=>'<option value="'+v.replace(/"/g,"&quot;")+'">'+v+'</option>').join("");
+    if(values.includes(current))specialty.value=current;
+  }
+  function setProfession(value){
+    profession.value=value||"";
+    filterType.value=value||"";
+  }
   function payHigh(job){
     const nums=(String(job.pay||"").replace(/,/g,"").match(/\d+(?:\.\d+)?/g)||[]).map(Number);
     return nums.length?Math.max(...nums):0;
   }
-  function roleTypeMatch(job,filter){
+  function professionMatch(job,filter){
     if(!filter)return true;
-    if(filter==="Nursing")return /nurs|rn|lpn|lvn|cna/i.test(job.type+" "+job.title) && job.category==="Nursing & Allied";
-    if(filter==="Rehabilitation")return job.category==="Rehabilitation";
-    return job.type===filter;
+    const target=norm(filter);
+    if(norm(job.profession)===target)return true;
+    const hay=norm([job.profession,job.type,job.title,job.specialty].filter(Boolean).join(" "));
+    const aliases={
+      "registered nurse":["registered nurse"," rn "],
+      "lpn lvn":["lpn","lvn","licensed practical nurse","licensed vocational nurse"],
+      "cna":["cna","certified nursing assistant"],
+      "imaging and radiology":["imaging","radiology","radiologic","ct tech","mri","sonograph","ultrasound","mammograph","nuclear medicine"],
+      "laboratory":["laboratory","medical technologist","lab tech","phlebot","histolog","cytolog"],
+      "respiratory therapy":["respiratory therapist","rrt","crt"],
+      "surgical services":["surgical technologist","sterile processing"],
+      "cardiovascular":["cath lab tech","cardiovascular","ekg"],
+      "audiology":["audiolog"],
+      "other allied health":["allied health"],
+      "physical therapist":["physical therapist"],
+      "physical therapist assistant":["physical therapist assistant","pta"],
+      "occupational therapist":["occupational therapist"],
+      "cota":["cota","occupational therapy assistant"],
+      "speech language pathologist":["speech language pathologist","slp"],
+      "physician":["physician"],
+      "nurse practitioner":["nurse practitioner"," np "],
+      "physician assistant":["physician assistant"," pa "]
+    };
+    const terms=aliases[target]||[target];
+    const padded=" "+hay+" ";
+    return terms.some(term=>padded.includes(norm(term).length<=3?" "+norm(term)+" ":norm(term)));
+  }
+  function specialtyMatch(job,filter){
+    if(!filter)return true;
+    const target=norm(filter);
+    const hay=norm([job.specialty,job.title,job.profession,job.type].filter(Boolean).join(" "));
+    if(target==="ob gyn")return hay.includes("ob gyn")||hay.includes("obstetrics and gynecology");
+    if(target==="ent otolaryngology")return hay.includes("ent")||hay.includes("otolaryngology");
+    return hay.includes(target);
   }
   function matches(job){
-    const p=normalizeCategory(profession.value).toLowerCase();
-    const q=(specialty.value||"").trim().toLowerCase();
+    const div=normalizeCategory(division.value||activeCategory);
+    const pr=profession.value||filterType.value||"";
+    const sp=specialty.value||"";
     const l=(locationInput.value||"").trim().toLowerCase();
-    const cat=(activeCategory||"").toLowerCase();
     const st=(filterState.value||"").toLowerCase();
-    const type=filterType.value||"";
-    if(p && job.category.toLowerCase()!==p)return false;
-    if(cat && job.category.toLowerCase()!==cat)return false;
-    if(q && !(job.title+" "+(job.profession||"")+" "+(job.specialty||"")+" "+job.type+" "+job.category).toLowerCase().includes(q))return false;
+    if(div && job.category!==div)return false;
+    if(pr && !professionMatch(job,pr))return false;
+    if(sp && !specialtyMatch(job,sp))return false;
     if(l && !(job.city+" "+job.state).toLowerCase().includes(l))return false;
     if(st && job.state.toLowerCase()!==st)return false;
-    if(!roleTypeMatch(job,type))return false;
     return true;
-  }
-  function rebuildRoleTypes(){
-    const cfg=divisionConfig[activeCategory]||divisionConfig[""];
-    const current=filterType.value;
-    filterType.innerHTML='<option value="">All professions</option>'+cfg.roleTypes.map(v=>'<option value="'+v+'">'+v+'</option>').join("");
-    if(cfg.roleTypes.includes(current))filterType.value=current;
   }
   function renderShortcuts(){
     const cfg=divisionConfig[activeCategory]||divisionConfig[""];
-    shortcuts.innerHTML=cfg.shortcuts.map(v=>'<button type="button" data-specialty="'+v.replace(/"/g,"&quot;")+'">'+v+'</button>').join("");
+    shortcuts.innerHTML=cfg.shortcuts.map(item=>
+      '<button type="button" data-kind="'+item.kind+'" data-value="'+item.value.replace(/"/g,"&quot;")+'">'+item.label+'</button>'
+    ).join("");
     qsa("#specialtyShortcuts button").forEach(btn=>btn.addEventListener("click",()=>{
-      specialty.value=btn.dataset.specialty||"";
+      const kind=btn.dataset.kind;
+      const value=btn.dataset.value||"";
+      if(kind==="profession"){
+        const inferred=findDivisionForProfession(value);
+        if(inferred && !activeCategory){
+          activeCategory=inferred;
+          division.value=inferred;
+          rebuildProfessionOptions(value);
+        }
+        setProfession(value);
+        rebuildSpecialtyOptions();
+      }else{
+        const inferred=findDivisionForSpecialty(value);
+        if(inferred && !activeCategory){
+          activeCategory=inferred;
+          division.value=inferred;
+          rebuildProfessionOptions();
+          rebuildSpecialtyOptions(value);
+        }
+        specialty.value=value;
+      }
       render();
       qs(".job-list")?.scrollIntoView({behavior:"smooth",block:"start"});
     }));
@@ -3016,7 +3357,10 @@ document.addEventListener('keydown',(e)=>{
       btn.classList.toggle("active",selected);
       btn.setAttribute("aria-selected",String(selected));
     });
-    resultsTitle.textContent=cfg.title;
+    const selectedProfession=profession.value;
+    resultsTitle.textContent=selectedProfession
+      ? (profession.options[profession.selectedIndex]?.text||selectedProfession)+" jobs."
+      : cfg.title;
     contextEyebrow.textContent=cfg.eyebrow;
     contextTitle.textContent=cfg.contextTitle;
     contextText.textContent=cfg.contextText;
@@ -3033,90 +3377,129 @@ document.addEventListener('keydown',(e)=>{
         <div class="job-card-main">
           <div class="job-badges">
             <span class="job-badge">${job.category}</span>
-            <span class="job-badge alt">${job.type}</span>
+            <span class="job-badge alt">${job.profession||job.type}</span>
           </div>
           <h3>${job.title}</h3>
           <div class="job-location-line"><span class="job-location-dot"></span><span>${job.city}, ${job.state}</span></div>
           <div class="job-detail-grid">
-            <div class="job-detail"><small>Start</small><strong>${job.start||"Contact recruiter"}</strong></div>
+            <div class="job-detail"><small>Start date</small><strong>${job.start||"Ask recruiter"}</strong></div>
             <div class="job-detail"><small>Posted</small><strong>${job.posted||"Current"}</strong></div>
             <div class="job-detail"><small>Job ID</small><strong>${job.id}</strong></div>
           </div>
         </div>
         <div class="job-card-side">
-          <span class="job-pay-label">Compensation</span>
-          <div class="job-pay">${job.pay||"Contact recruiter"}</div>
+          <span class="job-pay-label">Pay</span>
+          <div class="job-pay">${job.pay||"Ask recruiter"}</div>
           <a class="job-apply" href="${job.applyUrl||"https://www.medlivo.com/search-jobs"}" data-ats-apply-id="${job.id}" aria-label="View and apply for ${job.title}">View &amp; Apply →</a>
-          <span class="job-ats-note">View full opportunity details</span>
+          <span class="job-ats-note">See full job details before you apply</span>
         </div>
       </article>`).join("");
 
     const count=items.length;
     noResults.hidden=count!==0;
     list.hidden=count===0;
+    const scope=profession.value
+      ? (profession.options[profession.selectedIndex]?.text||profession.value)
+      : activeCategory;
     summary.textContent=count
-      ? `${count} current opportunit${count===1?"y":"ies"} found${activeCategory?` in ${activeCategory}`:""}`
-      : "No exact matches found. Try widening your search.";
+      ? `${count} current opportunit${count===1?"y":"ies"} found${scope?` for ${scope}`:""}`
+      : "No matching jobs found with these selections.";
     updateDivisionUI();
   }
   function setDivision(category){
     activeCategory=normalizeCategory(category);
-    profession.value=activeCategory;
+    division.value=activeCategory;
+    setProfession("");
     specialty.value="";
-    filterType.value="";
-    rebuildRoleTypes();
+    rebuildProfessionOptions();
+    rebuildSpecialtyOptions();
     render();
   }
 
   const params=new URLSearchParams(window.location.search);
-  if(params.has("profession")){
-    const normalized=normalizeCategory(params.get("profession")||"");
-    profession.value=normalized;
-    activeCategory=normalized;
+  let requestedDivision=normalizeCategory(params.get("division")||"");
+  const legacyProfession=params.get("profession")||"";
+  if(!requestedDivision && normalizeCategory(legacyProfession)!==legacyProfession){
+    requestedDivision=normalizeCategory(legacyProfession);
   }
-  if(params.has("specialty"))specialty.value=params.get("specialty")||"";
+  activeCategory=requestedDivision;
+  division.value=activeCategory;
+  rebuildProfessionOptions();
+  const requestedProfession=(activeCategory && normalizeCategory(legacyProfession)===activeCategory)?"":legacyProfession;
+  if(requestedProfession && [...profession.options].some(o=>o.value===requestedProfession))setProfession(requestedProfession);
+  if(params.has("type") && [...profession.options].some(o=>o.value===params.get("type")))setProfession(params.get("type"));
+  rebuildSpecialtyOptions(params.get("specialty")||"");
   if(params.has("location"))locationInput.value=params.get("location")||"";
   if(params.has("state"))filterState.value=(params.get("state")||"").toUpperCase();
 
-  rebuildRoleTypes();
-  if(params.has("type") && [...filterType.options].some(o=>o.value===params.get("type")))filterType.value=params.get("type");
-
   qs("#jobsSearchForm").addEventListener("submit",e=>{
     e.preventDefault();
-    activeCategory=normalizeCategory(profession.value);
-    filterType.value="";
-    rebuildRoleTypes();
+    activeCategory=normalizeCategory(division.value);
+    rebuildProfessionOptions(profession.value);
+    rebuildSpecialtyOptions(specialty.value);
     render();
     qs(".jobs-results-section")?.scrollIntoView({behavior:"smooth",block:"start"});
   });
 
-  profession.addEventListener("change",()=>{
-    activeCategory=normalizeCategory(profession.value);
+  division.addEventListener("change",()=>{
+    activeCategory=normalizeCategory(division.value);
+    setProfession("");
     specialty.value="";
-    filterType.value="";
-    rebuildRoleTypes();
+    rebuildProfessionOptions();
+    rebuildSpecialtyOptions();
     render();
   });
-  [filterState,filterType,sort].forEach(el=>el.addEventListener("change",render));
+  profession.addEventListener("change",()=>{
+    setProfession(profession.value);
+    if(!activeCategory && profession.value){
+      const inferred=findDivisionForProfession(profession.value);
+      if(inferred){
+        activeCategory=inferred;
+        division.value=inferred;
+        rebuildProfessionOptions(profession.value);
+        setProfession(profession.value);
+      }
+    }
+    rebuildSpecialtyOptions();
+    render();
+  });
+  specialty.addEventListener("change",render);
+  filterType.addEventListener("change",()=>{
+    setProfession(filterType.value);
+    if(!activeCategory && filterType.value){
+      const inferred=findDivisionForProfession(filterType.value);
+      if(inferred){
+        activeCategory=inferred;
+        division.value=inferred;
+        rebuildProfessionOptions(filterType.value);
+        setProfession(filterType.value);
+      }
+    }
+    rebuildSpecialtyOptions();
+    render();
+  });
+  [filterState,sort].forEach(el=>el.addEventListener("change",render));
 
   qsa(".jobs-division-card").forEach(btn=>btn.addEventListener("click",()=>setDivision(btn.dataset.category||"")));
   allButton.addEventListener("click",()=>{
     activeCategory="";
-    profession.value="";
+    division.value="";
+    setProfession("");
     specialty.value="";
-    filterType.value="";
-    rebuildRoleTypes();
+    rebuildProfessionOptions();
+    rebuildSpecialtyOptions();
     render();
   });
 
   function clearAll(){
-    profession.value="";
+    activeCategory="";
+    division.value="";
+    setProfession("");
     specialty.value="";
     locationInput.value="";
     filterState.value="";
-    activeCategory="";
-    filterType.value="";
-    rebuildRoleTypes();
+    rebuildProfessionOptions();
+    rebuildSpecialtyOptions();
     render();
   }
   qs("#clearFilters").addEventListener("click",clearAll);
