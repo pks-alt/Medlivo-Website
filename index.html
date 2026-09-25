@@ -2665,41 +2665,67 @@ header{
   padding:0 15px;
 }
 .career-more{
-  display:flex;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px;
   align-items:center;
-  gap:17px;
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid #e3e8f1;
+  margin-top:16px;
+  padding:13px 14px;
+  border:1px solid #e0e7f1;
+  border-radius:13px;
+  background:#f8faff;
 }
 .career-more>span{
-  flex:0 0 auto;
-  color:#7b879a;
-  font-size:10px;
-  font-weight:800;
+  color:#52617a;
+  font-size:10.5px;
+  line-height:1.25;
+  font-weight:900;
+  letter-spacing:.02em;
+  white-space:nowrap;
 }
 .career-more>div{
   display:flex;
-  gap:15px;
+  justify-content:flex-end;
+  gap:8px;
   flex-wrap:wrap;
 }
 .career-more a{
-  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 11px;
+  border:1px solid #d9e2ef;
+  border-radius:9px;
+  background:#fff;
   color:var(--navy);
   font-size:10px;
+  line-height:1;
   font-weight:900;
+  white-space:nowrap;
+  transition:border-color .16s ease,background .16s ease,color .16s ease,transform .16s ease;
 }
-.career-more a+a:before{
-  content:"";
-  position:absolute;
-  left:-8px;
-  top:50%;
-  width:2px;
-  height:2px;
-  border-radius:50%;
-  background:#a7b3c5;
+.career-more a:first-child{
+  border-color:#c9eac5;
+  background:#f4fbf3;
+  color:#276f28;
 }
-.career-more a:hover{color:var(--blue)}
+.career-more a:nth-child(2){
+  border-color:#d9e4f8;
+  background:#f5f8ff;
+  color:#2457bd;
+}
+.career-more a:hover,
+.career-more a:focus-visible{
+  transform:translateY(-1px);
+  border-color:#aebed4;
+  background:#fff;
+  color:var(--deep);
+}
+.career-more a:focus-visible{
+  outline:3px solid rgba(47,103,216,.22);
+  outline-offset:2px;
+}
 .career-home-refined .career-photo{
   min-height:520px;
   background:#102b72;
@@ -2780,15 +2806,23 @@ header{
     grid-column:auto;
   }
   .career-more{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:8px;
+    grid-template-columns:1fr;
+    gap:10px;
+    padding:13px;
+  }
+  .career-more>span{
+    white-space:normal;
   }
   .career-more>div{
     display:grid;
-    gap:8px;
+    grid-template-columns:1fr;
+    width:100%;
+    gap:7px;
   }
-  .career-more a+a:before{display:none}
+  .career-more a{
+    width:100%;
+    min-height:40px;
+  }
   .career-home-refined .career-photo{
     min-height:390px;
   }
