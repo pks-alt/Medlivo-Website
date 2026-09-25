@@ -1617,6 +1617,32 @@ header{
   }
 }
 
+
+
+/* === Search/filter refinement: 50 states + three divisions === */
+.jobs-layout{
+  grid-template-columns:248px 1fr;
+  gap:50px;
+}
+.jobs-category-wrap{
+  padding:0 0 22px;
+}
+.jobs-category-label{
+  display:block;
+  margin-bottom:10px;
+  color:#8290a5;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+.jobs-category-tabs{
+  padding:0;
+}
+.jobs-filters{
+  background:#fcfdff;
+}
+
 </style>
 </head>
 <body>
@@ -1707,32 +1733,66 @@ header{
       <aside class="jobs-filters" aria-label="Refine job results">
         <div class="jobs-filter-head">
           <div>
-            <span>Refine Search</span>
-            <strong>Filter opportunities</strong>
+            <span>Refine Results</span>
+            <strong>Filters</strong>
           </div>
-          <button type="button" id="clearFilters">Clear</button>
-        </div>
-
-        <div class="jobs-filter-group">
-          <label for="filterCategory">Category</label>
-          <select id="filterCategory">
-            <option value="">All categories</option>
-            <option value="Nursing & Allied">Nursing &amp; Allied</option>
-            <option value="Rehabilitation">Rehabilitation</option>
-            <option value="Locum Tenens">Locum Tenens</option>
-          </select>
+          <button type="button" id="clearFilters">Clear all</button>
         </div>
 
         <div class="jobs-filter-group">
           <label for="filterState">State</label>
           <select id="filterState">
             <option value="">All states</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
             <option value="CA">California</option>
             <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
             <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
             <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
             <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
           </select>
         </div>
 
@@ -1759,7 +1819,7 @@ header{
           <div>
             <div class="eyebrow">Current Opportunities</div>
             <h2>Healthcare jobs nationwide.</h2>
-            <p id="resultsSummary">Browse current openings and use the filters to narrow your search.</p>
+            <p id="resultsSummary">Current openings across Medlivo’s healthcare divisions.</p>
           </div>
           <div class="jobs-results-tools">
             <button class="jobs-mobile-filter" id="mobileFilterToggle" type="button">Filters</button>
@@ -1771,11 +1831,14 @@ header{
           </div>
         </div>
 
-        <div class="jobs-category-tabs" role="tablist" aria-label="Job categories">
-          <button class="active" data-category="" type="button">All</button>
-          <button data-category="Nursing & Allied" type="button">Nursing &amp; Allied</button>
-          <button data-category="Rehabilitation" type="button">Rehabilitation</button>
-          <button data-category="Locum Tenens" type="button">Locum Tenens</button>
+        <div class="jobs-category-wrap">
+          <span class="jobs-category-label">Browse by division</span>
+          <div class="jobs-category-tabs" role="tablist" aria-label="Medlivo healthcare divisions">
+            <button class="active" data-category="" type="button">All Opportunities</button>
+            <button data-category="Nursing & Allied" type="button">Nursing &amp; Allied</button>
+            <button data-category="Rehabilitation" type="button">Rehabilitation</button>
+            <button data-category="Locum Tenens" type="button">Locum Tenens</button>
+          </div>
         </div>
 
         <div class="job-list" id="jobList" data-ats-results="pending"></div>
@@ -1925,7 +1988,7 @@ document.addEventListener('keydown',(e)=>{
   const qs=s=>document.querySelector(s);
   const list=qs("#jobList"), noResults=qs("#noResults"), summary=qs("#resultsSummary");
   const profession=qs("#searchProfession"), specialty=qs("#searchSpecialty"), location=qs("#searchLocation");
-  const filterCategory=qs("#filterCategory"), filterState=qs("#filterState"), filterType=qs("#filterType"), sort=qs("#sortJobs");
+  const filterState=qs("#filterState"), filterType=qs("#filterType"), sort=qs("#sortJobs");
   let activeCategory="";
 
   function payHigh(job){
@@ -1936,7 +1999,7 @@ document.addEventListener('keydown',(e)=>{
     const p=(profession.value||"").toLowerCase();
     const q=(specialty.value||"").trim().toLowerCase();
     const l=(location.value||"").trim().toLowerCase();
-    const cat=(filterCategory.value||activeCategory||"").toLowerCase();
+    const cat=(activeCategory||"").toLowerCase();
     const st=(filterState.value||"").toLowerCase();
     const type=(filterType.value||"").toLowerCase();
     if(p && job.category.toLowerCase()!==p)return false;
@@ -1974,7 +2037,7 @@ document.addEventListener('keydown',(e)=>{
     noResults.hidden=items.length!==0;
     list.hidden=items.length===0;
     summary.textContent=items.length
-      ? `Showing ${items.length} preview opportunities. Use filters to narrow your search.`
+      ? `${items.length} opportunit${items.length===1?"y":"ies"} found`
       : "No exact matches found. Try widening your search.";
   }
 
@@ -1984,17 +2047,16 @@ document.addEventListener('keydown',(e)=>{
   if(params.has("location"))location.value=params.get("location")||"";
 
   qs("#jobsSearchForm").addEventListener("submit",e=>{e.preventDefault();render();});
-  [filterCategory,filterState,filterType,sort].forEach(el=>el.addEventListener("change",render));
+  [filterState,filterType,sort].forEach(el=>el.addEventListener("change",render));
   document.querySelectorAll(".jobs-category-tabs button").forEach(btn=>btn.addEventListener("click",()=>{
     document.querySelectorAll(".jobs-category-tabs button").forEach(x=>x.classList.remove("active"));
     btn.classList.add("active");
     activeCategory=btn.dataset.category||"";
-    filterCategory.value="";
     render();
   }));
   function clearAll(){
     profession.value="";specialty.value="";location.value="";
-    filterCategory.value="";filterState.value="";filterType.value="";
+    filterState.value="";filterType.value="";
     activeCategory="";
     document.querySelectorAll(".jobs-category-tabs button").forEach((x,i)=>x.classList.toggle("active",i===0));
     render();
