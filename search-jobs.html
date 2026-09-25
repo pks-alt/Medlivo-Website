@@ -1643,6 +1643,460 @@ header{
   background:#fcfdff;
 }
 
+
+
+/* === Careers search experience — final integrated refinement === */
+.jobs-results-section{
+  padding:66px 0 82px;
+  background:linear-gradient(180deg,#fff 0%,#fbfcff 100%);
+}
+.jobs-layout{
+  grid-template-columns:244px minmax(0,1fr);
+  gap:48px;
+}
+.jobs-filters{
+  position:sticky;
+  top:104px;
+  padding:24px 22px 22px;
+  border:1px solid #e3e9f2;
+  border-radius:18px;
+  background:rgba(255,255,255,.97);
+  box-shadow:0 12px 34px rgba(9,25,79,.045);
+}
+.jobs-filter-close{display:none}
+.jobs-filter-group select{
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.jobs-filter-group select:focus{
+  outline:0;
+  border-color:#b8c7df;
+  box-shadow:0 0 0 3px rgba(47,103,216,.08);
+}
+.jobs-help-card{
+  border-radius:15px;
+  box-shadow:0 16px 34px rgba(11,34,95,.14);
+}
+
+.jobs-division-switcher{
+  margin-bottom:28px;
+}
+.jobs-division-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:13px;
+}
+.jobs-division-head strong{
+  display:block;
+  max-width:620px;
+  margin-top:4px;
+  color:var(--deep);
+  font-size:14px;
+  line-height:1.45;
+}
+.jobs-all-button{
+  min-height:38px;
+  padding:0 14px;
+  border:1px solid #dce4ef;
+  border-radius:999px;
+  background:#fff;
+  color:#53617a;
+  font-size:10px;
+  font-weight:900;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:.18s ease;
+}
+.jobs-all-button:hover,
+.jobs-all-button.active{
+  border-color:var(--navy);
+  background:var(--navy);
+  color:#fff;
+}
+.jobs-division-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+.jobs-division-card{
+  --division-accent:#2f67d8;
+  position:relative;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:12px;
+  align-items:center;
+  min-height:94px;
+  padding:15px 15px 15px 14px;
+  border:1px solid #e0e7f1;
+  border-radius:16px;
+  background:#fff;
+  color:inherit;
+  text-align:left;
+  cursor:pointer;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(9,25,79,.035);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.jobs-division-card:before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  background:var(--division-accent);
+  opacity:.22;
+  transition:opacity .18s ease,width .18s ease;
+}
+.jobs-division-card:hover,
+.jobs-division-card.active{
+  transform:translateY(-2px);
+  border-color:#cfd9e8;
+  box-shadow:0 16px 34px rgba(9,25,79,.075);
+}
+.jobs-division-card.active:before{
+  width:4px;
+  opacity:1;
+}
+.division-nursing{--division-accent:#2f67d8}
+.division-rehab{--division-accent:#19a8a1}
+.division-locum{--division-accent:#18358f}
+.division-index{
+  display:grid;
+  place-items:center;
+  width:32px;height:32px;
+  border-radius:50%;
+  background:#f5f8fd;
+  color:var(--division-accent);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.division-copy{display:grid;gap:4px;min-width:0}
+.division-copy strong{
+  color:var(--deep);
+  font-size:13px;
+  line-height:1.2;
+  letter-spacing:-.015em;
+}
+.division-copy small{
+  color:#77859b;
+  font-size:9px;
+  line-height:1.35;
+  font-weight:700;
+}
+.division-arrow{
+  color:var(--division-accent);
+  font-size:15px;
+  font-weight:900;
+  transition:transform .18s ease;
+}
+.jobs-division-card:hover .division-arrow,
+.jobs-division-card.active .division-arrow{
+  transform:translateX(3px);
+}
+
+.job-list{
+  display:grid;
+  gap:12px;
+  border-top:0;
+}
+.job-card{
+  --job-accent:#2f67d8;
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 205px;
+  gap:26px;
+  padding:23px 22px 22px 24px;
+  border:1px solid #e2e8f1;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.035);
+  overflow:hidden;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+}
+.job-card:before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:4px;
+  background:var(--job-accent);
+  opacity:.82;
+}
+.job-card:hover{
+  transform:translateY(-2px);
+  border-color:#d2dcea;
+  box-shadow:0 18px 40px rgba(9,25,79,.08);
+  padding-left:24px;
+}
+.job-card:hover:before{width:4px}
+.job-card.cat-nursing-allied{--job-accent:#2f67d8}
+.job-card.cat-rehabilitation{--job-accent:#19a8a1}
+.job-card.cat-locum-tenens{--job-accent:#18358f}
+.job-card-main{min-width:0}
+.job-badges{margin-bottom:11px}
+.job-badge{
+  background:#eef4ff;
+  color:#2457bd;
+}
+.job-card.cat-rehabilitation .job-badge:first-child{
+  background:#ecfafa;
+  color:#147f7a;
+}
+.job-card.cat-locum-tenens .job-badge:first-child{
+  background:#eef1fb;
+  color:#18358f;
+}
+.job-card h3{
+  max-width:720px;
+  font-size:23px;
+}
+.job-location-line{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:10px;
+  color:#40506e;
+  font-size:12px;
+  font-weight:800;
+}
+.job-location-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--job-accent);
+}
+.job-detail-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:16px;
+  padding-top:15px;
+  border-top:1px solid #edf1f6;
+}
+.job-detail{
+  display:grid;
+  gap:4px;
+}
+.job-detail small{
+  color:#96a2b4;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+.job-detail strong{
+  color:#43516c;
+  font-size:11px;
+  line-height:1.35;
+}
+.job-card-side{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-end;
+  padding-left:22px;
+  border-left:1px solid #edf1f6;
+}
+.job-pay-label{
+  color:#96a2b4;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.job-pay{
+  margin-top:5px;
+  color:var(--deep);
+  font-size:14px;
+  line-height:1.4;
+  text-align:right;
+  white-space:normal;
+}
+.job-apply{
+  width:100%;
+  margin-top:15px;
+  min-height:44px;
+  border-radius:11px;
+  background:var(--navy);
+}
+.job-apply:hover{background:#2147aa}
+.job-ats-note{
+  margin-top:7px;
+  color:#9aa6b7;
+  font-size:8px;
+  font-weight:700;
+  text-align:right;
+}
+.jobs-no-results{
+  padding:56px 32px;
+  border-radius:20px;
+  background:#fff;
+  box-shadow:0 10px 28px rgba(9,25,79,.04);
+}
+.jobs-no-results-actions{
+  display:flex;
+  justify-content:center;
+  gap:9px;
+  flex-wrap:wrap;
+}
+.jobs-no-results-actions .btn-outline{
+  background:#fff;
+}
+
+.jobs-support-strip{
+  padding:8px 0 72px;
+  background:#fbfcff;
+}
+.jobs-support-head{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:64px;
+  align-items:end;
+  margin-bottom:26px;
+}
+.jobs-support-head h2{
+  margin-top:8px;
+  max-width:650px;
+  color:var(--deep);
+  font-size:clamp(34px,3.3vw,46px);
+  line-height:1.06;
+  letter-spacing:-.045em;
+}
+.jobs-support-head p{
+  max-width:520px;
+  color:var(--text);
+  font-size:13px;
+  line-height:1.65;
+}
+.jobs-support-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid #dfe6f0;
+  border-bottom:1px solid #dfe6f0;
+}
+.jobs-support-item{
+  min-height:185px;
+  padding:24px 22px 24px 0;
+}
+.jobs-support-item:not(:first-child){
+  padding-left:22px;
+  border-left:1px solid #e5eaf2;
+}
+.jobs-support-item>span{
+  display:block;
+  margin-bottom:18px;
+  color:var(--blue);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.jobs-support-item strong{
+  display:block;
+  color:var(--deep);
+  font-size:17px;
+  letter-spacing:-.02em;
+}
+.jobs-support-item p{
+  margin-top:8px;
+  color:#6c7a91;
+  font-size:11px;
+  line-height:1.58;
+}
+
+.jobs-filter-backdrop{display:none}
+
+@media(max-width:1040px){
+  .jobs-layout{grid-template-columns:1fr;gap:30px}
+  .jobs-division-grid{grid-template-columns:1fr}
+  .jobs-division-card{min-height:78px}
+  .jobs-filter-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:88;
+    background:rgba(4,15,44,.52);
+    backdrop-filter:blur(2px);
+  }
+  .jobs-filter-backdrop:not([hidden]){display:block}
+  .jobs-filters{
+    position:fixed;
+    top:0;
+    right:0;
+    z-index:89;
+    width:min(380px,92vw);
+    height:100vh;
+    overflow:auto;
+    display:block;
+    padding:66px 24px 28px;
+    border:0;
+    border-radius:0;
+    transform:translateX(102%);
+    transition:transform .22s ease;
+    box-shadow:-24px 0 60px rgba(4,15,44,.18);
+  }
+  .jobs-filters.open{transform:translateX(0)}
+  .jobs-filter-close{
+    display:grid;
+    place-items:center;
+    position:absolute;
+    top:18px;
+    right:18px;
+    width:38px;height:38px;
+    border:1px solid #e0e6ef;
+    border-radius:10px;
+    background:#fff;
+    color:var(--deep);
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+  }
+  .jobs-support-grid{grid-template-columns:1fr 1fr}
+  .jobs-support-item:nth-child(3){
+    border-left:0;
+    border-top:1px solid #e5eaf2;
+  }
+  .jobs-support-item:nth-child(4){
+    border-top:1px solid #e5eaf2;
+  }
+}
+@media(max-width:720px){
+  .jobs-results-section{padding:50px 0 60px}
+  .jobs-division-head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:12px;
+  }
+  .jobs-all-button{width:100%}
+  .job-card{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:21px 18px 19px 21px;
+  }
+  .job-card:hover{
+    padding-left:21px;
+  }
+  .job-card-side{
+    align-items:flex-start;
+    padding:16px 0 0;
+    border-left:0;
+    border-top:1px solid #edf1f6;
+  }
+  .job-pay{text-align:left}
+  .job-ats-note{text-align:left}
+  .job-detail-grid{grid-template-columns:1fr 1fr}
+  .job-detail:last-child{grid-column:1/-1}
+  .jobs-support-head{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+  .jobs-support-grid{grid-template-columns:1fr}
+  .jobs-support-item,
+  .jobs-support-item:not(:first-child){
+    min-height:auto;
+    padding:20px 0;
+    border-left:0;
+    border-top:1px solid #e5eaf2;
+  }
+  .jobs-support-item:first-child{border-top:0}
+}
+
 </style>
 </head>
 <body>
@@ -1730,7 +2184,9 @@ header{
 
   <section class="jobs-results-section">
     <div class="wrap jobs-layout">
+      <div class="jobs-filter-backdrop" id="filterBackdrop" hidden></div>
       <aside class="jobs-filters" aria-label="Refine job results">
+        <button class="jobs-filter-close" id="filterClose" type="button" aria-label="Close filters">×</button>
         <div class="jobs-filter-head">
           <div>
             <span>Refine Results</span>
@@ -1797,12 +2253,14 @@ header{
         </div>
 
         <div class="jobs-filter-group">
-          <label for="filterType">Profession type</label>
-          <select id="filterType">
-            <option value="">All types</option>
+          <label for="filterType">Role type</label>
+          <select id="filterType" data-ats-filter="role-type">
+            <option value="">All role types</option>
+            <option value="Nursing">Nursing</option>
+            <option value="Allied Health">Allied Health</option>
+            <option value="Rehabilitation">Rehabilitation</option>
             <option value="Physician">Physician</option>
             <option value="Advanced Practice">Advanced Practice</option>
-            <option value="Allied">Allied</option>
           </select>
         </div>
 
@@ -1818,7 +2276,7 @@ header{
         <div class="jobs-results-head">
           <div>
             <div class="eyebrow">Current Opportunities</div>
-            <h2>Healthcare jobs nationwide.</h2>
+            <h2 id="resultsTitle">Healthcare jobs nationwide.</h2>
             <p id="resultsSummary">Current openings across Medlivo’s healthcare divisions.</p>
           </div>
           <div class="jobs-results-tools">
@@ -1831,13 +2289,42 @@ header{
           </div>
         </div>
 
-        <div class="jobs-category-wrap">
-          <span class="jobs-category-label">Browse by division</span>
-          <div class="jobs-category-tabs" role="tablist" aria-label="Medlivo healthcare divisions">
-            <button class="active" data-category="" type="button">All Opportunities</button>
-            <button data-category="Nursing & Allied" type="button">Nursing &amp; Allied</button>
-            <button data-category="Rehabilitation" type="button">Rehabilitation</button>
-            <button data-category="Locum Tenens" type="button">Locum Tenens</button>
+        <div class="jobs-division-switcher">
+          <div class="jobs-division-head">
+            <div>
+              <span class="jobs-category-label">Browse by division</span>
+              <strong>Choose the healthcare path that fits your profession.</strong>
+            </div>
+            <button class="jobs-all-button active" data-category="" type="button">All Opportunities</button>
+          </div>
+
+          <div class="jobs-division-grid" role="tablist" aria-label="Medlivo healthcare divisions">
+            <button class="jobs-division-card division-nursing" data-category="Nursing & Allied" type="button">
+              <span class="division-index">01</span>
+              <span class="division-copy">
+                <strong>Nursing &amp; Allied</strong>
+                <small>RNs, LPNs/LVNs, CNAs &amp; Allied Health</small>
+              </span>
+              <span class="division-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="jobs-division-card division-rehab" data-category="Rehabilitation" type="button">
+              <span class="division-index">02</span>
+              <span class="division-copy">
+                <strong>Rehabilitation</strong>
+                <small>PTs, OTs, SLPs &amp; Therapy Assistants</small>
+              </span>
+              <span class="division-arrow" aria-hidden="true">→</span>
+            </button>
+
+            <button class="jobs-division-card division-locum" data-category="Locum Tenens" type="button">
+              <span class="division-index">03</span>
+              <span class="division-copy">
+                <strong>Locum Tenens</strong>
+                <small>Physicians, NPs &amp; PAs</small>
+              </span>
+              <span class="division-arrow" aria-hidden="true">→</span>
+            </button>
           </div>
         </div>
 
@@ -1846,9 +2333,31 @@ header{
         <div class="jobs-no-results" id="noResults" hidden>
           <span>No exact matches</span>
           <h3>Let’s widen the search.</h3>
-          <p>Try another specialty or location, or clear the filters to browse all current opportunities.</p>
-          <button class="btn btn-primary" type="button" id="viewAllJobs">View All Jobs</button>
+          <p>Try another specialty or location, clear your filters, or connect with a Medlivo recruiter for help finding the right assignment.</p>
+          <div class="jobs-no-results-actions">
+            <button class="btn btn-primary" type="button" id="viewAllJobs">View All Jobs</button>
+            <a class="btn btn-outline" href="mailto:hello@medlivo.com?subject=Help%20Finding%20a%20Healthcare%20Assignment">Talk to a Recruiter</a>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jobs-support-strip">
+    <div class="wrap">
+      <div class="jobs-support-head">
+        <div>
+          <div class="eyebrow">Working with Medlivo</div>
+          <h2>Support that continues beyond the search.</h2>
+        </div>
+        <p>From your first conversation through credentialing and assignment support, Medlivo stays close to the process.</p>
+      </div>
+
+      <div class="jobs-support-grid">
+        <div class="jobs-support-item"><span>01</span><strong>Clear opportunity details</strong><p>Understand the role, location, timing, and available compensation information before you move forward.</p></div>
+        <div class="jobs-support-item"><span>02</span><strong>Streamlined credentialing</strong><p>Experienced teams help keep documentation, onboarding, and assignment readiness moving.</p></div>
+        <div class="jobs-support-item"><span>03</span><strong>Nationwide reach</strong><p>Explore opportunities across Medlivo’s Nursing &amp; Allied, Rehabilitation, and Locum Tenens divisions.</p></div>
+        <div class="jobs-support-item"><span>04</span><strong>Assignment support</strong><p>Stay connected with a Medlivo team after placement when questions or needs arise.</p></div>
       </div>
     </div>
   </section>
@@ -1972,33 +2481,52 @@ document.addEventListener('keydown',(e)=>{
 
 <script>
 (function(){
-  // Preview seed data from the current Medlivo ATS search experience.
-  // Developer handoff: replace this array/render path with the live ATS response.
+  // Preview data mirrors fields exposed by the current Medlivo ATS experience.
+  // Developer handoff: replace this array and apply URLs with live ATS data.
   const jobs=[
-    {id:"26-38997",title:"Neurology",category:"Locum Tenens",type:"Physician",state:"AZ",city:"Prescott",pay:"$110.00 – $130.00 / Hour",start:"A.S.A.P",posted:"09/22/2026"},
-    {id:"26-38892",title:"OB/GYN Physician",category:"Locum Tenens",type:"Physician",state:"CO",city:"Fort Morgan",pay:"$315.00 – $365.00 / Hour",start:"A.S.A.P",posted:"09/21/2026"},
-    {id:"26-38883",title:"ENT Physician",category:"Locum Tenens",type:"Physician",state:"CA",city:"Sacramento",pay:"$315.00 – $345.00 / Hour",start:"A.S.A.P",posted:"09/21/2026"},
-    {id:"26-38946",title:"Emergency Medicine",category:"Locum Tenens",type:"Physician",state:"CA",city:"Fortuna",pay:"$250.00 – $300.00 / Hour",start:"A.S.A.P",posted:"09/21/2026"},
-    {id:"26-38740",title:"Nurse Practitioner (NP)",category:"Locum Tenens",type:"Advanced Practice",state:"NM",city:"Deming",pay:"$90.00 – $110.00 / Hour",start:"A.S.A.P",posted:"09/18/2026"},
-    {id:"26-38617",title:"Physician Assistant - Cardiology, Nurse Practitioner - Cardiology",category:"Locum Tenens",type:"Advanced Practice",state:"WA",city:"Everett",pay:"$100.00 – $120.00 / Hour",start:"A.S.A.P",posted:"09/17/2026"},
-    {id:"26-38616",title:"Obstetrics and Gynecology",category:"Locum Tenens",type:"Physician",state:"OR",city:"Hood River",pay:"$150.00 – $200.00 / Hour",start:"A.S.A.P",posted:"09/17/2026"},
-    {id:"26-38524",title:"Audiologist",category:"Nursing & Allied",type:"Allied",state:"WA",city:"Yakima",pay:"$80.00 – $90.00 / Hour",start:"A.S.A.P",posted:"09/16/2026"}
+    {id:"26-38997",title:"Neurology",category:"Locum Tenens",type:"Physician",state:"AZ",city:"Prescott",pay:"$110.00 – $130.00 / Hour",start:"A.S.A.P",posted:"09/22/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38892",title:"OB/GYN Physician",category:"Locum Tenens",type:"Physician",state:"CO",city:"Fort Morgan",pay:"$315.00 – $365.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38883",title:"ENT Physician",category:"Locum Tenens",type:"Physician",state:"CA",city:"Sacramento",pay:"$315.00 – $345.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38946",title:"Emergency Medicine",category:"Locum Tenens",type:"Physician",state:"CA",city:"Fortuna",pay:"$250.00 – $300.00 / Hour",start:"A.S.A.P",posted:"09/21/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38740",title:"Nurse Practitioner (NP)",category:"Locum Tenens",type:"Advanced Practice",state:"NM",city:"Deming",pay:"$90.00 – $110.00 / Hour",start:"A.S.A.P",posted:"09/18/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38617",title:"Physician Assistant - Cardiology, Nurse Practitioner - Cardiology",category:"Locum Tenens",type:"Advanced Practice",state:"WA",city:"Everett",pay:"$100.00 – $120.00 / Hour",start:"A.S.A.P",posted:"09/17/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38616",title:"Obstetrics and Gynecology",category:"Locum Tenens",type:"Physician",state:"OR",city:"Hood River",pay:"$150.00 – $200.00 / Hour",start:"A.S.A.P",posted:"09/17/2026",applyUrl:"https://www.medlivo.com/search-jobs"},
+    {id:"26-38524",title:"Audiologist",category:"Nursing & Allied",type:"Allied Health",state:"WA",city:"Yakima",pay:"$80.00 – $90.00 / Hour",start:"A.S.A.P",posted:"09/16/2026",applyUrl:"https://www.medlivo.com/search-jobs"}
   ];
 
   const qs=s=>document.querySelector(s);
-  const list=qs("#jobList"), noResults=qs("#noResults"), summary=qs("#resultsSummary");
-  const profession=qs("#searchProfession"), specialty=qs("#searchSpecialty"), location=qs("#searchLocation");
+  const qsa=s=>[...document.querySelectorAll(s)];
+  const list=qs("#jobList"), noResults=qs("#noResults"), summary=qs("#resultsSummary"), resultsTitle=qs("#resultsTitle");
+  const profession=qs("#searchProfession"), specialty=qs("#searchSpecialty"), locationInput=qs("#searchLocation");
   const filterState=qs("#filterState"), filterType=qs("#filterType"), sort=qs("#sortJobs");
+  const allButton=qs(".jobs-all-button");
   let activeCategory="";
 
+  const titles={
+    "":"Healthcare jobs nationwide.",
+    "Nursing & Allied":"Nursing & Allied opportunities.",
+    "Rehabilitation":"Rehabilitation opportunities.",
+    "Locum Tenens":"Locum Tenens opportunities."
+  };
+
+  function slug(value){
+    return String(value||"").toLowerCase().replace(/&/g,"and").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+  }
+  function normalizeCategory(value){
+    const v=String(value||"").trim().toLowerCase();
+    if(["nursing-allied","nursing & allied","nursing and allied"].includes(v))return "Nursing & Allied";
+    if(["rehab","rehabilitation"].includes(v))return "Rehabilitation";
+    if(["locum","locums","locum-tenens","locum tenens"].includes(v))return "Locum Tenens";
+    return value||"";
+  }
   function payHigh(job){
-    const nums=(job.pay.match(/[\d.]+/g)||[]).map(Number);
+    const nums=(String(job.pay||"").match(/[\d.]+/g)||[]).map(Number);
     return nums.length?Math.max(...nums):0;
   }
   function matches(job){
-    const p=(profession.value||"").toLowerCase();
+    const p=normalizeCategory(profession.value).toLowerCase();
     const q=(specialty.value||"").trim().toLowerCase();
-    const l=(location.value||"").trim().toLowerCase();
+    const l=(locationInput.value||"").trim().toLowerCase();
     const cat=(activeCategory||"").toLowerCase();
     const st=(filterState.value||"").toLowerCase();
     const type=(filterType.value||"").toLowerCase();
@@ -2010,6 +2538,11 @@ document.addEventListener('keydown',(e)=>{
     if(type && job.type.toLowerCase()!==type)return false;
     return true;
   }
+  function updateDivisionUI(){
+    allButton.classList.toggle("active",!activeCategory);
+    qsa(".jobs-division-card").forEach(btn=>btn.classList.toggle("active",btn.dataset.category===activeCategory));
+    resultsTitle.textContent=titles[activeCategory]||titles[""];
+  }
   function render(){
     let items=jobs.filter(matches);
     if(sort.value==="pay-high")items.sort((a,b)=>payHigh(b)-payHigh(a));
@@ -2017,54 +2550,95 @@ document.addEventListener('keydown',(e)=>{
     if(sort.value==="newest")items.sort((a,b)=>b.posted.localeCompare(a.posted));
 
     list.innerHTML=items.map(job=>`
-      <article class="job-card" data-job-id="${job.id}" data-ats-template="job-card">
-        <div>
-          <div class="job-badges"><span class="job-badge">${job.category}</span><span class="job-badge alt">${job.type}</span></div>
-          <h3>${job.title}</h3>
-          <div class="job-meta">
-            <span><b>Location</b> ${job.state} · ${job.city}</span>
-            <span><b>Start</b> ${job.start}</span>
-            <span><b>Posted</b> ${job.posted}</span>
+      <article class="job-card cat-${slug(job.category)}" data-job-id="${job.id}" data-ats-template="job-card" data-ats-category="${job.category}">
+        <div class="job-card-main">
+          <div class="job-badges">
+            <span class="job-badge">${job.category}</span>
+            <span class="job-badge alt">${job.type}</span>
           </div>
-          <div class="job-foot"><span>Job ID ${job.id}</span><span>Medlivo Healthcare Staffing</span></div>
+          <h3>${job.title}</h3>
+          <div class="job-location-line"><span class="job-location-dot"></span><span>${job.city}, ${job.state}</span></div>
+          <div class="job-detail-grid">
+            <div class="job-detail"><small>Start</small><strong>${job.start||"Contact recruiter"}</strong></div>
+            <div class="job-detail"><small>Posted</small><strong>${job.posted||"Current"}</strong></div>
+            <div class="job-detail"><small>Job ID</small><strong>${job.id}</strong></div>
+          </div>
         </div>
-        <div class="job-actions">
-          <div class="job-pay">${job.pay}</div>
-          <a class="job-apply" href="https://www.medlivo.com/search-jobs" data-ats-apply-id="${job.id}">View &amp; Apply →</a>
+        <div class="job-card-side">
+          <span class="job-pay-label">Compensation</span>
+          <div class="job-pay">${job.pay||"Contact recruiter"}</div>
+          <a class="job-apply" href="${job.applyUrl||"https://www.medlivo.com/search-jobs"}" data-ats-apply-id="${job.id}" aria-label="View and apply for ${job.title}">View &amp; Apply →</a>
+          <span class="job-ats-note">ATS job details open on apply</span>
         </div>
       </article>`).join("");
 
-    noResults.hidden=items.length!==0;
-    list.hidden=items.length===0;
-    summary.textContent=items.length
-      ? `${items.length} opportunit${items.length===1?"y":"ies"} found`
+    const count=items.length;
+    noResults.hidden=count!==0;
+    list.hidden=count===0;
+    summary.textContent=count
+      ? `${count} opportunit${count===1?"y":"ies"} found`
       : "No exact matches found. Try widening your search.";
+    updateDivisionUI();
   }
 
-  const params=new URLSearchParams(location.search);
-  if(params.has("profession"))profession.value=params.get("profession")||"";
-  if(params.has("specialty"))specialty.value=params.get("specialty")||"";
-  if(params.has("location"))location.value=params.get("location")||"";
-
-  qs("#jobsSearchForm").addEventListener("submit",e=>{e.preventDefault();render();});
-  [filterState,filterType,sort].forEach(el=>el.addEventListener("change",render));
-  document.querySelectorAll(".jobs-category-tabs button").forEach(btn=>btn.addEventListener("click",()=>{
-    document.querySelectorAll(".jobs-category-tabs button").forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
-    activeCategory=btn.dataset.category||"";
+  function setDivision(category){
+    activeCategory=normalizeCategory(category);
+    profession.value=activeCategory;
     render();
-  }));
+  }
+
+  const params=new URLSearchParams(window.location.search);
+  if(params.has("profession")){
+    const normalized=normalizeCategory(params.get("profession")||"");
+    profession.value=normalized;
+    activeCategory=normalized;
+  }
+  if(params.has("specialty"))specialty.value=params.get("specialty")||"";
+  if(params.has("location"))locationInput.value=params.get("location")||"";
+
+  qs("#jobsSearchForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    activeCategory=normalizeCategory(profession.value);
+    render();
+    qs(".jobs-results-section")?.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+
+  profession.addEventListener("change",()=>{
+    activeCategory=normalizeCategory(profession.value);
+    render();
+  });
+  [filterState,filterType,sort].forEach(el=>el.addEventListener("change",render));
+
+  qsa(".jobs-division-card").forEach(btn=>btn.addEventListener("click",()=>setDivision(btn.dataset.category||"")));
+  allButton.addEventListener("click",()=>{
+    activeCategory="";
+    profession.value="";
+    render();
+  });
+
   function clearAll(){
-    profession.value="";specialty.value="";location.value="";
+    profession.value="";specialty.value="";locationInput.value="";
     filterState.value="";filterType.value="";
     activeCategory="";
-    document.querySelectorAll(".jobs-category-tabs button").forEach((x,i)=>x.classList.toggle("active",i===0));
     render();
   }
   qs("#clearFilters").addEventListener("click",clearAll);
   qs("#viewAllJobs").addEventListener("click",clearAll);
-  const filterToggle=qs("#mobileFilterToggle"), filters=qs(".jobs-filters");
-  if(filterToggle&&filters)filterToggle.addEventListener("click",()=>filters.classList.toggle("open"));
+
+  const filterToggle=qs("#mobileFilterToggle");
+  const filters=qs(".jobs-filters");
+  const filterBackdrop=qs("#filterBackdrop");
+  const filterClose=qs("#filterClose");
+  function setFiltersOpen(open){
+    filters.classList.toggle("open",open);
+    filterBackdrop.hidden=!open;
+    document.body.style.overflow=open?"hidden":"";
+  }
+  if(filterToggle)filterToggle.addEventListener("click",()=>setFiltersOpen(true));
+  if(filterClose)filterClose.addEventListener("click",()=>setFiltersOpen(false));
+  if(filterBackdrop)filterBackdrop.addEventListener("click",()=>setFiltersOpen(false));
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")setFiltersOpen(false)});
+
   render();
 })();
 </script>
