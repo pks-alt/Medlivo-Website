@@ -1645,6 +1645,36 @@ header{
   .footer-contact-minimal{display:grid;gap:7px}
 }
 
+
+/* === Final footer logo treatment: Option A === */
+.footer-minimal{
+  background:#fff;
+  border-top:1px solid #e4e9f1;
+}
+.footer-logo-minimal{
+  width:216px;
+  background:#fff;
+  overflow:visible;
+}
+.footer-logo-minimal img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  background:#fff;
+  border:0;
+  box-shadow:none;
+  filter:none;
+  opacity:1;
+  mix-blend-mode:normal;
+}
+.footer-bottom-minimal{
+  background:#f7f9fc;
+}
+@media(max-width:480px){
+  .footer-logo-minimal{width:188px}
+}
+
 </style>
 </head>
 <body>
@@ -1800,7 +1830,7 @@ header{
   <div class="wrap footer-main-minimal">
     <div class="footer-brand-minimal">
       <a class="footer-logo-minimal" href="./" aria-label="Medlivo home">
-        <img src="assets/brand/medlivo-logo-transparent.png?v=20260924" alt="Medlivo">
+        <img src="assets/brand/medlivo-logo.png?v=20260924" alt="Medlivo">
       </a>
       <p>Healthcare staffing across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>
       <div class="footer-contact-minimal">
