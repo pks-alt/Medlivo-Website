@@ -1435,12 +1435,420 @@ header{
   .footer-logo-minimal{width:184px}
 }
 
+
+/* === Workforce Solutions final density + homepage alignment pass === */
+.hero-grid{
+  min-height:590px;
+  gap:66px;
+  padding:58px 0 62px;
+}
+.hero h1{
+  font-size:clamp(52px,4.7vw,68px);
+  max-width:660px;
+}
+.hero-copy{
+  margin-top:21px;
+  max-width:610px;
+}
+.hero-actions{margin-top:26px}
+.hero-proof{margin-top:23px}
+.enterprise-visual{
+  min-height:455px;
+  padding:30px;
+  border-radius:24px;
+}
+.enterprise-core{
+  margin-top:30px;
+  padding-bottom:24px;
+}
+.enterprise-core strong{font-size:31px}
+.enterprise-grid{margin-top:24px}
+.enterprise-grid>div{
+  min-height:112px;
+  padding:19px 20px;
+}
+
+.challenges{
+  padding:72px 0;
+}
+.challenge-layout{
+  grid-template-columns:.88fr 1.12fr;
+  gap:66px;
+  align-items:center;
+}
+.challenge-intro{
+  position:static;
+}
+.challenge-intro .lead{margin-top:15px}
+.challenge-row{
+  grid-template-columns:48px 1fr;
+  gap:16px;
+  padding:20px 0 21px;
+}
+.challenge-row>span{
+  width:34px;
+  height:34px;
+}
+.challenge-row h3{font-size:21px}
+.challenge-row p{
+  margin-top:6px;
+  font-size:14px;
+  line-height:1.58;
+}
+
+.solutions{
+  padding:74px 0;
+}
+.solutions-head{
+  gap:60px;
+  margin-bottom:28px;
+}
+.solution-model-grid{
+  border-radius:18px;
+  overflow:hidden;
+}
+.solution-model{
+  min-height:176px;
+  padding:25px 25px 27px;
+}
+.solution-model span{margin-bottom:18px}
+.solution-model h3{font-size:20px}
+.solution-model p{
+  font-size:13px;
+  line-height:1.58;
+}
+.specialty-link-band{
+  margin-top:20px;
+  padding:18px 20px;
+  border-radius:12px;
+}
+
+.delivery{
+  padding:76px 0;
+}
+.delivery-head{
+  gap:62px;
+  margin-bottom:34px;
+}
+.delivery-journey{
+  grid-template-columns:repeat(4,1fr);
+  gap:26px;
+}
+.delivery-line{
+  left:7%;
+  right:7%;
+}
+.delivery-step{
+  min-height:158px;
+}
+.delivery-step h3{
+  margin-top:22px;
+  font-size:19px;
+}
+.delivery-step p{
+  font-size:12.5px;
+  line-height:1.58;
+  max-width:230px;
+}
+.delivery-principles{
+  margin-top:18px;
+  padding-top:18px;
+}
+
+.programs{
+  padding:74px 0;
+}
+.programs-head{
+  gap:62px;
+  margin-bottom:30px;
+}
+.program-assurance{
+  grid-template-columns:.72fr 1.28fr;
+  border-radius:20px;
+}
+.program-principle{
+  padding:32px 30px;
+}
+.program-principle strong{
+  margin-top:18px;
+  font-size:28px;
+}
+.program-principle p{
+  margin-top:14px;
+  font-size:13px;
+  line-height:1.62;
+}
+.program-assurance .program-list{
+  padding:6px 28px;
+}
+.program-assurance .program-row{
+  padding:20px 0;
+}
+.program-assurance .program-row h3{font-size:19px}
+.program-assurance .program-row p{
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.58;
+}
+
+.final{
+  padding:58px 0 64px;
+}
+.final-shell{
+  padding:38px 40px;
+  border-radius:20px;
+  gap:36px;
+}
+.final h2{
+  font-size:clamp(34px,3.5vw,44px);
+}
+.final p{
+  font-size:14px;
+  max-width:650px;
+}
+.final-note{margin-top:14px}
+
+footer{
+  padding-top:44px;
+}
+
+@media(max-width:1040px){
+  .hero-grid{padding:52px 0 58px}
+  .challenge-layout{grid-template-columns:1fr;gap:24px}
+  .delivery-journey{grid-template-columns:1fr 1fr}
+  .delivery-line{display:none}
+  .delivery-step{min-height:auto;padding:6px 0 22px}
+  .program-assurance{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .hero-grid{padding:42px 0 48px}
+  .enterprise-visual{min-height:auto}
+  .challenges,.solutions,.delivery,.programs{padding:58px 0}
+  .delivery-journey{grid-template-columns:1fr}
+  .solution-model{min-height:auto}
+  .final{padding:48px 0 54px}
+  .final-shell{padding:30px 24px}
+}
+
+
+/* === Workforce Solutions aesthetic cleanup === */
+header{
+  background:rgba(255,255,255,.97);
+  backdrop-filter:saturate(155%) blur(16px);
+  box-shadow:none;
+}
+.nav{
+  height:78px;
+  gap:24px;
+}
+.logo{width:188px}
+.links{
+  gap:22px;
+  font-size:14px;
+  letter-spacing:-.01em;
+}
+.actions .btn{
+  min-height:46px;
+  padding:0 18px;
+  border-radius:9px;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 82% 14%,rgba(95,223,229,.11),transparent 26%),
+    linear-gradient(125deg,#fff 0%,#fbfdff 58%,#f2f6fd 100%);
+  border-bottom:1px solid #e7ecf3;
+}
+.hero-grid{
+  min-height:560px;
+  grid-template-columns:.94fr 1.06fr;
+  gap:58px;
+  padding:54px 0 58px;
+}
+.hero h1{
+  font-size:clamp(50px,4.55vw,66px);
+  line-height:1.01;
+  max-width:640px;
+}
+.hero-copy{
+  font-size:17px;
+  line-height:1.64;
+  max-width:590px;
+}
+.hero-proof{
+  gap:16px;
+  font-size:11.5px;
+}
+.enterprise-visual{
+  min-height:430px;
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 24px 56px rgba(9,25,79,.14);
+}
+.enterprise-core strong{font-size:29px}
+.enterprise-core span{font-size:13px}
+.enterprise-grid>div{
+  min-height:104px;
+  padding:18px;
+}
+.enterprise-grid b{font-size:15px}
+
+section{padding:70px 0}
+.title{
+  font-size:clamp(36px,3.7vw,48px);
+  line-height:1.07;
+}
+.lead{
+  font-size:15.5px;
+  line-height:1.66;
+}
+
+.challenges{
+  background:#fff;
+}
+.challenge-layout{
+  gap:58px;
+}
+.challenge-list{
+  border-top:1px solid #e2e8f1;
+}
+.challenge-row{
+  padding:18px 0 19px;
+}
+.challenge-row:hover{padding-left:6px}
+.challenge-row h3{font-size:20px}
+.challenge-row p{font-size:13.5px}
+
+.solutions{
+  background:#f7f9fc;
+  border-top:1px solid #e7ecf3;
+  border-bottom:1px solid #e7ecf3;
+}
+.solutions-head{
+  gap:54px;
+  margin-bottom:24px;
+}
+.solution-model-grid{
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  background:transparent;
+}
+.solution-model{
+  min-height:168px;
+  padding:24px 23px 25px;
+  border:1px solid #e0e6ef;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.045);
+}
+.solution-model span{margin-bottom:16px}
+.solution-model h3{font-size:19px}
+.solution-model p{font-size:13px}
+.specialty-link-band{
+  border:0;
+  border-top:1px solid #dde4ee;
+  background:transparent;
+  padding:18px 0 0;
+  margin-top:22px;
+  border-radius:0;
+}
+.specialty-link-band strong{font-size:14px}
+
+.delivery{
+  padding:72px 0;
+  background:
+    radial-gradient(circle at 86% 8%,rgba(95,223,229,.11),transparent 28%),
+    linear-gradient(132deg,#061744 0%,#0a225f 55%,#153887 100%);
+}
+.delivery-head{
+  gap:56px;
+  margin-bottom:30px;
+}
+.delivery-step{
+  min-height:150px;
+}
+.delivery-node{
+  width:36px;
+  height:36px;
+  box-shadow:0 0 0 7px rgba(11,34,95,.9);
+}
+.delivery-step h3{
+  margin-top:20px;
+  font-size:18px;
+}
+.delivery-step p{
+  max-width:220px;
+  font-size:12px;
+}
+.delivery-principles{
+  gap:28px;
+  margin-top:16px;
+  padding-top:17px;
+}
+
+.final{
+  background:#fff;
+  padding:54px 0 58px;
+}
+.final-shell{
+  padding:34px 36px;
+  border-radius:18px;
+  box-shadow:0 16px 38px rgba(11,34,95,.11);
+}
+.final h2{
+  font-size:clamp(32px,3.2vw,42px);
+}
+.final p{
+  margin-top:9px;
+  font-size:13.5px;
+}
+.final-note{
+  margin-top:12px;
+  font-size:10.5px;
+}
+.final .btn{min-height:46px}
+
+footer{
+  padding:44px 0 20px;
+  background:#f7f9fc;
+}
+.footer-body{
+  gap:44px;
+}
+.footer-logo{width:188px}
+.footer-brand p{font-size:13px}
+.footer-grid{gap:38px}
+.fcol a{font-size:12.5px}
+.foot{
+  margin-top:28px;
+  padding-top:17px;
+  font-size:11.5px;
+}
+
+@media(max-width:1040px){
+  .hero-grid{gap:36px}
+  .solution-model-grid{grid-template-columns:1fr}
+  .solution-model{min-height:auto}
+}
+@media(max-width:720px){
+  section{padding:56px 0}
+  .hero-grid{padding:40px 0 46px}
+  .hero h1{font-size:41px}
+  .enterprise-visual{padding:24px 20px;border-radius:18px}
+  .solution-model{padding:21px 20px}
+  .final-shell{padding:28px 22px}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a href="./" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
+    <a href="index.html" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
     <nav class="links">
       <a class="active" href="workforce-solutions.html">Solutions</a>
       <div class="nav-dropdown">
@@ -1465,11 +1873,10 @@ header{
           </div>
         </div>
       </div>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
       <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
-      <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff</a>
+      <a class="btn btn-green" href="request-staff.html">Request Staff</a>
       <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -1480,25 +1887,25 @@ header{
   <div class="wrap hero-grid">
     <div>
       <div class="kicker">Workforce Solutions</div>
-      <h1>Healthcare workforce solutions for urgent, ongoing, and enterprise needs.</h1>
-      <p class="hero-copy">Medlivo supports direct staffing, multi-site workforce demand, and MSP/VMS programs with experienced recruiting, coordinated delivery, and clear ownership from requirement through assignment.</p>
+      <h1>Healthcare staffing built to fit the way you operate.</h1>
+      <p class="hero-copy">From a single hard-to-fill opening to multi-site and MSP/VMS programs, Medlivo brings the recruiting, credentialing, and delivery support needed to move a requirement from open to staffed.</p>
       <div class="hero-actions">
-        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff</a>
+        <a class="btn btn-green" href="request-staff.html">Request Staff</a>
         <a class="btn btn-outline" href="#solutions">Explore Solutions</a>
       </div>
-      <div class="hero-proof"><span><i></i>Direct staffing</span><span><i></i>MSP / VMS programs</span><span><i></i>Multi-site support</span></div>
+      <div class="hero-proof"><span><i></i>Travel &amp; temporary staffing</span><span><i></i>MSP / VMS delivery</span><span><i></i>Multi-site support</span></div>
     </div>
     <div class="enterprise-visual" aria-label="Healthcare workforce solutions overview">
-      <div class="enterprise-label">WORKFORCE OPERATING MODEL</div>
+      <div class="enterprise-label">HOW WE SUPPORT CLIENTS</div>
       <div class="enterprise-core">
-        <strong>One Medlivo team</strong>
-        <span>Aligned to your requirements, process, and priorities.</span>
+        <strong>One team around the requirement.</strong>
+        <span>Recruiting, credentialing, client coordination, and assignment support working together.</span>
       </div>
       <div class="enterprise-grid">
-        <div><small>01</small><b>Direct Staffing</b><span>Contract and specialty needs</span></div>
-        <div><small>02</small><b>MSP / VMS</b><span>Supplier delivery</span></div>
-        <div><small>03</small><b>Multi-Site</b><span>Coordinated workforce demand</span></div>
-        <div><small>04</small><b>Delivery</b><span>Credentialing through assignment</span></div>
+        <div><small>01</small><b>Direct Staffing</b><span>Travel, temporary, and specialty needs</span></div>
+        <div><small>02</small><b>MSP / VMS</b><span>Supplier delivery within program rules</span></div>
+        <div><small>03</small><b>Multi-Site</b><span>Coordinated support across locations</span></div>
+        <div><small>04</small><b>Assignment Support</b><span>From readiness through completion</span></div>
       </div>
     </div>
   </div>
@@ -1507,16 +1914,14 @@ header{
 <section class="challenges">
   <div class="wrap challenge-layout">
     <div class="challenge-intro">
-      <div class="eyebrow">Workforce Pressures</div>
-      <h2 class="title">Healthcare staffing pressure shows up in more than one place.</h2>
-      <p class="lead">Coverage gaps, constrained talent markets, multi-site demand, and complex program requirements can all slow workforce response. Medlivo is built to work across those conditions without adding another layer of complexity.</p>
-      <div class="challenge-note">Different workforce pressures call for different staffing responses.</div>
+      <div class="eyebrow">Where We Help</div>
+      <h2 class="title">Different staffing problems need different responses.</h2>
+      <p class="lead">Some needs are urgent. Others are difficult because of specialty, geography, scale, or program requirements. Medlivo adjusts the recruiting and delivery approach to the need in front of us.</p>
     </div>
     <div class="challenge-list">
-      <div class="challenge-row"><span>01</span><div><h3>Coverage and capacity pressure</h3><p>Urgent gaps and changing demand can put pressure on schedules, teams, and continuity of care.</p></div></div>
-      <div class="challenge-row"><span>02</span><div><h3>Specialty and market constraints</h3><p>Some roles are harder to fill because of specialty, geography, timing, or local talent availability.</p></div></div>
-      <div class="challenge-row"><span>03</span><div><h3>Multi-site consistency</h3><p>Organizations operating across facilities need staffing support that can stay aligned across locations and requirements.</p></div></div>
-      <div class="challenge-row"><span>04</span><div><h3>Administrative complexity</h3><p>Submission rules, credentialing, onboarding, and multiple stakeholders can slow progress when responsibilities are fragmented.</p></div></div>
+      <div class="challenge-row"><span>01</span><div><h3>Urgent coverage</h3><p>Open shifts, leaves, and unexpected vacancies that need a faster recruiting response.</p></div></div>
+      <div class="challenge-row"><span>02</span><div><h3>Hard-to-fill specialties</h3><p>Roles where specialty, location, licensing, or timing makes the available talent pool smaller.</p></div></div>
+      <div class="challenge-row"><span>03</span><div><h3>Multi-site and program demand</h3><p>Staffing needs that must stay consistent across facilities, stakeholders, or established workforce programs.</p></div></div>
     </div>
   </div>
 </section>
@@ -1525,56 +1930,20 @@ header{
   <div class="wrap">
     <div class="solutions-head">
       <div>
-        <div class="eyebrow">Workforce Solutions</div>
-        <h2 class="title">Flexible staffing models for different workforce needs.</h2>
+        <div class="eyebrow">How We Can Support You</div>
+        <h2 class="title">Choose the staffing model that fits the need.</h2>
       </div>
-      <p class="lead">A single opening, recurring coverage, and an enterprise workforce program should not be handled the same way. Medlivo aligns the staffing model to the scope, urgency, and operating environment.</p>
+      <p class="lead">The right approach depends on the size of the need, the speed required, and how your organization manages contingent labor.</p>
     </div>
 
-    <div class="solution-architecture">
-      <div class="solution-models-panel">
-        <div class="solution-panel-label">Staffing Models</div>
-        <div class="solution-panel-intro">How Medlivo can support your staffing program.</div>
-
-        <div class="solution-arch-row">
-          <span>01</span>
-          <div><h3>Direct Staffing</h3><p>Contract, temporary, and specialty staffing for individual openings or recurring workforce needs.</p></div>
-        </div>
-
-        <div class="solution-arch-row">
-          <span>02</span>
-          <div><h3>Enterprise & Multi-Site Staffing</h3><p>Coordinated support for organizations managing workforce demand across facilities, departments, or markets.</p></div>
-        </div>
-
-        <div class="solution-arch-row">
-          <span>03</span>
-          <div><h3>MSP / VMS Supplier Delivery</h3><p>Supplier execution within established requisition, submission, compliance, credentialing, and onboarding workflows.</p></div>
-        </div>
-      </div>
-
-      <div class="solution-capabilities-panel">
-        <div class="solution-panel-label">Delivery Capabilities</div>
-        <div class="solution-panel-intro">What helps each staffing model move from requirement to assignment.</div>
-
-        <div class="capability-row">
-          <span>01</span>
-          <div><h3>Urgent & Hard-to-Fill Coverage</h3><p>Targeted recruiting when timing, geography, or specialty requirements make a role harder to fill.</p></div>
-        </div>
-
-        <div class="capability-row">
-          <span>02</span>
-          <div><h3>Credentialing & Onboarding Coordination</h3><p>Structured follow-through on documentation, licensing, compliance, onboarding, and assignment readiness.</p></div>
-        </div>
-
-        <div class="capability-row">
-          <span>03</span>
-          <div><h3>Assignment Support</h3><p>Ongoing coordination after the start so clients and clinicians have a clear path when questions or issues arise.</p></div>
-        </div>
-      </div>
+    <div class="solution-model-grid">
+      <div class="solution-model"><span>01</span><h3>Direct Staffing</h3><p>Travel, temporary, contract, and specialty staffing for individual openings or recurring needs.</p></div>
+      <div class="solution-model"><span>02</span><h3>Enterprise &amp; Multi-Site Staffing</h3><p>Coordinated recruiting and delivery support across facilities, departments, or markets.</p></div>
+      <div class="solution-model"><span>03</span><h3>MSP / VMS Supplier Delivery</h3><p>Candidate submission, compliance, credentialing, onboarding, and assignment support inside established program workflows.</p></div>
     </div>
 
     <div class="specialty-link-band">
-      <div><small>Healthcare Specialties</small><strong>Nursing & Allied · Rehabilitation · Locum Tenens</strong></div>
+      <div><small>Healthcare Specialties</small><strong>Nursing &amp; Allied · Rehabilitation · Locum Tenens</strong></div>
       <a href="specialties.html">Explore Specialties →</a>
     </div>
   </div>
@@ -1584,92 +1953,41 @@ header{
   <div class="wrap">
     <div class="delivery-head">
       <div>
-        <div class="eyebrow">Delivery Model</div>
-        <h2 class="title">From requirement to workforce-ready start.</h2>
+        <div class="eyebrow">How Delivery Works</div>
+        <h2 class="title">A clear path from open requirement to start.</h2>
       </div>
-      <p class="lead">Each requirement moves through one coordinated delivery path, connecting recruiting, client communication, credentialing, onboarding, start, and assignment support.</p>
+      <p class="lead">The details vary by client, but the job is straightforward: understand the requirement, find the right candidate, get the details right, and stay engaged through the assignment.</p>
     </div>
 
     <div class="delivery-journey">
       <div class="delivery-line" aria-hidden="true"></div>
-
-      <div class="delivery-step">
-        <div class="delivery-node">01</div>
-        <h3>Define the need</h3>
-        <p>Role, care setting, schedule, timing, rates, and program requirements.</p>
-      </div>
-
-      <div class="delivery-step">
-        <div class="delivery-node">02</div>
-        <h3>Recruit & qualify</h3>
-        <p>Specialty-aligned sourcing, screening, availability, and fit against the requirement.</p>
-      </div>
-
-      <div class="delivery-step">
-        <div class="delivery-node">03</div>
-        <h3>Submit & coordinate</h3>
-        <p>Candidate presentation, interview coordination, feedback, and offer-related next steps.</p>
-      </div>
-
-      <div class="delivery-step">
-        <div class="delivery-node">04</div>
-        <h3>Credential & onboard</h3>
-        <p>Licensing, documentation, compliance, client requirements, and start readiness.</p>
-      </div>
-
-      <div class="delivery-step">
-        <div class="delivery-node">05</div>
-        <h3>Start & support</h3>
-        <p>Assignment launch, ongoing communication, and coordination when needs change.</p>
-      </div>
+      <div class="delivery-step"><div class="delivery-node">01</div><h3>Understand the need</h3><p>Role, schedule, location, timing, rates, and client-specific requirements.</p></div>
+      <div class="delivery-step"><div class="delivery-node">02</div><h3>Recruit &amp; qualify</h3><p>Targeted sourcing, screening, availability, and fit against the requirement.</p></div>
+      <div class="delivery-step"><div class="delivery-node">03</div><h3>Credential &amp; prepare</h3><p>Licensing, documentation, compliance, onboarding, and start readiness.</p></div>
+      <div class="delivery-step"><div class="delivery-node">04</div><h3>Start &amp; support</h3><p>Assignment launch, communication, and follow-through when something changes.</p></div>
     </div>
 
     <div class="delivery-principles">
-      <span>One accountable delivery path</span>
-      <span>Clear status at each stage</span>
-      <span>Client-specific requirements built into the process</span>
+      <span>Clear responsibility</span>
+      <span>Visible status</span>
+      <span>Client requirements built into the workflow</span>
     </div>
   </div>
 </section>
 
-<section class="programs">
-  <div class="wrap">
-    <div class="programs-head">
-      <div>
-        <div class="eyebrow">Enterprise & Program Readiness</div>
-        <h2 class="title">Built for the discipline enterprise programs require.</h2>
-      </div>
-      <p class="lead">Large workforce programs run on defined rules, deadlines, approvals, and visibility. Medlivo works within those structures rather than asking clients to change them.</p>
-    </div>
 
-    <div class="program-assurance">
-      <div class="program-principle">
-        <div class="program-principle-label">Our Operating Principle</div>
-        <strong>Work within the program.<br>Execute to its standards.</strong>
-        <p>Client requirements define the workflow. Medlivo aligns recruiting, credentialing, communication, and assignment support to the program’s operating requirements.</p>
-      </div>
-
-      <div class="program-list">
-        <div class="program-row"><span>01</span><div><h3>Follow the program rules</h3><p>Requisition details, rate parameters, submission requirements, deadlines, and supplier protocols handled within the established process.</p></div></div>
-        <div class="program-row"><span>02</span><div><h3>Meet client-specific standards</h3><p>Credentialing, documentation, onboarding, approvals, and start requirements aligned to the client or program.</p></div></div>
-        <div class="program-row"><span>03</span><div><h3>Keep stakeholders aligned</h3><p>Clear coordination across client teams, program partners, clinicians, recruiters, credentialing, and delivery operations.</p></div></div>
-        <div class="program-row"><span>04</span><div><h3>Maintain ownership through assignment</h3><p>Defined responsibility before start and continued support when questions, changes, or assignment needs arise.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="final" id="contact">
   <div class="wrap final-shell">
     <div>
-      <div class="eyebrow">Start a Staffing Request</div>
-      <h2>Tell us what you need. We’ll align the right staffing response.</h2>
-      <p>Share the role, location, timing, care setting, and program requirements. We’ll connect the request with the right Medlivo team and delivery model.</p>
-      <div class="final-note">Nursing & Allied · Rehabilitation · Locum Tenens</div>
+      <div class="eyebrow">Request Staff</div>
+      <h2>Tell us the role, location, and timing.</h2>
+      <p>We’ll connect the request with the right Medlivo team across Nursing &amp; Allied, Rehabilitation, or Locum Tenens.</p>
+      <div class="final-note">Travel · Temporary · Specialty · MSP / VMS</div>
     </div>
     <div class="final-actions">
-      <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Staffing%20Request">Request Staff</a>
-      <a class="btn btn-outline" href="mailto:hello@medlivo.com">Contact Medlivo</a>
+      <a class="btn btn-green" href="request-staff.html">Request Staff</a>
+      <a class="btn btn-outline" href="tel:+18556335486">855-633-5486</a>
     </div>
   </div>
 </section>
@@ -1678,7 +1996,7 @@ header{
 <footer class="site-footer footer-minimal">
   <div class="wrap footer-main-minimal">
     <div class="footer-brand-minimal">
-      <a class="footer-logo-minimal" href="./" aria-label="Medlivo home">
+      <a class="footer-logo-minimal" href="index.html" aria-label="Medlivo home">
         <img src="assets/brand/medlivo-logo-transparent.png?v=20260924b" alt="Medlivo">
       </a>
       <p>Healthcare staffing across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>
@@ -1699,7 +2017,7 @@ header{
       </div>
       <div class="footer-col-minimal">
         <h4>For Clinicians</h4>
-        <a href="https://www.medlivo.com/search-jobs">Search Jobs</a>
+        <a href="search-jobs.html">Search Jobs</a>
         <a href="nursing-allied.html#clinicians">Nursing &amp; Allied Jobs</a>
         <a href="rehabilitation.html#clinicians">Rehabilitation Jobs</a>
         <a href="locum-tenens.html#clinicians">Locum Tenens Opportunities</a>

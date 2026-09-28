@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">\n<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n<meta http-equiv="Pragma" content="no-cache">\n<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Medlivo | Healthcare Staffing That Keeps Care Moving</title>
 <meta name="description" content="Medlivo connects healthcare organizations with qualified professionals and clinicians with opportunities that fit across Nursing & Allied, Rehabilitation, and Locum Tenens.">
 <style>
@@ -1947,7 +1950,7 @@ header{
 
 
 
-/* === FINAL INTEGRATED HOMEPAGE — approved visual system === */
+/* === FINAL INTEGRATED HOMEPAGE, approved visual system === */
 
 /* Hero: compact dark split, face-safe crop, seamless image blend */
 .home-hero-premium{
@@ -3263,13 +3266,209 @@ body{background:#fff}
   .closing-action{min-width:0}
 }
 
+
+/* === Homepage V2 lower-half redesign === */
+.workforce-v2{
+  padding:82px 0 78px;
+  background:#f7f9fc;
+}
+.workforce-v2-head{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:72px;
+  align-items:end;
+  margin-bottom:34px;
+}
+.workforce-v2-head .lead{margin:0;max-width:570px}
+.workforce-v2-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid #dfe6ef;
+  border-bottom:1px solid #dfe6ef;
+}
+.workforce-v2-card{
+  padding:28px 28px 30px 0;
+  border-right:1px solid #dfe6ef;
+}
+.workforce-v2-card:not(:first-child){padding-left:28px}
+.workforce-v2-card:last-child{border-right:0}
+.workforce-v2-card>span{
+  display:block;
+  margin-bottom:20px;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.workforce-v2-card h3{
+  font-size:21px;
+  line-height:1.2;
+  letter-spacing:-.025em;
+  color:var(--deep);
+}
+.workforce-v2-card p{
+  margin-top:9px;
+  font-size:13px;
+  line-height:1.65;
+  color:#69768d;
+}
+.workforce-v2-cta{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
+  align-items:center;
+  margin-top:30px;
+  padding:25px 28px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#071a52 0%,#0b225f 64%,#17398b 100%);
+}
+.workforce-v2-cta>div:first-child{display:grid;gap:5px}
+.workforce-v2-cta span{
+  color:#9ff8f2;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:900;
+}
+.workforce-v2-cta strong{
+  color:#fff;
+  font-size:16px;
+  line-height:1.4;
+}
+.workforce-v2-actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.workforce-v2-actions>a:last-child{
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+.why-v2{
+  padding:84px 0 80px;
+  background:linear-gradient(135deg,#071a52 0%,#0b225f 58%,#17398b 100%);
+}
+.why-v2-head{
+  max-width:760px;
+  margin-bottom:38px;
+}
+.why-v2 .eyebrow{color:#9ff8f2}
+.why-v2 .title{color:#fff}
+.why-v2 .lead{color:#c0cbe1;max-width:700px}
+.why-v2-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(255,255,255,.15);
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+.why-v2-item{
+  padding:27px 28px 29px 0;
+  border-right:1px solid rgba(255,255,255,.13);
+}
+.why-v2-item:not(:first-child){padding-left:28px}
+.why-v2-item:last-child{border-right:0}
+.why-v2-item span{
+  display:block;
+  margin-bottom:19px;
+  color:#7ee875;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.why-v2-item h3{
+  color:#fff;
+  font-size:20px;
+  letter-spacing:-.025em;
+}
+.why-v2-item p{
+  margin-top:8px;
+  color:#b8c4dc;
+  font-size:13px;
+  line-height:1.62;
+}
+.heritage-v2{
+  padding:62px 0;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.heritage-v2-shell{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:68px;
+  align-items:center;
+}
+.heritage-v2-copy h2{
+  margin:0;
+  max-width:560px;
+  color:var(--deep);
+  font-size:clamp(34px,3.2vw,44px);
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+.heritage-v2-copy p{
+  margin-top:14px;
+  max-width:560px;
+  color:#657289;
+  font-size:14px;
+  line-height:1.68;
+}
+.heritage-v2-proof{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-left:1px solid var(--line);
+}
+.heritage-v2-proof>div{
+  min-height:112px;
+  padding:12px 24px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid var(--line);
+}
+.heritage-v2-proof strong{
+  color:var(--deep);
+  font-size:24px;
+  line-height:1.05;
+  letter-spacing:-.035em;
+}
+.heritage-v2-proof span{
+  margin-top:9px;
+  color:#6d7990;
+  font-size:11.5px;
+  line-height:1.5;
+}
+@media(max-width:960px){
+  .workforce-v2-head,.heritage-v2-shell{grid-template-columns:1fr;gap:24px}
+  .workforce-v2-grid,.why-v2-grid{grid-template-columns:1fr}
+  .workforce-v2-card,.workforce-v2-card:not(:first-child),
+  .why-v2-item,.why-v2-item:not(:first-child){
+    padding:22px 0;
+    border-right:0;
+    border-bottom:1px solid #dfe6ef;
+  }
+  .why-v2-item,.why-v2-item:not(:first-child){border-bottom-color:rgba(255,255,255,.13)}
+  .workforce-v2-card:last-child,.why-v2-item:last-child{border-bottom:0}
+  .heritage-v2-proof{border-left:0;border-top:1px solid var(--line)}
+}
+@media(max-width:720px){
+  .workforce-v2,.why-v2{padding:64px 0}
+  .workforce-v2-cta{grid-template-columns:1fr;gap:18px;padding:22px}
+  .workforce-v2-actions{flex-wrap:wrap}
+  .heritage-v2{padding:52px 0}
+  .heritage-v2-proof{grid-template-columns:1fr}
+  .heritage-v2-proof>div{border-right:0;border-bottom:1px solid var(--line);padding:19px 0;min-height:auto}
+  .heritage-v2-proof>div:last-child{border-bottom:0}
+}
+
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
 <body>
 <header>
   <div class="wrap nav">
-    <a href="./" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
+    <a href="index.html" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
     <nav class="links">
       <a href="workforce-solutions.html">Solutions</a>
       <div class="nav-dropdown">
@@ -3348,7 +3547,7 @@ body{background:#fff}
     <div class="career-copy">
       <div class="eyebrow">For Clinicians</div>
       <h2>Find the opportunity that moves your career forward.</h2>
-      <p>Explore current Nursing &amp; Allied, Rehabilitation, and Locum Tenens opportunities nationwide—with recruiter support from search through assignment.</p>
+      <p>Explore current Nursing &amp; Allied, Rehabilitation, and Locum Tenens opportunities nationwide, with recruiter support from search through assignment.</p>
 
       <div class="career-search-head">
         <span>Search current jobs</span>
@@ -3397,102 +3596,92 @@ body{background:#fff}
   </div>
 </section>
 
-<section class="workforce-section" id="workforce">
+<section class="workforce-section workforce-v2" id="workforce">
   <div class="wrap">
-    <div class="workforce-grid">
-      <div class="workforce-intro">
-        <div class="eyebrow">For Healthcare Organizations</div>
-        <h2 class="title">The right coverage, with a team that stays accountable.</h2>
-        <p class="lead">From urgent gaps to ongoing workforce demand, Medlivo helps healthcare organizations secure the people they need with clear communication, specialty expertise, and ownership that stays visible.</p>
-      </div>
-      <div class="workforce-list">
-        <div class="workforce-row"><span>01</span><div><h3>Urgent coverage</h3><p>Move quickly when open shifts, leaves, or unexpected gaps put coverage at risk.</p></div></div>
-        <div class="workforce-row"><span>02</span><div><h3>Ongoing workforce demand</h3><p>Build dependable recruiting support for recurring, seasonal, and longer-term needs.</p></div></div>
-        <div class="workforce-row"><span>03</span><div><h3>Structured workforce programs</h3><p>Operate smoothly within MSP, VMS, and other structured workforce environments.</p></div></div>
-        <div class="workforce-row"><span>04</span><div><h3>Assignment continuity</h3><p>Keep communication and accountability in place from placement through completion.</p></div></div>
-      </div>
-    </div>
-
-    <div class="staffing-cta" id="staffing-request">
-      <div class="staffing-cta-copy">
-        <div class="eyebrow">For Healthcare Organizations</div>
-        <h3>Need healthcare talent?</h3>
-        <p>Tell us what you need across Nursing &amp; Allied, Rehabilitation, or Locum Tenens. Our team will connect with you directly.</p>
-      </div>
-      <div class="staffing-cta-actions">
-        <a class="btn btn-green" href="request-staff.html">Request Staff →</a>
-        <a class="staffing-cta-phone" href="tel:+18556335486">Call 855-633-5486</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<section class="why-section" id="why">
-  <div class="wrap">
-    <div class="why-head">
+    <div class="workforce-v2-head">
       <div>
-        <div class="eyebrow">Why Medlivo</div>
-        <h2 class="title">National reach.<br><span>Accountability that stays personal.</span></h2>
+        <div class="eyebrow">For Healthcare Organizations</div>
+        <h2 class="title">Coverage when you need it. A team that stays with you.</h2>
       </div>
-      <p class="lead">Medlivo combines national recruiting capability with focused teams that stay close to each client, clinician, and assignment.</p>
+      <p class="lead">Medlivo supports travel, temporary, and ongoing healthcare staffing needs across Nursing &amp; Allied, Rehabilitation, and Locum Tenens, with direct communication and clear ownership from request through assignment.</p>
     </div>
-    <div class="why-principles">
-      <div class="why-principle"><span>01</span><h3>Healthcare specialization</h3><p>Dedicated teams across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p></div>
-      <div class="why-principle"><span>02</span><h3>Experienced people</h3><p>Staffing leadership shaped by years of healthcare, client, and talent experience.</p></div>
-      <div class="why-principle"><span>03</span><h3>Responsive teams</h3><p>Direct access to people who understand the need, the timeline, and the outcome.</p></div>
-      <div class="why-principle"><span>04</span><h3>Visible ownership</h3><p>Responsibility stays clear instead of disappearing across handoffs.</p></div>
+
+    <div class="workforce-v2-grid">
+      <article class="workforce-v2-card">
+        <span>01</span>
+        <h3>Travel &amp; temporary staffing</h3>
+        <p>Respond to open positions, leaves, seasonal demand, and urgent coverage with qualified healthcare professionals.</p>
+      </article>
+      <article class="workforce-v2-card">
+        <span>02</span>
+        <h3>Specialty-focused recruiting</h3>
+        <p>Work with teams aligned to Nursing &amp; Allied, Rehabilitation, and Locum Tenens, not a generic recruiting desk.</p>
+      </article>
+      <article class="workforce-v2-card">
+        <span>03</span>
+        <h3>Program-ready delivery</h3>
+        <p>Support for healthcare organizations operating through MSP, VMS, and other structured workforce programs.</p>
+      </article>
+    </div>
+
+    <div class="workforce-v2-cta">
+      <div>
+        <span>Need healthcare talent?</span>
+        <strong>Tell us the role, location, and timing. We’ll take it from there.</strong>
+      </div>
+      <div class="workforce-v2-actions">
+        <a class="btn btn-green" href="request-staff.html">Request Staff →</a>
+        <a href="tel:+18556335486">855-633-5486</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="heritage" aria-label="Experience behind Medlivo">
-  <div class="wrap heritage-shell">
-    <div class="heritage-copy">
+
+
+<section class="why-section why-v2" id="why">
+  <div class="wrap">
+    <div class="why-v2-head">
+      <div class="eyebrow">Why Medlivo</div>
+      <h2 class="title">Built to stay close to the work.</h2>
+      <p class="lead">Scale matters. So does knowing who owns the outcome. Medlivo is built around focused healthcare teams, responsive communication, and visible accountability.</p>
+    </div>
+    <div class="why-v2-grid">
+      <div class="why-v2-item"><span>01</span><h3>Healthcare-focused teams</h3><p>Specialized recruiting and delivery across our three healthcare divisions.</p></div>
+      <div class="why-v2-item"><span>02</span><h3>Direct communication</h3><p>Fewer handoffs and clearer access to people who understand the need.</p></div>
+      <div class="why-v2-item"><span>03</span><h3>Visible ownership</h3><p>Responsibility stays clear from the first request through the life of the assignment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="heritage heritage-v2" aria-label="Experience behind Medlivo">
+  <div class="wrap heritage-v2-shell">
+    <div class="heritage-v2-copy">
       <div class="eyebrow">Experience Behind Medlivo</div>
-      <h2>Experienced leadership. Built for today’s healthcare workforce.</h2>
-      <p>The people behind Medlivo bring more than 20 years of staffing and workforce experience across healthcare delivery, enterprise client environments, and changing talent markets.</p>
+      <h2>Experienced leadership. A healthcare staffing platform built for today.</h2>
+      <p>Medlivo is backed by more than 20 years of staffing and workforce leadership experience across healthcare, enterprise clients, and changing talent markets.</p>
     </div>
-    <div class="heritage-points">
-      <div class="heritage-point"><strong>20+ Years</strong><span>Staffing and workforce leadership experience</span></div>
-      <div class="heritage-point"><strong>National Capability</strong><span>Recruiting and delivery support across U.S. markets and care settings</span></div>
-      <div class="heritage-point"><strong>3 Healthcare Divisions</strong><span>Nursing & Allied, Rehabilitation, and Locum Tenens</span></div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<section class="closing-cta" aria-label="Get started with Medlivo">
-  <div class="wrap closing-cta-shell">
-    <div class="closing-cta-copy">
-      <div class="eyebrow">Ready When You Are</div>
-      <h2>Move forward with Medlivo.</h2>
-      <p>Whether you’re looking for your next healthcare opportunity or need qualified talent, start with the path that fits you.</p>
-    </div>
-    <div class="closing-cta-actions">
-      <a class="closing-action closing-action-light" href="search-jobs.html">
-        <span>For Clinicians</span>
-        <strong>Find Jobs →</strong>
-      </a>
-      <a class="closing-action closing-action-green" href="request-staff.html">
-        <span>For Healthcare Organizations</span>
-        <strong>Request Staff →</strong>
-      </a>
+    <div class="heritage-v2-proof">
+      <div><strong>20+ Years</strong><span>Staffing and workforce leadership experience</span></div>
+      <div><strong>3 Divisions</strong><span>Nursing &amp; Allied · Rehabilitation · Locum Tenens</span></div>
+      <div><strong>Nationwide</strong><span>Recruiting and delivery support across U.S. markets</span></div>
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
 
 </main>
 
 <footer class="site-footer footer-minimal" id="contact">
   <div class="wrap footer-main-minimal">
     <div class="footer-brand-minimal">
-      <a class="footer-logo-minimal" href="./" aria-label="Medlivo home">
+      <a class="footer-logo-minimal" href="index.html" aria-label="Medlivo home">
         <img src="assets/brand/medlivo-logo-transparent.png?v=20260924b" alt="Medlivo">
       </a>
       <p>Healthcare staffing across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>

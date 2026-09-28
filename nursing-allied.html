@@ -2100,12 +2100,554 @@ header{
   .footer-logo-minimal{width:184px}
 }
 
+
+/* === Nursing & Allied final cleanup === */
+header{background:rgba(255,255,255,.97);backdrop-filter:saturate(155%) blur(16px)}
+.nav{height:78px;gap:24px}
+.logo{width:188px}
+.links{gap:22px;font-size:14px}
+.actions .btn{min-height:46px;padding:0 18px;border-radius:9px}
+
+.na-premium-hero{border-bottom:1px solid #e7ecf3}
+.na-hero-stage{min-height:auto}
+.na-premium-grid{
+  min-height:590px;
+  gap:58px;
+  padding-top:54px;
+  padding-bottom:58px;
+}
+.na-premium-copy h1{
+  font-size:clamp(50px,4.7vw,66px);
+  max-width:690px;
+}
+.hero-copy{font-size:17px;line-height:1.64;max-width:610px}
+.hero-actions{margin-top:26px}
+.hero-signals{margin-top:22px}
+.na-hero-stack{transform:scale(.95);transform-origin:center right}
+
+.market{padding:72px 0}
+.market-head{gap:58px;margin-bottom:28px}
+.market-grid{gap:18px}
+.market-card{padding:28px;border-radius:18px;box-shadow:0 10px 28px rgba(9,25,79,.05)}
+.market-card h3{font-size:26px;margin-top:18px}
+.market-card>p{font-size:13.5px}
+.role-cloud{margin-top:20px;gap:7px}
+.role-cloud span{padding:8px 9px;font-size:10.5px}
+.market-lens{margin-top:22px}
+
+.signals{padding:72px 0;background:#f7f9fc;border-top:1px solid #e7ecf3;border-bottom:1px solid #e7ecf3}
+.signals-head{gap:58px;margin-bottom:28px}
+.signals .signal-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.signals .signal-card{
+  min-height:176px;
+  padding:24px 22px;
+  border:1px solid #e0e6ef;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.04);
+}
+.signals .signal-card h3{font-size:19px;margin-top:16px}
+.signals .signal-card p{font-size:13px;line-height:1.58}
+.signals .signal-card-wide{grid-column:auto}
+
+.clinical-ready{padding:72px 0}
+.ready-head{gap:58px;margin-bottom:28px}
+.ready-grid{gap:16px}
+.ready-card{padding:24px 22px;min-height:168px;border-radius:16px}
+.ready-card h3{font-size:19px}
+.ready-card p{font-size:13px}
+.ready-bar{margin-top:20px;padding:17px 20px}
+
+.engage{padding:68px 0}
+.engage-head{gap:58px;margin-bottom:28px}
+.engage-grid{gap:18px}
+.engage-card{padding:30px;border-radius:18px}
+.engage-card h3{font-size:27px}
+.engage-card>p{font-size:13.5px}
+.engage-fields{margin-top:18px}
+.engage-card .btn{margin-top:21px}
+
+footer{padding-top:44px}
+.footer-main-minimal{gap:44px}
+
+@media(max-width:1040px){
+  .signals .signal-grid{grid-template-columns:1fr 1fr}
+  .na-hero-stack{transform:none}
+}
+@media(max-width:720px){
+  .na-premium-grid{padding-top:42px;padding-bottom:48px}
+  .na-premium-copy h1{font-size:41px}
+  .market,.signals,.clinical-ready,.engage{padding:58px 0}
+  .signals .signal-grid{grid-template-columns:1fr}
+  .market-card,.engage-card{padding:23px 20px}
+}
+
+
+/* === Nursing & Allied density correction === */
+.na-premium-grid{
+  min-height:540px;
+  grid-template-columns:.98fr 1.02fr;
+  gap:48px;
+  padding:46px 0 50px;
+}
+.na-premium-copy h1{
+  font-size:clamp(48px,4.45vw,63px);
+  line-height:1.015;
+}
+.na-premium-copy .hero-copy{
+  margin-top:19px;
+  max-width:590px;
+}
+.na-hero-stack{
+  min-height:420px;
+  transform:scale(.92);
+  transform-origin:center right;
+}
+.stack-main{top:26px}
+.stack-nursing{top:196px}
+.stack-allied{top:298px}
+.na-hero-wordmark{
+  bottom:-6px;
+  opacity:.38;
+}
+
+.market.na-market-premium{
+  padding:62px 0 66px;
+}
+.na-market-head{
+  max-width:820px;
+  margin:0 auto 26px;
+}
+.na-market-head .title{
+  margin-top:10px;
+  font-size:clamp(37px,3.7vw,50px);
+  line-height:1.05;
+}
+.na-market-head .lead{
+  margin-top:13px;
+  max-width:700px;
+  line-height:1.62;
+}
+.na-market-grid{gap:16px}
+.na-market-card{
+  padding:25px 24px 26px;
+  border-radius:17px;
+}
+.na-market-card h3{
+  margin-top:16px;
+  font-size:24px;
+}
+.na-market-card>p{
+  margin-top:9px;
+  line-height:1.6;
+}
+.role-cloud{
+  margin-top:17px;
+  gap:6px;
+}
+.role-cloud span{
+  padding:7px 8px;
+  font-size:10px;
+}
+
+.signals{
+  padding:62px 0 64px;
+}
+.signals-head{
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  margin-bottom:23px;
+}
+.signals .signal-card{
+  min-height:150px;
+  padding:20px 19px;
+}
+.signals .signal-card h3{
+  margin-top:13px;
+  font-size:18px;
+}
+.signals .signal-card p{margin-top:6px}
+
+.clinical-ready{
+  padding:62px 0 64px;
+}
+.ready-head{
+  gap:48px;
+  margin-bottom:23px;
+}
+.ready-card{
+  min-height:145px;
+  padding:20px 19px;
+}
+.ready-card h3{
+  margin-top:15px;
+  font-size:18px;
+}
+.ready-card p{margin-top:6px}
+.ready-bar{
+  margin-top:16px;
+  padding:14px 18px;
+  grid-template-columns:105px 1fr;
+}
+
+.engage{
+  padding:58px 0 62px;
+}
+.engage-head{
+  gap:48px;
+  margin-bottom:23px;
+}
+.engage-card{
+  min-height:0!important;
+  padding:25px 24px;
+}
+.engage-card h3{font-size:24px}
+.engage-card>p{
+  margin-top:9px;
+  line-height:1.58;
+}
+.engage-fields{
+  margin-top:15px;
+  gap:6px;
+}
+.engage-fields span{
+  padding:7px 9px;
+  font-size:9.5px;
+}
+.engage-card .btn{margin-top:18px}
+
+@media(max-width:1040px){
+  .na-premium-grid{min-height:auto;grid-template-columns:1fr;gap:18px}
+  .na-hero-stack{min-height:345px;transform:none}
+  .signals-head,.ready-head,.engage-head{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:720px){
+  .na-premium-grid{padding:38px 0 42px}
+  .na-premium-copy h1{font-size:39px}
+  .na-hero-stack{min-height:360px}
+  .market.na-market-premium,.signals,.clinical-ready,.engage{padding:50px 0 52px}
+  .na-market-head{margin-bottom:20px;text-align:left}
+  .na-market-head .title,.na-market-head .lead{margin-left:0;margin-right:0}
+  .ready-bar{grid-template-columns:1fr;gap:5px}
+}
+
+
+/* === Final Nursing & Allied rhythm / whitespace pass === */
+.na-premium-grid{
+  min-height:500px;
+  gap:40px;
+  padding:36px 0 42px;
+}
+.na-premium-copy h1{
+  font-size:clamp(47px,4.35vw,61px);
+  max-width:660px;
+}
+.na-premium-copy .hero-copy{
+  margin-top:17px;
+  max-width:570px;
+}
+.hero-actions{margin-top:22px}
+.hero-signals{margin-top:18px}
+.na-hero-stack{
+  min-height:360px;
+  transform:scale(.88);
+  transform-origin:center right;
+}
+.stack-main{top:18px}
+.stack-nursing{top:168px}
+.stack-allied{top:260px}
+.na-hero-wordmark{bottom:-14px}
+
+.market.na-market-premium{
+  padding:52px 0 56px;
+}
+.na-market-head{
+  margin-bottom:20px;
+  max-width:780px;
+}
+.na-market-head .title{
+  font-size:clamp(35px,3.45vw,47px);
+}
+.na-market-head .lead{
+  margin-top:11px;
+}
+.na-market-card{
+  padding:22px 22px 23px;
+}
+.na-market-card h3{
+  margin-top:14px;
+  font-size:23px;
+}
+.na-market-card>p{margin-top:8px}
+.role-cloud{margin-top:15px}
+
+.signals{
+  padding:52px 0 54px;
+}
+.signals-head{
+  gap:42px;
+  margin-bottom:19px;
+}
+.signals .signal-grid{gap:12px}
+.signals .signal-card{
+  min-height:132px;
+  padding:17px 17px;
+  border-radius:14px;
+}
+.signals .signal-card h3{
+  margin-top:11px;
+  font-size:17px;
+}
+.signals .signal-card p{
+  font-size:12.5px;
+  line-height:1.52;
+}
+
+.clinical-ready{
+  padding:52px 0 54px;
+}
+.ready-head{
+  gap:42px;
+  margin-bottom:19px;
+}
+.ready-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.035);
+}
+.ready-card{
+  min-height:0;
+  padding:20px 18px 21px;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  background:#fff;
+}
+.ready-card:not(:last-child){
+  border-right:1px solid var(--line);
+}
+.ready-card h3{
+  margin-top:13px;
+  font-size:17px;
+}
+.ready-card p{
+  margin-top:6px;
+  font-size:12.5px;
+  line-height:1.52;
+}
+.ready-bar{
+  margin-top:12px;
+  padding:12px 16px;
+  border-radius:12px;
+  grid-template-columns:92px 1fr;
+}
+.ready-bar strong{font-size:10px}
+.ready-bar span{font-size:13px}
+
+.engage{
+  padding:50px 0 54px;
+}
+.engage-head{
+  gap:42px;
+  margin-bottom:19px;
+}
+.engage-grid{gap:14px}
+.engage-card{
+  padding:22px 22px;
+  border-radius:16px;
+}
+.engage-card h3{font-size:23px}
+.engage-card>p{margin-top:8px}
+.engage-fields{margin-top:13px}
+.engage-card .btn{margin-top:16px}
+
+@media(max-width:1040px){
+  .na-premium-grid{padding:34px 0 40px;gap:14px}
+  .na-hero-stack{min-height:330px;transform:none}
+  .ready-grid{grid-template-columns:1fr 1fr}
+  .ready-card:nth-child(2){border-right:0}
+  .ready-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media(max-width:720px){
+  .na-premium-grid{padding:32px 0 36px}
+  .na-premium-copy h1{font-size:38px}
+  .na-hero-stack{min-height:340px}
+  .market.na-market-premium,.signals,.clinical-ready,.engage{padding:44px 0 46px}
+  .signals-head,.ready-head,.engage-head{gap:14px;margin-bottom:17px}
+  .ready-grid{grid-template-columns:1fr}
+  .ready-card,.ready-card:nth-child(2){
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+  .ready-card:last-child{border-bottom:0}
+  .ready-bar{grid-template-columns:1fr;gap:4px}
+}
+
+
+/* === Open Nursing & Allied Positions === */
+.open-positions{
+  padding:52px 0 54px;
+  background:#f7f9fc;
+  border-top:1px solid #e7ecf3;
+  border-bottom:1px solid #e7ecf3;
+}
+.positions-head{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:42px;
+  align-items:end;
+  margin-bottom:20px;
+}
+.positions-head .lead{margin:0}
+.positions-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.position-card{
+  display:flex;
+  flex-direction:column;
+  min-height:205px;
+  padding:21px 20px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.04);
+}
+.position-card small{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:900;
+  color:var(--blue);
+}
+.position-card h3{
+  margin-top:12px;
+  font-size:19px;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  color:var(--deep);
+}
+.position-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:13px;
+}
+.position-meta span{
+  padding:6px 8px;
+  border-radius:999px;
+  background:#f4f7fb;
+  border:1px solid #e3e9f2;
+  font-size:10px;
+  font-weight:800;
+  color:#53617a;
+}
+.position-card p{
+  margin-top:12px;
+  font-size:12.5px;
+  line-height:1.55;
+  color:#66738a;
+}
+.position-card a{
+  margin-top:auto;
+  padding-top:16px;
+  font-size:12px;
+  font-weight:900;
+  color:var(--navy);
+}
+.positions-foot{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+  margin-top:18px;
+}
+.positions-foot p{
+  font-size:12.5px;
+  line-height:1.5;
+  color:#6a768d;
+}
+@media(max-width:1040px){
+  .positions-head{grid-template-columns:1fr;gap:14px}
+  .positions-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .open-positions{padding:44px 0 46px}
+  .positions-grid{grid-template-columns:1fr}
+  .position-card{min-height:0}
+  .positions-foot{align-items:flex-start;flex-direction:column}
+}
+
+
+/* === Open positions spacing refinement === */
+.open-positions{
+  padding:46px 0 48px;
+}
+.positions-head{
+  gap:36px;
+  margin-bottom:16px;
+}
+.positions-head .title{
+  font-size:clamp(34px,3.35vw,46px);
+  line-height:1.05;
+}
+.positions-head .lead{
+  font-size:16px;
+  line-height:1.58;
+}
+.positions-grid{
+  gap:12px;
+}
+.position-card{
+  min-height:178px;
+  padding:18px 18px;
+  border-radius:14px;
+}
+.position-card h3{
+  margin-top:10px;
+  font-size:18px;
+}
+.position-meta{
+  margin-top:10px;
+  gap:5px;
+}
+.position-card p{
+  margin-top:9px;
+  line-height:1.5;
+}
+.position-card a{
+  padding-top:13px;
+}
+.positions-foot{
+  margin-top:14px;
+}
+.engage{
+  padding-top:46px;
+}
+@media(max-width:720px){
+  .open-positions{padding:40px 0 42px}
+  .positions-head{gap:10px;margin-bottom:14px}
+  .position-card{padding:17px 16px}
+  .positions-foot{margin-top:13px;gap:12px}
+  .engage{padding-top:42px}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a href="./" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
+    <a href="index.html" aria-label="Medlivo home"><img class="logo" src="assets/brand/medlivo-logo.png" alt="Medlivo"></a>
     <nav class="links">
       <a href="workforce-solutions.html">Solutions</a>
       <div class="nav-dropdown">
@@ -2130,11 +2672,10 @@ header{
           </div>
         </div>
       </div>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
-      <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Jobs</a>
-      <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff</a>
+      <a class="btn btn-outline" href="search-jobs.html">Search Jobs</a>
+      <a class="btn btn-green" href="request-staff.html">Request Staff</a>
       <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -2151,11 +2692,11 @@ header{
     <div class="wrap na-premium-grid">
       <div class="na-premium-copy">
         <div class="kicker">Nursing & Allied Division</div>
-        <h1>Nursing & Allied staffing for fast-moving clinical environments.</h1>
-        <p class="hero-copy">From bedside nursing to diagnostic, procedural, and clinical support roles, Medlivo evaluates candidates against the details that actually shape success in the role — clinical background, credentials, schedule, location, and availability.</p>
+        <h1>Nursing & Allied staffing built around the realities of the role.</h1>
+        <p class="hero-copy">From bedside nursing to diagnostic, procedural, and clinical support roles, Medlivo recruits around the specialty, setting, schedule, credentials, and timing that define the opening.</p>
         <div class="hero-actions">
-          <a class="btn btn-green" href="#engage">Request Nursing & Allied Staff</a>
-          <a class="btn btn-outline hero-outline" href="https://www.medlivo.com/search-jobs">Search Nursing & Allied Jobs</a>
+          <a class="btn btn-green" href="request-staff.html">Request Nursing & Allied Staff</a>
+          <a class="btn btn-outline hero-outline" href="search-jobs.html">Search Nursing & Allied Jobs</a>
         </div>
         <div class="hero-signals">
           <span>Specialty</span>
@@ -2190,8 +2731,8 @@ header{
   <div class="wrap">
     <div class="market-head na-market-head">
       <div class="eyebrow">Inside the Division</div>
-      <h2 class="title">Two talent markets. Different clinical demands.</h2>
-      <p class="lead">Nursing and allied health roles are qualified differently. Medlivo evaluates each around the clinical, technical, and practical details that matter to the work.</p>
+      <h2 class="title">Nursing and allied roles require different recruiting expertise.</h2>
+      <p class="lead">The work may happen under the same roof, but the experience, credentials, and recruiting signals are not the same.</p>
     </div>
 
     <div class="market-grid premium-market-grid na-market-grid">
@@ -2213,11 +2754,7 @@ header{
           <span>Care Coordination</span>
           <span>Nursing Leadership</span>
         </div>
-        <div class="market-lens">
-          <div><small>What we evaluate</small><strong>Unit · Specialty · Experience · Shift · Schedule · Location · Availability</strong></div>
-          <div><small>What affects readiness</small><strong>Licensure · Certifications · Clinical Documentation · Client Requirements</strong></div>
-        </div>
-      </article>
+        </article>
 
       <article class="market-card market-allied na-market-card">
         <div class="na-market-card-top">
@@ -2228,7 +2765,7 @@ header{
           <div class="na-market-badge">Technical Care</div>
         </div>
         <h3>Technical and clinical support roles shaped by modality and environment.</h3>
-        <p>Allied staffing depends on technical specialization, procedure exposure, care setting, and role-specific credentials—not just general clinical experience.</p>
+        <p>Allied staffing depends on technical specialization, procedure exposure, care setting, and role-specific credentials, not just general clinical experience.</p>
         <div class="role-cloud">
           <span>Imaging</span>
           <span>Cath Lab</span>
@@ -2238,11 +2775,7 @@ header{
           <span>Pharmacy</span>
           <span>Medical Assistants</span>
         </div>
-        <div class="market-lens">
-          <div><small>What we evaluate</small><strong>Modality · Certification · Procedure Experience · Setting · Location · Availability</strong></div>
-          <div><small>What affects readiness</small><strong>Credentials · Technical Requirements · Facility Standards · Start Timing</strong></div>
-        </div>
-      </article>
+        </article>
     </div>
   </div>
 </section>
@@ -2251,46 +2784,33 @@ header{
   <div class="wrap">
     <div class="signals-head">
       <div>
-        <div class="eyebrow">The Recruiting Lens</div>
-        <h2 class="title">Five dimensions shape every candidate evaluation.</h2>
+        <div class="eyebrow">How We Recruit</div>
+        <h2 class="title">Start with the role. Recruit to the details.</h2>
       </div>
-      <p class="lead">The Nursing & Allied team evaluates each opening against the factors that actually drive success in the role — clinical background, schedule, location, credentials, and start timing.</p>
+      <p class="lead">Our team builds the search around what will actually determine whether a clinician can step into the assignment successfully.</p>
     </div>
 
-    <div class="signals-stage">
-      <div class="signal-core">
-        <small>THE REQUIREMENT</small>
-        <strong>What does this opening actually demand?</strong>
-        <p>Clinical capability and practical feasibility are considered together before a candidate is presented.</p>
-      </div>
-
-      <div class="signal-grid">
-        <article class="signal-card">
-          <span>01</span>
-          <h3>Clinical match</h3>
-          <p>Specialty, unit, modality, technical background, and relevant experience.</p>
-        </article>
-        <article class="signal-card">
-          <span>02</span>
-          <h3>Schedule & availability</h3>
-          <p>Shift, schedule, call expectations, assignment length, and availability.</p>
-        </article>
-        <article class="signal-card">
-          <span>03</span>
-          <h3>Location & mobility</h3>
-          <p>Geography, commute or travel expectations, and the practical ability to work the location.</p>
-        </article>
-        <article class="signal-card">
-          <span>04</span>
-          <h3>Credentials & standards</h3>
-          <p>Licensure, certifications, documentation, and facility or program standards.</p>
-        </article>
-        <article class="signal-card signal-card-wide">
-          <span>05</span>
-          <h3>Start readiness</h3>
-          <p>Availability and the ability to complete required steps within the target timeline.</p>
-        </article>
-      </div>
+    <div class="signal-grid">
+      <article class="signal-card">
+        <span>01</span>
+        <h3>Clinical fit</h3>
+        <p>Specialty, unit, modality, technical background, and relevant experience.</p>
+      </article>
+      <article class="signal-card">
+        <span>02</span>
+        <h3>Schedule &amp; location</h3>
+        <p>Shift, assignment structure, geography, travel expectations, and availability.</p>
+      </article>
+      <article class="signal-card">
+        <span>03</span>
+        <h3>Credentials</h3>
+        <p>Licensure, certifications, documentation, and client-specific requirements.</p>
+      </article>
+      <article class="signal-card">
+        <span>04</span>
+        <h3>Start readiness</h3>
+        <p>Whether the clinician can complete the required steps within the target timeline.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -2300,9 +2820,9 @@ header{
     <div class="ready-head">
       <div>
         <div class="eyebrow">Clinical Readiness</div>
-        <h2 class="title">Ready means every critical detail is resolved before the first shift.</h2>
+        <h2 class="title">From selection to first shift, the details still matter.</h2>
       </div>
-      <p class="lead">For Nursing & Allied clinicians, readiness brings together professional standing, clinical verification, compliance clearance, onboarding, and the final details needed to begin.</p>
+      <p class="lead">Once a clinician is selected, Medlivo coordinates the steps required to get the assignment ready to start.</p>
     </div>
 
     <div class="ready-grid">
@@ -2329,8 +2849,61 @@ header{
     </div>
 
     <div class="ready-bar">
-      <strong>Why it matters</strong>
-      <span>The goal is a clean transition from selection to first shift — with the clinician cleared, informed, and ready to begin.</span>
+      <strong>The goal</strong>
+      <span>A clinician who arrives cleared, informed, and ready to work.</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="open-positions" id="open-positions">
+  <div class="wrap">
+    <div class="positions-head">
+      <div>
+        <div class="eyebrow">Current Opportunities</div>
+        <h2 class="title">Explore Nursing &amp; Allied openings.</h2>
+      </div>
+      <p class="lead">Browse current opportunities across nursing and allied health specialties, locations, and assignment types.</p>
+    </div>
+
+    <div class="positions-grid">
+      <article class="position-card">
+        <small>Nursing</small>
+        <h3>Registered Nurse Opportunities</h3>
+        <div class="position-meta">
+          <span>Nationwide</span>
+          <span>Multiple Specialties</span>
+        </div>
+        <p>Explore current RN assignments across acute care, specialty units, and other clinical settings.</p>
+        <a href="search-jobs.html?profession=Nursing">View Nursing Jobs →</a>
+      </article>
+
+      <article class="position-card">
+        <small>Allied Health</small>
+        <h3>Imaging &amp; Diagnostic Opportunities</h3>
+        <div class="position-meta">
+          <span>Nationwide</span>
+          <span>Allied Health</span>
+        </div>
+        <p>Search current imaging, diagnostic, laboratory, respiratory, and technical clinical roles.</p>
+        <a href="search-jobs.html?profession=Allied">View Allied Jobs →</a>
+      </article>
+
+      <article class="position-card">
+        <small>Clinical Support</small>
+        <h3>Specialty &amp; Support Opportunities</h3>
+        <div class="position-meta">
+          <span>Multiple Locations</span>
+          <span>Current Openings</span>
+        </div>
+        <p>Find additional Nursing &amp; Allied roles across care coordination, surgical support, pharmacy, and related specialties.</p>
+        <a href="search-jobs.html">Explore All Openings →</a>
+      </article>
+    </div>
+
+    <div class="positions-foot">
+      <p>Job availability changes frequently as new client needs are added.</p>
+      <a class="btn btn-primary" href="search-jobs.html">View All Nursing &amp; Allied Jobs</a>
     </div>
   </div>
 </section>
@@ -2340,40 +2913,34 @@ header{
     <div class="engage-head">
       <div>
         <div class="eyebrow">Nursing & Allied</div>
-        <h2 class="title">Strong placements start with clarity on both sides.</h2>
+        <h2 class="title">One division. Two clear paths.</h2>
       </div>
-      <p class="lead">Healthcare organizations need confidence in capability and readiness. Clinicians need clarity on the role, schedule, location, and expectations before they commit.</p>
+      <p class="lead">Healthcare organizations can request talent directly. Clinicians can search current Nursing & Allied opportunities.</p>
     </div>
 
     <div class="engage-grid">
       <article class="engage-card client-card">
         <small>For Healthcare Organizations</small>
-        <h3>Tell us what the role actually requires.</h3>
-        <p>Share the specialty, care setting, schedule, timing, and program requirements. We’ll focus the search on candidates aligned to the actual opening.</p>
+        <h3>Need Nursing & Allied talent?</h3>
+        <p>Tell us the specialty, location, schedule, and timing. We’ll connect the request with the right recruiting team.</p>
         <div class="engage-fields">
-          <span>Role & specialty</span>
-          <span>Care setting</span>
-          <span>Shift / schedule</span>
+          <span>Specialty</span>
           <span>Location</span>
-          <span>Start timing</span>
-          <span>Program requirements</span>
+          <span>Schedule & timing</span>
         </div>
-        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Nursing%20and%20Allied%20Staffing%20Request">Request Staff</a>
+        <a class="btn btn-green" href="request-staff.html">Request Staff</a>
       </article>
 
       <article class="engage-card clinician-card" id="clinicians">
         <small>For Nursing & Allied Clinicians</small>
-        <h3>Tell us what makes a role worth considering.</h3>
-        <p>Tell us the specialty, location, schedule, and career priorities that matter most so we can focus on opportunities worth your time.</p>
+        <h3>Looking for your next assignment?</h3>
+        <p>Search current opportunities across nursing and allied health specialties nationwide.</p>
         <div class="engage-fields">
-          <span>Profession</span>
           <span>Specialty</span>
           <span>Preferred location</span>
-          <span>Schedule</span>
           <span>Availability</span>
-          <span>Career priorities</span>
         </div>
-        <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Nursing & Allied Jobs</a>
+        <a class="btn btn-outline" href="search-jobs.html">Search Nursing & Allied Jobs</a>
       </article>
     </div>
   </div>
@@ -2383,7 +2950,7 @@ header{
 <footer class="site-footer footer-minimal">
   <div class="wrap footer-main-minimal">
     <div class="footer-brand-minimal">
-      <a class="footer-logo-minimal" href="./" aria-label="Medlivo home">
+      <a class="footer-logo-minimal" href="index.html" aria-label="Medlivo home">
         <img src="assets/brand/medlivo-logo-transparent.png?v=20260924b" alt="Medlivo">
       </a>
       <p>Healthcare staffing across Nursing &amp; Allied, Rehabilitation, and Locum Tenens.</p>
@@ -2404,7 +2971,7 @@ header{
       </div>
       <div class="footer-col-minimal">
         <h4>For Clinicians</h4>
-        <a href="https://www.medlivo.com/search-jobs">Search Jobs</a>
+        <a href="search-jobs.html">Search Jobs</a>
         <a href="nursing-allied.html#clinicians">Nursing &amp; Allied Jobs</a>
         <a href="rehabilitation.html#clinicians">Rehabilitation Jobs</a>
         <a href="locum-tenens.html#clinicians">Locum Tenens Opportunities</a>
