@@ -1,0 +1,25 @@
+name: Nursing and Allied isolated spacing review
+on:
+  push:
+    branches: ["qa/nursing-allied-spacing-20260928"]
+    paths: [".github/workflows/nursing-allied-spacing-review.yml"]
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package the exact review source and approved assets
+        run: |
+          mkdir -p review-source
+          cp *.html review-source/
+          cp -R assets review-source/
+          git rev-parse HEAD > review-source/SOURCE_COMMIT.txt
+          git hash-object nursing-allied.html > review-source/SOURCE_BLOB.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nursing-allied-review-source
+          path: review-source/
+          retention-days: 7
