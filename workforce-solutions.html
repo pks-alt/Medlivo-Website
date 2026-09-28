@@ -1630,6 +1630,219 @@ footer{
   .final-shell{padding:30px 24px}
 }
 
+
+/* === Workforce Solutions aesthetic cleanup === */
+header{
+  background:rgba(255,255,255,.97);
+  backdrop-filter:saturate(155%) blur(16px);
+  box-shadow:none;
+}
+.nav{
+  height:78px;
+  gap:24px;
+}
+.logo{width:188px}
+.links{
+  gap:22px;
+  font-size:14px;
+  letter-spacing:-.01em;
+}
+.actions .btn{
+  min-height:46px;
+  padding:0 18px;
+  border-radius:9px;
+}
+
+.hero{
+  background:
+    radial-gradient(circle at 82% 14%,rgba(95,223,229,.11),transparent 26%),
+    linear-gradient(125deg,#fff 0%,#fbfdff 58%,#f2f6fd 100%);
+  border-bottom:1px solid #e7ecf3;
+}
+.hero-grid{
+  min-height:560px;
+  grid-template-columns:.94fr 1.06fr;
+  gap:58px;
+  padding:54px 0 58px;
+}
+.hero h1{
+  font-size:clamp(50px,4.55vw,66px);
+  line-height:1.01;
+  max-width:640px;
+}
+.hero-copy{
+  font-size:17px;
+  line-height:1.64;
+  max-width:590px;
+}
+.hero-proof{
+  gap:16px;
+  font-size:11.5px;
+}
+.enterprise-visual{
+  min-height:430px;
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 24px 56px rgba(9,25,79,.14);
+}
+.enterprise-core strong{font-size:29px}
+.enterprise-core span{font-size:13px}
+.enterprise-grid>div{
+  min-height:104px;
+  padding:18px;
+}
+.enterprise-grid b{font-size:15px}
+
+section{padding:70px 0}
+.title{
+  font-size:clamp(36px,3.7vw,48px);
+  line-height:1.07;
+}
+.lead{
+  font-size:15.5px;
+  line-height:1.66;
+}
+
+.challenges{
+  background:#fff;
+}
+.challenge-layout{
+  gap:58px;
+}
+.challenge-list{
+  border-top:1px solid #e2e8f1;
+}
+.challenge-row{
+  padding:18px 0 19px;
+}
+.challenge-row:hover{padding-left:6px}
+.challenge-row h3{font-size:20px}
+.challenge-row p{font-size:13.5px}
+
+.solutions{
+  background:#f7f9fc;
+  border-top:1px solid #e7ecf3;
+  border-bottom:1px solid #e7ecf3;
+}
+.solutions-head{
+  gap:54px;
+  margin-bottom:24px;
+}
+.solution-model-grid{
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  background:transparent;
+}
+.solution-model{
+  min-height:168px;
+  padding:24px 23px 25px;
+  border:1px solid #e0e6ef;
+  border-radius:16px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.045);
+}
+.solution-model span{margin-bottom:16px}
+.solution-model h3{font-size:19px}
+.solution-model p{font-size:13px}
+.specialty-link-band{
+  border:0;
+  border-top:1px solid #dde4ee;
+  background:transparent;
+  padding:18px 0 0;
+  margin-top:22px;
+  border-radius:0;
+}
+.specialty-link-band strong{font-size:14px}
+
+.delivery{
+  padding:72px 0;
+  background:
+    radial-gradient(circle at 86% 8%,rgba(95,223,229,.11),transparent 28%),
+    linear-gradient(132deg,#061744 0%,#0a225f 55%,#153887 100%);
+}
+.delivery-head{
+  gap:56px;
+  margin-bottom:30px;
+}
+.delivery-step{
+  min-height:150px;
+}
+.delivery-node{
+  width:36px;
+  height:36px;
+  box-shadow:0 0 0 7px rgba(11,34,95,.9);
+}
+.delivery-step h3{
+  margin-top:20px;
+  font-size:18px;
+}
+.delivery-step p{
+  max-width:220px;
+  font-size:12px;
+}
+.delivery-principles{
+  gap:28px;
+  margin-top:16px;
+  padding-top:17px;
+}
+
+.final{
+  background:#fff;
+  padding:54px 0 58px;
+}
+.final-shell{
+  padding:34px 36px;
+  border-radius:18px;
+  box-shadow:0 16px 38px rgba(11,34,95,.11);
+}
+.final h2{
+  font-size:clamp(32px,3.2vw,42px);
+}
+.final p{
+  margin-top:9px;
+  font-size:13.5px;
+}
+.final-note{
+  margin-top:12px;
+  font-size:10.5px;
+}
+.final .btn{min-height:46px}
+
+footer{
+  padding:44px 0 20px;
+  background:#f7f9fc;
+}
+.footer-body{
+  gap:44px;
+}
+.footer-logo{width:188px}
+.footer-brand p{font-size:13px}
+.footer-grid{gap:38px}
+.fcol a{font-size:12.5px}
+.foot{
+  margin-top:28px;
+  padding-top:17px;
+  font-size:11.5px;
+}
+
+@media(max-width:1040px){
+  .hero-grid{gap:36px}
+  .solution-model-grid{grid-template-columns:1fr}
+  .solution-model{min-height:auto}
+}
+@media(max-width:720px){
+  section{padding:56px 0}
+  .hero-grid{padding:40px 0 46px}
+  .hero h1{font-size:41px}
+  .enterprise-visual{padding:24px 20px;border-radius:18px}
+  .solution-model{padding:21px 20px}
+  .final-shell{padding:28px 22px}
+}
+
 </style>
 </head>
 <body>
