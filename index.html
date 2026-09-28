@@ -3153,6 +3153,116 @@ header{
   .staffing-cta-actions{flex-wrap:wrap}
 }
 
+
+/* === Final homepage aesthetic pass === */
+body{background:#fff}
+.specialties{background:#f8fafc}
+.careers{background:#fff}
+.workforce-section{background:#f7f9fc}
+.heritage{background:#fff}
+.workforce-section,
+.careers,
+.specialties,
+.heritage{
+  position:relative;
+}
+.workforce-section:before,
+.careers:before,
+.specialties:before,
+.heritage:before{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#e3e9f2 15%,#e3e9f2 85%,transparent);
+}
+.staffing-cta{
+  margin-top:34px;
+  padding:30px 32px;
+  border-radius:20px;
+  box-shadow:0 16px 40px rgba(9,25,79,.10);
+}
+.staffing-cta h3{font-size:clamp(28px,2.6vw,36px)}
+.staffing-cta p{max-width:640px}
+.closing-cta{
+  padding:0 0 64px;
+  background:#fff;
+}
+.closing-cta-shell{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:46px;
+  align-items:center;
+  padding:34px 36px;
+  border:1px solid #dfe6ef;
+  border-radius:22px;
+  background:linear-gradient(135deg,#f9fbff 0%,#f3f7ff 100%);
+  box-shadow:0 16px 42px rgba(9,25,79,.06);
+}
+.closing-cta .eyebrow{margin-bottom:9px}
+.closing-cta h2{
+  margin:0;
+  color:var(--deep);
+  font-size:clamp(30px,3vw,40px);
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
+.closing-cta p{
+  max-width:650px;
+  margin-top:10px;
+  color:#66738a;
+  font-size:14px;
+  line-height:1.65;
+}
+.closing-cta-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.closing-action{
+  min-width:190px;
+  padding:15px 16px;
+  border-radius:12px;
+  display:grid;
+  gap:5px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.closing-action:hover{transform:translateY(-2px)}
+.closing-action span{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:900;
+}
+.closing-action strong{
+  font-size:13px;
+  font-weight:900;
+}
+.closing-action-light{
+  background:#fff;
+  border:1px solid #dce4ef;
+  color:var(--navy);
+}
+.closing-action-light span{color:#7a879b}
+.closing-action-green{
+  background:var(--green);
+  color:var(--deep);
+  border:1px solid rgba(41,216,15,.35);
+}
+.closing-action-green span{color:#256b20}
+@media(max-width:900px){
+  .closing-cta-shell{grid-template-columns:1fr;gap:24px}
+  .closing-cta-actions{max-width:460px}
+}
+@media(max-width:560px){
+  .closing-cta{padding-bottom:48px}
+  .closing-cta-shell{padding:28px 22px}
+  .closing-cta-actions{grid-template-columns:1fr}
+  .closing-action{min-width:0}
+}
+
 </style>
 </head>
 <!-- FINAL HOMEPAGE BUILD: agreed-order-v10 -->
@@ -3184,7 +3294,6 @@ header{
           </div>
         </div>
       </div>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
       <a class="btn btn-outline" href="#clinicians">Search Jobs</a>
@@ -3356,6 +3465,27 @@ header{
 
 
 
+
+
+<section class="closing-cta" aria-label="Get started with Medlivo">
+  <div class="wrap closing-cta-shell">
+    <div class="closing-cta-copy">
+      <div class="eyebrow">Ready When You Are</div>
+      <h2>Move forward with Medlivo.</h2>
+      <p>Whether you’re looking for your next healthcare opportunity or need qualified talent, start with the path that fits you.</p>
+    </div>
+    <div class="closing-cta-actions">
+      <a class="closing-action closing-action-light" href="search-jobs.html">
+        <span>For Clinicians</span>
+        <strong>Find Jobs →</strong>
+      </a>
+      <a class="closing-action closing-action-green" href="request-staff.html">
+        <span>For Healthcare Organizations</span>
+        <strong>Request Staff →</strong>
+      </a>
+    </div>
+  </div>
+</section>
 
 </main>
 
