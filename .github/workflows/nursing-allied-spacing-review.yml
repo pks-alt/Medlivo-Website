@@ -11,15 +11,19 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Package the exact review source and approved assets
+      - name: Package the current preview and its approved assets
         run: |
+          git fetch --depth=1 origin main
           mkdir -p review-source
-          cp *.html review-source/
-          cp -R assets review-source/
-          git rev-parse HEAD > review-source/SOURCE_COMMIT.txt
-          git hash-object nursing-allied.html > review-source/SOURCE_BLOB.txt
+          git archive origin/main assets | tar -x -C review-source
+          git show origin/main:nursing-allied-preview/index.html > review-source/preview-original.html
+          git show origin/main:nursing-allied.html > review-source/nursing-allied.html
+          git show origin/main:index.html > review-source/index.html
+          git show HEAD:nursing-allied.html > review-source/branch-original.html
+          git rev-parse origin/main > review-source/SOURCE_COMMIT.txt
+          git rev-parse origin/main:nursing-allied-preview/index.html > review-source/PREVIEW_BLOB.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: nursing-allied-review-source
+          name: nursing-allied-current-preview-source
           path: review-source/
           retention-days: 7
