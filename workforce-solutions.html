@@ -1435,6 +1435,201 @@ header{
   .footer-logo-minimal{width:184px}
 }
 
+
+/* === Workforce Solutions final density + homepage alignment pass === */
+.hero-grid{
+  min-height:590px;
+  gap:66px;
+  padding:58px 0 62px;
+}
+.hero h1{
+  font-size:clamp(52px,4.7vw,68px);
+  max-width:660px;
+}
+.hero-copy{
+  margin-top:21px;
+  max-width:610px;
+}
+.hero-actions{margin-top:26px}
+.hero-proof{margin-top:23px}
+.enterprise-visual{
+  min-height:455px;
+  padding:30px;
+  border-radius:24px;
+}
+.enterprise-core{
+  margin-top:30px;
+  padding-bottom:24px;
+}
+.enterprise-core strong{font-size:31px}
+.enterprise-grid{margin-top:24px}
+.enterprise-grid>div{
+  min-height:112px;
+  padding:19px 20px;
+}
+
+.challenges{
+  padding:72px 0;
+}
+.challenge-layout{
+  grid-template-columns:.88fr 1.12fr;
+  gap:66px;
+  align-items:center;
+}
+.challenge-intro{
+  position:static;
+}
+.challenge-intro .lead{margin-top:15px}
+.challenge-row{
+  grid-template-columns:48px 1fr;
+  gap:16px;
+  padding:20px 0 21px;
+}
+.challenge-row>span{
+  width:34px;
+  height:34px;
+}
+.challenge-row h3{font-size:21px}
+.challenge-row p{
+  margin-top:6px;
+  font-size:14px;
+  line-height:1.58;
+}
+
+.solutions{
+  padding:74px 0;
+}
+.solutions-head{
+  gap:60px;
+  margin-bottom:28px;
+}
+.solution-model-grid{
+  border-radius:18px;
+  overflow:hidden;
+}
+.solution-model{
+  min-height:176px;
+  padding:25px 25px 27px;
+}
+.solution-model span{margin-bottom:18px}
+.solution-model h3{font-size:20px}
+.solution-model p{
+  font-size:13px;
+  line-height:1.58;
+}
+.specialty-link-band{
+  margin-top:20px;
+  padding:18px 20px;
+  border-radius:12px;
+}
+
+.delivery{
+  padding:76px 0;
+}
+.delivery-head{
+  gap:62px;
+  margin-bottom:34px;
+}
+.delivery-journey{
+  grid-template-columns:repeat(4,1fr);
+  gap:26px;
+}
+.delivery-line{
+  left:7%;
+  right:7%;
+}
+.delivery-step{
+  min-height:158px;
+}
+.delivery-step h3{
+  margin-top:22px;
+  font-size:19px;
+}
+.delivery-step p{
+  font-size:12.5px;
+  line-height:1.58;
+  max-width:230px;
+}
+.delivery-principles{
+  margin-top:18px;
+  padding-top:18px;
+}
+
+.programs{
+  padding:74px 0;
+}
+.programs-head{
+  gap:62px;
+  margin-bottom:30px;
+}
+.program-assurance{
+  grid-template-columns:.72fr 1.28fr;
+  border-radius:20px;
+}
+.program-principle{
+  padding:32px 30px;
+}
+.program-principle strong{
+  margin-top:18px;
+  font-size:28px;
+}
+.program-principle p{
+  margin-top:14px;
+  font-size:13px;
+  line-height:1.62;
+}
+.program-assurance .program-list{
+  padding:6px 28px;
+}
+.program-assurance .program-row{
+  padding:20px 0;
+}
+.program-assurance .program-row h3{font-size:19px}
+.program-assurance .program-row p{
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.58;
+}
+
+.final{
+  padding:58px 0 64px;
+}
+.final-shell{
+  padding:38px 40px;
+  border-radius:20px;
+  gap:36px;
+}
+.final h2{
+  font-size:clamp(34px,3.5vw,44px);
+}
+.final p{
+  font-size:14px;
+  max-width:650px;
+}
+.final-note{margin-top:14px}
+
+footer{
+  padding-top:44px;
+}
+
+@media(max-width:1040px){
+  .hero-grid{padding:52px 0 58px}
+  .challenge-layout{grid-template-columns:1fr;gap:24px}
+  .delivery-journey{grid-template-columns:1fr 1fr}
+  .delivery-line{display:none}
+  .delivery-step{min-height:auto;padding:6px 0 22px}
+  .program-assurance{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  .hero-grid{padding:42px 0 48px}
+  .enterprise-visual{min-height:auto}
+  .challenges,.solutions,.delivery,.programs{padding:58px 0}
+  .delivery-journey{grid-template-columns:1fr}
+  .solution-model{min-height:auto}
+  .final{padding:48px 0 54px}
+  .final-shell{padding:30px 24px}
+}
+
 </style>
 </head>
 <body>
@@ -1465,11 +1660,10 @@ header{
           </div>
         </div>
       </div>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
       <a class="btn btn-outline" href="index.html#clinicians">Search Jobs</a>
-      <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff</a>
+      <a class="btn btn-green" href="request-staff.html">Request Staff</a>
       <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     </div>
   </div>
