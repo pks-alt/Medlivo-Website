@@ -1,0 +1,86 @@
+name: Assemble and verify approved recovery
+on:
+  push:
+    branches: ["recovery/approved-20260927"]
+    paths: ["scripts/recover-approved.py", ".github/workflows/recover-approved.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: recovery/approved-20260927
+          fetch-depth: 0
+      - name: Install verification tools
+        run: python -m pip install beautifulsoup4 playwright
+      - name: Assemble pinned approved pages
+        run: python scripts/recover-approved.py
+      - name: Test recovered pages in a real browser
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > /tmp/medlivo-server.log 2>&1 &
+          python - <<'PY'
+          import pathlib,json,shutil,subprocess,time
+          from playwright.sync_api import sync_playwright
+          from urllib.parse import urlsplit,unquote
+          from bs4 import BeautifulSoup
+          out=pathlib.Path('recovery-build');out.mkdir(exist_ok=True)
+          evidence=out/'browser';evidence.mkdir(exist_ok=True)
+          manifest=json.loads(pathlib.Path('BUILD.json').read_text());results=[];failures=[]
+          for filename in manifest['pages']:
+              soup=BeautifulSoup(pathlib.Path(filename).read_text(),'html.parser')
+              for a in soup.select('a[href]'):
+                  href=a['href'];url=urlsplit(href)
+                  if url.scheme or url.netloc or not url.path:continue
+                  target=pathlib.Path(unquote(url.path))
+                  if target.suffix=='.html' and not target.is_file():failures.append(filename+' broken link '+href)
+          with sync_playwright() as p:
+              executable=shutil.which('google-chrome') or shutil.which('chromium')
+              if not executable:subprocess.run(['python','-m','playwright','install','chromium'],check=True)
+              browser=p.chromium.launch(headless=True,**({'executable_path':executable} if executable else {}),args=['--no-sandbox'])
+              for width in [1440,390]:
+                  for name in manifest['pages']:
+                      page=browser.new_page(viewport={'width':width,'height':1000 if width==1440 else 844},device_scale_factor=1)
+                      errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+                      response=page.goto('http://127.0.0.1:8765/'+name,wait_until='networkidle',timeout=60000)
+                      row={'page':name,'width':width,'status':response.status,'overflow':page.evaluate('document.documentElement.scrollWidth > innerWidth'),'errors':errors,'broken_images':page.locator('img').evaluate_all('(els)=>els.filter(e=>!e.complete||e.naturalWidth===0).map(e=>e.getAttribute("src"))')}
+                      if name in ['index.html','workforce-solutions.html','nursing-allied.html','rehabilitation.html','request-staff.html']:
+                          page.screenshot(path=str(evidence/(name.replace('.html','')+'-'+str(width)+'.png')),full_page=True)
+                      if name=='rehabilitation.html' and width==1440:page.locator('.care-settings').screenshot(path=str(evidence/'rehab-four-settings.png'))
+                      if name=='index.html':
+                          row['is_v2']=page.locator('.workforce-v2').count()==1 and page.locator('.why-v2').count()==1
+                          row['ready_when_you_are']=page.get_by_text('Ready When You Are',exact=True).count()
+                          assert row['is_v2'] and row['ready_when_you_are']==0
+                      if name=='nursing-allied.html':assert page.locator('#open-positions').count()==1
+                      if name=='rehabilitation.html':assert page.locator('.care-settings .setting-card').count()==4
+                      if row['status']!=200 or row['errors'] or row['broken_images'] or row['overflow']:failures.append(row)
+                      results.append(row);page.close()
+              browser.close()
+          (out/'browser-verification.json').write_text(json.dumps({'results':results,'failures':failures},indent=2))
+          print(json.dumps({'results':results,'failures':failures},indent=2))
+          for name in list(manifest['pages'])+['BUILD.json','SITE_SOURCE.md']:shutil.copy2(name,out/name)
+          shutil.copytree('assets',out/'assets',dirs_exist_ok=True)
+          (out/'.nojekyll').touch()
+          if failures:raise SystemExit('Recovery checks failed. No source commit or deployment will occur.')
+          PY
+      - name: Preserve verified recovery on the isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- '*.html' BUILD.json SITE_SOURCE.md .nojekyll
+          if ! git diff --cached --quiet; then
+            git commit -m 'Recover pinned evening pages as a single canonical root build'
+            git push origin HEAD:recovery/approved-20260927
+          fi
+          echo "RECOVERY_COMMIT=$(git rev-parse HEAD)"
+      - name: Save recovery build and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-recovery-build
+          path: recovery-build/
+          include-hidden-files: true
+          retention-days: 14
