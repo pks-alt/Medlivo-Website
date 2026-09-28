@@ -2186,6 +2186,155 @@ footer{padding-top:44px}
   .market-card,.engage-card{padding:23px 20px}
 }
 
+
+/* === Nursing & Allied density correction === */
+.na-premium-grid{
+  min-height:540px;
+  grid-template-columns:.98fr 1.02fr;
+  gap:48px;
+  padding:46px 0 50px;
+}
+.na-premium-copy h1{
+  font-size:clamp(48px,4.45vw,63px);
+  line-height:1.015;
+}
+.na-premium-copy .hero-copy{
+  margin-top:19px;
+  max-width:590px;
+}
+.na-hero-stack{
+  min-height:420px;
+  transform:scale(.92);
+  transform-origin:center right;
+}
+.stack-main{top:26px}
+.stack-nursing{top:196px}
+.stack-allied{top:298px}
+.na-hero-wordmark{
+  bottom:-6px;
+  opacity:.38;
+}
+
+.market.na-market-premium{
+  padding:62px 0 66px;
+}
+.na-market-head{
+  max-width:820px;
+  margin:0 auto 26px;
+}
+.na-market-head .title{
+  margin-top:10px;
+  font-size:clamp(37px,3.7vw,50px);
+  line-height:1.05;
+}
+.na-market-head .lead{
+  margin-top:13px;
+  max-width:700px;
+  line-height:1.62;
+}
+.na-market-grid{gap:16px}
+.na-market-card{
+  padding:25px 24px 26px;
+  border-radius:17px;
+}
+.na-market-card h3{
+  margin-top:16px;
+  font-size:24px;
+}
+.na-market-card>p{
+  margin-top:9px;
+  line-height:1.6;
+}
+.role-cloud{
+  margin-top:17px;
+  gap:6px;
+}
+.role-cloud span{
+  padding:7px 8px;
+  font-size:10px;
+}
+
+.signals{
+  padding:62px 0 64px;
+}
+.signals-head{
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  margin-bottom:23px;
+}
+.signals .signal-card{
+  min-height:150px;
+  padding:20px 19px;
+}
+.signals .signal-card h3{
+  margin-top:13px;
+  font-size:18px;
+}
+.signals .signal-card p{margin-top:6px}
+
+.clinical-ready{
+  padding:62px 0 64px;
+}
+.ready-head{
+  gap:48px;
+  margin-bottom:23px;
+}
+.ready-card{
+  min-height:145px;
+  padding:20px 19px;
+}
+.ready-card h3{
+  margin-top:15px;
+  font-size:18px;
+}
+.ready-card p{margin-top:6px}
+.ready-bar{
+  margin-top:16px;
+  padding:14px 18px;
+  grid-template-columns:105px 1fr;
+}
+
+.engage{
+  padding:58px 0 62px;
+}
+.engage-head{
+  gap:48px;
+  margin-bottom:23px;
+}
+.engage-card{
+  min-height:0!important;
+  padding:25px 24px;
+}
+.engage-card h3{font-size:24px}
+.engage-card>p{
+  margin-top:9px;
+  line-height:1.58;
+}
+.engage-fields{
+  margin-top:15px;
+  gap:6px;
+}
+.engage-fields span{
+  padding:7px 9px;
+  font-size:9.5px;
+}
+.engage-card .btn{margin-top:18px}
+
+@media(max-width:1040px){
+  .na-premium-grid{min-height:auto;grid-template-columns:1fr;gap:18px}
+  .na-hero-stack{min-height:345px;transform:none}
+  .signals-head,.ready-head,.engage-head{grid-template-columns:1fr;gap:18px}
+}
+@media(max-width:720px){
+  .na-premium-grid{padding:38px 0 42px}
+  .na-premium-copy h1{font-size:39px}
+  .na-hero-stack{min-height:360px}
+  .market.na-market-premium,.signals,.clinical-ready,.engage{padding:50px 0 52px}
+  .na-market-head{margin-bottom:20px;text-align:left}
+  .na-market-head .title,.na-market-head .lead{margin-left:0;margin-right:0}
+  .ready-bar{grid-template-columns:1fr;gap:5px}
+}
+
 </style>
 </head>
 <body>
@@ -2298,11 +2447,7 @@ footer{padding-top:44px}
           <span>Care Coordination</span>
           <span>Nursing Leadership</span>
         </div>
-        <div class="market-lens">
-          <div><small>What we evaluate</small><strong>Unit · Specialty · Experience · Shift · Schedule · Location · Availability</strong></div>
-          <div><small>What affects readiness</small><strong>Licensure · Certifications · Clinical Documentation · Client Requirements</strong></div>
-        </div>
-      </article>
+        </article>
 
       <article class="market-card market-allied na-market-card">
         <div class="na-market-card-top">
@@ -2323,11 +2468,7 @@ footer{padding-top:44px}
           <span>Pharmacy</span>
           <span>Medical Assistants</span>
         </div>
-        <div class="market-lens">
-          <div><small>What we evaluate</small><strong>Modality · Certification · Procedure Experience · Setting · Location · Availability</strong></div>
-          <div><small>What affects readiness</small><strong>Credentials · Technical Requirements · Facility Standards · Start Timing</strong></div>
-        </div>
-      </article>
+        </article>
     </div>
   </div>
 </section>
@@ -2423,12 +2564,9 @@ footer{padding-top:44px}
         <h3>Need Nursing & Allied talent?</h3>
         <p>Tell us the specialty, location, schedule, and timing. We’ll connect the request with the right recruiting team.</p>
         <div class="engage-fields">
-          <span>Role & specialty</span>
-          <span>Care setting</span>
-          <span>Shift / schedule</span>
+          <span>Specialty</span>
           <span>Location</span>
-          <span>Start timing</span>
-          <span>Program requirements</span>
+          <span>Schedule & timing</span>
         </div>
         <a class="btn btn-green" href="request-staff.html">Request Staff</a>
       </article>
@@ -2438,12 +2576,9 @@ footer{padding-top:44px}
         <h3>Looking for your next assignment?</h3>
         <p>Search current opportunities across nursing and allied health specialties nationwide.</p>
         <div class="engage-fields">
-          <span>Profession</span>
           <span>Specialty</span>
           <span>Preferred location</span>
-          <span>Schedule</span>
           <span>Availability</span>
-          <span>Career priorities</span>
         </div>
         <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Nursing & Allied Jobs</a>
       </article>
