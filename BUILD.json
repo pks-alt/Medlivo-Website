@@ -1,0 +1,72 @@
+{
+  "build_id": "medlivo-recovered-20260927",
+  "source_policy": "Canonical root HTML. One native main/root GitHub Pages publisher. Preview and v2 folders are not deployment inputs.",
+  "pages": {
+    "index.html": {
+      "commit": "874b820c1b81d9233bb02ddda9a331734646aaf8",
+      "path": "index.html",
+      "selection": "19:58 PDT homepage V2, confirmed by FINAL_HOME_BUILD.md at 20:06",
+      "sha256": "7d27e80de2c966ea61f9f4e50dbcd3b95b666d71b1d372456bb0b07498c15906"
+    },
+    "workforce-solutions.html": {
+      "commit": "62134bf75c62a5b5b53c2c36ac6f13fc8be1b4dc",
+      "path": "workforce-solutions-preview/index.html",
+      "selection": "20:30 PDT polished Solutions, without repeated enterprise-program section",
+      "sha256": "5222fc2717bf3a614923b9bf4be872a73fa75cd65d5c73b38ebbf18ec989507d"
+    },
+    "nursing-allied.html": {
+      "commit": "794f81e033b74151d0c169185121bbcd500e8bb5",
+      "path": "nursing-allied-preview/index.html",
+      "selection": "Approved Nursing and Allied page with openings and final spacing pass",
+      "sha256": "df60d64b1c550001b5c116bf45ff395894c15f21b68a58c8db379187475cd8cf"
+    },
+    "rehabilitation.html": {
+      "commit": "038bc2a20b8dec869574edf12ca0fd7a9446f680",
+      "path": "rehabilitation-preview.html",
+      "selection": "Four editorial care-setting rows, combined post-acute and home-based care, openings",
+      "sha256": "882a045fa8eecbff20ee1b6e928d76eda0c1f466efca45d51023be1d3d6753c8"
+    },
+    "request-staff.html": {
+      "commit": "780d3fc3bd125e5d1aae1960ed23f340e8c80b39",
+      "path": "request-staff.html",
+      "selection": "20:50 PDT dedicated request page aligned with final Medlivo design",
+      "sha256": "618ae06b9868c06cecd30aeff4dee18b1dd3cbad480bb2b9add763f88de381b9"
+    },
+    "locum-tenens.html": {
+      "commit": "8ad7bb331a03c987d0bcced4b2161dc90fd8f6f9",
+      "path": "v2/locum-tenens.html",
+      "selection": "Preserved supporting page; no new design changes",
+      "sha256": "b47e98d312a7bde40c8790258e810a4dd8bf30440d31bd651125e1cd6cc55663"
+    },
+    "search-jobs.html": {
+      "commit": "8ad7bb331a03c987d0bcced4b2161dc90fd8f6f9",
+      "path": "v2/search-jobs.html",
+      "selection": "Preserved supporting page; no new design changes",
+      "sha256": "0797657fdf89de78133cf49cd433619814108cad90655c89799300a28e62e40e"
+    },
+    "about.html": {
+      "commit": "8ad7bb331a03c987d0bcced4b2161dc90fd8f6f9",
+      "path": "v2/about.html",
+      "selection": "Preserved supporting page; no new design changes",
+      "sha256": "6990dd6989f01516411ce797a8e5c24b2769eaef105ffacb3d99b9618d4949b2"
+    },
+    "leadership.html": {
+      "commit": "8ad7bb331a03c987d0bcced4b2161dc90fd8f6f9",
+      "path": "v2/leadership.html",
+      "selection": "Preserved supporting page; no new design changes",
+      "sha256": "e9957bc55d8847d658fce0eb882e3f6cfd8631d53ab7bf3eca34df8a3f24d9a3"
+    },
+    "careers.html": {
+      "commit": "8ad7bb331a03c987d0bcced4b2161dc90fd8f6f9",
+      "path": "v2/careers.html",
+      "selection": "Preserved supporting page; no new design changes",
+      "sha256": "34d77bfe06b3b32a335080dec3b848a2ab0433698df2534d88bbfe2ebe9ffc2c"
+    },
+    "specialties.html": {
+      "commit": "8ad7bb331a03c987d0bcced4b2161dc90fd8f6f9",
+      "path": "v2/specialties.html",
+      "selection": "Preserved supporting page; no new design changes",
+      "sha256": "3fe8203d30bb969a9496eb5004f750789adb03323f2bca7346e81b9ef65e7f7a"
+    }
+  }
+}
