@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<base href="/Medlivo-Website/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rehabilitation Staffing | Medlivo</title>
@@ -2250,6 +2251,359 @@ header{
   .footer-logo-minimal{width:184px}
 }
 
+
+/* === Rehabilitation final refinement === */
+.na-premium-grid{
+  min-height:510px;
+  grid-template-columns:.98fr 1.02fr;
+  gap:42px;
+  padding:38px 0 44px;
+}
+.na-premium-copy h1{
+  font-size:clamp(47px,4.35vw,61px);
+  line-height:1.015;
+  max-width:690px;
+}
+.na-premium-copy .hero-copy{
+  margin-top:17px;
+  font-size:16.5px;
+  line-height:1.6;
+  max-width:610px;
+}
+.hero-actions{margin-top:22px}
+.hero-signals{margin-top:18px}
+.rehab-hero-stack{
+  min-height:410px;
+  transform:scale(.89);
+  transform-origin:center right;
+}
+.therapist-proof{padding:44px 0}
+.therapist-proof-grid{gap:42px}
+.therapist-proof-copy h2{font-size:30px}
+.therapist-proof-copy p{margin-top:10px;line-height:1.6}
+
+.market{padding:52px 0 56px}
+.market-head{gap:42px;margin-bottom:20px}
+.rehab-market-grid{gap:12px}
+.rehab-market-grid .market-card{
+  padding:21px 20px;
+  border-radius:15px;
+}
+.rehab-market-grid .market-card h3{
+  font-size:21px;
+  margin-top:13px;
+}
+.rehab-market-grid .market-card>p{
+  margin-top:8px;
+  font-size:12.5px;
+  line-height:1.52;
+}
+.rehab-market-grid .role-cloud{margin-top:12px}
+.rehab-market-grid .market-lens{margin-top:15px}
+.rehab-market-grid .market-lens strong{font-size:11.5px;line-height:1.45}
+
+/* Care settings condensed to a single visual band */
+.care-settings{padding:50px 0 52px}
+.setting-head{gap:42px;margin-bottom:18px}
+.setting-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+}
+.setting-card{
+  min-height:0;
+  padding:19px 16px 20px;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+.setting-card:not(:last-child){border-right:1px solid var(--line)!important}
+.setting-card h3{font-size:17px;margin-top:12px}
+.setting-card p{font-size:12px;line-height:1.5;margin-top:6px}
+.setting-matters{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+}
+.setting-matters strong{font-size:10.5px;line-height:1.45}
+
+/* Recruiting lens simplified visually */
+.signals{padding:50px 0 52px}
+.signals-head{gap:42px;margin-bottom:18px}
+.signals-stage{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:12px;
+}
+.signal-core{
+  min-height:100%;
+  padding:24px 22px;
+  border-radius:16px;
+}
+.signals .signal-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+.signals .signal-card{
+  min-height:118px;
+  padding:16px 16px;
+  border-radius:14px;
+}
+.signals .signal-card-wide{grid-column:1 / -1;min-height:105px}
+.signals .signal-card h3{font-size:16.5px;margin-top:10px}
+.signals .signal-card p{font-size:12px;line-height:1.48;margin-top:5px}
+
+/* Readiness as a connected progression */
+.clinical-ready{padding:50px 0 52px}
+.ready-head{gap:42px;margin-bottom:18px}
+.ready-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+}
+.ready-card{
+  min-height:0;
+  padding:19px 17px 20px;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.ready-card:not(:last-child){border-right:1px solid var(--line)}
+.ready-card h3{font-size:17px;margin-top:12px}
+.ready-card p{font-size:12.5px;line-height:1.5;margin-top:6px}
+.ready-bar{margin-top:12px;padding:12px 16px;border-radius:12px}
+
+/* Current rehabilitation opportunities */
+.rehab-positions{
+  padding:48px 0 50px;
+  background:#f7f9fc;
+  border-top:1px solid #e7ecf3;
+  border-bottom:1px solid #e7ecf3;
+}
+.rehab-positions-head{
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:40px;
+  align-items:end;
+  margin-bottom:18px;
+}
+.rehab-positions-head .lead{margin:0}
+.rehab-position-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.rehab-position-card{
+  display:flex;
+  flex-direction:column;
+  min-height:176px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow:0 8px 24px rgba(9,25,79,.035);
+}
+.rehab-position-card small{
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+}
+.rehab-position-card h3{
+  margin-top:10px;
+  font-size:18px;
+  color:var(--deep);
+}
+.rehab-position-card p{
+  margin-top:8px;
+  font-size:12.5px;
+  line-height:1.5;
+  color:#66738a;
+}
+.rehab-position-card a{
+  margin-top:auto;
+  padding-top:13px;
+  font-size:12px;
+  font-weight:900;
+  color:var(--navy);
+}
+.rehab-positions-foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-top:14px;
+}
+.rehab-positions-foot p{font-size:12.5px;color:#6a768d}
+
+.engage{padding:48px 0 52px}
+.engage-head{gap:42px;margin-bottom:18px}
+.engage-card{padding:22px;border-radius:16px}
+.engage-card h3{font-size:23px}
+.engage-card>p{margin-top:8px;line-height:1.55}
+.engage-fields{margin-top:13px;gap:6px}
+.engage-fields span{padding:7px 9px;font-size:9.5px}
+.engage-card .btn{margin-top:16px}
+
+@media(max-width:1040px){
+  .na-premium-grid{grid-template-columns:1fr;min-height:auto;gap:16px}
+  .rehab-hero-stack{transform:none;min-height:385px}
+  .therapist-proof-grid,.market-head,.setting-head,.signals-head,.ready-head,.rehab-positions-head,.engage-head{grid-template-columns:1fr;gap:14px}
+  .setting-grid{grid-template-columns:1fr 1fr}
+  .setting-card:not(:last-child){border-right:0!important}
+  .setting-card:nth-child(odd){border-right:1px solid var(--line)!important}
+  .setting-card{border-bottom:1px solid var(--line)!important}
+  .setting-card:last-child{border-bottom:0!important}
+  .signals-stage{grid-template-columns:1fr}
+  .ready-grid{grid-template-columns:1fr 1fr}
+  .ready-card:nth-child(2){border-right:0}
+  .ready-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .rehab-position-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .na-premium-grid{padding:32px 0 36px}
+  .na-premium-copy h1{font-size:38px}
+  .therapist-proof,.market,.care-settings,.signals,.clinical-ready,.rehab-positions,.engage{padding:42px 0 44px}
+  .rehab-market-grid,.rehab-position-grid,.signals .signal-grid,.setting-grid,.ready-grid{grid-template-columns:1fr}
+  .setting-card,.setting-card:nth-child(odd),.ready-card,.ready-card:nth-child(2){border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .setting-card:last-child,.ready-card:last-child{border-bottom:0!important}
+  .rehab-positions-foot{align-items:flex-start;flex-direction:column}
+}
+
+
+/* === Care Setting Matters: editorial progression === */
+.care-settings{
+  position:relative;
+  overflow:hidden;
+  padding:50px 0 54px;
+  background:
+    radial-gradient(circle at 90% 8%,rgba(95,223,229,.10),transparent 24%),
+    linear-gradient(180deg,#f8faff 0%,#fff 100%);
+}
+.setting-head{
+  grid-template-columns:.9fr 1.1fr;
+  gap:46px;
+  margin-bottom:22px;
+}
+.setting-head .title{
+  max-width:680px;
+}
+.setting-head .lead{
+  max-width:660px;
+}
+.setting-grid{
+  display:block;
+  border:1px solid #dde5f0;
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 14px 34px rgba(9,25,79,.045);
+}
+.setting-card{
+  display:grid;
+  grid-template-columns:48px 215px minmax(0,1fr) minmax(260px,340px);
+  gap:18px;
+  align-items:center;
+  min-height:0;
+  padding:18px 20px;
+  border:0!important;
+  border-bottom:1px solid var(--line)!important;
+  background:#fff;
+}
+.setting-card:last-child{
+  border-bottom:0!important;
+}
+.setting-card:hover{
+  background:#fbfdff;
+}
+.setting-card>span{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#f2f6ff;
+  border:1px solid #dbe4f3;
+  font-size:9px;
+  font-weight:900;
+  color:var(--blue);
+}
+.setting-card h3{
+  margin:0;
+  font-size:17px;
+  line-height:1.25;
+  color:var(--deep);
+  letter-spacing:-.02em;
+}
+.setting-card p{
+  margin:0;
+  font-size:12.5px;
+  line-height:1.52;
+  color:#66738a;
+}
+.setting-matters{
+  margin:0;
+  padding:0 0 0 18px;
+  border-top:0;
+  border-left:1px solid var(--line);
+}
+.setting-matters small{
+  display:block;
+  font-size:8.5px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:900;
+  color:var(--blue);
+}
+.setting-matters strong{
+  display:block;
+  margin-top:5px;
+  font-size:10.5px;
+  line-height:1.45;
+  color:#43516a;
+  font-weight:800;
+}
+@media(max-width:1040px){
+  .setting-head{grid-template-columns:1fr;gap:14px}
+  .setting-card{
+    grid-template-columns:42px 190px 1fr;
+  }
+  .setting-matters{
+    grid-column:2 / -1;
+    padding:10px 0 0;
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+}
+@media(max-width:720px){
+  .care-settings{padding:42px 0 44px}
+  .setting-grid{border-radius:14px}
+  .setting-card{
+    grid-template-columns:38px 1fr;
+    gap:10px 12px;
+    padding:16px;
+  }
+  .setting-card h3{
+    font-size:16px;
+  }
+  .setting-card p{
+    grid-column:1 / -1;
+    font-size:12.5px;
+  }
+  .setting-matters{
+    grid-column:1 / -1;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2280,11 +2634,10 @@ header{
           </div>
         </div>
       </div>
-      <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
-      <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Jobs</a>
-      <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Healthcare%20Staffing%20Request">Request Staff</a>
+      <a class="btn btn-outline" href="search-jobs.html">Search Jobs</a>
+      <a class="btn btn-green" href="request-staff.html">Request Staff</a>
       <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     </div>
   </div>
@@ -2303,10 +2656,10 @@ header{
       <div class="na-premium-copy">
         <div class="kicker">Rehabilitation Division</div>
         <h1>Rehabilitation staffing built around discipline, setting, and continuity.</h1>
-        <p class="hero-copy">Medlivo connects healthcare organizations with Physical Therapy, Occupational Therapy, and Speech-Language Pathology professionals. Our team looks beyond discipline alone — aligning clinical experience, care environment, licensure, availability, and the realities of the role.</p>
+        <p class="hero-copy">Medlivo connects healthcare organizations with Physical Therapy, Occupational Therapy, and Speech-Language Pathology professionals. Our team looks beyond discipline alone, aligning clinical experience, care environment, licensure, availability, and the realities of the role.</p>
         <div class="hero-actions">
-          <a class="btn btn-green" href="#engage">Request Rehabilitation Staff</a>
-          <a class="btn btn-outline hero-outline" href="https://www.medlivo.com/search-jobs">Search Rehabilitation Jobs</a>
+          <a class="btn btn-green" href="request-staff.html">Request Rehabilitation Staff</a>
+          <a class="btn btn-outline hero-outline" href="search-jobs.html?profession=Rehabilitation">Search Rehabilitation Jobs</a>
         </div>
         <div class="hero-signals">
           <span>Discipline</span>
@@ -2351,7 +2704,7 @@ header{
     <div class="therapist-proof-copy">
       <small>Built with firsthand perspective</small>
       <h2>Therapy staffing informed by the work itself.</h2>
-      <p>One of Medlivo’s founders spent more than two decades working as a therapist. That firsthand experience brings a different lens to rehabilitation staffing — understanding the language of therapy, the realities of different care environments, and the pressures clinicians and healthcare organizations navigate every day.</p>
+      <p>One of Medlivo’s founders spent more than two decades working as a therapist. That firsthand experience brings a different lens to rehabilitation staffing, understanding the language of therapy, the realities of different care environments, and the pressures clinicians and healthcare organizations navigate every day.</p>
     </div>
   </div>
 </section>
@@ -2425,9 +2778,9 @@ header{
     <div class="setting-head">
       <div>
         <div class="eyebrow">Care Setting Matters</div>
-        <h2 class="title">Where therapy is delivered changes what the role demands.</h2>
+        <h2 class="title">The care setting changes the assignment.</h2>
       </div>
-      <p class="lead">Acute care, inpatient rehabilitation, skilled nursing, outpatient, and home health each bring different clinical demands, pace, documentation, coordination, and patient needs. Medlivo screens for those differences.</p>
+      <p class="lead">The same discipline can look very different from one care environment to another. Medlivo recruits around the setting, patient needs, workload, documentation, and operating rhythm of the assignment.</p>
     </div>
 
     <div class="setting-grid">
@@ -2445,21 +2798,15 @@ header{
       </article>
       <article class="setting-card">
         <span>03</span>
-        <h3>Skilled Nursing & Post-Acute</h3>
-        <p>Recovery and continuity in environments where caseload, productivity, and longer-term functional goals matter.</p>
-        <div class="setting-matters"><small>What matters</small><strong>Setting Experience · Caseload · Patient Population · Productivity Expectations · Schedule</strong></div>
+        <h3>Post-Acute &amp; Home-Based Care</h3>
+        <p>Skilled nursing, post-acute, and home-based therapy require continuity, independence, caseload management, and a clear understanding of the patient environment.</p>
+        <div class="setting-matters"><small>What matters</small><strong>Setting Experience · Caseload · Service Area · Productivity · Documentation · Schedule</strong></div>
       </article>
       <article class="setting-card">
         <span>04</span>
         <h3>Outpatient</h3>
         <p>Scheduled visits where specialty focus, patient mix, throughput, and documentation shape the day.</p>
         <div class="setting-matters"><small>What matters</small><strong>Clinical Focus · Patient Population · Caseload · Schedule · Documentation Requirements</strong></div>
-      </article>
-      <article class="setting-card">
-        <span>05</span>
-        <h3>Home Health</h3>
-        <p>Autonomous care across a service area, with travel, visit planning, safety, and documentation built into the role.</p>
-        <div class="setting-matters"><small>What matters</small><strong>Home Health Experience · Service Area · Visit Expectations · Documentation · Schedule</strong></div>
       </article>
     </div>
   </div>
@@ -2548,7 +2895,46 @@ header{
 
     <div class="ready-bar">
       <strong>Why it matters</strong>
-      <span>The objective is a clean handoff from selection to first day — with the clinician cleared, informed, and ready to begin.</span>
+      <span>The objective is a clean handoff from selection to first day, with the clinician cleared, informed, and ready to begin.</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="rehab-positions" id="open-positions">
+  <div class="wrap">
+    <div class="rehab-positions-head">
+      <div>
+        <div class="eyebrow">Current Opportunities</div>
+        <h2 class="title">Explore Rehabilitation openings.</h2>
+      </div>
+      <p class="lead">Browse current opportunities across Physical Therapy, Occupational Therapy, and Speech-Language Pathology.</p>
+    </div>
+
+    <div class="rehab-position-grid">
+      <article class="rehab-position-card">
+        <small>Physical Therapy</small>
+        <h3>PT &amp; PTA opportunities</h3>
+        <p>Explore current therapy assignments across acute care, post-acute, outpatient, home health, and other settings.</p>
+        <a href="search-jobs.html?profession=Rehabilitation">View Physical Therapy Jobs →</a>
+      </article>
+      <article class="rehab-position-card">
+        <small>Occupational Therapy</small>
+        <h3>OT &amp; COTA opportunities</h3>
+        <p>Search current occupational therapy roles across multiple care settings, schedules, and locations.</p>
+        <a href="search-jobs.html?profession=Rehabilitation">View Occupational Therapy Jobs →</a>
+      </article>
+      <article class="rehab-position-card">
+        <small>Speech-Language Pathology</small>
+        <h3>SLP opportunities</h3>
+        <p>Find current speech-language pathology assignments aligned to clinical focus, setting, and patient population.</p>
+        <a href="search-jobs.html?profession=Rehabilitation">View SLP Jobs →</a>
+      </article>
+    </div>
+
+    <div class="rehab-positions-foot">
+      <p>Job availability changes as new client needs are added.</p>
+      <a class="btn btn-primary" href="search-jobs.html?profession=Rehabilitation">View All Rehabilitation Jobs</a>
     </div>
   </div>
 </section>
@@ -2557,44 +2943,37 @@ header{
   <div class="wrap" id="contact">
     <div class="engage-head">
       <div>
-        <div class="eyebrow">Rehabilitation</div>
-        <h2 class="title">The right role has to work for both sides.</h2>
+        <div class="eyebrow">For Organizations &amp; Clinicians</div>
+        <h2 class="title">Two clear paths. One Rehabilitation team.</h2>
       </div>
-      <p class="lead">Healthcare organizations need capability and readiness. Clinicians need clarity on the environment, workload, location, and expectations. Medlivo brings those requirements together before the start.</p>
+      <p class="lead">Healthcare organizations can request Rehabilitation talent directly. Clinicians can explore current PT, OT, and SLP opportunities.</p>
     </div>
 
     <div class="engage-grid">
       <article class="engage-card client-card">
         <small>For Healthcare Organizations</small>
-        <h3>Tell us what success in the role requires.</h3>
-        <p>Share the clinical environment, workload, schedule, timing, and facility requirements. We’ll build the search around the realities of the role.</p>
+        <h3>Need Rehabilitation talent?</h3>
+        <p>Tell us the discipline, setting, location, schedule, and timing. We’ll connect the request with the right Rehabilitation recruiting team.</p>
         <div class="engage-fields">
           <span>Discipline</span>
           <span>Care setting</span>
-          <span>Patient population</span>
-          <span>Schedule</span>
           <span>Location</span>
-          <span>Start timing</span>
-          <span>Caseload / productivity</span>
-          <span>Facility requirements</span>
+          <span>Schedule &amp; timing</span>
         </div>
-        <a class="btn btn-green" href="mailto:hello@medlivo.com?subject=Rehabilitation%20Staffing%20Request">Request Rehabilitation Staff</a>
+        <a class="btn btn-green" href="request-staff.html">Request Rehabilitation Staff</a>
       </article>
 
       <article class="engage-card clinician-card" id="clinicians">
         <small>For Rehabilitation Clinicians</small>
-        <h3>Tell us where you do your best work.</h3>
-        <p>Share the settings, patient populations, locations, and schedules that fit your experience and priorities. We’ll focus the conversation accordingly.</p>
+        <h3>Looking for your next Rehabilitation role?</h3>
+        <p>Explore current Physical Therapy, Occupational Therapy, and Speech-Language Pathology opportunities across care settings and locations.</p>
         <div class="engage-fields">
-          <span>Profession</span>
+          <span>Discipline</span>
           <span>Preferred setting</span>
-          <span>Patient population</span>
-          <span>Preferred location</span>
-          <span>Schedule</span>
+          <span>Location</span>
           <span>Availability</span>
-          <span>Career priorities</span>
         </div>
-        <a class="btn btn-outline" href="https://www.medlivo.com/search-jobs">Search Rehabilitation Jobs</a>
+        <a class="btn btn-outline" href="search-jobs.html?profession=Rehabilitation">Search Rehabilitation Jobs</a>
       </article>
     </div>
   </div>
@@ -2625,10 +3004,10 @@ header{
       </div>
       <div class="footer-col-minimal">
         <h4>For Clinicians</h4>
-        <a href="https://www.medlivo.com/search-jobs">Search Jobs</a>
-        <a href="nursing-allied.html#clinicians">Nursing &amp; Allied Jobs</a>
-        <a href="rehabilitation.html#clinicians">Rehabilitation Jobs</a>
-        <a href="locum-tenens.html#clinicians">Locum Tenens Opportunities</a>
+        <a href="search-jobs.html">Search Jobs</a>
+        <a href="search-jobs.html?profession=Nursing%20%26%20Allied">Nursing &amp; Allied Jobs</a>
+        <a href="search-jobs.html?profession=Rehabilitation">Rehabilitation Jobs</a>
+        <a href="search-jobs.html?profession=Locum%20Tenens">Locum Tenens Opportunities</a>
       </div>
       <div class="footer-col-minimal">
         <h4>Company</h4>
