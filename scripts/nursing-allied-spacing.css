@@ -1,0 +1,145 @@
+/* Nursing & Allied responsive spacing — 2026-09-28. */
+.na-premium-hero,.na-hero-stage{min-height:0}
+.na-premium-grid{min-height:0;grid-template-columns:1.08fr .92fr;gap:48px;padding:52px 0 54px;align-items:center}
+.na-premium-copy h1{font-size:clamp(43px,4.25vw,61px);line-height:1.06;letter-spacing:-.045em;max-width:680px;margin-top:16px}
+.na-premium-copy .hero-copy{font-size:17px;line-height:1.65;max-width:590px;margin-top:20px}
+.na-premium-copy .hero-actions{gap:10px;margin-top:24px;flex-wrap:wrap}
+.na-premium-copy .hero-actions .btn{font-size:13px;min-height:48px;white-space:normal;text-align:center}
+.na-hero-image{inset:0 0 0 47%;z-index:0}
+.na-hero-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% center;transform:none}
+.na-hero-overlay{background:linear-gradient(90deg,#071744 0%,rgba(7,23,68,.85) 20%,rgba(7,23,68,.22) 64%,rgba(7,23,68,.12)),linear-gradient(0deg,rgba(7,23,68,.55),transparent 50%)}
+.na-premium-copy,.na-hero-stack{position:relative;z-index:2}
+.na-hero-stack{display:grid;gap:12px;min-height:0;transform:none;justify-self:end;align-content:end;align-self:end;width:min(320px,100%);padding:0}
+.na-hero-stack .stack-card{position:relative;inset:auto;width:100%;margin:0;transform:none;box-shadow:0 12px 32px rgba(4,17,48,.13)}
+.na-hero-stack .stack-main{padding:22px 24px;border-radius:18px;background:rgba(8,31,86,.92)}
+.na-hero-stack .stack-main strong{font-size:23px;line-height:1.22;margin-top:10px}
+.na-hero-stack .stack-main small{font-size:10px}
+.na-hero-stack .stack-nursing,.na-hero-stack .stack-allied{padding:16px 20px;border-radius:14px;grid-template-columns:32px minmax(0,1fr);gap:12px}
+.na-hero-stack .stack-card b{font-size:16px}
+.na-hero-stack .stack-card div small{font-size:12px;line-height:1.45}
+.na-hero-wordmark{display:none}
+.market.na-market-premium,.signals,.clinical-ready{padding:56px 0}
+.market.na-market-premium{background:linear-gradient(180deg,#f7f9fc,#fff)}
+.market.na-market-premium .na-market-head{display:block;max-width:900px;margin:0 auto 26px;text-align:center}
+.market.na-market-premium .na-market-head .title{max-width:850px;margin:10px auto 0;font-size:clamp(32px,3.2vw,44px);line-height:1.13;letter-spacing:-.035em}
+.market.na-market-premium .na-market-head .lead{max-width:740px;margin:12px auto 0;font-size:16px;line-height:1.6}
+.market.na-market-premium .na-market-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+.market.na-market-premium .na-market-card{min-height:0;padding:24px 26px;border-radius:18px;background:#fff;box-shadow:0 6px 20px rgba(9,25,79,.035)}
+.market.na-market-premium .na-market-card h3{font-size:24px;line-height:1.22;letter-spacing:-.025em;margin-top:16px;max-width:none}
+.market.na-market-premium .na-market-card>p{font-size:15px;line-height:1.6;margin-top:10px;max-width:none}
+.na-market-card-top{align-items:center;gap:16px}
+.na-market-card-top>div:first-child{flex-direction:row;align-items:center;gap:10px}
+.na-market-card-top small{font-size:12px}
+.na-market-badge{font-size:10px}
+.role-cloud{margin-top:18px;gap:7px}
+.role-cloud span{padding:7px 10px;font-size:12px;line-height:1.4;font-weight:650;border-radius:8px}
+.signals{background:#f7f9fc;border-top:1px solid #e5eaf2;border-bottom:1px solid #e5eaf2}
+.signals-head,.ready-head{grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;margin-bottom:24px}
+.signals-head .title,.ready-head .title{font-size:clamp(32px,3.2vw,44px);line-height:1.13;letter-spacing:-.035em;margin-top:10px}
+.signals-head .lead,.ready-head .lead{font-size:16px;line-height:1.6;margin:0;max-width:570px}
+.signals .signal-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;background:transparent}
+.signals .signal-card{min-height:0;padding:22px 20px;border:1px solid #e1e7f0;border-radius:14px;background:#fff;box-shadow:0 5px 16px rgba(9,25,79,.025)}
+.signals .signal-card span{font-size:11px}
+.signals .signal-card h3{font-size:19px;line-height:1.25;margin-top:14px;letter-spacing:-.02em}
+.signals .signal-card p{font-size:14px;line-height:1.6;margin-top:8px}
+.clinical-ready{background:#fff}
+.ready-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;border:0;border-radius:0;background:transparent;overflow:visible}
+.ready-grid .ready-card{min-height:0;padding:20px 0 0;border:0;border-top:2px solid #dfe7f3;border-radius:0;background:transparent}
+.ready-grid .ready-card span{font-size:11px}
+.ready-grid .ready-card h3{font-size:19px;line-height:1.25;margin-top:12px;letter-spacing:-.02em}
+.ready-grid .ready-card p{font-size:14px;line-height:1.6;margin-top:8px}
+.engage{padding:46px 0 52px;background:#f7f9fc;border-top:1px solid #e5eaf2}
+.engage .engage-head{display:block;margin-bottom:22px}
+.engage .engage-head .title{font-size:32px;line-height:1.14;margin-top:9px;letter-spacing:-.025em}
+.engage .engage-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.engage .engage-card{display:flex;flex-direction:column;align-items:flex-start;min-height:0!important;padding:26px 28px;border-radius:18px;box-shadow:0 7px 24px rgba(9,25,79,.04)}
+.engage .engage-card small{font-size:11px}
+.engage .engage-card h3{font-size:25px;line-height:1.2;margin-top:12px;letter-spacing:-.025em}
+.engage .engage-card>p{font-size:15px;line-height:1.6;margin:10px 0 20px;max-width:500px}
+.engage .engage-card .btn{margin-top:auto;min-height:46px;position:relative;z-index:1}
+.site-footer.footer-minimal{padding:0;background:#f7f9fc}
+.site-footer .footer-main-minimal{grid-template-columns:.8fr 1.2fr;gap:52px;padding:38px 0 32px}
+.site-footer .footer-logo-minimal{width:188px}
+.site-footer .footer-brand-minimal>p{font-size:14px;line-height:1.65;margin-top:16px}
+.site-footer .footer-links-minimal{gap:28px}
+.site-footer .footer-col-minimal h4{font-size:11px;margin:2px 0 14px}
+.site-footer .footer-col-minimal a{font-size:13px;margin:9px 0}
+.site-footer .footer-bottom-row{font-size:12px;padding:15px 0}
+header .nav{height:78px;gap:24px}
+header .logo{width:188px}
+header .links{gap:22px;font-size:14px}
+header .actions .btn{min-height:46px;padding:0 18px;border-radius:9px}
+a:focus-visible,button:focus-visible{outline:3px solid #4d83dc;outline-offset:4px}
+@media(max-width:1100px){
+ .na-premium-grid{gap:32px}.na-premium-copy h1{font-size:48px}
+ .signals .signal-grid,.ready-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .site-footer .footer-main-minimal{grid-template-columns:1fr;gap:28px}
+ .site-footer .footer-brand-minimal{max-width:620px}
+}
+@media(max-width:1040px){
+ .na-premium-grid{grid-template-columns:1.12fr .88fr;gap:28px;padding:44px 0}
+ .na-premium-copy h1{font-size:44px}.na-hero-image{inset:0 0 0 40%}
+ .na-hero-stack{width:100%;padding:0}.na-hero-stack .stack-main strong{font-size:20px}
+ .na-hero-stack .stack-card div small{font-size:11px}
+ .signals-head,.ready-head{grid-template-columns:1fr;gap:14px;align-items:start}
+ header .nav{height:72px;gap:16px}header .logo{width:168px}
+ header .actions{margin-left:auto;gap:8px}
+ header .links.open{top:72px;left:0;right:0;max-height:calc(100dvh - 90px);overflow:auto}
+}
+@media(max-width:760px){
+ .na-premium-grid{grid-template-columns:1fr;gap:26px;padding:34px 0 36px}
+ .na-premium-copy h1{font-size:clamp(35px,6.1vw,44px);max-width:650px;margin-top:14px}
+ .na-premium-copy .hero-copy{font-size:16px;line-height:1.6;margin-top:16px}
+ .na-premium-copy .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}
+ .na-hero-image{inset:0 0 0 20%}.na-hero-overlay{background:linear-gradient(90deg,#071744,rgba(7,23,68,.88) 42%,rgba(7,23,68,.6)),linear-gradient(0deg,rgba(7,23,68,.72),transparent)}
+ .na-hero-stack{grid-template-columns:1fr 1fr;gap:10px;max-width:none;justify-self:stretch}
+ .na-hero-stack .stack-main{grid-column:1/-1;padding:18px 20px}
+ .na-hero-stack .stack-main strong{font-size:20px;line-height:1.25;margin-top:7px}
+ .na-hero-stack .stack-nursing,.na-hero-stack .stack-allied{padding:13px 14px;gap:9px;grid-template-columns:25px minmax(0,1fr)}
+ .na-hero-stack .stack-nursing>span,.na-hero-stack .stack-allied>span{width:25px;height:25px;font-size:9px}
+ .na-hero-stack .stack-card b{font-size:14px}
+ .market.na-market-premium,.signals,.clinical-ready{padding:42px 0}
+ .market.na-market-premium .na-market-head{text-align:left;margin-bottom:22px}
+ .market.na-market-premium .na-market-head .title{font-size:32px;line-height:1.15;margin-left:0}
+ .market.na-market-premium .na-market-head .lead{margin-left:0;font-size:15px}
+ .market.na-market-premium .na-market-grid,.engage .engage-grid{grid-template-columns:1fr;gap:16px}
+ .market.na-market-premium .na-market-card{padding:22px}.market.na-market-premium .na-market-card h3{font-size:23px}
+ .signals-head .title,.ready-head .title{font-size:32px;line-height:1.15}
+ .signals-head .lead,.ready-head .lead{font-size:15px}
+ .engage{padding:38px 0 42px}.engage .engage-head .title{font-size:28px}
+ .engage .engage-card{padding:23px 22px}.engage .engage-card h3{font-size:24px}
+ .site-footer .footer-main-minimal{padding:32px 0 26px;gap:26px}
+ .site-footer .footer-links-minimal{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}
+ .site-footer .footer-bottom-row{flex-direction:column;align-items:flex-start;gap:10px}
+ .site-footer .footer-contact-minimal{display:flex;flex-wrap:wrap;gap:8px 16px}
+}
+@media(max-width:520px){
+ :root{--wrap:min(1240px,calc(100% - 32px))}
+ header .nav{gap:12px}header .logo{width:148px}header .actions .btn-green{font-size:12px;padding:0 12px;min-height:44px}
+ header .actions .menu{width:42px;height:44px;flex-shrink:0}
+ .na-premium-copy .hero-actions{grid-template-columns:1fr}
+ .na-hero-stack .stack-nursing,.na-hero-stack .stack-allied{grid-template-columns:minmax(0,1fr);padding:13px 14px}.na-hero-stack .stack-nursing>span,.na-hero-stack .stack-allied>span{display:none}
+ .na-hero-stack .stack-card div small{font-size:12px}
+ .signals .signal-grid{grid-template-columns:1fr;gap:0;border-top:1px solid #dce5f0}
+ .signals .signal-card{display:grid;grid-template-columns:27px minmax(0,1fr);gap:5px 12px;border:0;border-bottom:1px solid #dce5f0;border-radius:0;box-shadow:none;background:transparent;padding:17px 0}
+ .signals .signal-card>span{grid-row:1/3;padding-top:4px}.signals .signal-card h3,.signals .signal-card p{margin:0}
+ .ready-grid{grid-template-columns:1fr;gap:0}
+ .ready-grid .ready-card{display:grid;grid-template-columns:27px minmax(0,1fr);gap:5px 12px;padding:17px 0;border-top:1px solid #dce5f0}
+ .ready-grid .ready-card>span{grid-row:1/3;padding-top:4px}.ready-grid .ready-card h3,.ready-grid .ready-card p{margin:0}
+ .site-footer .footer-logo-minimal{width:178px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+.site-footer .footer-bottom-row,.site-footer .footer-bottom-row a{color:#5f6c81}
+
+.open-positions{padding:48px 0;background:#f7f9fc}
+.open-positions .positions-head{grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;margin-bottom:22px}
+.open-positions .positions-head .title{font-size:clamp(32px,3.2vw,44px);line-height:1.13;margin-top:10px}
+.open-positions .positions-head .lead{font-size:16px;line-height:1.6}
+.open-positions .position-card{min-height:0;padding:22px;border-radius:14px;box-shadow:0 5px 16px rgba(9,25,79,.025)}
+.open-positions .position-card p{font-size:14px;line-height:1.6;margin:10px 0 16px}
+.open-positions .position-card a{padding-top:0;font-size:13px}
+.open-positions .position-meta span{font-size:11px}
+@media(max-width:1040px){.open-positions .positions-head{grid-template-columns:1fr;gap:14px}.open-positions .positions-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.open-positions{padding:42px 0}.open-positions .positions-head .title{font-size:32px}.open-positions .positions-head .lead{font-size:15px}.open-positions .positions-grid{grid-template-columns:1fr}.open-positions .position-card{padding:20px}.open-positions .positions-foot{align-items:flex-start;flex-direction:column}}
+@media(max-width:360px){header .logo{width:128px}header .nav{gap:8px}header .actions{gap:6px}header .actions .btn-green{padding:0 10px;font-size:11px}}
