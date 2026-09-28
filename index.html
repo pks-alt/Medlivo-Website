@@ -2925,7 +2925,7 @@ header{
   transition:border-color .16s ease,box-shadow .16s ease,background .16s ease;
 }
 .staffing-field textarea{
-  min-height:96px;
+  min-height:82px;
   resize:vertical;
   line-height:1.55;
 }
@@ -3263,11 +3263,11 @@ header{
       <div class="staffing-request-copy">
         <div class="eyebrow">Request Healthcare Staff</div>
         <h3>Let’s solve the coverage gap.</h3>
-        <p>Tell us the role, location, timing, and coverage priorities. We’ll connect your request directly with the right Medlivo staffing team across Nursing &amp; Allied, Rehabilitation, or Locum Tenens.</p>
+        <p>Tell us the role, location, start timing, and number of professionals you need. We’ll route the request directly to the right Medlivo staffing team.</p>
         <div class="staffing-request-trust">
-          <span><b>01</b> One request</span>
-          <span><b>02</b> Right specialty team</span>
-          <span><b>03</b> Direct follow-up</span>
+          <span><b>01</b> Share the need</span>
+          <span><b>02</b> We route it fast</span>
+          <span><b>03</b> Your team follows up</span>
         </div>
         <div class="staffing-request-help">
           <span>Prefer to talk with us directly?</span>
@@ -3310,11 +3310,6 @@ header{
           </div>
 
           <div class="staffing-field">
-            <label for="staffingDuration">Duration / Schedule</label>
-            <input id="staffingDuration" name="duration" placeholder="e.g. 13 weeks, 3 days/week, call coverage">
-          </div>
-
-          <div class="staffing-field">
             <label for="staffingCount">Number Needed</label>
             <input id="staffingCount" name="count" type="number" min="1" placeholder="1">
           </div>
@@ -3335,8 +3330,8 @@ header{
           </div>
 
           <div class="staffing-field staffing-field-wide">
-            <label for="staffingDetails">Additional Details</label>
-            <textarea id="staffingDetails" name="details" rows="4" placeholder="Share any schedule, credentialing, coverage, or candidate requirements."></textarea>
+            <label for="staffingDetails">Additional Details <span style="font-weight:700;text-transform:none;letter-spacing:0;color:#9aa5b7">(optional)</span></label>
+            <textarea id="staffingDetails" name="details" rows="3" placeholder="Anything else we should know about this travel or staffing need?"></textarea>
           </div>
         </div>
 
@@ -3556,7 +3551,6 @@ if(staffingRequestForm){
       'Organization / Facility: '+value('organization'),
       'Location: '+value('location'),
       'Start Timing: '+value('start'),
-      'Duration / Schedule: '+value('duration'),
       'Number Needed: '+value('count'),
       '',
       'Contact Name: '+value('contact'),
