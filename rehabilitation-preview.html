@@ -2479,6 +2479,131 @@ header{
   .rehab-positions-foot{align-items:flex-start;flex-direction:column}
 }
 
+
+/* === Care Setting Matters: editorial progression === */
+.care-settings{
+  position:relative;
+  overflow:hidden;
+  padding:50px 0 54px;
+  background:
+    radial-gradient(circle at 90% 8%,rgba(95,223,229,.10),transparent 24%),
+    linear-gradient(180deg,#f8faff 0%,#fff 100%);
+}
+.setting-head{
+  grid-template-columns:.9fr 1.1fr;
+  gap:46px;
+  margin-bottom:22px;
+}
+.setting-head .title{
+  max-width:680px;
+}
+.setting-head .lead{
+  max-width:660px;
+}
+.setting-grid{
+  display:block;
+  border:1px solid #dde5f0;
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 14px 34px rgba(9,25,79,.045);
+}
+.setting-card{
+  display:grid;
+  grid-template-columns:48px 215px minmax(0,1fr) minmax(260px,340px);
+  gap:18px;
+  align-items:center;
+  min-height:0;
+  padding:18px 20px;
+  border:0!important;
+  border-bottom:1px solid var(--line)!important;
+  background:#fff;
+}
+.setting-card:last-child{
+  border-bottom:0!important;
+}
+.setting-card:hover{
+  background:#fbfdff;
+}
+.setting-card>span{
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#f2f6ff;
+  border:1px solid #dbe4f3;
+  font-size:9px;
+  font-weight:900;
+  color:var(--blue);
+}
+.setting-card h3{
+  margin:0;
+  font-size:17px;
+  line-height:1.25;
+  color:var(--deep);
+  letter-spacing:-.02em;
+}
+.setting-card p{
+  margin:0;
+  font-size:12.5px;
+  line-height:1.52;
+  color:#66738a;
+}
+.setting-matters{
+  margin:0;
+  padding:0 0 0 18px;
+  border-top:0;
+  border-left:1px solid var(--line);
+}
+.setting-matters small{
+  display:block;
+  font-size:8.5px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:900;
+  color:var(--blue);
+}
+.setting-matters strong{
+  display:block;
+  margin-top:5px;
+  font-size:10.5px;
+  line-height:1.45;
+  color:#43516a;
+  font-weight:800;
+}
+@media(max-width:1040px){
+  .setting-head{grid-template-columns:1fr;gap:14px}
+  .setting-card{
+    grid-template-columns:42px 190px 1fr;
+  }
+  .setting-matters{
+    grid-column:2 / -1;
+    padding:10px 0 0;
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+}
+@media(max-width:720px){
+  .care-settings{padding:42px 0 44px}
+  .setting-grid{border-radius:14px}
+  .setting-card{
+    grid-template-columns:38px 1fr;
+    gap:10px 12px;
+    padding:16px;
+  }
+  .setting-card h3{
+    font-size:16px;
+  }
+  .setting-card p{
+    grid-column:1 / -1;
+    font-size:12.5px;
+  }
+  .setting-matters{
+    grid-column:1 / -1;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -2653,9 +2778,9 @@ header{
     <div class="setting-head">
       <div>
         <div class="eyebrow">Care Setting Matters</div>
-        <h2 class="title">Where therapy is delivered changes what the role demands.</h2>
+        <h2 class="title">The care setting changes the assignment.</h2>
       </div>
-      <p class="lead">Acute care, inpatient rehabilitation, skilled nursing, outpatient, and home health each bring different clinical demands, pace, documentation, coordination, and patient needs. Medlivo screens for those differences.</p>
+      <p class="lead">The same discipline can look very different from one care environment to another. Medlivo recruits around the setting, patient needs, workload, documentation, and operating rhythm of the assignment.</p>
     </div>
 
     <div class="setting-grid">
